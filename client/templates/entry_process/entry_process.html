@@ -1,0 +1,19 @@
+<template name="entry_process">
+  <div class="container  mt-4">
+
+
+    <!-- {{log instance.process_step.get 'process_step' object=instance.process_step.get}} -->
+    {{#if compare instance.process_step.get '==' 1}}
+      {{> entry_process_step1}}
+    {{else if compare instance.process_step.get '==' 2}}
+      {{> entry_process_step2}}
+    {{else if compare instance.process_step.get '==' 3}}
+
+      {{> entry_process_step3}}
+    {{else if compare instance.process_step.get '==' 4}}
+      {{> entry_process_complete}}
+    {{/if}}
+  </div>
+
+
+</template>
