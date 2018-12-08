@@ -1,6 +1,4 @@
-import './entry_process_step1.html';
-
-const categories = [
+export const categories = [
   {
     id: 1,
     label_text: 'Coding/accountability partner',
@@ -51,9 +49,3 @@ const categories = [
     active: true,
   },
 ]
-
-Template.entry_process_step1.helpers({
-  categories() {
-    return categories;
-  }
-});
