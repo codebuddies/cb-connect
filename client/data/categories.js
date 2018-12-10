@@ -1,14 +1,14 @@
 export const categories = [
   {
     id: 1,
-    label_text: 'Coding/accountability partner',
+    label_text: 'Coding/Accountability Partner',
     muted_text: '',
     value: 'category_1',
     active: true,
   },
   {
     id: 2,
-    label_text: 'Feedback/career advice',
+    label_text: 'Feedback/Career Advice',
     muted_text: '',
     value: 'category_2',
     active: true,
@@ -23,29 +23,29 @@ export const categories = [
   {
     id: 4,
     label_text: 'Mentee',
-    muted_text: '(Offers to mentor/teach)',
+    muted_text: '(I would like to mentor or teach)',
     value: 'category_4',
     active: true,
   },
   {
     id: 5,
-    label_text: 'OSS Project Maintainers',
+    label_text: 'An Open Source Project to contribute to',
     muted_text: '',
     value: 'category_5',
     active: true,
   },
   {
     id: 6,
-    label_text: 'Potential new contributors to OSS projects',
+    label_text: 'Potential New Contributor(s) to my OSS project',
     muted_text: '',
     value: 'category_6',
     active: true,
   },
   {
     id: 0,
-    label_text: 'Something Else',
+    label_text: 'Other',
     muted_text: '(Not mentioned above)',
     value: 'category_0',
     active: true,
   },
-]
+];
