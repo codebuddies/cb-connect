@@ -10,7 +10,7 @@
           <form id="entry-process1" class="mt-2" novalidate>
 
             <div class="form-group">
-              <label class="form-control-label" for="category">I am looking for</label>
+              <label class="form-control-label" for="category">I am looking for:</label>
               {{#each categories}}
                 <div class="custom-control custom-radio">
                   <input type="radio" class="custom-control-input" name="category" id="{{value}}" value="{{value}}" checked="{{#if compare instance.entryData.get.step1.category '==' value }}true{{/if}}" required>
@@ -35,19 +35,22 @@
           <form id="entry-process2" class="mt-2" novalidate>
             <div class="form-group">
               <div class="form-group">
-                <label for="entry-name">Hello, My name is</label>
+                <label for="entry-name">Hello, my name is:</label>
                 <input type="text" class="form-control" id="entry-name" value="{{instance.entryData.get.step2.name}}" pattern="[A-Za-z]{5,50}" required>
                 <small id="passwordHelpBlock" class="form-text text-muted">
-                  Will be anonymous except for your match
+                  Your name will be anonymous except to your match
                 </small>
               </div>
               <div class="form-group">
-                <label for="entry-intro">One line intro of yourself</label>
+                <label for="entry-intro">One-line intro of yourself:</label>
                 <input type="text" class="form-control" id="entry-intro" value="{{instance.entryData.get.step2.intro}}" pattern="[A-Za-z]{8,140}" required>
               </div>
               <div class="form-group">
-                <label for="entry-request">Please, fill in the blank</label>
+                <label for="entry-request">Please provide more detail about what you're looking for:</label>
                 <textarea name="entry_request" class="form-control" id="entry-request" rows="4" cols="40" required>{{instance.entryData.get.step2.request}}</textarea>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  e.g. I am working on ______ and struggling with ______. Looking for someone who can ______.
+                </small>
               </div>
             </div>
 
@@ -68,7 +71,7 @@
         <div class="card-body">
           <form id="entry-process3" class="mt-2" novalidate>
             <div class="form-group">
-              <label for="entry-email">Email <small class="text-muted">(We will not share your email address with another member.)</small></label>
+              <label for="entry-email">Email <small class="text-muted">(We will not share your email address with others. )</small></label>
               <input type="text" class="form-control" id="entry-email" value="{{instance.entryData.get.step3.email}}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
               <div class="invalid-feedback feedback-pos"> Please input valid email ID </div>
             </div>
