@@ -1,8 +1,8 @@
 import './entry_process.html';
 
 import { ReactiveVar } from 'meteor/reactive-var';
-import { categories } from '../../data/categories';
-import { timezones } from '../../data/timezones';
+import { categories } from '../../../lib/data/categories';
+import { timezones } from '../../../lib/data/timezones';
 
 
 
