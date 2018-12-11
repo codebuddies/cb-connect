@@ -7,4 +7,27 @@
       </hgroup>
     </div>
   </section>
+
+
+  <section class="container" style="margin-top:140px">
+
+    <div class="row">
+      <div class="container cell-group">
+        <div class="row text-center flex-nowrap">
+          {{#each categories}}
+            <div class="col-sm-4">
+              <h6>{{short_lable}}</h6>
+              <hr>
+              {{#each entries value}}
+                <h5 class="slot-box">
+                  {{applicant.name}}
+                </h5>
+              {{/each}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+  </section>
 </template>
