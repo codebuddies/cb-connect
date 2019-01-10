@@ -91,9 +91,10 @@ Template.entry_process.events({
 
     const step3 = {
       email: $.trim(template.find("#entry-email").value),
-      timezone: $("#entry-timezone option:selected").val(),
+      timezoneOffset: $("#entry-timezone option:selected").val(),
       timezoneId: $("#entry-timezone option:selected").attr('data-id'),
       timezoneDaylightSaving: $("#entry-timezone option:selected").attr('data-daylight'),
+      timezoneTitle: $("#entry-timezone option:selected").attr('data-title'),
     }
 
     // get set
@@ -103,6 +104,15 @@ Template.entry_process.events({
     // template.processStep.set(3)
 
     //submit an entry
+    const entryData = template.entryData.get();
+    Meteor.call("entries.add", entryData, function(error, result) {
+      if (error) {
+        console.log("error", error);
+      }
+      if (result) {
+
+      }
+    });
 
   },
 

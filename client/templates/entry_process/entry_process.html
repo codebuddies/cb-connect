@@ -79,7 +79,7 @@
               <label for="entry-timezone">Time Zone</label>
               <select class="custom-select" id="entry-timezone">
                 {{#each timezones}}
-                  <option data-id={{id}} data-daylight="{{daylight_saving}}" value="{{value}}" selected="{{#if compare instance.entryData.get.step3.timezoneId '==' id }}true{{/if}}" >{{label_text}}</option>
+                  <option data-id={{id}} data-title="{{label_text}}" data-daylight="{{daylight_saving}}" value="{{value}}" selected="{{#if compare instance.entryData.get.step3.timezoneId '==' id }}true{{/if}}" >{{label_text}}</option>
                 {{/each}}
               </select>
             </div>

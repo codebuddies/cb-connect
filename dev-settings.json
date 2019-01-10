@@ -1,3 +1,19 @@
 {
-  "seeder": true
+  "seeder": false,
+  "private": {
+    "siteInfo": {
+      "name": "CB Connect",
+      "URL": "https://cbconnect.herokuapp.com"
+    },
+    "emails": {
+      "person": "Linda  <connect@codebuddies.org>",
+      "bot": "CB Connect <no-reply@.>"
+    },
+    "smtp": {
+      "username":"SMTP_Injection",
+      "password": "password",
+      "host": "smtp.sparkpostmail.com",
+      "port": "587"
+    }
+  }
 }
