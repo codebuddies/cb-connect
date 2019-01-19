@@ -36,14 +36,14 @@
             <div class="form-group">
               <div class="form-group">
                 <label for="entry-name">Hello, my name is:</label>
-                <input type="text" class="form-control" id="entry-name" value="{{instance.entryData.get.step2.name}}" pattern="[A-Za-z]{5,50}" required>
+                <input type="text" class="form-control" id="entry-name" value="{{instance.entryData.get.step2.name}}" pattern="[A-Za-z\s]{3,50}" required>
                 <small id="passwordHelpBlock" class="form-text text-muted">
                   Your name will be anonymous except to your match
                 </small>
               </div>
               <div class="form-group">
                 <label for="entry-intro">One-line intro of yourself:</label>
-                <input type="text" class="form-control" id="entry-intro" value="{{instance.entryData.get.step2.intro}}" pattern="[A-Za-z]{8,140}" required>
+                <input type="text" class="form-control" id="entry-intro" value="{{instance.entryData.get.step2.intro}}" pattern="[A-Za-z\s]{10,140}" required>
               </div>
               <div class="form-group">
                 <label for="entry-request">Please provide more detail about what you're looking for:</label>

@@ -1,8 +1,0 @@
-const generateUser =  () => {
-
-}
-
-
-const seedUsers = () => {
-
-}
