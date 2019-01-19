@@ -12,16 +12,16 @@ Accounts.emailTemplates.enrollAccount.text = (user, url) => {
     + url;
 };
 
-Accounts.emailTemplates.resetPassword.from = () => {
-  // Overrides the value set in `Accounts.emailTemplates.from` when resetting
-  // passwords.
-  return 'AwesomeSite Password Reset <no-reply@example.com>';
-};
-Accounts.emailTemplates.verifyEmail = {
-   subject() {
-      return "Activate your account now!";
-   },
-   text(user, url) {
-      return `Hey ${user}! Verify your e-mail by following this link: ${url}`;
-   }
-};
+// Accounts.emailTemplates.resetPassword.from = () => {
+//   // Overrides the value set in `Accounts.emailTemplates.from` when resetting
+//   // passwords.
+//   return 'AwesomeSite Password Reset <no-reply@example.com>';
+// };
+// Accounts.emailTemplates.verifyEmail = {
+//    subject() {
+//       return "Activate your account now!";
+//    },
+//    text(user, url) {
+//       return `Hey ${user}! Verify your e-mail by following this link: ${url}`;
+//    }
+// };

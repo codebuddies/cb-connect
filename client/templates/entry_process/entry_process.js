@@ -3,7 +3,7 @@ import './entry_process.html';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { categories } from '../../../lib/data/categories';
 import { timezones } from '../../../lib/data/timezones';
-
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 
 Template.entry_process.onCreated(function() {
@@ -26,16 +26,21 @@ Template.entry_process.helpers({
 Template.entry_process.events({
   "click #step1-next"(event, template) {
 
-    const form = $("#entry-process1")
 
-    if (form[0].checkValidity() === false) {
+    const categories = [];// checked item will be stored in here
+    $('input[name=category]:checked').each(function() {
+      categories.push($(this).val());
+    });
+
+    if (categories.length < 1) {
+      const form = $("#entry-process1")
       event.preventDefault()
       form.addClass('was-validated');
       return
     }
 
     const step1 = {
-      category: $(template.find('input:radio[name=category]:checked')).val()
+      categories: categories
     }
 
 
@@ -63,7 +68,7 @@ Template.entry_process.events({
     const step2 = {
       name: $.trim(template.find("#entry-name").value),
       intro: $.trim(template.find("#entry-intro").value),
-      request: $.trim(template.find("#entry-request").value)
+      // request: $.trim(template.find("#entry-request").value)
     }
 
     // get set
@@ -101,16 +106,15 @@ Template.entry_process.events({
     const data = template.entryData.get();
     data['step3'] = step3;
     template.entryData.set(data);
-    // template.processStep.set(3)
 
     //submit an entry
     const entryData = template.entryData.get();
-    Meteor.call("entries.add", entryData, function(error, result) {
+    Meteor.call("users.enroll", entryData, function(error, result) {
       if (error) {
         console.log("error", error);
       }
       if (result) {
-
+        FlowRouter.go('/woohoo');
       }
     });
 

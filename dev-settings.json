@@ -6,14 +6,14 @@
       "URL": "https://cbconnect.herokuapp.com"
     },
     "emails": {
-      "person": "Linda  <connect@codebuddies.org>",
-      "bot": "CB Connect <no-reply@.>"
+      "person": "Linda  <linda@codebuddies.org>",
+      "bot": "CB Connect <no-reply@codebuddies.org>"
     },
     "smtp": {
       "username":"SMTP_Injection",
       "password": "password",
       "host": "smtp.sparkpostmail.com",
-      "port": "587"
+      "port": "2525"
     }
   }
 }
