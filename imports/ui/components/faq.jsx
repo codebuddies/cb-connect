@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 const Faq = props => {
   return (
     <React.Fragment>
-      <header class="container mt-5">
-        <div class="display-4 text-default">FAQ</div>
+      <header className="container mt-5">
+        <div className="display-4 text-default">FAQ</div>
       </header>
 
-      <section class="p-5">
-        <div class="container">
+      <section className="p-5">
+        <div className="container">
           <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
+            <div className="card">
+              <div className="card-header" id="headingOne">
+                <h5 className="mb-0">
                   <button
-                    class="btn btn-link"
+                    className="btn btn-link"
                     data-toggle="collapse"
                     data-target="#collapseOne"
                     aria-expanded="true"
@@ -26,8 +26,8 @@ const Faq = props => {
                 </h5>
               </div>
 
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
+              <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div className="card-body">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
                   moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                   Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
@@ -37,11 +37,11 @@ const Faq = props => {
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
+            <div className="card">
+              <div className="card-header" id="headingTwo">
+                <h5 className="mb-0">
                   <button
-                    class="btn btn-link collapsed"
+                    className="btn btn-link collapsed"
                     data-toggle="collapse"
                     data-target="#collapseTwo"
                     aria-expanded="false"
@@ -51,8 +51,8 @@ const Faq = props => {
                   </button>
                 </h5>
               </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
+              <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div className="card-body">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
                   moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                   Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
@@ -62,11 +62,11 @@ const Faq = props => {
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
+            <div className="card">
+              <div className="card-header" id="headingThree">
+                <h5 className="mb-0">
                   <button
-                    class="btn btn-link collapsed"
+                    className="btn btn-link collapsed"
                     data-toggle="collapse"
                     data-target="#collapseThree"
                     aria-expanded="false"
@@ -76,8 +76,8 @@ const Faq = props => {
                   </button>
                 </h5>
               </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
+              <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div className="card-body">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
                   moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                   Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
