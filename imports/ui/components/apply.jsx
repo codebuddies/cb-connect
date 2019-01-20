@@ -1,6 +1,6 @@
 import React from 'react';
-import { categories } from '/imports/data/categories';
-import { timezones } from '/imports/data/timezones';
+import { categories } from '/lib/data/categories';
+import { timezones } from '/lib/data/timezones';
 
 class Apply extends React.Component {
   constructor(props) {
