@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 
-class Navbar extends React.Component {
+
+class NavbarWrapper extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -9,41 +11,19 @@ class Navbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg container">
-          <Link className="navbar-brand" to="/">
-            CodeBuddies Connect
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item mr-3">
-                <Link className="nav-link" to="/faq">
-                  FAQ
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login">
-                  <div className="btn btn-primary btn-sm btn-border">Login</div>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        {this.props.children}
+        <Navbar className="navbar navbar-expand-lg container">
+          <Navbar.Brand href="/">
+             CodeBuddies Connect
+           </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+            <Nav className="mr-auto"></Nav>
+            <Nav.Link className="mr-sm-2" href="/faq">FAQ</Nav.Link>
+            <Button variant="outline-success" className="btn btn-primary btn-sm btn-border">Login</Button>
+          </Navbar>
+          {this.props.children}
       </React.Fragment>
     );
   }
 }
 
-export default Navbar;
+export default NavbarWrapper;
