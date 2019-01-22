@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Button } from 'react-bootstrap';
-
+import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 
 class NavbarWrapper extends React.Component {
   constructor(props) {
@@ -10,18 +9,24 @@ class NavbarWrapper extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Navbar className="navbar navbar-expand-lg container">
-          <Navbar.Brand href="/">
-             CodeBuddies Connect
-           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Nav className="mr-auto"></Nav>
-            <Nav.Link className="mr-sm-2" href="/faq">FAQ</Nav.Link>
-            <Button variant="outline-success" className="btn btn-primary btn-sm btn-border">Login</Button>
-          </Navbar>
-          {this.props.children}
-      </React.Fragment>
+      <Container>
+        <Navbar>
+          <Link to="/" className='navbar-brand'>
+            CodeBuddies Connect
+          </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Nav className="mr-auto" />
+          <Link to="/faq" className='nav-link mr-sm-2'>
+            FAQ
+          </Link>
+          <Link to="/login">
+            <Button variant="outline-success" size="sm">
+              Login
+            </Button>
+          </Link>
+        </Navbar>
+        {this.props.children}
+      </Container>
     );
   }
 }
