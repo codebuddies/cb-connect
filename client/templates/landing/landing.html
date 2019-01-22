@@ -1,7 +1,7 @@
 <template name="landing">
   {{#unless currentUser}}
-    {{> entry_process}}
+    {{> landing_for_visitors}}
   {{else}}
-
+    {{> landing_for_users}}
   {{/unless}}
 </template>

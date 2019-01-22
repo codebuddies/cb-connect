@@ -1,0 +1,19 @@
+.carousel-item.active {
+    display:block;
+}
+
+/* The heart of the matter */
+.cell-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.cell-group > .row > .col-sm-4 {
+  display: inline-block;
+  float: none;
+}
+
+.slot-box {
+  border-style: solid;
+  border-width: thin;
+  padding: 10px;
+}

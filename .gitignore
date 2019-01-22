@@ -1,4 +1,5 @@
 node_modules/
 .clipboard
 settings.json
-development-settings.json
+my-settings.json
+stage-settings.json
