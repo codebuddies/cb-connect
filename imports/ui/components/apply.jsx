@@ -1,154 +1,185 @@
 import React from 'react';
 import { categories } from '/lib/data/categories';
 import { timezones } from '/lib/data/timezones';
+import { Card, Button, Form } from 'react-bootstrap';
 
 class Apply extends React.Component {
   constructor(props) {
     super(props);
-    this.getNavButtons = this.getNavButtons.bind(this);
-    this.goNext = this.goNext.bind(this);
     this.goBack = this.goBack.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getForm1 = this.getForm1.bind(this);
+    this.getForm2 = this.getForm2.bind(this);
+    this.getForm3 = this.getForm3.bind(this);
+    this.updateFormData = this.updateFormData.bind(this);
+    this._formData = {};
 
     this.state = {
       processStep: 1,
+      formValidated: false,
     };
   }
 
-  getNavButtons() {
-    const { processStep } = this.state;
-    const classNames = 'btn btn-default mt-2';
+  goBack(e) {
+    this.updateFormData(e.currentTarget.form);
+    this.setState(state => ({ processStep: state.processStep - 1, formValidated: false }));
+  }
+
+  getForm1() {
+    const { formValidated } = this.state;
 
     return (
-      <React.Fragment>
-        {processStep !== 1 ? (
-          <div className={classNames} onClick={this.goBack}>
-            Back
-          </div>
-        ) : null}
-        {processStep !== 3 ? (
-          <div className={classNames + ' float-right'} onClick={this.goNext}>
-            Next
-          </div>
-        ) : null}
-        {processStep === 3 ? (
-          <div className={classNames + ' float-right'} onClick={this.handleSubmit}>
-            Submit
-          </div>
-        ) : null}
-      </React.Fragment>
+      <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
+        <Card>
+          <Card.Body>
+            <Form.Label as="legend">I am looking for:</Form.Label>
+            {categories.map((category, i) => (
+              <Form.Check
+                required
+                defaultChecked={this._formData.category === category.value}
+                key={i}
+                name="category"
+                type="radio"
+                id={category.id}
+                value={category.value}
+                label={
+                  <div>
+                    {category.label_text}
+                    <small className="text-muted">{' ' + category.muted_text}</small>
+                  </div>
+                }
+              />
+            ))}
+          </Card.Body>
+        </Card>
+        <br />
+        <Button className="float-right" variant="outline-primary" type="submit">
+          Next
+        </Button>
+      </Form>
     );
   }
 
-  goNext() {
-    this.setState(state => ({ processStep: state.processStep + 1 }));
+  getForm2() {
+    const { formValidated } = this.state;
+    const { name, oneLineIntro, lookingFor } = this._formData || {};
+
+    return (
+      <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
+        <Card>
+          <Card.Body>
+            <Form.Group controlId="name">
+              <Form.Label>Hello, my name is:</Form.Label>
+              <Form.Control type="text" required defaultValue={name} pattern="[A-Za-z ]{5,50}" />
+              <Form.Text className="text-muted">Your name will be anonymous except to your match</Form.Text>
+            </Form.Group>
+
+            <Form.Group controlId="oneLineIntro">
+              <Form.Label>One-line intro of yourself:</Form.Label>
+              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[A-Za-z ]{8,140}" />
+            </Form.Group>
+
+            <Form.Group controlId="lookingFor">
+              <Form.Label>Please provide more detail about what you're looking for:</Form.Label>
+              <Form.Control as="textarea" rows="4" required defaultValue={lookingFor} />
+              <Form.Text className="text-muted">
+                e.g. I am working on ______ and struggling with ______. Looking for someone who can ______.
+              </Form.Text>
+            </Form.Group>
+          </Card.Body>
+        </Card>
+        <br />
+        <Button onClick={this.goBack} variant="outline-primary">
+          Back
+        </Button>
+        <Button className="float-right" variant="outline-primary" type="submit">
+          Next
+        </Button>
+      </Form>
+    );
   }
 
-  goBack() {
-    this.setState(state => ({ processStep: state.processStep - 1 }));
+  getForm3() {
+    const { email, timezone } = this._formData || {};
+    const { formValidated } = this.state;
+    return (
+      <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
+        <Card>
+          <Card.Body>
+            <Form.Group controlId="email">
+              <Form.Label>
+                Email <small className="text-muted">(We will not share your email address with others. )</small>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                required
+                defaultValue={email}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="timezone">
+              <Form.Label>Time Zone</Form.Label>
+              <Form.Control as="select" required defaultValue={timezone}>
+                {timezones.map((tz, i) => (
+                  <option key={i} data-id={tz.id} data-daylight={tz.daylight_saving} value={tz.value}>
+                    {tz.label_text}
+                  </option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+          </Card.Body>
+        </Card>
+        <br />
+        <Button onClick={this.goBack} variant="outline-primary">
+          Back
+        </Button>
+        <Button className="float-right" variant="outline-primary" type="submit">
+          Next
+        </Button>
+      </Form>
+    );
   }
 
-  handleSubmit() {}
+  handleSubmit(event) {
+    const form = event.currentTarget;
+    this.updateFormData(form);
+    event.preventDefault();
+    event.stopPropagation();
 
+    //Form is invalid
+    if (form.checkValidity() === false) {
+      return this.setState({ formValidated: true });
+    }
+
+    // Final step to submit the form
+    if (this.state.processStep === 3) {
+      // TODO submit the form to backend
+      const data = this._formData;
+      console.log('Data to submit', data);
+    } else {
+      // Move to next form
+      this.setState(state => ({ formValidated: false, processStep: state.processStep + 1 }));
+    }
+  }
+
+  updateFormData(form) {
+    const { name, oneLineIntro, lookingFor, email, timezone, category } = form.elements;
+    if (name && name.value) this._formData.name = name.value;
+    if (oneLineIntro && oneLineIntro.value) this._formData.oneLineIntro = oneLineIntro.value;
+    if (lookingFor && lookingFor.value) this._formData.lookingFor = lookingFor.value;
+    if (email && email.value) this._formData.email = email.value;
+    if (timezone && timezone.value) this._formData.timezone = timezone.value;
+    if (category && category.value) this._formData.category = category.value;
+  }
   render() {
     const { processStep } = this.state;
+
     return (
-      <div className="container  mt-4">
-        <div className="card">
-          <div className="card-body">
-            {processStep === 1 ? (
-              <form id="entry-process1" className="mt-2" noValidate>
-                <div className="form-group">
-                  <label className="form-control-label" htmlFor="category">
-                    I am looking for:
-                  </label>
-
-                  {categories.map((category, i) => (
-                    <div key={i} className="custom-control custom-radio">
-                      <input
-                        type="radio"
-                        className="custom-control-input"
-                        name="category"
-                        id={category.id}
-                        value={category.id}
-                      />
-                      <label className="custom-control-label" htmlFor={category.id}>
-                        {category.label_text}
-                        <small className="text-muted">{category.muted_text}</small>
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </form>
-            ) : null}
-
-            {processStep === 2 ? (
-              <form id="entry-process2" className="mt-2" noValidate>
-                <div className="form-group">
-                  <div className="form-group">
-                    <label htmlFor="entry-name">Hello, my name is:</label>
-                    <input type="text" className="form-control" id="entry-name" pattern="[A-Za-z]{5,50}" required />
-                    <small id="passwordHelpBlock" className="form-text text-muted">
-                      Your name will be anonymous except to your match
-                    </small>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="entry-intro">One-line intro of yourself:</label>
-                    <input type="text" className="form-control" id="entry-intro" pattern="[A-Za-z]{8,140}" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="entry-request">Please provide more detail about what you're looking for:</label>
-                    <textarea
-                      name="entry_request"
-                      className="form-control"
-                      id="entry-request"
-                      rows="4"
-                      cols="40"
-                      required
-                    />
-                    <small id="passwordHelpBlock" className="form-text text-muted">
-                      e.g. I am working on ______ and struggling with ______. Looking for someone who can ______.
-                    </small>
-                  </div>
-                </div>
-              </form>
-            ) : null}
-
-            {processStep === 3 ? (
-              <form id="entry-process3" className="mt-2" noValidate>
-                <div className="form-group">
-                  <label htmlFor="entry-email">
-                    Email <small className="text-muted">(We will not share your email address with others. )</small>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="entry-email"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                  />
-                  <div className="invalid-feedback feedback-pos"> Please input valid email ID </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="entry-timezone">Time Zone</label>
-                  <select className="custom-select" id="entry-timezone">
-                    {timezones.map((timezone, i) => (
-                      <option
-                        key={i}
-                        data-id={timezone.id}
-                        data-daylight={timezone.daylight_saving}
-                        value={timezone.value}
-                      >
-                        {timezone.label_text}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </form>
-            ) : null}
-          </div>
-        </div>
-
-        {this.getNavButtons()}
+      <div className='m-auto w-100 pt-5 pl-2 pr-2' style={{maxWidth: '768px'}}>
+        {processStep === 1 ? this.getForm1() : null}
+        {processStep === 2 ? this.getForm2() : null}
+        {processStep === 3 ? this.getForm3() : null}
       </div>
     );
   }
