@@ -2,6 +2,7 @@ import React from 'react';
 import { categories } from '/lib/data/categories';
 import { timezones } from '/lib/data/timezones';
 import { Card, Button, Form } from 'react-bootstrap';
+import { EMAIL_REGEX } from '/imports/constants/regex';
 
 class Apply extends React.Component {
   constructor(props) {
@@ -110,12 +111,7 @@ class Apply extends React.Component {
               <Form.Label>
                 Email <small className="text-muted">(We will not share your email address with others. )</small>
               </Form.Label>
-              <Form.Control
-                type="text"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                required
-                defaultValue={email}
-              />
+              <Form.Control type="text" pattern={EMAIL_REGEX} required defaultValue={email} />
             </Form.Group>
 
             <Form.Group controlId="timezone">
@@ -176,7 +172,7 @@ class Apply extends React.Component {
     const { processStep } = this.state;
 
     return (
-      <div className='m-auto w-100 pt-5 pl-2 pr-2' style={{maxWidth: '768px'}}>
+      <div className="m-auto w-100 pt-5 pl-2 pr-2" style={{ maxWidth: '768px' }}>
         {processStep === 1 ? this.getForm1() : null}
         {processStep === 2 ? this.getForm2() : null}
         {processStep === 3 ? this.getForm3() : null}

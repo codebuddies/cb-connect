@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
+import { EMAIL_REGEX } from '/imports/constants/regex';
 
 class Login extends React.Component {
   constructor(props) {
@@ -21,11 +22,10 @@ class Login extends React.Component {
 
     const email = form.elements['email'].value;
     const password = form.elements['password'].value;
-    console.log(email, password);
 
     Meteor.loginWithPassword(email, password, err => {
       if (err) {
-        this.setState({error: err.message})
+        this.setState({ error: err.message });
       }
       // TODO: Redirect user to further
     });
@@ -51,7 +51,7 @@ class Login extends React.Component {
                   type="text"
                   autoComplete="email"
                   placeholder="Email address"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  pattern={EMAIL_REGEX}
                   required
                 />
               </Form.Group>
@@ -65,7 +65,7 @@ class Login extends React.Component {
                 Login
               </Button>
             </Form>
-            <br/>
+            <br />
             {error ? <Alert variant="danger">{error}</Alert> : null}
           </Col>
         </Row>
