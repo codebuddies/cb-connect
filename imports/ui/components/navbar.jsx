@@ -9,24 +9,26 @@ class NavbarWrapper extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Navbar>
-          <Link to="/" className='navbar-brand'>
-            CodeBuddies Connect
-          </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Nav className="mr-auto" />
-          <Link to="/faq" className='nav-link mr-sm-2'>
-            FAQ
-          </Link>
-          <Link to="/login">
-            <Button variant="outline-success" size="sm">
-              Login
-            </Button>
-          </Link>
-        </Navbar>
+      <React.Fragment>
+        <Container>
+          <Navbar>
+            <Link to="/" className="navbar-brand">
+              CodeBuddies Connect
+            </Link>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Nav className="mr-auto" />
+            <Link to="/faq" className="nav-link mr-sm-2">
+              FAQ
+            </Link>
+            <Link to="/login">
+              <Button variant="outline-success" size="sm">
+                Login
+              </Button>
+            </Link>
+          </Navbar>
+        </Container>
         {this.props.children}
-      </Container>
+      </React.Fragment>
     );
   }
 }
