@@ -40,7 +40,7 @@ class Landing extends React.Component {
                   'Free education'"
               </blockquote>
               <p className="text-right">- <a href="https://github.com/ZoranPandovski" alt="Zoran Pandovski Github">Zoran Pandovski</a>, Full-Stack Developer from Macedonia</p>
-          </Col></
+          </Col>
           <Col sm={8}></Col>
         </Row>
       </Container>
