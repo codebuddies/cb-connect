@@ -3,3 +3,5 @@ node_modules/
 settings.json
 development-settings.json
 .DS_Store
+my-settings.json
+stage-settings.json
