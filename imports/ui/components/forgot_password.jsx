@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
-import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 import { EMAIL_REGEX } from '/imports/constants/regex';
 
-class Login extends React.Component {
+class ForgotPassword extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
+      processing: false,
       validated: false,
       error: null,
+      success: null,
     };
   }
 
@@ -22,18 +24,19 @@ class Login extends React.Component {
     if (form.checkValidity() === false) return;
 
     const email = form.elements['email'].value;
-    const password = form.elements['password'].value;
 
-    Meteor.loginWithPassword(email, password, err => {
+    Accounts.forgotPassword({ email }, err => {
+      console.log(err);
       if (err) {
-        this.setState({ error: err.message });
+        this.setState({ error: err.reason });
+      } else {
+        this.setState({ success: 'Check your email for instructions' });
       }
-      // TODO: Redirect user to further
     });
   }
 
   render() {
-    const { validated, error } = this.state;
+    const { validated, error, success, processing } = this.state;
 
     return (
       <Container fluid>
@@ -41,7 +44,7 @@ class Login extends React.Component {
           <Col sm={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
             <br />
             <br />
-            <h2 className="text-center">Login</h2>
+            <h2 className="text-center">Forgot Password?</h2>
             <br />
             <br />
 
@@ -57,22 +60,17 @@ class Login extends React.Component {
                 />
               </Form.Group>
 
-              <Form.Group controlId="password">
-                <Form.Label srOnly>Password</Form.Label>
-                <Form.Control type="password" required placeholder="Password" autoComplete="current-password" />
-              </Form.Group>
-
-              <Button variant="primary" type="submit" block>
-                Login
+              <Button variant="primary" type="submit" block disabled={processing}>
+                {processing ? 'Processing' : 'Submit'}
               </Button>
             </Form>
             <br />
             {error ? <Alert variant="danger">{error}</Alert> : null}
+            {success ? <Alert variant="success">{success}</Alert> : null}
 
-            <div className="text-center">
-              <Link to="/forgot-password">Forgot Password?</Link>
+            <div class="text-center">
+              <Link to="/login">Login</Link>
             </div>
-
           </Col>
         </Row>
       </Container>
@@ -80,4 +78,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default ForgotPassword;
