@@ -71,13 +71,15 @@ class Apply extends React.Component {
           <Card.Body>
             <Form.Group controlId="name">
               <Form.Label>Hello, my name is:</Form.Label>
-              <Form.Control type="text" required defaultValue={name} pattern="[A-Za-z ]{5,50}" />
+              <Form.Control type="text" required defaultValue={name} pattern="[A-Za-z0-9]{3,50}" data-error="Please enter" />
+              <Form.Control.Feedback type="invalid">Your name needs to be between 3 and 50 characters long.</Form.Control.Feedback>
               <Form.Text className="text-muted">Your name will be anonymous except to your match</Form.Text>
             </Form.Group>
 
             <Form.Group controlId="oneLineIntro">
               <Form.Label>One-line intro of yourself:</Form.Label>
-              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[A-Za-z ]{8,140}" />
+              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[A-Za-z-09]{8,270}" />
+              <Form.Control.Feedback type="invalid">Please share an intro between 8 and 270 characters long.</Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group controlId="lookingFor">
@@ -112,6 +114,7 @@ class Apply extends React.Component {
                 Email <small className="text-muted">(We will not share your email address with others. )</small>
               </Form.Label>
               <Form.Control type="text" pattern={EMAIL_REGEX} required defaultValue={email} />
+              <Form.Control.Feedback type="invalid">Please share a valid email.</Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group controlId="timezone">
