@@ -78,8 +78,8 @@ class Apply extends React.Component {
 
             <Form.Group controlId="oneLineIntro">
               <Form.Label>One-line intro of yourself:</Form.Label>
-              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[A-Za-z-09]{8,270}" />
-              <Form.Control.Feedback type="invalid">Please share an intro between 8 and 270 characters long.</Form.Control.Feedback>
+              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[A-Za-z0-9\s\.]{8,140}" />
+              <Form.Control.Feedback type="invalid">Please share an intro between 8 and 140 characters long.</Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group controlId="lookingFor">
