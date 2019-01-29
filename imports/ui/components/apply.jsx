@@ -1,8 +1,9 @@
 import React from 'react';
 import { categories } from '/lib/data/categories';
 import { timezones } from '/lib/data/timezones';
-import { Card, Button, Form } from 'react-bootstrap';
+import { Alert, Card, Button, Form } from 'react-bootstrap';
 import { EMAIL_REGEX } from '/imports/constants/regex';
+import { Meteor } from 'meteor/meteor';
 
 class Apply extends React.Component {
   constructor(props) {
@@ -18,6 +19,8 @@ class Apply extends React.Component {
     this.state = {
       processStep: 1,
       formValidated: false,
+      error: null,
+      processing: false
     };
   }
 
@@ -42,7 +45,7 @@ class Apply extends React.Component {
                 name="category"
                 type="radio"
                 id={category.id}
-                value={category.value}
+                value={category.id}
                 label={
                   <div>
                     {category.label_text}
@@ -104,7 +107,7 @@ class Apply extends React.Component {
 
   getForm3() {
     const { email, timezone } = this._formData || {};
-    const { formValidated } = this.state;
+    const { formValidated, processing  } = this.state;
     return (
       <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
         <Card>
@@ -121,7 +124,7 @@ class Apply extends React.Component {
               <Form.Label>Time Zone</Form.Label>
               <Form.Control as="select" required defaultValue={timezone}>
                 {timezones.map((tz, i) => (
-                  <option key={i} data-id={tz.id} data-daylight={tz.daylight_saving} value={tz.value}>
+                  <option key={i} data-id={tz.id} data-daylight={tz.daylight_saving} value={tz.id}>
                     {tz.label_text}
                   </option>
                 ))}
@@ -133,8 +136,8 @@ class Apply extends React.Component {
         <Button onClick={this.goBack} variant="outline-primary">
           Back
         </Button>
-        <Button className="float-right" variant="outline-primary" type="submit">
-          Next
+        <Button className="float-right" variant="outline-primary" type="submit" disabled={processing}>
+          {processing ? 'Processing' : 'Submit'}
         </Button>
       </Form>
     );
@@ -155,7 +158,18 @@ class Apply extends React.Component {
     if (this.state.processStep === 3) {
       // TODO submit the form to backend
       const data = this._formData;
-      console.log('Data to submit', data);
+      this.setState({ 'processing' : true });
+      Meteor.call("users.enroll", data, (error, result) => {
+        if (error) {
+          this.setState({ 'error' : error.reason });
+          this.setState({ 'processing' : false });
+        }
+        if (result) {
+          this.setState({ 'processing' : false });
+          this.props.history.push('/woohoo')
+        }
+      });
+
     } else {
       // Move to next form
       this.setState(state => ({ formValidated: false, processStep: state.processStep + 1 }));
@@ -172,10 +186,10 @@ class Apply extends React.Component {
     if (category && category.value) this._formData.category = category.value;
   }
   render() {
-    const { processStep } = this.state;
-
+    const { processStep, error } = this.state;
     return (
       <div className="m-auto w-100 pt-5 pl-2 pr-2" style={{ maxWidth: '768px' }}>
+        {error ? <Alert variant="danger">{error}</Alert> : null}
         {processStep === 1 ? this.getForm1() : null}
         {processStep === 2 ? this.getForm2() : null}
         {processStep === 3 ? this.getForm3() : null}
