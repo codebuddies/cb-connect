@@ -1,10 +1,10 @@
-import Reac, { Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
 
 
-class EnrollmentSetPassword extends Component {
+class SetPassword extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -105,7 +105,7 @@ class EnrollmentSetPassword extends Component {
               </Form.Group>
 
               <Button variant="primary" type="submit" block disabled={processing}>
-                {processing ? 'Processing' : 'Submit'}
+                {processing ? 'Processing' : 'Set Password'}
               </Button>
             </Form>
             <br />
@@ -120,4 +120,4 @@ class EnrollmentSetPassword extends Component {
   }
 }
 
-export default EnrollmentSetPassword;
+export default SetPassword;
