@@ -7,6 +7,7 @@ import Faq from '../imports/ui/components/faq.jsx';
 import Woohoo from '../imports/ui/components/woohoo.jsx';
 import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
+import EnrollmentSetPassword from '../imports/ui/components/enrollment_set_password.jsx';
 
 export const renderRoutes = () => (
   <Router>
@@ -15,6 +16,7 @@ export const renderRoutes = () => (
         <Route exact path="/" component={Landing} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot-password" component={ForgotPassword} />
+        <Route exact path="/enroll-account/:token" component={EnrollmentSetPassword} />
         <Route exact path="/faq" component={Faq} />
         <Route path="/apply" component={Apply} />
         <Route path="/woohoo" component={Woohoo} />
