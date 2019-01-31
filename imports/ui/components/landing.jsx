@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Container, Row, Col } from 'react-bootstrap';
+import Board from './board'
 
 class Landing extends React.Component {
   constructor(props) {
@@ -42,6 +43,9 @@ class Landing extends React.Component {
               <p className="text-right">- <a href="https://github.com/ZoranPandovski" alt="Zoran Pandovski Github">Zoran Pandovski</a>, Full-Stack Developer from Macedonia</p>
           </Col>
           <Col sm={8}></Col>
+        </Row>
+        <Row>
+          <Board />
         </Row>
       </Container>
     );
