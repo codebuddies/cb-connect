@@ -7,14 +7,11 @@ class Column extends React.Component{
             <div className="column">
                 <h2>{this.props.heading}</h2>
                 <div className="cards">
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
-                    <Card intro="one-line intro" description="one-line description" timezone="EST"/>
+                    {console.log(this.props)}
+                    {this.props.cards.map((card) => {
+                        return <Card intro={card.intro} description={card.description} timezone={card.timezone}/>
+                    })}
+                    
                 </div>
             </div>
         )
