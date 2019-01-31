@@ -18,13 +18,21 @@ class Board extends React.Component {
                 'active': true
             },
             {
-                'intro': 'one-line intro',
+                'intro': 'SDET/QA constantly looking to improve.',
                 'timezone': 'EST',
-                'description': 'description',
-                'category': 'category_2',
+                'description': 'Goal: Produce functional software and improve developer skills through practice.',
+                'category': 'category_1',
                 'name': 'harry',
                 'active': false
-            }
+            },
+            {
+              'intro': 'I am Developer from Cote D\'Ivoire. I work mainly with NodeJS, PHP but I know some Python and Java.',
+              'timezone': 'EST',
+              'description': 'Async programming in Javascript',
+              'category': 'category_4',
+              'name': 'harry',
+              'active': false
+          }
         ]
     };
     this.handleClick = this.handleClick.bind(this);
@@ -38,13 +46,13 @@ class Board extends React.Component {
     
     return (
       <Container id="board">
-          <Column heading="Looking for a Coding/Accountability Partner" cards={} />
-          <Column heading="Looking for Feedback/Career Advice" />
-          <Column heading="Looking for a Mentor" />
-          <Column heading="Would Like to Mentor or Teach" />
-          <Column heading="Looking for an Open Source Project to Contribute To" />
-          <Column heading="Looking for Potential Contributor(s) to my OSS project" />
-          <Column heading="Other" />
+          <Column heading="Looking for a Coding/Accountability Partner" cards={this.state.cards.filter((card) => card['category'] == 'category_1')} />
+          <Column heading="Would Like to Mentor or Teach" cards={this.state.cards.filter((card) => card['category'] == 'category_4')}/>
+          <Column heading="Looking for a Mentor" cards={this.state.cards.filter((card) => card['category'] == 'category_3')}/>
+          <Column heading="Looking for Feedback/Career Advice" cards={this.state.cards.filter((card) => card['category'] == 'category_2')} />
+          <Column heading="Looking for an Open Source Project to Contribute To" cards={this.state.cards.filter((card) => card['category'] == 'category_5')} />
+          <Column heading="Looking for Potential Contributor(s) to my OSS project" cards={this.state.cards.filter((card) => card['category'] == 'category_6')}/>
+          <Column heading="Other" cards={this.state.cards.filter((card) => card['category'] == 'category_7')} />
       </Container>
     );
   }
