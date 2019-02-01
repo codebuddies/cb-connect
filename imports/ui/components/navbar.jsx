@@ -1,13 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import withUser from '/imports/ui/components/hoc/with-user.jsx';
 
 class NavbarWrapper extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  handleLogout() {
+    Meteor.logout();
+  }
+
   render() {
+    const { user } = this.props;
+
     return (
       <React.Fragment>
         <Container>
@@ -20,11 +28,17 @@ class NavbarWrapper extends React.Component {
             <Link to="/faq" className="nav-link mr-sm-2">
               FAQ
             </Link>
-            <Link to="/login">
-              <Button variant="outline-success" size="sm">
-                Login
+            {user ? (
+              <Button variant="outline-success" size="sm" onClick={this.handleLogout}>
+                Logout
               </Button>
-            </Link>
+            ) : (
+              <Link to="/login">
+                <Button variant="outline-success" size="sm">
+                  Login
+                </Button>
+              </Link>
+            )}
           </Navbar>
         </Container>
         {this.props.children}
@@ -33,4 +47,4 @@ class NavbarWrapper extends React.Component {
   }
 }
 
-export default NavbarWrapper;
+export default withUser(NavbarWrapper);
