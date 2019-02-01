@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { Accounts } from 'meteor/accounts-base';
 import Login from '../imports/ui/components/login.jsx';
 import Landing from '../imports/ui/components/landing.jsx';
 import Navbar from '../imports/ui/components/navbar.jsx';
