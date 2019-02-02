@@ -10,7 +10,7 @@
       "bot": "CB Connect <no-reply@codebuddies.org>"
     },
     "smtp": {
-      "username":"SMTP_Injection",
+      "username": "SMTP_Injection",
       "password": "password",
       "host": "smtp.sparkpostmail.com",
       "port": "2525"
