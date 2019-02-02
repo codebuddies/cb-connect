@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Container, Row, Col } from 'react-bootstrap';
-import Board from './board'
+import BoardContainer from '/imports/ui/containers/board.jsx';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class Landing extends React.Component {
           <Col sm={8}></Col>
         </Row>
         <Row>
-          <Board />
+          <BoardContainer />
         </Row>
       </Container>
     );
