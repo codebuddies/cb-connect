@@ -4,11 +4,13 @@
 CodeBuddies' mission is to help connect people who can _help each other_ become better at software development. So far we've built an open-sourced platform that allows people to schedule remote code pairing sessions, feel less alone/be productive in a 24/7 silent coworking hangout, etc. MOST of the activity in the community occurs on Slack, where people post questions -- sometimes technical, sometimes career-related. 
 
 **The problem:**
+
 Many people are intimidated by Slack, and too shy to post. 
 
 Or they join, see that a channel they're interested in looks quiet (because we're on the Slack free plan, and messages get archived quickly), feel discouraged and leave. Or they don't see the post someone shared a while back about a project they're looking for. 
 
 **The solution:**
+
 CB Connect is meant to help the quiet people, who are totally looking for:
 a) that accountability or pair programming partner
 b) a one-time mentor willing to meet up for an hour
