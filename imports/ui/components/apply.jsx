@@ -40,7 +40,7 @@ class Apply extends React.Component {
             {categories.map((category, i) => (
               <Form.Check
                 required
-                defaultChecked={this._formData.category === category.value}
+                defaultChecked={this._formData.category === category.id}
                 key={i}
                 name="category"
                 type="radio"
