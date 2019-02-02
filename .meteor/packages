@@ -20,3 +20,5 @@ fourseven:scss
 static-html
 accounts-password
 check
+react-meteor-data
+aldeed:collection2@3.0.0

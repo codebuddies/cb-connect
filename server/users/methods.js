@@ -4,7 +4,8 @@ import { check } from 'meteor/check';
 import { _ } from 'lodash';
 import { timezones } from '../../lib/data/timezones';
 import { categories } from '../../lib/data/categories';
-import { Entries } from '../../lib/collections/entries';
+import EntriesHelper from '/imports/api/entries/server/helpers.js';
+
 Accounts.onCreateUser((options, user) => {
   const customizedUser = Object.assign(
     {
@@ -74,7 +75,7 @@ Meteor.methods({
       if (userId) {
         // create new entry
         const entry = {
-          user_id: userId,
+          userId: userId,
           category: {
             id: category_id,
             title: category_title,
@@ -83,18 +84,17 @@ Meteor.methods({
             id: tz_id,
             title: tz_title,
             offset: tz_offset,
-            daylight_saving: daylight_saving,
+            daylightSaving: daylight_saving,
           },
-          note: lookingFor,
+          lookingFor,
+          oneLineIntro,
           verified: false,
           active: false,
           preferences: [],
-          current_match: [],
-          previous_matches: [],
+          previousMatches: [],
         };
 
-        Entries.insert(entry);
-        // send welcome email
+        EntriesHelper.add(entry);
         try {
           return Accounts.sendEnrollmentEmail(userId);
         } catch (e) {
