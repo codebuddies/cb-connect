@@ -28,7 +28,6 @@ class Login extends React.Component {
       if (err) {
         this.setState({ error: err.message });
       }
-      // TODO: Redirect user to further
     });
   }
 
