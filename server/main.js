@@ -2,8 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { databaseSeeder, databaseSeedRemover } from './seeder';
 import './configs';
 import './users/methods';
-import './entries/methods';
-import './entries/publications';
+
+import '/imports/api/entries/server/publications.js';
+import '/imports/api/entries/server/methods.js';
 
 Meteor.startup(() => {
   // code to run on server at startup

@@ -1,8 +1,7 @@
 import faker from 'faker';
 import { categories } from '../../lib/data/categories';
 import { timezones } from '../../lib/data/timezones';
-
-import { Entries } from '../../lib/collections/entries';
+import Entries from '/imports/api/entries/entries.js';
 
 /**
  * This is a description of the foo function.
