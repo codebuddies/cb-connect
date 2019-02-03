@@ -1,10 +1,11 @@
 import React from 'react';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function Entry(props) {
       const { timezone, lookingFor, oneLineIntro } = props;
         return (
             <div className="entry">
-                <span className="pull-right">♥</span>
+                <FavoriteIcon></FavoriteIcon>
                 <p>{oneLineIntro}</p>
                 <p>{lookingFor}</p>
                 <p>{timezone}</p>
