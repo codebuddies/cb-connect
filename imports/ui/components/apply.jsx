@@ -15,7 +15,6 @@ class Apply extends React.Component {
     this.getForm3 = this.getForm3.bind(this);
     this.updateFormData = this.updateFormData.bind(this);
     this._formData = {};
-
     this.state = {
       processStep: 1,
       formValidated: false,

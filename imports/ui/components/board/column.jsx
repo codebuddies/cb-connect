@@ -1,16 +1,16 @@
 import React from 'react';
-import Card from './card';
+import Entry from './entry';
 
 class Column extends React.Component {
   render() {
-    const { cards } = this.props;
+    const { entries } = this.props;
 
     return (
       <div className="column">
         <h2>{this.props.heading}</h2>
-        <div className="cards">
-          {cards.map((card, i) => (
-            <Card key={i} lookingFor={card.lookingFor} oneLineIntro={card.oneLineIntro} timezone={card.tz.title} />
+        <div className="entries">
+          {entries.map((entry, i) => (
+            <Entry key={i} lookingFor={entry.lookingFor} oneLineIntro={entry.oneLineIntro} timezone={entry.tz.title} />
           ))}
         </div>
       </div>

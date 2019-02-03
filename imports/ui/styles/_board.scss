@@ -17,14 +17,14 @@
         margin: 5px;
         background: #efefef;
         width: 300px;
-        .cards {
+        .entries {
             overflow-y: scroll;
             max-height: 500px;
         }
     }
-    .card {
+    .entry {
         margin: 5px;
         padding: 10px;
-        
+        background: #fff;
     }
 }
