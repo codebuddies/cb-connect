@@ -16,7 +16,7 @@ let Schema = new SimpleSchema({
   lookingFor: String,
   oneLineIntro: String,
   verified: Boolean,
-  active: Boolean,
+  matched: Boolean,
   preferences: {
     type: Array,
     optional: true,
