@@ -35,3 +35,8 @@ Feel free to file new issues. We're looking for design, UX, and code (any: React
 Once the prototype is launched, we'll probably also need volunteer matchers. 
 
 Please submit new pull requests against the `staging` branch.
+
+### How to login on localhost
+After you create a new user by submitting an entry, you'll be able to log in by typing in the email you used to apply, and "password" for the password. 
+
+If you want to get the verification email, please create an API key in Sparkpost and put it into line 14 in dev-settings.json. 
