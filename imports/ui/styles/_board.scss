@@ -26,5 +26,16 @@
         margin: 5px;
         padding: 10px;
         background: #fff;
+        position: relative;
+        span.favorite {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            color: #ddd;
+            &:hover {
+                color: red;
+                cursor: pointer;
+            }
+        }
     }
 }
