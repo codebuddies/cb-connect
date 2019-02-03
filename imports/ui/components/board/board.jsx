@@ -16,8 +16,8 @@ class Board extends React.Component {
 
     const columns = categories.map((category, i) => {
       const heading = 'Looking for ' + category.label_text;
-      const cards = entries.filter(entry => entry.category.id === category.id);
-      return <Column key={i} heading={heading} cards={cards} />;
+      const filteredEntries = entries.filter(entry => entry.category.id === category.id);
+      return <Column key={i} heading={heading} entries={filteredEntries} />;
     });
     return [columns];
   }

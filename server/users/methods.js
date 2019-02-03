@@ -73,6 +73,10 @@ Meteor.methods({
       const userId = Accounts.createUser(options);
 
       if (userId) {
+        // if running in dev, set a default password so user can login
+        if (Meteor.isDevelopment) {
+          Accounts.setPassword(userId, 'password');
+        }
         // create new entry
         const entry = {
           userId: userId,
@@ -89,7 +93,7 @@ Meteor.methods({
           lookingFor,
           oneLineIntro,
           verified: false,
-          active: false,
+          matched: false,
           preferences: [],
           previousMatches: [],
         };

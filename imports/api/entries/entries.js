@@ -17,6 +17,14 @@ let Schema = new SimpleSchema({
   oneLineIntro: String,
   verified: Boolean,
   matched: Boolean,
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert) return new Date();
+      if (this.isUpsert) return { $setOnInsert: new Date() };
+      this.unset();
+    },
+  },
   preferences: {
     type: Array,
     optional: true,
@@ -25,6 +33,12 @@ let Schema = new SimpleSchema({
     type: Object,
     optional: true,
     blackbox: true,
+  },
+  'preferences.$.entryId': {
+    type: String,
+  },
+  'preferences.$.createdAt': {
+    type: Date,
   },
   currentMatch: {
     type: String,
