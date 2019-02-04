@@ -28,11 +28,19 @@ c) an opportunity to teach/mentor someone else
 
 4/ People can create new cards at any point (e.g. you could at the same time be looking for feedback/advice, AND be looking for an accountability partner)
 
-### How to contribute
+## How to contribute
+
+0. Join Discord at https://discord.gg/yvtBmEW and ask any questions in the #cb-connect-questions channel.
+1. Fork this repository and download your copy with `git clone [YOUR_PATH]`. You can also request to be added as a collaborator.
+2. Install meteor: https://www.meteor.com/install
+3. Before you start up the app, make sure to `meteor npm install`.
+4. Start the app with the following command: `meteor --settings dev-settings.json`
 
 Feel free to file new issues. We're looking for design, UX, and code (any: React, Javascript, Meteor, MongoDB) help.
 
-Once the prototype is launched, we'll probably also need volunteer matchers. 
+If you see an issue under the `help wanted` category that you'd like to tackle, please comment that you're working on it, and create a new branch for the issue.
+
+Once the prototype is launched, we'll also need volunteer moderators/matchers. 
 
 Please submit new pull requests against the `staging` branch.
 
