@@ -7,9 +7,13 @@ import { categories } from '../../lib/data/categories';
 import EntriesHelper from '/imports/api/entries/server/helpers.js';
 
 Accounts.onCreateUser((options, user) => {
-  const customizedUser = Object.assign({
-    complete: false,
-  });
+  const customizedUser = Object.assign(
+    {
+      complete: false,
+      moderator: false,
+    },
+    user
+  );
 
   if (options.profile) {
     customizedUser.profile = options.profile;
@@ -49,6 +53,7 @@ Meteor.methods({
         profile: {
           name: name,
           intro: oneLineIntro,
+          moderator: false,
           tz: {
             id: tz_id,
             title: tz_title,
