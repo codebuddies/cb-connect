@@ -7,12 +7,9 @@ import { categories } from '../../lib/data/categories';
 import EntriesHelper from '/imports/api/entries/server/helpers.js';
 
 Accounts.onCreateUser((options, user) => {
-  const customizedUser = Object.assign(
-    {
-      complete: false,
-    },
-    user
-  );
+  const customizedUser = Object.assign({
+    complete: false,
+  });
 
   if (options.profile) {
     customizedUser.profile = options.profile;
