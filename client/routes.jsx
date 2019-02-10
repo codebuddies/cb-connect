@@ -8,7 +8,7 @@ import Woohoo from '../imports/ui/components/woohoo.jsx';
 import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
-import Home from '../imports/ui/components/home.jsx';
+import Dashboard from '../imports/ui/components/dashboard.jsx';
 import withUser from '../imports/ui/components/hoc/with-user.jsx';
 
 export const renderRoutes = () => (
@@ -16,7 +16,7 @@ export const renderRoutes = () => (
     <Switch>
       <Navbar>
         <Route exact path="/" component={Landing} />
-        <RouteWithUser exact path="/home" component={Home} />
+        <RouteWithUser exact path="/dashboard" component={Dashboard} />
         <RouteWithOutUser exact path="/login" component={Login} />
         <RouteWithOutUser exact path="/forgot-password" component={ForgotPassword} />
         <RouteWithOutUser exact path="/enroll-account/:token" component={SetPassword} />
@@ -46,8 +46,8 @@ const RouteWithOutUser = withUser(({ user, component: Component, ...rest }) => {
   const { pathname } = window.location;
   if (!user) {
     return <Route {...rest} render={props => <Component {...props} user={user} />} />;
-  } else if (pathname !== '/home' && pathname === rest.path) {
-    return <Redirect push to="/home" />;
+  } else if (pathname !== '/dashboard' && pathname === rest.path) {
+    return <Redirect push to="/dashboard" />;
   }
   return null;
 });

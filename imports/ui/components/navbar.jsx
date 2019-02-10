@@ -29,6 +29,13 @@ class NavbarWrapper extends React.Component {
               FAQ
             </Link>
             {user ? (
+               <Link to="/dashboard" className="nav-link mr-sm-2">
+                Dashboard
+              </Link>
+            ) : (
+              ""
+            )}
+            {user ? (
               <Button variant="outline-success" size="sm" onClick={this.handleLogout}>
                 Logout
               </Button>
