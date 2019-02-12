@@ -17,6 +17,19 @@ b) a one-time mentor willing to meet up for an hour
 c) an opportunity to teach/mentor someone else 
 ... but don't know the right place to post on Slack, and aren't the sort of natural leaders who think nothing of organizing their own study group on CodeBuddies, or are fearless about posting their questions on Slack or scheduling a hangout on codebuddies.org/hangouts. 
 
+Open Canvas: [https://docs.google.com/presentation/d/1QjVW5UPnyfCQaLCvM-Lqne87a1xYsHS763UEK6D5pTQ/edit#slide=id.p](https://docs.google.com/presentation/d/1QjVW5UPnyfCQaLCvM-Lqne87a1xYsHS763UEK6D5pTQ/edit#slide=id.p)
+
+### Roadmap
+## Milestone 1
+- Users can sign up and register an account
+- Entries are filtered and displayed on individual columns
+- Users can "favorite" other entries
+- Moderators can see which users favorited which other entries
+- Moderators can click on two entries and "match" them, triggering an automated email to the creators of both entries
+- Moderators see a list of all past matches
+- Users can accept or deny a match
+- Users can "flag" a user, meaning they will never be matched with entries submitted by that other user. 
+- Moderators can see a list of top flagged users.
 
 ### The user flow (a work-in-progress):
 
