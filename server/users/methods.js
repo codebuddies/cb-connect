@@ -10,6 +10,7 @@ Accounts.onCreateUser((options, user) => {
   const customizedUser = Object.assign(
     {
       complete: false,
+      moderator: false,
     },
     user
   );
@@ -52,6 +53,7 @@ Meteor.methods({
         profile: {
           name: name,
           intro: oneLineIntro,
+          moderator: false,
           tz: {
             id: tz_id,
             title: tz_title,
