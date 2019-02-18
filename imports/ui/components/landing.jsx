@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import BoardContainer from '/imports/ui/containers/board.jsx';
+import { AuthContext } from './hoc/AuthProvider';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -9,7 +10,10 @@ class Landing extends React.Component {
   }
 
   render() {
+    const { user } = this.context
+
     return (
+      user ? <Redirect to='/dashboard' /> :
       <Container>
         <Row>
         <Col className="h-100" style={{marginTop:140}}>
@@ -51,5 +55,5 @@ class Landing extends React.Component {
     );
   }
 }
-
+Landing.contextType = AuthContext;
 export default Landing;

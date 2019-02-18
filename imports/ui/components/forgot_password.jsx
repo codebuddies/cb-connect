@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
 import { EMAIL_REGEX } from '/imports/constants/regex';
+import { AuthContext } from './hoc/AuthProvider'
+import { Redirect } from 'react-router-dom'
 
 class ForgotPassword extends React.Component {
   constructor(props) {
@@ -37,8 +39,10 @@ class ForgotPassword extends React.Component {
 
   render() {
     const { validated, error, success, processing } = this.state;
+    const { isLoggedIn } = this.context
 
     return (
+      isLoggedIn ? <Redirect to='/home' /> :
       <Container fluid>
         <Row>
           <Col sm={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
@@ -68,7 +72,7 @@ class ForgotPassword extends React.Component {
             {error ? <Alert variant="danger">{error}</Alert> : null}
             {success ? <Alert variant="success">{success}</Alert> : null}
 
-            <div class="text-center">
+            <div className="text-center">
               <Link to="/login">Login</Link>
             </div>
           </Col>
@@ -77,5 +81,5 @@ class ForgotPassword extends React.Component {
     );
   }
 }
-
+ForgotPassword.contextType = AuthContext
 export default ForgotPassword;
