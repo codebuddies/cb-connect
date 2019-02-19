@@ -30,17 +30,17 @@ class NavigationBar extends React.Component {
                 Moderate
               </Link>
             ) : (
-              ""
+              ''
             )}
             <Link to="/faq" className="nav-link mr-sm-2">
               FAQ
             </Link>
             {user ? (
-               <Link to="/dashboard" className="nav-link mr-sm-2">
+              <Link to="/dashboard" className="nav-link mr-sm-2">
                 Dashboard
               </Link>
             ) : (
-              ""
+              ''
             )}
             {user ? (
               <Button variant="outline-success" size="sm" onClick={this.handleLogout}>
@@ -60,5 +60,6 @@ class NavigationBar extends React.Component {
     );
   }
 }
+
 NavigationBar.contextType = AuthContext;
 export default NavigationBar;
