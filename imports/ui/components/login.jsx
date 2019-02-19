@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { EMAIL_REGEX } from '/imports/constants/regex';
+import { AuthContext } from './hoc/AuthProvider'
+import { Redirect } from 'react-router-dom'
 
 class Login extends React.Component {
   constructor(props) {
@@ -33,8 +35,10 @@ class Login extends React.Component {
 
   render() {
     const { validated, error } = this.state;
+    const { isLoggedIn } = this.context
 
     return (
+      isLoggedIn ? <Redirect to='/home' /> :
       <Container fluid>
         <Row>
           <Col sm={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
@@ -78,5 +82,6 @@ class Login extends React.Component {
     );
   }
 }
+Login.contextType = AuthContext
 
 export default Login;

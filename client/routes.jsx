@@ -12,7 +12,6 @@ import Home from '../imports/ui/components/home.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
 import AuthenticatedRoute from '../imports/ui/components/hoc/AuthenticatedRoute';
 import { AuthProvider } from '../imports/ui/components/hoc/AuthProvider';
-import withUser from '../imports/ui/components/hoc/with-user';
 
 export const renderRoutes = () => (
   <Router>
@@ -21,28 +20,16 @@ export const renderRoutes = () => (
         <Switch>
           <AuthenticatedRoute path="/home" component={Home} />
           <AuthenticatedRoute path="/moderator" component={Moderator} />
-          <RouteWithOutUser path="/login" component={Login} />
+          <Route path="/login" component={Login} />
           <Route path="/forgot-password" component={ForgotPassword} />
-          <RouteWithOutUser exact path="/enroll-account/:token" component={SetPassword} />
-          <RouteWithOutUser exact path="/reset-password/:token" component={SetPassword} />
+          <Route exact path="/enroll-account/:token" component={SetPassword} />
+          <Route exact path="/reset-password/:token" component={SetPassword} />
           <Route exact path="/faq" component={Faq} />
-          <RouteWithOutUser path="/apply" component={Apply} />
-          <Route path="/woohoo" component={withUser(Woohoo)} />
+          <Route path="/apply" component={Apply} />
+          <Route path="/woohoo" component={Woohoo} />
           <Route exact path="/" component={Landing} />
         </Switch>
       </Navbar>
     </AuthProvider>
   </Router>
 );
-
-
-const RouteWithOutUser = withUser(({ user, component: Component, ...rest }) => {
-  const { pathname } = window.location;
-  if (!user) {
-    return <Route {...rest} render={props => <Component {...props} user={user} />} />;
-  } else if (pathname !== '/home' && pathname === rest.path) {
-    console.log('getting redirected to home..')
-    return <Redirect push to="/home" />;
-  }
-  return null;
-});
