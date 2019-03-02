@@ -7,5 +7,5 @@ Accounts.emailTemplates.enrollAccount.subject = user => {
 };
 
 Accounts.emailTemplates.enrollAccount.text = (user, url) => {
-  return "You've joined CB Connect." + ' Please activate your account, simply click the link below:\n\n' + url;
+  return "You've joined CB Connect." + ' Please activate your account by simply clicking on the link below:\n\n' + url;
 };
