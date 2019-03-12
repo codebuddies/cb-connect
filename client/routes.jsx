@@ -9,7 +9,6 @@ import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
 import Dashboard from '../imports/ui/components/dashboard.jsx';
-// import Home from '../imports/ui/components/home.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
 import withUser from '../imports/ui/components/hoc/with-user.jsx';
 
