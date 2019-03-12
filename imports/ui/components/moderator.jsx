@@ -20,4 +20,4 @@ const Moderator = props => {
   )
 }
 
-export default Home
+export default Moderator
