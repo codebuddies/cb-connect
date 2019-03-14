@@ -1,34 +1,35 @@
-import React from 'react';
-import { Col, ListGroup } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { ListGroup } from 'react-bootstrap';
 
-const DashboardSidebar = () => {
-    return (
-        <Col sm={3}>
-            <p className="font-weight-bold">
-                Looking For
-            </p>
-            <ListGroup as='ul'>
-                <ListGroup.Item action>
-                    Mentor
-                </ListGroup.Item>
-                <ListGroup.Item action>
-                    Mentee
-                </ListGroup.Item>
-                <ListGroup.Item action>
-                    OSS Projects
-                </ListGroup.Item>
-                <ListGroup.Item action>
-                    OSS Contributors
-                </ListGroup.Item>
-                <ListGroup.Item action>
-                    Accountabili-buddies
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    Other
-                </ListGroup.Item>
-            </ListGroup>
-        </Col>
-    )
+class DashboardSidebar extends Component {
+	constructor (props) {
+		super(props)
+		this.state = {
+			listItems: [
+				'Mentor', 
+				'Mentee', 
+				'OSS Projects', 
+				'OSS Contributors',
+				'Accountabilibuddies',
+				'Other'
+			]
+		}
+	}
+
+	render () {
+		return (
+			<>
+				<p className='font-weight-bold'>Looking For</p>
+				<ListGroup as='ul'>
+					{ this.state.listItems.map(item => {
+							const id = this.state.listItems.indexOf(item)
+							return <ListGroup.Item action key={id}>{ item }</ListGroup.Item>
+						})
+					}
+				</ListGroup>
+			</>
+		)
+	}
 }
 
 export default DashboardSidebar;
