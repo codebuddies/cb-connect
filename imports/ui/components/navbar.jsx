@@ -15,7 +15,6 @@ class NavbarWrapper extends React.Component {
 
   render() {
     const { user } = this.props;
-    console.log(this.props)
 
     return (
       <React.Fragment>
