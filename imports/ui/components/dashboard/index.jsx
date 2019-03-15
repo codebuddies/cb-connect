@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DashboardSidebar from './dashboard_sidebar'
+import MatchesSection from './matches_section'
 import DashboardCardsSection from './dashboard_cards_section'
 
 class Dashboard extends Component {
@@ -20,20 +21,15 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-3">
-            <DashboardSidebar sections={this.state.sections} />
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-3'>
+            <div className='sticky-top'>
+              <DashboardSidebar sections={this.state.sections} />
+            </div>
           </div>
-          <div className="col">
-            {/* Your current matches */}
-            <section className="dashboard-current-matches-section">
-              <h1 className="h5 text-capitalize font-weight-normal">
-                Your current matches
-              </h1>
-
-              <p>You don't have any current matches</p>
-            </section>
+          <div className='col'>
+            <MatchesSection />          
   
             {/* Card Sections */}
             { this.state.sections.map(section => {
