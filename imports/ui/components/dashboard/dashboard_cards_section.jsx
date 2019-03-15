@@ -10,7 +10,7 @@ class DashboardCardsSection extends Component {
   render () {
     return (
       <Card as='section' className='mb-4'>
-        <Card.Header className='font-weight-bold text-capitalize'>
+        <Card.Header className='text-capitalize'>
           People looking for {this.props.section}
         </Card.Header>
         <Card.Body>

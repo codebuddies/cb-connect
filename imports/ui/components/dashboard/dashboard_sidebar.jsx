@@ -10,10 +10,15 @@ class DashboardSidebar extends Component {
 		return (
 			<>
 				<p className='font-weight-normal'>What are you looking for?</p>
-				<ListGroup as='ul'>
+				<ListGroup as='ul' defaultActiveKey='all'>
+					<ListGroup.Item action eventKey='all'> All </ListGroup.Item>
 					{ this.props.sections.map(item => {
 							const key = this.props.sections.indexOf(item)
-							return <ListGroup.Item action key={key}>{ item }</ListGroup.Item>
+							return (
+								<ListGroup.Item action key={key} eventKey={key}>
+									{ item }
+								</ListGroup.Item>
+							)
 						})
 					}
 				</ListGroup>

@@ -24,7 +24,7 @@ class Dashboard extends Component {
       <div className='container'>
         <div className='row'>
           <div className='col-sm-3'>
-            <div className='sticky-top'>
+            <div className='sticky-top mb-4'>
               <DashboardSidebar sections={this.state.sections} />
             </div>
           </div>
