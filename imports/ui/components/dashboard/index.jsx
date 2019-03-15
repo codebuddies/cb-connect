@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import DashboardSidebar from './dashboard_sidebar'
 import DashboardCardsSection from './dashboard_cards_section'
-import './dashboard.scss'
 
 class Dashboard extends Component {
   constructor (props) {
