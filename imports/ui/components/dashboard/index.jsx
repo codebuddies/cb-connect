@@ -1,45 +1,54 @@
-import React from 'react';
-import { Container, Row, Col, CardDeck, Card } from 'react-bootstrap';
-import DashboardSidebar from './dashboard_sidebar';
+import React, { Component } from 'react'
+import DashboardSidebar from './dashboard_sidebar'
+import DashboardCardsSection from './dashboard_cards_section'
+import './dashboard.scss'
 
-const Dashboard = props => {
+class Dashboard extends Component {
+  constructor (props) {
+    super(props)
 
-  return (
-    <Container>
-      <Row>
-        <Col sm='3'>
-          <DashboardSidebar></DashboardSidebar>
-        </Col>
-        
-        <Col>
-          {/* Your Current Matches */}
+    this.state = {
+      sections: [
+        'Mentors', 
+				'Mentees', 
+				'OSS Projects', 
+				'OSS Contributors',
+				'Accountabili-buddies',
+				'Other'
+      ] 
+    }
+  }
 
-          {/* Accordions:
-          + Mentors
-          + Mentees
-          + OSS Projects
-          + Contributors
-          + Accountabili-buddies
-					Other */}
-					
-          {/* Mentors */}
-          <section className='dashboard-card-section'>
-            <h1 className='h5 text-capitalize font-weight-normal'>
-              People looking for mentors
-            </h1>
+  render () {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-3">
+            <DashboardSidebar sections={this.state.sections} />
+          </div>
+          <div className="col">
+            {/* Your current matches */}
+            <section className="dashboard-current-matches-section">
+              <h1 className="h5 text-capitalize font-weight-normal">
+                Your current matches
+              </h1>
 
-            <CardDeck className='d-block'>
-              <Card style={{ width: '33%' }}>
-                <Card.Body>
-                  Hello
-                </Card.Body>
-              </Card>
-            </CardDeck>					
-          </section>
-        </Col>
-      </Row>
-    </Container>
-  )
+              <p>You don't have any current matches</p>
+            </section>
+  
+            {/* Card Sections */}
+            { this.state.sections.map(section => {
+                const key = this.state.sections.indexOf(section)
+                return (
+                  <DashboardCardsSection section={section} key={key} />
+                )
+              })      
+            }
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Dashboard

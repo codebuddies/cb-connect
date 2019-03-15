@@ -1,0 +1,13 @@
+// TODO: Look into implementing CSS Modules in Meteor - AC 3/19
+.dashboard-cards-section {
+  margin-bottom: 2rem;
+
+  > .dashboard-cards-section-header { 
+    margin-bottom: 1rem;
+    padding: 0.5rem; 
+    background-color: darken(#f8f9fa, 5%);
+    > .h5 { margin-bottom: 0px }
+  }
+
+  > .card-deck { padding: 0 0.5rem }
+}
