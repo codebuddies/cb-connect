@@ -1,5 +1,6 @@
 {
   "seeder": false,
+  "development": true,
   "private": {
     "siteInfo": {
       "name": "CB Connect",

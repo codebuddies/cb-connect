@@ -23,14 +23,15 @@ Meteor.startup(() => {
     server: Meteor.settings.private.smtp.host,
     port: Meteor.settings.private.smtp.port,
   };
-
-  process.env.MAIL_URL =
-    'smtp://' +
-    encodeURIComponent(smtp.username) +
-    ':' +
-    encodeURIComponent(smtp.password) +
-    '@' +
-    encodeURIComponent(smtp.server) +
-    ':' +
-    smtp.port;
+  if (Meteor.settings.development === false) {
+    process.env.MAIL_URL =
+      'smtp://' +
+      encodeURIComponent(smtp.username) +
+      ':' +
+      encodeURIComponent(smtp.password) +
+      '@' +
+      encodeURIComponent(smtp.server) +
+      ':' +
+      smtp.port;
+  }
 });
