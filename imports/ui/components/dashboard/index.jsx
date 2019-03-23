@@ -1,44 +1,36 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import DashboardSidebar from './dashboard_sidebar'
 import MatchesSection from './matches_section'
 import DashboardCardsSection from './dashboard_cards_section'
 
 class Dashboard extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      sections: [
-        'Mentors', 
-				'Mentees', 
-				'OSS Projects', 
-				'OSS Contributors',
-				'Accountabili-buddies',
-				'Other'
-      ] 
-    }
-  }
-
   render () {
+    const sections = [
+      'Mentors', 
+      'Mentees', 
+      'OSS Projects', 
+      'OSS Contributors',
+      'Accountabili-buddies',
+      'Other'
+    ] 
+
+    const DashboardSections = sections.map(section => {
+      const key = section.toLowerCase().split(' ').join('-')
+      return <DashboardCardsSection section={section} key={key} />
+    })      
+
     return (
       <div className='container'>
         <div className='row'>
           <div className='col-sm-3'>
             <div className='sticky-top mb-4'>
-              <DashboardSidebar sections={this.state.sections} />
+              <DashboardSidebar sections={sections} />
             </div>
           </div>
           <div className='col'>
             <MatchesSection />          
   
-            {/* Card Sections */}
-            { this.state.sections.map(section => {
-                const key = this.state.sections.indexOf(section)
-                return (
-                  <DashboardCardsSection section={section} key={key} />
-                )
-              })      
-            }
+            {DashboardSections}
           </div>
         </div>
       </div>
