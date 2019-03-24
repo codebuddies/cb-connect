@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import { CardDeck, Card } from 'react-bootstrap';
-import MatchCard from './match_card';
+import React, {Component} from 'react'
+import {CardDeck, Card, Collapse} from 'react-bootstrap'
+import MatchCard from './match_card'
 
 class DashboardCardsSection extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
+    const {section, visibility} = this.props
+
     return (
-      <Card as='section' className='mb-4'>
-        <Card.Header className='text-capitalize'>
-          People looking for {this.props.section}
-        </Card.Header>
-        <Card.Body>
-          <CardDeck className='d-block'>
-            <MatchCard name='angelo cordon' overview='some text'/>
-          </CardDeck>					
-        </Card.Body>
-      </Card>
+      <Collapse in={visibility}>
+        <Card as='section' className='mb-4'>
+          <Card.Header className='text-capitalize'>
+            People looking for {section}
+          </Card.Header>
+          <Card.Body>
+              <CardDeck className='d-block'>
+                <MatchCard name='angelo cordon' overview='some text'/>
+              </CardDeck>					
+          </Card.Body>
+        </Card>
+      </Collapse>
     )
   }
 }
 
-export default DashboardCardsSection;
+export default DashboardCardsSection
