@@ -12,10 +12,22 @@ class Dashboard extends Component {
     }
   }
 
+  getTargetSections = (section) => {
+    const targets = {
+      'mentors' : 'mentees',
+      'mentees' : 'mentors', 
+      'oss-projects': 'oss-contributors',
+      'oss-contributors': 'oss-projects'
+    }
+
+    return targets[section] || section
+  }
+
   // Set which section to be visible;
   // Binded handler to `DashboardSidebar` as a property for state hoisting
   handleVisibilityChange = (section) => {
-    this.setState({visibleSections: section})
+    const targetSection = this.getTargetSections(section)
+    this.setState({visibleSections: targetSection})
   }
 
   checkSectionVisibility = (sectionKey) => {

@@ -6,7 +6,7 @@ class DashboardSidebar extends Component {
 		super(props)
 	}
 
-	logKey = event => {
+	getItemKey = event => {
 		// Get `ListGroup.Item` key and hoist it back up to Dashboard state
 		const sectionKey = event.target.dataset.rbEventKey
 		this.props.onVisibilityChange(sectionKey)
@@ -21,7 +21,11 @@ class DashboardSidebar extends Component {
 		const menuItems = items.map(item => {
 			const key = item.toLowerCase().split(' ').join('-')
 			return (
-				<ListGroup.Item action key={key} eventKey={key} onClick={this.logKey}>
+				<ListGroup.Item 
+					action 
+					key={key} 
+					eventKey={key} 
+					onClick={this.getItemKey}>
 					{item}
 				</ListGroup.Item>
 			)
