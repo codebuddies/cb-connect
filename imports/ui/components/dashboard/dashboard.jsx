@@ -12,6 +12,10 @@ class Dashboard extends Component {
     }
   }
 
+  getEntries = (entry) => {
+    const { entries = [] } = this.props;
+  }
+
   getTargetSections = (section) => {
     const targets = {
       'mentors' : 'mentees',
@@ -79,4 +83,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard
+export default Dashboard;

@@ -8,7 +8,8 @@ import Woohoo from '../imports/ui/components/woohoo.jsx';
 import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
-import Dashboard from '../imports/ui/components/dashboard';
+import Dashboard from '../imports/ui/components/dashboard/dashboard.jsx';
+import Profile from '../imports/ui/components/dashboard/profile.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
 import withUser from '../imports/ui/components/hoc/with-user.jsx';
 
@@ -17,7 +18,7 @@ export const renderRoutes = () => (
     <Switch>
       <Navbar>
         <Route exact path="/" component={Landing} />
-        <RouteWithUser exact path="/dashboard" component={Dashboard} />
+        <RouteWithUser exact path="/dashboard" component={Profile} />
         <RouteWithOutUser exact path="/login" component={Login} />
         <RouteWithOutUser exact path="/forgot-password" component={ForgotPassword} />
         <RouteWithOutUser exact path="/enroll-account/:token" component={SetPassword} />

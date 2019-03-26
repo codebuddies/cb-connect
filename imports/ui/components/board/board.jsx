@@ -6,8 +6,8 @@ import '/imports/ui/styles/_board.scss';
 import { categories } from '/lib/data/categories.js';
 
 class Board extends React.Component {
-  constructor(prop) {
-    super(prop);
+  constructor(props) {
+    super(props);
     this.getColumns = this.getColumns.bind(this);
   }
 
