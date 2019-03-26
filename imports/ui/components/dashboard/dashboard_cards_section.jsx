@@ -14,7 +14,7 @@ class DashboardCardsSection extends Component {
           </Card.Header>
           <Card.Body>
               <CardDeck className='d-block'>
-                <MatchCard name='angelo cordon' overview='some text'/>
+                <MatchCard name="Test" overview='some text'/>
               </CardDeck>					
           </Card.Body>
         </Card>

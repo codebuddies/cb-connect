@@ -10,6 +10,12 @@ class Dashboard extends Component {
       // Define all sections to be visible on initialize
       visibleSections: 'all'
     }
+    console.log(props)
+  }
+
+  getEntries = (entry) => {
+    const { entries = [] } = this.props;
+    console.log(this.props)
   }
 
   getTargetSections = (section) => {
@@ -79,4 +85,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard
+export default Dashboard;

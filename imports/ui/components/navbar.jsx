@@ -32,13 +32,6 @@ class NavbarWrapper extends React.Component {
             ) : (
               ""
             )}
-             {user ? (
-              <Link to="/home" className="nav-link mr-sm-2">
-                Profile
-              </Link>
-            ) : (
-              ""
-            )}
             <Link to="/faq" className="nav-link mr-sm-2">
               FAQ
             </Link>
