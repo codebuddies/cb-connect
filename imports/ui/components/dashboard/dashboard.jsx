@@ -3,6 +3,14 @@ import DashboardSidebar from './dashboard_sidebar'
 import MatchesSection from './matches_section'
 import DashboardCardsSection from './dashboard_cards_section'
 
+const sectionTargets = {
+  'mentors' : 'mentees',
+  'mentees' : 'mentors', 
+  'oss-projects': 'oss-contributors',
+  'oss-contributors': 'oss-projects'
+}
+
+
 class Dashboard extends Component {
   constructor (props) {
     super(props)
@@ -17,14 +25,7 @@ class Dashboard extends Component {
   }
 
   getTargetSections = (section) => {
-    const targets = {
-      'mentors' : 'mentees',
-      'mentees' : 'mentors', 
-      'oss-projects': 'oss-contributors',
-      'oss-contributors': 'oss-projects'
-    }
-
-    return targets[section] || section
+    return sectionTargets[section] || section
   }
 
   // Set which section to be visible;
