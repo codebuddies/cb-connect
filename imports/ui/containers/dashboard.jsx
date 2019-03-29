@@ -11,11 +11,12 @@ const DashboardContainer = withTracker((props) => {
   const loading = !entriesHandle.ready();
   const currentUser = Meteor.user();
   const categoryIdString = categoryId.get().toString();
-  console.log(categoryIdString)
-  console.log('categoryIdString is' + categoryIdString)
+  // console.log(categoryIdString)
+  // console.log('categoryIdString is' + categoryIdString)
   const entries = categoryIdString === 'all' ? Entries.find().fetch() : Entries.find({userId: {$ne: currentUser._id}, "category.id": categoryIdString}, {limit: 9}).fetch()
 
-  const ownEntries = Entries.find().fetch();
+  const ownEntries = Entries.find({userId: {$eq: currentUser._id}, matched: false}).fetch();
+  // console.log(ownEntries);
   return {
     loading,
     entries,

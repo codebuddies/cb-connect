@@ -34,10 +34,10 @@ class Dashboard extends Component {
   }
 
   getTargetSections = (section) => {
-    console.log(this.props)
-    console.log("TEST")
+    // console.log(this.props)
+    // console.log("TEST")
     const newId = this.state.visibleSections;
-    console.log(newId)
+    // console.log(newId)
     return sectionTargets[section]
   }
 
@@ -92,7 +92,7 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className='col-sm-9'>
-            <MatchesSection/>          
+            <MatchesSection ownEntries={this.props.ownEntries} />          
             {DashboardSections}
           </div>
         </div>

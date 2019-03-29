@@ -22,17 +22,19 @@ class MatchCard extends Component {
           <Card.Text>
             <small className="text-muted">{ this.props.timezone }</small>
           </Card.Text>
-          <Dropdown as={ButtonGroup} className='btn-block'>
-            <Button className='btn-block' variant="primary">
-              Request Connection
-            </Button>
-  
-            <Dropdown.Toggle split variant="primary" />
-  
-            <Dropdown.Menu>
-              <Dropdown.Item as='button'>Report</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          { this.props.ownCard === "true" ? '' :
+            <Dropdown as={ButtonGroup} className='btn-block'>
+              <Button className='btn-block' variant="primary">
+                Request Connection
+              </Button>
+    
+              <Dropdown.Toggle split variant="primary" />
+    
+              <Dropdown.Menu>
+                <Dropdown.Item as='button'>Report</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown> 
+          }
         </Card.Body>
       </Card>
       </CardDeck>
