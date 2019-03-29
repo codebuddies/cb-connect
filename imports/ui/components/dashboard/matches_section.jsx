@@ -1,7 +1,9 @@
 import React from 'react'
 import { Card, Nav, Tab } from 'react-bootstrap'
+import MatchCard from './match_card'
 
-const MatchesSection = () => {
+const MatchesSection = (props) => {
+  const {ownEntries} = props;
   return (
     <Tab.Container defaultActiveKey='currentMatches'>
       <Card as='section' className='mb-4'>
@@ -19,9 +21,9 @@ const MatchesSection = () => {
         </Card.Header>
         <Tab.Content as={ Card.Body }>
           <Tab.Pane eventKey='currentMatches'>
-            <Card.Text>
-              You don't have any current matches.
-            </Card.Text>
+            {ownEntries.length ? ownEntries.map((entry, i) => (
+                  <MatchCard key={i} lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro} ownCard="true"/>
+               )) : <Card.Text>You don't have any current matches.</Card.Text>}			
           </Tab.Pane>
           <Tab.Pane eventKey='pastMatches'>
             <Card.Text>

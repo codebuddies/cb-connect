@@ -22,7 +22,7 @@ class DashboardCardsSection extends Component {
           </Card.Header>  
           <Card.Body>
                {entries.length ? entries.map((entry, i) => (
-                  <MatchCard lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>
+                  <MatchCard key={i} lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>
                )) : <Card.Text>No active entries were found.</Card.Text>}			
           </Card.Body>
         </Card>
