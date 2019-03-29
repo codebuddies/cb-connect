@@ -10,7 +10,6 @@ class MatchCard extends Component {
 
   render () {
     return (
-      <CardDeck style={{ width: '50%' }}>
       <Card>
         <Card.Body>
           <Card.Title className='font-weight-normal text-capitalize'>
@@ -37,7 +36,6 @@ class MatchCard extends Component {
           }
         </Card.Body>
       </Card>
-      </CardDeck>
     )
   }
 }
