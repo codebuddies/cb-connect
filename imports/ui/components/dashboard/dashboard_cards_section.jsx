@@ -6,12 +6,20 @@ class DashboardCardsSection extends Component {
   render () {
     const {section, visibility, entries} = this.props
     console.log(this.props.entries)
+    const sectionMapper = {
+      'Mentors': 'Mentees to help', 
+      'Mentees': 'Mentors',
+      'OSS Projects':'OSS Contributors to their project',
+      'OSS Contributors': 'OSS Projects to contribute to',
+      'Accountabili-buddies': 'Accountabili-buddies',
+      'Other':'Other'
+    }
     return (
       <Collapse in={visibility}>
         <Card as='section' className='mb-4'>
           <Card.Header className='text-capitalize'>
-            People looking for {section}
-          </Card.Header>
+            People looking for {sectionMapper[section]}
+          </Card.Header>  
           <Card.Body>
                {entries.length ? entries.map((entry, i) => (
                   <MatchCard lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>

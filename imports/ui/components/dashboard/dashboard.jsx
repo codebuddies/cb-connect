@@ -90,7 +90,7 @@ class Dashboard extends Component {
                 onVisibilityChange={this.handleVisibilityChange} />
             </div>
           </div>
-          <div className='col'>
+          <div className='col-sm-9'>
             <MatchesSection/>          
             {DashboardSections}
           </div>

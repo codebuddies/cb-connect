@@ -17,8 +17,8 @@ class MatchCard extends Component {
           <Card.Text>
             { this.props.oneLineIntro }
           </Card.Text>
-          <Card.Text className="timezone">
-            { this.props.timezone }
+          <Card.Text>
+            <small className="text-muted">{ this.props.timezone }</small>
           </Card.Text>
           <Dropdown as={ButtonGroup} className='btn-block'>
             <Button className='btn-block' variant="primary">
