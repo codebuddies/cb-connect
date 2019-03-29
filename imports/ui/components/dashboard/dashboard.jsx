@@ -3,11 +3,13 @@ import DashboardSidebar from './dashboard_sidebar'
 import MatchesSection from './matches_section'
 import DashboardCardsSection from './dashboard_cards_section'
 
-const sectionTargets = {
-  'mentors' : 'mentees',
-  'mentees' : 'mentors', 
-  'oss-projects': 'oss-contributors',
-  'oss-contributors': 'oss-projects'
+const sectionTargets = { //see: categories.js for numbers
+  'mentors' : '3',
+  'mentees' : '4', 
+  'oss-projects': '5',
+  'oss-contributors': '6',
+  'accountabili-buddies': '1',
+  'other': '0'
 }
 
 
@@ -18,32 +20,33 @@ class Dashboard extends Component {
       // Define all sections to be visible on initialize
       visibleSections: 'all'
     }
-    console.log(props)
   }
 
   getEntries = (entry) => {
     const { entries = [] } = this.props;
     console.log(this.props)
-  }
-
-  getEntries = (entry) => {
-    const { entries = [] } = this.props;
+    const newId = this.state.visibleSections;
+    console.log(newId)
+    this.props.handleCategoryChange(newId);
+    console.log(entries)
   }
 
   getTargetSections = (section) => {
-    return sectionTargets[section] || section
+    return sectionTargets[section]
   }
 
   // Set which section to be visible;
   // Binded handler to `DashboardSidebar` as a property for state hoisting
   handleVisibilityChange = (section) => {
     const targetSection = this.getTargetSections(section)
-    this.setState({visibleSections: targetSection})
+    this.setState({visibleSections: targetSection}, function() {
+        console.log('handleVisibilityChange this.state: ' + this.state.visibleSections)
+    })
   }
 
   checkSectionVisibility = (sectionKey) => {
     const allSectionsVisible = this.state.visibleSections === 'all'
-    const sectionIsVisible = this.state.visibleSections === sectionKey
+    const sectionIsVisible = this.state.visibleSections === sectionTargets[sectionKey]
     if (allSectionsVisible || sectionIsVisible) { return true }
     return false
   }
@@ -81,7 +84,7 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className='col'>
-            <MatchesSection />          
+            <MatchesSection/>          
             {DashboardSections}
           </div>
         </div>
