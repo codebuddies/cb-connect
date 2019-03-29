@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {CardDeck, Card, Collapse} from 'react-bootstrap'
+import {CardDeck, CardColumns, Card, Collapse} from 'react-bootstrap'
 import MatchCard from './match_card'
 
 class DashboardCardsSection extends Component {
@@ -16,7 +16,7 @@ class DashboardCardsSection extends Component {
     }
     return (
       <Collapse in={visibility}>
-        <Card as='section' className='mb-4'>
+        <Card as='section'>
           <Card.Header className='text-capitalize'>
             People looking for {sectionMapper[section]}
           </Card.Header>  
