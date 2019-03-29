@@ -11,10 +11,10 @@ class MatchCard extends Component {
       <Card style={{ width: '33%' }}>
         <Card.Body>
           <Card.Title className='font-weight-normal text-capitalize'>
-            { this.props.name }
+            { this.props.timezone }
           </Card.Title>
           <Card.Text>
-            { this.props.overview }
+            { this.props.oneLineIntro }
           </Card.Text>
           <Dropdown as={ButtonGroup} className='btn-block'>
             <Button className='btn-block' variant="primary">

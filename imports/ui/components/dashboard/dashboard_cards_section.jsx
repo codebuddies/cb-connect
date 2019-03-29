@@ -5,7 +5,7 @@ import MatchCard from './match_card'
 class DashboardCardsSection extends Component {
   render () {
     const {section, visibility} = this.props
-    console.log(this.props)
+    console.log(this.props.entries)
     return (
       <Collapse in={visibility}>
         <Card as='section' className='mb-4'>
@@ -14,7 +14,7 @@ class DashboardCardsSection extends Component {
           </Card.Header>
           <Card.Body>
               <CardDeck className='d-block'>
-                <MatchCard name="Test" overview='some text'/>
+                <MatchCard timezone={this.props.timezone} oneLineIntro='some text'/>
               </CardDeck>					
           </Card.Body>
         </Card>
