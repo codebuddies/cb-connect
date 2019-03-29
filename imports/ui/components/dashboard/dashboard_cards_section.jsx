@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {CardDeck, CardColumns, Card, Collapse} from 'react-bootstrap'
+import {CardColumns, Card, Collapse} from 'react-bootstrap'
 import MatchCard from './match_card'
 
 class DashboardCardsSection extends Component {
@@ -20,7 +20,7 @@ class DashboardCardsSection extends Component {
           <Card.Header className='text-capitalize'>
             People looking for {sectionMapper[section]}
           </Card.Header>  
-          <Card.Body>
+          <Card.Body as={CardColumns}>
                {entries.length ? entries.map((entry, i) => (
                   <MatchCard key={i} lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>
                )) : <Card.Text>No active entries were found.</Card.Text>}			
