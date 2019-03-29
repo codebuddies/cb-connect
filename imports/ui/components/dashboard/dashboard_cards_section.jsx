@@ -5,7 +5,7 @@ import MatchCard from './match_card'
 class DashboardCardsSection extends Component {
   render () {
     const {section, visibility} = this.props
-
+    console.log(this.props)
     return (
       <Collapse in={visibility}>
         <Card as='section' className='mb-4'>

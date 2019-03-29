@@ -4,12 +4,12 @@ import MatchesSection from './matches_section'
 import DashboardCardsSection from './dashboard_cards_section'
 
 const sectionTargets = { //see: categories.js for numbers
-  'mentors' : '3',
-  'mentees' : '4', 
-  'oss-projects': '5',
-  'oss-contributors': '6',
-  'accountabili-buddies': '1',
-  'other': '0'
+  'mentors' : 3,
+  'mentees' : 4, 
+  'oss-projects': 5,
+  'oss-contributors': 6,
+  'accountabili-buddies': 1,
+  'other': 0
 }
 
 
@@ -29,9 +29,14 @@ class Dashboard extends Component {
     console.log(newId)
     this.props.handleCategoryChange(newId);
     console.log(entries)
+    return entries;
   }
 
   getTargetSections = (section) => {
+    console.log(this.props)
+    console.log("TEST")
+    const newId = this.state.visibleSections;
+    console.log(newId)
     return sectionTargets[section]
   }
 
@@ -42,6 +47,7 @@ class Dashboard extends Component {
     this.setState({visibleSections: targetSection}, function() {
         console.log('handleVisibilityChange this.state: ' + this.state.visibleSections)
     })
+    console.log(this.props);
   }
 
   checkSectionVisibility = (sectionKey) => {
@@ -67,6 +73,7 @@ class Dashboard extends Component {
 
       return (
         <DashboardCardsSection 
+          entries={this.getEntries()}
           section={section} 
           key={key} 
           visibility={visible} />
