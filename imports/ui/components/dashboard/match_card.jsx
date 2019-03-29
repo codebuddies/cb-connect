@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Card, Dropdown, ButtonGroup, Button } from 'react-bootstrap'
+import { Card, CardDeck, Dropdown, ButtonGroup, Button } from 'react-bootstrap'
+import '/imports/ui/styles/_cards.scss';
 
 class MatchCard extends Component {
   constructor (props) {
@@ -9,7 +10,8 @@ class MatchCard extends Component {
 
   render () {
     return (
-      <Card style={{ width: '33%' }}>
+      <CardDeck style={{ width: '50%' }}>
+      <Card>
         <Card.Body>
           <Card.Title className='font-weight-normal text-capitalize'>
             { this.props.lookingFor }
@@ -33,6 +35,7 @@ class MatchCard extends Component {
           </Dropdown>
         </Card.Body>
       </Card>
+      </CardDeck>
     )
   }
 }
