@@ -4,7 +4,7 @@ import MatchCard from './match_card'
 
 class DashboardCardsSection extends Component {
   render () {
-    const {section, visibility} = this.props
+    const {section, visibility, entries} = this.props
     console.log(this.props.entries)
     return (
       <Collapse in={visibility}>
@@ -13,9 +13,9 @@ class DashboardCardsSection extends Component {
             People looking for {section}
           </Card.Header>
           <Card.Body>
-              <CardDeck className='d-block'>
-                <MatchCard timezone={this.props.timezone} oneLineIntro='some text'/>
-              </CardDeck>					
+               {entries.length ? entries.map((entry, i) => (
+                  <MatchCard lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>
+               )) : <Card.Text>No active entries were found.</Card.Text>}			
           </Card.Body>
         </Card>
       </Collapse>
