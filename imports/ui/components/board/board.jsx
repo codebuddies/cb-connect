@@ -13,7 +13,7 @@ class Board extends React.Component {
 
   getColumns() {
     const { entries = [] } = this.props;
-
+    console.log(this.props.entries)
     const columns = categories.map((category, i) => {
       const heading = 'Looking for ' + category.label_text;
       const filteredEntries = entries.filter(entry => entry.category.id === category.id);
