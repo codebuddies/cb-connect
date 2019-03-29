@@ -4,6 +4,7 @@ import MatchesSection from './matches_section'
 import DashboardCardsSection from './dashboard_cards_section'
 
 const sectionTargets = { //see: categories.js for numbers
+  'all': 'all',
   'mentors' : 3,
   'mentees' : 4, 
   'oss-projects': 5,
