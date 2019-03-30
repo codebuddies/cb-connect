@@ -8,7 +8,6 @@ import '/imports/api/entries/server/methods.js';
 
 Meteor.startup(() => {
   // code to run on server at startup
-
   if (Meteor.settings.seeder) {
     databaseSeeder();
     console.log('database seeded');
