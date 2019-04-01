@@ -5,7 +5,7 @@ import MatchCard from './match_card'
 class DashboardCardsSection extends Component {
   render () {
     const {section, visibility, entries} = this.props
-    console.log(this.props.entries)
+    //console.log(this.props.entries)
     const sectionMapper = {
       'Mentors': 'Mentees to help', 
       'Mentees': 'Mentors',
