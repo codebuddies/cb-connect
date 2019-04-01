@@ -21,7 +21,7 @@ class MatchCard extends Component {
           { this.props.ownCard === "true" ? '' :
             <Dropdown as={ButtonGroup} className='btn-block'>
               <Button className='btn-block' variant="primary">
-                Request Connection
+                Request Match
               </Button>
     
               <Dropdown.Toggle split variant="primary" />
