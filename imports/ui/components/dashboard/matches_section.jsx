@@ -15,7 +15,7 @@ const MatchesSection = (props) => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey='pastMatches'>Past Matches</Nav.Link>
+              <Nav.Link eventKey='otherSubmissions'>Other Submissions</Nav.Link>
             </Nav.Item>
           </Nav>
         </Card.Header>
@@ -25,9 +25,9 @@ const MatchesSection = (props) => {
                   <MatchCard key={i} lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro} ownCard="true"/>
                )) : <Card.Text>You don't have any current matches.</Card.Text>}			
           </Tab.Pane>
-          <Tab.Pane eventKey='pastMatches'>
+          <Tab.Pane eventKey='otherSubmissions'>
             <Card.Text>
-              You don't have any past matches.
+              You don't have any other submissions. 
             </Card.Text>
           </Tab.Pane>
         </Tab.Content>
