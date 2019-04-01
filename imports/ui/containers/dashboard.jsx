@@ -15,7 +15,7 @@ const DashboardContainer = withTracker((props) => {
   // console.log('categoryIdString is' + categoryIdString)
   const entries = categoryIdString === 'all' ? Entries.find().fetch() : Entries.find({userId: {$ne: currentUser._id}, "category.id": categoryIdString}, {limit: 9}).fetch()
 
-  const ownEntries = Entries.find({userId: {$eq: currentUser._id}, matched: false}).fetch();
+  const ownEntries = Entries.find({userId: {$eq: currentUser._id}, matched: "unmatched"}).fetch();
   // console.log(ownEntries);
   return {
     loading,
