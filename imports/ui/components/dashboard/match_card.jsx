@@ -12,14 +12,11 @@ class MatchCard extends Component {
     return (
       <Card>
         <Card.Body>
-          <Card.Title className='font-weight-normal text-capitalize'>
-            { this.props.lookingFor }
+          <Card.Title className='font-weight-normal'>
+          { this.props.oneLineIntro }
           </Card.Title>
           <Card.Text>
-            { this.props.oneLineIntro }
-          </Card.Text>
-          <Card.Text>
-            <small className="text-muted">{ this.props.timezone }</small>
+          { this.props.lookingFor }
           </Card.Text>
           { this.props.ownCard === "true" ? '' :
             <Dropdown as={ButtonGroup} className='btn-block'>
@@ -35,6 +32,7 @@ class MatchCard extends Component {
             </Dropdown> 
           }
         </Card.Body>
+        <Card.Footer><small className="text-muted">{ this.props.timezone }</small></Card.Footer>
       </Card>
     )
   }
