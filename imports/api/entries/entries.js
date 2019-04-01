@@ -16,7 +16,7 @@ let Schema = new SimpleSchema({
   lookingFor: String,
   oneLineIntro: String,
   verified: Boolean,
-  matched: Boolean,
+  matched: String, //0: unmatched, 1: found suggested match, 2: accepted match, 3: confirmed connection
   createdAt: {
     type: Date,
     autoValue: function() {
