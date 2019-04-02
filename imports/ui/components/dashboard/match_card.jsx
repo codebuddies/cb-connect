@@ -9,16 +9,17 @@ class MatchCard extends Component {
   }
 
   render () {
+    const { oneLineIntro, lookingFor, ownCard, timezone } = this.props
     return (
       <Card>
         <Card.Body>
           <Card.Title className='font-weight-normal'>
-          { this.props.oneLineIntro }
+          { oneLineIntro }
           </Card.Title>
           <Card.Text>
-          { this.props.lookingFor }
+          { lookingFor }
           </Card.Text>
-          { this.props.ownCard === "true" ? '' :
+          { ownCard === "true" ? '' :
             <Dropdown as={ButtonGroup} className='btn-block'>
               <Button className='btn-block' variant="primary">
                 Request Match
@@ -32,7 +33,7 @@ class MatchCard extends Component {
             </Dropdown> 
           }
         </Card.Body>
-        <Card.Footer><small className="text-muted">{ this.props.timezone }</small></Card.Footer>
+        <Card.Footer><small className="text-muted">{ timezone }</small></Card.Footer>
       </Card>
     )
   }
