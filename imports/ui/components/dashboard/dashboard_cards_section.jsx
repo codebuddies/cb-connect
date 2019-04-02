@@ -16,7 +16,7 @@ class DashboardCardsSection extends Component {
     }
     return (
       <Collapse in={visibility}>
-        <Card as='section'>
+        <Card as='section' className="mb-2">
           <Card.Header className='text-capitalize'>
             People looking for {sectionMapper[section]}
           </Card.Header>  
