@@ -51,7 +51,6 @@ class Login extends React.Component {
                   type="text"
                   autoComplete="email"
                   placeholder="Email address"
-                  pattern={EMAIL_REGEX}
                   required
                 />
               </Form.Group>

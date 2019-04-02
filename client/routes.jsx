@@ -11,31 +11,57 @@ import SetPassword from '../imports/ui/components/set_password.jsx';
 import Dashboard from '../imports/ui/components/dashboard.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
 import withUser from '../imports/ui/components/hoc/with-user.jsx';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Roles } from 'meteor/alanning:roles';
+import Loading from '../imports/ui/components/loading.jsx';
 
-export const renderRoutes = () => (
-  <Router>
-    <Switch>
-      <Navbar>
-        <Route exact path="/" component={Landing} />
-        <RouteWithUser exact path="/dashboard" component={Dashboard} />
-        <RouteWithOutUser exact path="/login" component={Login} />
-        <RouteWithOutUser exact path="/forgot-password" component={ForgotPassword} />
-        <RouteWithOutUser exact path="/enroll-account/:token" component={SetPassword} />
-        <RouteWithOutUser exact path="/reset-password/:token" component={SetPassword} />
-        <RouteWithUser exact path="/moderator" component={Moderator} />
-        <Route exact path="/faq" component={Faq} />
-        <RouteWithOutUser path="/apply" component={Apply} />
-        <Route path="/woohoo" component={withUser(Woohoo)} />
-      </Navbar>
-    </Switch>
-  </Router>
-);
+class App extends React.Component {
+  state = { ready: false, afterLoginPath: null };
+
+  componentDidMount() {
+    this.setPageReady();
+  }
+
+  setPageReady = () => {
+    this.setState({ ready: true });
+  };
+
+  setAfterLoginPath = (afterLoginPath) => {
+    this.setState({ afterLoginPath });
+  };
+  render () {
+    const { props, state, setAfterLoginPath } = this;
+
+
+    if (props.loading) {
+      return (<Loading/>);
+    } else {
+      {console.log(Roles.userIsInRole(Meteor.userId(), 'owner', 'CB'))}
+    return (
+      <Router>
+        <Switch>
+          <Navbar>
+            <Route exact path="/" component={Landing} />
+            <RouteWithUser exact path="/dashboard" component={Dashboard} />
+            <RouteWithOutUser exact path="/login" component={Login} />
+            <RouteWithOutUser exact path="/forgot-password" component={ForgotPassword} />
+            <RouteWithOutUser exact path="/enroll-account/:token" component={SetPassword} />
+            <RouteWithOutUser exact path="/reset-password/:token" component={SetPassword} />
+            <RouteWithUser exact path="/moderator" component={Moderator} />
+            <Route exact path="/faq" component={Faq} />
+            <RouteWithOutUser path="/apply" component={Apply} />
+            <Route path="/woohoo" component={withUser(Woohoo)} />
+          </Navbar>
+        </Switch>
+      </Router>
+    )}
+  }
+};
 
 // All routes where user supposed to be logged in
 // If user is not logged in, redirect them to login page
-const RouteWithUser = withUser(({ user, component: Component, ...rest }) => {
+const RouteWithUser = withUser(({ user, loading, component: Component, ...rest }) => {
   const { pathname } = window.location;
-
   if (user) {
     return <Route {...rest} render={props => <Component {...props} user={user} />} />;
   } else if (pathname !== '/login' && pathname === rest.path) {
@@ -44,7 +70,7 @@ const RouteWithUser = withUser(({ user, component: Component, ...rest }) => {
   return null;
 });
 
-const RouteWithOutUser = withUser(({ user, component: Component, ...rest }) => {
+const RouteWithOutUser = withUser(({ user, loading, component: Component, ...rest }) => {
   const { pathname } = window.location;
   if (!user) {
     return <Route {...rest} render={props => <Component {...props} user={user} />} />;
@@ -53,3 +79,21 @@ const RouteWithOutUser = withUser(({ user, component: Component, ...rest }) => {
   }
   return null;
 });
+
+
+
+
+export default AppContainer = withTracker( () => {
+  const loggingIn = Meteor.loggingIn();
+  const user = Meteor.user();
+  const userId = Meteor.userId();
+  const loading = !Roles.subscription.ready();
+
+  return {
+    loading,
+    loggingIn,
+    authenticated: !loggingIn && !!userId,
+    roles: Roles.getRolesForUser(userId),
+    userId,
+  }
+})(App)

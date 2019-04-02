@@ -4,6 +4,9 @@ import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import withUser from '/imports/ui/components/hoc/with-user.jsx';
 
+import { Roles } from 'meteor/alanning:roles';
+import Loading from './loading.jsx';
+
 class NavbarWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -14,9 +17,7 @@ class NavbarWrapper extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
-    console.log(this.props)
-
+    const {user, userId } = this.props;
     return (
       <React.Fragment>
         <Container>
@@ -26,7 +27,7 @@ class NavbarWrapper extends React.Component {
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="mr-auto" />
-            {user && user.profile.moderator ? (
+            {Roles.userIsInRole(Meteor.userId(), 'owner', 'CB') ? (
               <Link to="/moderator" className="nav-link mr-sm-2">
                 Moderate
               </Link>

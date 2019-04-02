@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { databaseSeeder, databaseSeedRemover } from './seeder';
+import { Random } from 'meteor/random';
+import { Roles } from 'meteor/alanning:roles';
 import './configs';
 import './users/methods';
 
@@ -15,6 +17,19 @@ Meteor.startup(() => {
   } else {
     databaseSeedRemover();
     console.log('seed data removed');
+  }
+
+  //
+  if (Meteor.users.find().count() === 0) {
+    let password = Random.secret([9]);
+    let id = Accounts.createUser({
+      username: 'super',
+      password: password,
+    });
+    console.log(password);
+    if (id) {
+      Roles.addUsersToRoles(id, 'owner', 'CB');
+    }
   }
 
   smtp = {
