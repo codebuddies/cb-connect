@@ -21,8 +21,8 @@ class DashboardCardsSection extends Component {
             People looking for {sectionMapper[section]}
           </Card.Header>  
           <Card.Body as={CardColumns}>
-               {entries.length ? entries.map((entry, i) => (
-                  <MatchCard key={i} lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>
+               {entries.length ? entries.map((entry) => (
+                  <MatchCard key={entry._id} lookingFor={entry.lookingFor} timezone={entry.tz.title} oneLineIntro={entry.oneLineIntro}/>
                )) : <Card.Text>No active entries were found.</Card.Text>}			
           </Card.Body>
         </Card>
