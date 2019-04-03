@@ -25,19 +25,13 @@ class Dashboard extends Component {
 
   getEntries = (entry) => {
     const { entries = [] } = this.props;
-    //console.log(this.props)
     const newId = this.state.visibleSections;
-   // console.log(newId)
     this.props.handleCategoryChange(newId);
-   // console.log(entries)
     return entries;
   }
 
   getTargetSections = (section) => {
-    // console.log(this.props)
-    // console.log("TEST")
     const newId = this.state.visibleSections;
-    // console.log(newId)
     return sectionTargets[section]
   }
 
@@ -46,9 +40,7 @@ class Dashboard extends Component {
   handleVisibilityChange = (section) => {
     const targetSection = this.getTargetSections(section)
     this.setState({visibleSections: targetSection}, function() {
-       // console.log('handleVisibilityChange this.state: ' + this.state.visibleSections)
     })
-   // console.log(this.props);
   }
 
   checkSectionVisibility = (sectionKey) => {

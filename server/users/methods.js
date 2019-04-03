@@ -35,8 +35,6 @@ Meteor.methods({
 
     const timezone = _.find(timezones, { id: data.timezone });
     const category = _.find(categories, { id: data.category });
-    console.log(data);
-    console.log(timezone);
 
     // check if user exists or not.
     const actor = Accounts.findUserByEmail(data.email);
