@@ -4,9 +4,9 @@
   "scripts": {
     "start": "meteor run",
     "pretest": "npm run prettier && npm run lint",
-    "_test": "meteor test --once --driver-package meteortesting:mocha",
+    "test:meteor": "meteor test --once --driver-package meteortesting:mocha",
+    "test:meteor-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "test": "jest",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "lint": "eslint . --ext .js --ext .jsx",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix",
     "prettier": "prettier --write \"./**/*.{js,jsx}\"",
