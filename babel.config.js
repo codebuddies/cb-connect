@@ -12,6 +12,7 @@ module.exports = {
       {
         root: './',
         alias: {
+          lib: './lib',
           components: './imports/ui/components',
         },
       },
