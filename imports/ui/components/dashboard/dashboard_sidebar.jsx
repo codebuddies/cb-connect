@@ -13,7 +13,7 @@ class DashboardSidebar extends Component {
 	}
 
 	render () {
-		const {sections} = this.props
+		const {sections, currentUserName} = this.props
 
 		// Add `All` as a menu item at beginning of all options
 		const items = ['All'].concat(sections)
@@ -33,7 +33,7 @@ class DashboardSidebar extends Component {
 
 		return (
 			<>
-				<p className='font-weight-normal'>What are you looking for?</p>
+				<p className='font-weight-normal'>Welcome, {currentUserName}! What are you looking for?</p>
 				<ListGroup as='ul' defaultActiveKey='all'>
 					{menuItems}
 				</ListGroup>
