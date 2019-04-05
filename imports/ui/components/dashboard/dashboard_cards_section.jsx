@@ -5,12 +5,13 @@ import MatchCard from './match_card'
 class DashboardCardsSection extends Component {
   render () {
     const {section, visibility, entries} = this.props
+   
     const sectionMapper = {
-      'Mentors': 'Mentees to help', 
-      'Mentees': 'Mentors',
-      'OSS Projects':'OSS Contributors to their project',
-      'OSS Contributors': 'OSS Projects to contribute to',
-      'Accountabili-buddies': 'Accountabili-buddies',
+      'Mentor': 'Mentees to help', 
+      'Mentee': 'Mentors',
+      'Open Source Project':'Contributors to their Open Source project',
+      'Contributor(s)': 'Open Source Projects to contribute to',
+      'Accountability Partner': 'Accountabili-buddies',
       'Other':'Other'
     }
     return (
