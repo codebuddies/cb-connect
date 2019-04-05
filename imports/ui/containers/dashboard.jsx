@@ -12,7 +12,10 @@ const DashboardContainer = withTracker((props) => {
   const currentUser = Meteor.user();
   const currentUserName = Meteor.user().profile.name;
   const categoryIdString = categoryId.get().toString();
-  const entries = categoryIdString === 'all' ? Entries.find({userId: {$ne: currentUser._id}).fetch() : Entries.find({userId: {$ne: currentUser._id}, "category.id": categoryIdString}).fetch()
+  const entries = categoryIdString === 'all' ? 
+                  Entries.find({userId: {$ne: currentUser._id}}).fetch() : 
+                  Entries.find({userId: {$ne: currentUser._id},
+                               "category.id": categoryIdString}).fetch()
   
   const ownEntries = Entries.find({userId: {$eq: currentUser._id}, matched: "unmatched"}).fetch();
   return {
