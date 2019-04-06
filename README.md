@@ -32,7 +32,7 @@ Open Canvas: [https://docs.google.com/presentation/d/1QjVW5UPnyfCQaLCvM-Lqne87a1
 - Users can "flag" a user, meaning they will never be matched with entries submitted by that other user. 
 - Moderators can see a list of top flagged users.
 
-### The specs document
+## The specs document
 [https://docs.google.com/document/d/1N8cYiQC9g8rheZzI37Eo2iKghC6C3oKZ069Ttv6H61o/edit](https://docs.google.com/document/d/1N8cYiQC9g8rheZzI37Eo2iKghC6C3oKZ069Ttv6H61o/edit)
 
 
