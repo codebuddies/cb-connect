@@ -20,26 +20,21 @@ c) an opportunity to teach/mentor someone else
 Open Canvas: [https://docs.google.com/presentation/d/1QjVW5UPnyfCQaLCvM-Lqne87a1xYsHS763UEK6D5pTQ/edit#slide=id.p](https://docs.google.com/presentation/d/1QjVW5UPnyfCQaLCvM-Lqne87a1xYsHS763UEK6D5pTQ/edit#slide=id.p)
 
 ### Roadmap
+
 ## Milestone 1
-- Users can sign up and register an account
+- Users can sign up and register an account by submitting an entry
 - Entries are filtered and displayed on individual columns
-- Users can "favorite" other entries
-- Moderators can see which users favorited which other entries
+- Users can "request" other entries
+- Moderators can see which users requested other entries
 - Moderators can click on two entries and "match" them, triggering an automated email to the creators of both entries
 - Moderators see a list of all past matches
 - Users can accept or deny a match
 - Users can "flag" a user, meaning they will never be matched with entries submitted by that other user. 
 - Moderators can see a list of top flagged users.
 
-### The user flow (a work-in-progress):
+### The specs document
+[https://docs.google.com/document/d/1N8cYiQC9g8rheZzI37Eo2iKghC6C3oKZ069Ttv6H61o/edit](https://docs.google.com/document/d/1N8cYiQC9g8rheZzI37Eo2iKghC6C3oKZ069Ttv6H61o/edit)
 
-1/ Participant will submit a form filling out intro, what they're looking for (one of 7 categories), and further details
-
-2/ Matcher will click the participant's card, then click another card, which will fire off an email and a notification to both parties. (After the MVP, we might have the "system" calculate some points and do auto-matching)
-
-3/ Each party can accept or reject the match (if they reject, can leave an optional comment about why). If they accept the match, they can decide to go off and jump on a call, pair together, invite each other to a Github repo, or whatever they decide.
-
-4/ People can create new cards at any point (e.g. you could at the same time be looking for feedback/advice, AND be looking for an accountability partner)
 
 ## How to contribute
 
