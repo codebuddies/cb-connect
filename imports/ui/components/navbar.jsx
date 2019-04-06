@@ -15,7 +15,6 @@ class NavbarWrapper extends React.Component {
 
   render() {
     const { user } = this.props;
-    console.log(this.props)
 
     return (
       <React.Fragment>
@@ -29,13 +28,6 @@ class NavbarWrapper extends React.Component {
             {user && user.profile.moderator ? (
               <Link to="/moderator" className="nav-link mr-sm-2">
                 Moderate
-              </Link>
-            ) : (
-              ""
-            )}
-             {user ? (
-              <Link to="/home" className="nav-link mr-sm-2">
-                Profile
               </Link>
             ) : (
               ""

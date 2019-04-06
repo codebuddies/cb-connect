@@ -35,8 +35,6 @@ Meteor.methods({
 
     const timezone = _.find(timezones, { id: data.timezone });
     const category = _.find(categories, { id: data.category });
-    console.log(data);
-    console.log(timezone);
 
     // check if user exists or not.
     const actor = Accounts.findUserByEmail(data.email);
@@ -44,7 +42,7 @@ Meteor.methods({
       throw new Meteor.Error('user.enroll', 'User with this email already exists.');
     } else {
       const { email, name, oneLineIntro, lookingFor } = data;
-      const { id: category_id, short_lable: category_title } = category;
+      const { id: category_id, short_label: category_title } = category;
       const { id: tz_id, label_text: tz_title, daylight_saving, value: tz_offset } = timezone;
 
       // create new user

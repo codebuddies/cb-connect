@@ -11,10 +11,8 @@ Meteor.startup(() => {
 
   if (Meteor.settings.seeder) {
     databaseSeeder();
-    console.log('database seeded');
   } else {
     databaseSeedRemover();
-    console.log('seed data removed');
   }
 
   smtp = {
