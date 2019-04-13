@@ -15,6 +15,20 @@ let Schema = new SimpleSchema({
   lookingFor: String,
   oneLineIntro: String,
   verified: Boolean,
+  flags: {
+    type: Array,
+    optional: true,
+  },
+  'flags.$': {
+    type: Object,
+    optional: true,
+  },
+  'flags.$.userId': {
+    type: String,
+  },
+  'flags.$.reason': {
+    type: String,
+  },
   matched: String, //0: unmatched, 1: found suggested match, 2: accepted match, 3: confirmed connection
   createdAt: {
     type: Date,

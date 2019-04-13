@@ -8,9 +8,11 @@ class MatchCard extends Component {
     super(props)
     this.showFlagModal = this.showFlagModal.bind(this);
     this.closeFlagModal = this.closeFlagModal.bind(this);
-    this.submitFlagModal = this.closeFlagModal.bind(this);
+    this.handleFlagReasonChange = this.handleFlagReasonChange.bind(this);
+    this.submitFlagModal = this.submitFlagModal.bind(this);
     this.state = {
       showFlagModal: false,
+      flagReason: ''
     };
   }
   showFlagModal(event) {
@@ -21,9 +23,28 @@ class MatchCard extends Component {
     event.preventDefault();
     this.setState({ showFlagModal: false });
   }
+  handleFlagReasonChange(event) {
+    alert('changed')
+    this.setState({flagReason: event.target.value})
+  }
   submitFlagModal(event) {
     event.preventDefault();
+
+    const data = {
+      "userId": "Am...sZ",
+      "reason": this.state.flagReason
+    }
     this.setState({ showFlagModal: false });
+    Meteor.call("entry.flag", data, (error, result) => {
+      if (error) {
+        this.setState({ 'error' : error.reason });
+        this.setState({ 'processing' : false });
+      }
+      if (result) {
+        this.setState({ 'processing' : false });
+        this.props.history.push('/woohoo')
+      }
+    });
   }
 
   render() {
@@ -63,13 +84,13 @@ class MatchCard extends Component {
 
         <Modal.Body>
           <Form.Group controlId="formGroupFlagReason">
-            <Form.Control type="text" placeholder="Enter reason" />
+            <Form.Control type="text" value={this.state.flagReason} onChange={this.handleflagReasonChange} placeholder="Enter reason" />
           </Form.Group>
         </Modal.Body>
 
         <Modal.Footer>
           <Button variant="secondary" onClick={this.closeFlagModal}>Close</Button>
-          <Button variant="primary" type="submit" onSubmit={this.submitFlagModal}>Submit</Button>
+          <Button variant="primary" onClick={this.submitFlagModal}>Submit</Button>
         </Modal.Footer>
         </Form>
       </Modal>
