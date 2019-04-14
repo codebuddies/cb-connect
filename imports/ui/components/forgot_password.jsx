@@ -68,7 +68,7 @@ class ForgotPassword extends React.Component {
             {error ? <Alert variant="danger">{error}</Alert> : null}
             {success ? <Alert variant="success">{success}</Alert> : null}
 
-            <div class="text-center">
+            <div className="text-center">
               <Link to="/login">Login</Link>
             </div>
           </Col>

@@ -19,7 +19,7 @@ class Apply extends React.Component {
       processStep: 1,
       formValidated: false,
       error: null,
-      processing: false
+      processing: false,
     };
   }
 
@@ -73,15 +73,30 @@ class Apply extends React.Component {
           <Card.Body>
             <Form.Group controlId="name">
               <Form.Label>Hello, my name is:</Form.Label>
-              <Form.Control type="text" required defaultValue={name} pattern="[A-Za-z0-9 ]{3,50}" data-error="Please enter" />
-              <Form.Control.Feedback type="invalid">Your name needs to be between 3 and 50 characters long.</Form.Control.Feedback>
+              <Form.Control
+                type="text"
+                required
+                defaultValue={name}
+                pattern="[A-Za-z0-9 ]{3,50}"
+                data-error="Please enter"
+              />
+              <Form.Control.Feedback type="invalid">
+                Your name needs to be between 3 and 50 characters long.
+              </Form.Control.Feedback>
               <Form.Text className="text-muted">Your name will be anonymous except to your match</Form.Text>
             </Form.Group>
 
             <Form.Group controlId="oneLineIntro">
               <Form.Label>One-line intro of yourself:</Form.Label>
-              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[A-Za-z0-9,!?\x27\x22\s\.]{8,140}" />
-              <Form.Control.Feedback type="invalid">Please share an intro between 8 and 140 characters long.</Form.Control.Feedback>
+              <Form.Control
+                type="text"
+                required
+                defaultValue={oneLineIntro}
+                pattern="[A-Za-z0-9,!?\x27\x22\s\.]{8,140}"
+              />
+              <Form.Control.Feedback type="invalid">
+                Please share an intro between 8 and 140 characters long.
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group controlId="lookingFor">
@@ -106,7 +121,7 @@ class Apply extends React.Component {
 
   getForm3() {
     const { email, timezone } = this._formData || {};
-    const { formValidated, processing  } = this.state;
+    const { formValidated, processing } = this.state;
     return (
       <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
         <Card>
@@ -157,18 +172,17 @@ class Apply extends React.Component {
     if (this.state.processStep === 3) {
       // TODO submit the form to backend
       const data = this._formData;
-      this.setState({ 'processing' : true });
-      Meteor.call("users.enroll", data, (error, result) => {
+      this.setState({ processing: true });
+      Meteor.call('users.enroll', data, (error, result) => {
         if (error) {
-          this.setState({ 'error' : error.reason });
-          this.setState({ 'processing' : false });
+          this.setState({ error: error.reason });
+          this.setState({ processing: false });
         }
         if (result) {
-          this.setState({ 'processing' : false });
-          this.props.history.push('/woohoo')
+          this.setState({ processing: false });
+          this.props.history.push('/woohoo');
         }
       });
-
     } else {
       // Move to next form
       this.setState(state => ({ formValidated: false, processStep: state.processStep + 1 }));
