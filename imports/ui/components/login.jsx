@@ -71,7 +71,6 @@ class Login extends React.Component {
             <div className="text-center">
               <Link to="/forgot-password">Forgot Password?</Link>
             </div>
-
           </Col>
         </Row>
       </Container>
