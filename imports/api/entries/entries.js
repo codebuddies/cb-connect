@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 const Entries = new Mongo.Collection('entries');
 import SimpleSchema from 'simpl-schema';
