@@ -5,6 +5,10 @@
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "lint": "eslint . --ext .js --ext .jsx",
+    "lint:fix": "eslint . --ext .js --ext .jsx --fix",
+    "prettier": "prettier --write \"./**/*.{js,jsx}\"",
+    "prettier:check": "prettier -l \"./**/*.{js,jsx}\"",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
     "commit": "git-cz"
   },
@@ -53,7 +57,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
+    "*.{js,jsx,json,css,md}": [
       "prettier --write",
       "git add"
     ]
