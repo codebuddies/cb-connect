@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardDeck, Dropdown, ButtonGroup, Button } from 'react-bootstrap';
+import { Card, Dropdown, ButtonGroup, Button } from 'react-bootstrap';
 import '/imports/ui/styles/_cards.scss';
 
 class MatchCard extends Component {

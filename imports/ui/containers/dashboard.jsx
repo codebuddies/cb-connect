@@ -3,9 +3,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 import Entries from '/imports/api/entries/entries.js';
 import Dashboard from '/imports/ui/components/dashboard/dashboard.jsx';
 
+// eslint-disable-next-line no-undef
 const categoryId = new ReactiveVar(3);
 const handleCategoryChange = id => categoryId.set(id);
 
+// eslint-disable-next-line no-unused-vars
 const DashboardContainer = withTracker(props => {
   const entriesHandle = Meteor.subscribe('entries.board');
   const loading = !entriesHandle.ready();

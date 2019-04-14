@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
@@ -12,8 +13,8 @@ const WithUser = Component => {
     }
 
     componentDidMount() {
-      Accounts.onLogout(_ => this.setState({ isLoggedin: false }));
-      Accounts.onLogin(_ => this.setState({ isLoggedin: true }));
+      Accounts.onLogout(() => this.setState({ isLoggedin: false }));
+      Accounts.onLogin(() => this.setState({ isLoggedin: true }));
     }
 
     render() {
