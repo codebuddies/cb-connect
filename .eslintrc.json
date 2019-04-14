@@ -23,8 +23,14 @@
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "prettier/prettier": "error",
-    "react/prop-types": "warn"
+    "react/prop-types": "warn",
+    "react/no-unescaped-entities": 0
   }
 }
