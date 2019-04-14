@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
 
-
 class SetPassword extends Component {
   constructor(props) {
     super(props);
@@ -15,15 +14,15 @@ class SetPassword extends Component {
       error: null,
       success: null,
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
     };
   }
 
-  handleChange (event) {
+  handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
-  passwordsMatch () {
+  passwordsMatch() {
     const { password, confirmPassword } = this.state;
     return password === confirmPassword;
   }
@@ -32,11 +31,11 @@ class SetPassword extends Component {
     event.preventDefault();
     event.stopPropagation();
 
-    this.setState({ validated: true});
+    this.setState({ validated: true });
     if (!this.passwordsMatch()) {
-      this.setState({ 'error' : 'password does not match' });
-    }else {
-      this.setState({ 'error' : null });
+      this.setState({ error: 'password does not match' });
+    } else {
+      this.setState({ error: null });
     }
 
     if (form.checkValidity() === false) {
@@ -45,18 +44,17 @@ class SetPassword extends Component {
       const { token } = this.props.match.params;
       const { password } = this.state;
 
-      this.setState({ 'processing' : true });
+      this.setState({ processing: true });
 
-      Accounts.resetPassword(token, password, (error)  => {
+      Accounts.resetPassword(token, password, error => {
         if (error) {
-            this.setState({ 'error' : error.reason });
-            this.setState({ 'processing' : false });
-
-          } else {
-            this.setState({ 'processing' : false });
-            this.setState({ 'success' : 'Welcome To CB Connect !' });
-            this.props.history.push('/')
-          }
+          this.setState({ error: error.reason });
+          this.setState({ processing: false });
+        } else {
+          this.setState({ processing: false });
+          this.setState({ success: 'Welcome To CB Connect !' });
+          this.props.history.push('/');
+        }
       });
     }
   }
@@ -87,7 +85,9 @@ class SetPassword extends Component {
                   data-error="Please enter valid password"
                   required
                 />
-                <Form.Control.Feedback type="invalid">Your password needs to be between 4 and 20 characters long.</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Your password needs to be between 4 and 20 characters long.
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group controlId="repeatPassword">
                 <Form.Label srOnly>Confirm password</Form.Label>
@@ -101,7 +101,9 @@ class SetPassword extends Component {
                   data-error="Please enter valid password"
                   required
                 />
-                <Form.Control.Feedback type="invalid">Your password needs to be between 4 and 20 characters long.</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Your password needs to be between 4 and 20 characters long.
+                </Form.Control.Feedback>
               </Form.Group>
 
               <Button variant="primary" type="submit" block disabled={processing}>
@@ -111,8 +113,6 @@ class SetPassword extends Component {
             <br />
             {error ? <Alert variant="danger">{error}</Alert> : null}
             {success ? <Alert variant="success">{success}</Alert> : null}
-
-
           </Col>
         </Row>
       </Container>
