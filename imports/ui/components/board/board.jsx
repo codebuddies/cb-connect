@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Collapse, Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Column from './column';
 import '/imports/ui/styles/_board.scss';
 import { categories } from '/lib/data/categories.js';
@@ -22,7 +21,6 @@ class Board extends React.Component {
   }
 
   render() {
-    const { loading } = this.props;
     // TODO - if loading is true show some nice loading animation!
     return <Container id="board">{this.getColumns()}</Container>;
   }

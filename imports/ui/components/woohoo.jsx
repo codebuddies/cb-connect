@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
-const Woohoo = props => {
+const Woohoo = () => {
   return (
     <Container>
       <Row>

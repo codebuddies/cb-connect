@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
+import { Alert, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
 import { EMAIL_REGEX } from '/imports/constants/regex';
 
@@ -26,7 +26,6 @@ class ForgotPassword extends React.Component {
     const email = form.elements['email'].value;
 
     Accounts.forgotPassword({ email }, err => {
-      console.log(err);
       if (err) {
         this.setState({ error: err.reason });
       } else {
