@@ -3,15 +3,17 @@
 
 language: node_js
 node_js:
-  - "8.11.4"
-before_script: 
+  - "8"
+before_script:
   # Install meteor
   - curl https://install.meteor.com | /bin/sh
   # Add meteor to path (instead of asking for sudo in the Travis container)
   # We can then use the faster container infrastructure - http://docs.travis-ci.com/user/workers/container-based-infrastructure/
   - export PATH=$HOME/.meteor:$PATH
+  # Install all the dependencies! 
   - npm install
 services:
   - mongodb
-cache: npm
-
+cache:
+  directories: 
+    - node_modules
