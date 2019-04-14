@@ -102,6 +102,7 @@ Meteor.methods({
         try {
           return Accounts.sendEnrollmentEmail(userId);
         } catch (e) {
+          // eslint-disable-next-line no-console
           console.log(e);
         }
       }

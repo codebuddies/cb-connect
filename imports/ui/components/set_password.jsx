@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
+import { Alert, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
 
 class SetPassword extends Component {

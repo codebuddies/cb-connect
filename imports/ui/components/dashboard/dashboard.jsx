@@ -23,7 +23,7 @@ class Dashboard extends Component {
     };
   }
 
-  getEntries = entry => {
+  getEntries = () => {
     const { entries = [] } = this.props;
     const newId = this.state.visibleSections;
 
@@ -32,7 +32,6 @@ class Dashboard extends Component {
   };
 
   getTargetSections = section => {
-    const newId = this.state.visibleSections;
     return sectionTargets[section];
   };
 
