@@ -8,19 +8,18 @@ class AuthProvider extends React.Component {
     super()
   }
   state = {
-    loggedIn: !!Meteor.userId(),
-    user: ''
+    user: null
     }
 
   componentDidMount() {
-    Accounts.onLogout(_ => this.setState({ loggedIn: false }))
-    Accounts.onLogin(_ => this.setState({ loggedIn: true, user: Meteor.user() }))
+    Accounts.onLogout(_ => this.setState({ user: null }))
+    Accounts.onLogin(_ => this.setState({ user: Meteor.user() }))
   }
 
   render() {
     return (
       <AuthContext.Provider
-        value={{ isLoggedIn: this.state.loggedIn, user: this.state.user }}
+        value={{ user: this.state.user }}
       >
       {this.props.children}
       </AuthContext.Provider>

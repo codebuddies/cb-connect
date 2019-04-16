@@ -4,10 +4,10 @@ import { AuthConsumer } from './AuthProvider'
 
 const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <AuthConsumer>
-    {({ isLoggedIn, user }) => (
+    {({ user }) => (
       <Route
         render={props =>
-          isLoggedIn ? <Component user={user} {...props} /> : <Redirect to="/login" />
+          user ? <Component {...props} /> : <Redirect to="/login" />
         }
         {...rest}
       />
