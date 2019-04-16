@@ -39,10 +39,10 @@ class ForgotPassword extends React.Component {
 
   render() {
     const { validated, error, success, processing } = this.state;
-    const { isLoggedIn } = this.context
+    const { user } = this.context
 
     return (
-      isLoggedIn ? <Redirect to='/home' /> :
+      user ? <Redirect to='/home' /> :
       <Container fluid>
         <Row>
           <Col sm={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
