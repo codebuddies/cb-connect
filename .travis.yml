@@ -12,6 +12,8 @@ before_script:
   - export PATH=$HOME/.meteor:$PATH
   # Install all the dependencies! 
   - npm install
+script:
+  - npm run lint
 services:
   - mongodb
 cache:

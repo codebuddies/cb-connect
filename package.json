@@ -3,13 +3,12 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "pretest": "npm run prettier && npm run lint",
     "test:meteor": "meteor test --once --driver-package meteortesting:mocha",
     "test:meteor-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "test": "jest",
     "lint": "eslint . --ext .js --ext .jsx",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix",
-    "prettier": "prettier --write \"./**/*.{js,jsx}\"",
+    "prettier:all": "prettier --write \"./**/*.{js,jsx}\"",
     "prettier:check": "prettier -l \"./**/*.{js,jsx}\"",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
     "commit": "git-cz"
