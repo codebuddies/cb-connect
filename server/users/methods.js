@@ -27,14 +27,16 @@ Meteor.methods({
     check(data, {
       reason: String,
       userId: String,
+      entryId: String,
     });
+    console.log(data);
 
     //     "flags": [
     //   {"userID": "AM...sZ", "reason": "my note"},
     //   {"userID": "ds...Di", "reason": "test note"}
     //  ],
 
-    EntriesHelper.update(data);
+    EntriesHelper.updateFlags(data);
   },
   'users.enroll'(data) {
     check(data, {

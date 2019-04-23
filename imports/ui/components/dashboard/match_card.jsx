@@ -8,7 +8,7 @@ class MatchCard extends Component {
     super(props)
     this.showFlagModal = this.showFlagModal.bind(this);
     this.closeFlagModal = this.closeFlagModal.bind(this);
-    this.handleFlagReasonChange = this.handleFlagReasonChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.submitFlagModal = this.submitFlagModal.bind(this);
     this.state = {
       showFlagModal: false,
@@ -23,17 +23,20 @@ class MatchCard extends Component {
     event.preventDefault();
     this.setState({ showFlagModal: false });
   }
-  handleFlagReasonChange(event) {
-    alert('changed')
-    this.setState({flagReason: event.target.value})
+  handleChange(e) {
+    this.setState({
+      flagReason: e.target.value
+    });
   }
-  submitFlagModal(event) {
-    event.preventDefault();
+  submitFlagModal(e) {
+    e.preventDefault();
 
     const data = {
-      "userId": "Am...sZ",
-      "reason": this.state.flagReason
+      "userId": Meteor.userId(),
+      "reason": this.state.flagReason,
+      "entryId": this.props.entryId
     }
+
     this.setState({ showFlagModal: false });
     Meteor.call("entry.flag", data, (error, result) => {
       if (error) {
@@ -42,7 +45,6 @@ class MatchCard extends Component {
       }
       if (result) {
         this.setState({ 'processing' : false });
-        this.props.history.push('/woohoo')
       }
     });
   }
@@ -77,14 +79,14 @@ class MatchCard extends Component {
       </Card>
       
       <Modal show={this.state.showFlagModal} onHide={this.closeFlagModal}>
-      <Form>
+      <Form noValidate onSubmit={e => this.submitFlagModal(e)}>
         <Modal.Header closeButton onClick={this.closeFlagModal}>
           <Modal.Title>Why are you flagging this entry?</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <Form.Group controlId="formGroupFlagReason">
-            <Form.Control type="text" value={this.state.flagReason} onChange={this.handleflagReasonChange} placeholder="Enter reason" />
+          <Form.Group controlId="flagReason">
+            <Form.Control type="text" defaultValue={this.state.flagReason} onChange={this.handleChange} placeholder="Enter reason" />
           </Form.Group>
         </Modal.Body>
 
