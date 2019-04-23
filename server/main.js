@@ -15,7 +15,7 @@ Meteor.startup(() => {
     databaseSeedRemover();
   }
 
-  smtp = {
+  const smtp = {
     username: Meteor.settings.private.smtp.username,
     password: Meteor.settings.private.smtp.password,
     server: Meteor.settings.private.smtp.host,

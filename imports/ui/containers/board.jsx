@@ -7,6 +7,7 @@ const BoardContainer = withTracker(() => {
   const entriesHandle = Meteor.subscribe('entries.board');
   const loading = !entriesHandle.ready();
   const entries = Entries.find().fetch();
+  // eslint-disable-next-line no-unused-vars
   const currentUser = Meteor.userId();
 
   return {

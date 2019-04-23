@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, Collapse, Container, Row, Col } from 'react-bootstrap';
 
 class Faq extends React.Component {
@@ -28,7 +27,7 @@ class Faq extends React.Component {
         <Row>
           <Col>
             <Card>
-              <Card.Header onClick={_ => this.handleClick(1)}>Collapsible Group Item #1</Card.Header>
+              <Card.Header onClick={() => this.handleClick(1)}>Collapsible Group Item #1</Card.Header>
               <Collapse in={openId === 1}>
                 <Card.Body>
                   <Card.Title>Special title treatment</Card.Title>
@@ -45,7 +44,7 @@ class Faq extends React.Component {
               </Collapse>
             </Card>
             <Card>
-              <Card.Header onClick={_ => this.handleClick(2)}>Collapsible Group Item #2</Card.Header>
+              <Card.Header onClick={() => this.handleClick(2)}>Collapsible Group Item #2</Card.Header>
               <Collapse in={openId === 2}>
                 <Card.Body>
                   <Card.Title>Special title treatment</Card.Title>

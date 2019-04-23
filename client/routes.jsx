@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from '../imports/ui/components/login.jsx';
 import Landing from '../imports/ui/components/landing.jsx';
 import Navbar from '../imports/ui/components/navbar.jsx';
@@ -9,7 +9,6 @@ import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
-import Dashboard from '../imports/ui/components/dashboard/dashboard';
 import Profile from '../imports/ui/components/dashboard/profile';
 import AuthenticatedRoute from '../imports/ui/components/hoc/AuthenticatedRoute';
 import { AuthProvider } from '../imports/ui/components/hoc/AuthProvider';

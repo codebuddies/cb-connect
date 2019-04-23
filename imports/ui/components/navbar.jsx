@@ -14,7 +14,7 @@ class NavigationBar extends React.Component {
   }
 
   render() {
-    const { user } = this.context
+    const { user } = this.context;
 
     return (
       <React.Fragment>
