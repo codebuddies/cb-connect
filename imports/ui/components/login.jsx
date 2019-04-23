@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Alert, Card, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { EMAIL_REGEX } from '/imports/constants/regex';
-import { AuthContext } from './hoc/AuthProvider'
+import { AuthContext } from './hoc/AuthProvider';
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -33,10 +33,11 @@ class Login extends React.Component {
 
   render() {
     const { validated, error } = this.state;
-    const { user } = this.context
+    const { user } = this.context;
 
-    return (
-      user ? <Redirect to='/dashboard' /> :
+    return user ? (
+      <Redirect to="/dashboard" />
+    ) : (
       <Container fluid>
         <Row>
           <Col sm={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
@@ -73,12 +74,11 @@ class Login extends React.Component {
             <div className="text-center">
               <Link to="/forgot-password">Forgot Password?</Link>
             </div>
-
           </Col>
         </Row>
       </Container>
     );
   }
 }
-Login.contextType = AuthContext
+Login.contextType = AuthContext;
 export default Login;

@@ -9,7 +9,6 @@ import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
-import Dashboard from '../imports/ui/components/dashboard/dashboard';
 import Profile from '../imports/ui/components/dashboard/profile';
 import AuthenticatedRoute from '../imports/ui/components/hoc/AuthenticatedRoute';
 import { AuthProvider } from '../imports/ui/components/hoc/AuthProvider';

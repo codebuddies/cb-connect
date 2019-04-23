@@ -1,4 +1,6 @@
+import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
+
 Accounts.emailTemplates.siteName = Meteor.settings.private.siteInfo.name;
 Accounts.emailTemplates.from = Meteor.settings.private.emails.person;
 

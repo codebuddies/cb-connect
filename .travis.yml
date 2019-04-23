@@ -1,0 +1,21 @@
+# https://forums.meteor.com/t/integrating-with-travis-ci/2608
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#meteor-apps
+
+language: node_js
+node_js:
+  - "8"
+before_script:
+  # Install meteor
+  - curl https://install.meteor.com | /bin/sh
+  # Add meteor to path (instead of asking for sudo in the Travis container)
+  # We can then use the faster container infrastructure - http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+  - export PATH=$HOME/.meteor:$PATH
+  # Install all the dependencies! 
+  - npm install
+script:
+  - npm run lint
+services:
+  - mongodb
+cache:
+  directories: 
+    - node_modules
