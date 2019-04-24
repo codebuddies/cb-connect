@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
-import withUser from '/imports/ui/components/hoc/with-user.jsx';
+import { AuthContext } from './hoc/AuthProvider';
 
-class NavbarWrapper extends React.Component {
+class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,7 +14,7 @@ class NavbarWrapper extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user } = this.context;
 
     return (
       <React.Fragment>
@@ -61,4 +61,5 @@ class NavbarWrapper extends React.Component {
   }
 }
 
-export default withUser(NavbarWrapper);
+NavigationBar.contextType = AuthContext;
+export default NavigationBar;
