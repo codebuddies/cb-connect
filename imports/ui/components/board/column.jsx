@@ -1,5 +1,6 @@
 import React from 'react';
 import Entry from './entry';
+import { PropTypes } from 'prop-types';
 
 class Column extends React.Component {
   render() {
@@ -17,5 +18,11 @@ class Column extends React.Component {
     );
   }
 }
+
+Column.propTypes = {
+  // We can check optional and required types here
+  entries: PropTypes.array,
+  heading: PropTypes.string,
+};
 
 export default Column;

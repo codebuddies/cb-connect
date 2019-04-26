@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Nav, Tab } from 'react-bootstrap';
 import MatchCard from './match_card';
+import { PropTypes } from 'prop-types';
 
 const MatchesSection = props => {
   const { ownEntries } = props;
@@ -40,6 +41,10 @@ const MatchesSection = props => {
       </Card>
     </Tab.Container>
   );
+};
+
+MatchesSection.propTypes = {
+  ownEntries: PropTypes.element,
 };
 
 export default MatchesSection;

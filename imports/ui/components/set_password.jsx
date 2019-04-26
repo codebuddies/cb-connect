@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
+import { PropTypes } from 'prop-types';
 
 class SetPassword extends Component {
   constructor(props) {
@@ -118,5 +119,10 @@ class SetPassword extends Component {
     );
   }
 }
+
+SetPassword.propTypes = {
+  match: PropTypes.boolean,
+  history: PropTypes.array,
+};
 
 export default SetPassword;

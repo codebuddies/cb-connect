@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Dropdown, ButtonGroup, Button } from 'react-bootstrap';
 import '/imports/ui/styles/_cards.scss';
+import { PropTypes } from 'prop-types';
 
 class MatchCard extends Component {
   constructor(props) {
@@ -37,5 +38,12 @@ class MatchCard extends Component {
     );
   }
 }
+
+MatchCard.propTypes = {
+  oneLineIntro: PropTypes.string,
+  lookingFor: PropTypes.string,
+  ownCard: PropTypes.boolean,
+  timezone: PropTypes.string,
+};
 
 export default MatchCard;

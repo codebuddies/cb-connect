@@ -212,8 +212,9 @@ class Apply extends React.Component {
   }
 }
 
-Apply.PropTypes = {
+Apply.propTypes = {
   // We can check optional and required types here
+  history: PropTypes.array,
 };
 
 export default Apply;

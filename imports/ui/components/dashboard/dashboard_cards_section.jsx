@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CardColumns, Card, Collapse } from 'react-bootstrap';
 import MatchCard from './match_card';
+import { PropTypes } from 'prop-types';
 
 class DashboardCardsSection extends Component {
   render() {
@@ -37,5 +38,11 @@ class DashboardCardsSection extends Component {
     );
   }
 }
+
+DashboardCardsSection.propTypes = {
+  section: PropTypes.element,
+  visibility: PropTypes.bool,
+  entries: PropTypes.array,
+};
 
 export default DashboardCardsSection;

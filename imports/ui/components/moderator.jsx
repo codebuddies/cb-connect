@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import BoardContainer from '/imports/ui/containers/board.jsx';
+import { PropTypes } from 'prop-types';
 
 const Moderator = props => {
   const { user } = props;
@@ -17,6 +18,10 @@ const Moderator = props => {
       </Row>
     </Container>
   );
+};
+
+Moderator.propTypes = {
+  user: PropTypes.object,
 };
 
 export default Moderator;

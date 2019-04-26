@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ListGroup } from 'react-bootstrap';
+import { PropTypes } from 'prop-types';
 
 class DashboardSidebar extends Component {
   constructor(props) {
@@ -40,5 +41,11 @@ class DashboardSidebar extends Component {
     );
   }
 }
+
+DashboardSidebar.propTypes = {
+  onVisibilityChange: PropTypes.boolean,
+  sections: PropTypes.element,
+  currentUserName: PropTypes.string,
+};
 
 export default DashboardSidebar;

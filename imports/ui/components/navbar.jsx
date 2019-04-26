@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import withUser from '/imports/ui/components/hoc/with-user.jsx';
+import { PropTypes } from 'prop-types';
 
 class NavbarWrapper extends React.Component {
   constructor(props) {
@@ -60,5 +61,10 @@ class NavbarWrapper extends React.Component {
     );
   }
 }
+
+NavbarWrapper.propTypes = {
+  user: PropTypes.object,
+  children: PropTypes.object,
+};
 
 export default withUser(NavbarWrapper);
