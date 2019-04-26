@@ -44,6 +44,10 @@ Open Canvas: [https://docs.google.com/presentation/d/1QjVW5UPnyfCQaLCvM-Lqne87a1
 3. Before you start up the app, make sure to `meteor npm install`.
 4. Start the app with the following command: `meteor --settings dev-settings.json`
 
+Tips:
+- If you need help or would like to pair on an issue, join our Discord at https://discord.gg/yvtBmEW ask! 
+- When you have localhost:3000 running, type control-m to see the local data available on the page.
+
 Feel free to file new issues. We're looking for design, UX, and code (any: React, Javascript, Meteor, MongoDB) help.
 
 If you see an issue under the `help wanted` category that you'd like to tackle, please comment that you're working on it, and create a new branch for the issue.

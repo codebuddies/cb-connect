@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from '../imports/ui/components/login.jsx';
 import Landing from '../imports/ui/components/landing.jsx';
 import Navbar from '../imports/ui/components/navbar.jsx';
@@ -8,48 +8,28 @@ import Woohoo from '../imports/ui/components/woohoo.jsx';
 import Apply from '../imports/ui/components/apply.jsx';
 import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
-import Profile from '../imports/ui/components/dashboard/profile.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
-import withUser from '../imports/ui/components/hoc/with-user.jsx';
+import Profile from '../imports/ui/components/dashboard/profile';
+import AuthenticatedRoute from '../imports/ui/components/hoc/AuthenticatedRoute';
+import { AuthProvider } from '../imports/ui/components/hoc/AuthProvider';
 
 export const renderRoutes = () => (
   <Router>
-    <Switch>
+    <AuthProvider>
       <Navbar>
-        <Route exact path="/" component={Landing} />
-        <RouteWithUser exact path="/dashboard" component={Profile} />
-        <RouteWithOutUser exact path="/login" component={Login} />
-        <RouteWithOutUser exact path="/forgot-password" component={ForgotPassword} />
-        <RouteWithOutUser exact path="/enroll-account/:token" component={SetPassword} />
-        <RouteWithOutUser exact path="/reset-password/:token" component={SetPassword} />
-        <RouteWithUser exact path="/moderator" component={Moderator} />
-        <Route exact path="/faq" component={Faq} />
-        <RouteWithOutUser path="/apply" component={Apply} />
-        <Route path="/woohoo" component={withUser(Woohoo)} />
+        <Switch>
+          <AuthenticatedRoute path="/dashboard" component={Profile} />
+          <AuthenticatedRoute path="/moderator" component={Moderator} />
+          <Route path="/login" component={Login} />
+          <Route path="/forgot-password" component={ForgotPassword} />
+          <Route exact path="/enroll-account/:token" component={SetPassword} />
+          <Route exact path="/reset-password/:token" component={SetPassword} />
+          <Route exact path="/faq" component={Faq} />
+          <Route path="/apply" component={Apply} />
+          <Route path="/woohoo" component={Woohoo} />
+          <Route exact path="/" component={Landing} />
+        </Switch>
       </Navbar>
-    </Switch>
+    </AuthProvider>
   </Router>
 );
-
-// All routes where user supposed to be logged in
-// If user is not logged in, redirect them to login page
-const RouteWithUser = withUser(({ user, component: Component, ...rest }) => {
-  const { pathname } = window.location;
-
-  if (user) {
-    return <Route {...rest} render={props => <Component {...props} user={user} />} />;
-  } else if (pathname !== '/login' && pathname === rest.path) {
-    return <Redirect push to="/login" />;
-  }
-  return null;
-});
-
-const RouteWithOutUser = withUser(({ user, component: Component, ...rest }) => {
-  const { pathname } = window.location;
-  if (!user) {
-    return <Route {...rest} render={props => <Component {...props} user={user} />} />;
-  } else if (pathname !== '/dashboard' && pathname === rest.path) {
-    return <Redirect push to="/dashboard" />;
-  }
-  return null;
-});
