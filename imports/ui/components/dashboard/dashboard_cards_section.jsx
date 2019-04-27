@@ -24,6 +24,7 @@ class DashboardCardsSection extends Component {
               entries.map(entry => (
                 <MatchCard
                   key={entry._id}
+                  entryId={entry._id}
                   lookingFor={entry.lookingFor}
                   timezone={entry.tz.title}
                   oneLineIntro={entry.oneLineIntro}

@@ -5,7 +5,7 @@ const EntriesHelper = {
     Entries.insert(data);
   },
   updateFlags(data) {
-    Entries.update({ _id: data.entryId }, { data });
+    Entries.update({ _id: data.entryId }, { $push: { flags: data } });
   },
 };
 
