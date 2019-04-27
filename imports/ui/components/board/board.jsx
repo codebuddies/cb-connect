@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Column from './column';
 import '/imports/ui/styles/_board.scss';
 import { categories } from '/lib/data/categories.js';
+import { PropTypes } from 'prop-types';
 
 class Board extends React.Component {
   constructor(props) {
@@ -25,5 +26,10 @@ class Board extends React.Component {
     return <Container id="board">{this.getColumns()}</Container>;
   }
 }
+
+Board.propTypes = {
+  // We can check optional and required types here
+  entries: PropTypes.array,
+};
 
 export default Board;

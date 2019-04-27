@@ -1,6 +1,7 @@
 import React from 'react';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import { PropTypes } from 'prop-types';
 
 function Entry(props) {
   const { timezone, lookingFor, oneLineIntro } = props;
@@ -16,4 +17,10 @@ function Entry(props) {
   );
 }
 
+Entry.propTypes = {
+  // We can check optional and required types here
+  timezone: PropTypes.string,
+  lookingFor: PropTypes.array,
+  oneLineIntro: PropTypes.string,
+};
 export default Entry;

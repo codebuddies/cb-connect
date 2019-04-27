@@ -3,6 +3,7 @@ import DashboardSidebar from './dashboard_sidebar';
 import MatchesSection from './matches_section';
 import DashboardCardsSection from './dashboard_cards_section';
 import { categories } from '/lib/data/categories.js';
+import { PropTypes } from 'prop-types';
 
 const sectionTargets = {
   //see: categories.js for numbers
@@ -94,5 +95,12 @@ class Dashboard extends Component {
     );
   }
 }
+
+Dashboard.propTypes = {
+  entries: PropTypes.array,
+  handleCategoryChange: PropTypes.element,
+  currentUserName: PropTypes.string,
+  ownEntries: PropTypes.element,
+};
 
 export default Dashboard;

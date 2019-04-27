@@ -4,6 +4,7 @@ import { timezones } from '/lib/data/timezones';
 import { Alert, Card, Button, Form } from 'react-bootstrap';
 import { EMAIL_REGEX } from '/imports/constants/regex';
 import { Meteor } from 'meteor/meteor';
+import { PropTypes } from 'prop-types';
 
 class Apply extends React.Component {
   constructor(props) {
@@ -210,5 +211,10 @@ class Apply extends React.Component {
     );
   }
 }
+
+Apply.propTypes = {
+  // We can check optional and required types here
+  history: PropTypes.array,
+};
 
 export default Apply;

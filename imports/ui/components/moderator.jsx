@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { AuthContext } from './hoc/AuthProvider';
 import BoardContainer from '/imports/ui/containers/board.jsx';
+import { PropTypes } from 'prop-types';
 
 class Moderator extends React.Component {
   constructor(props) {
@@ -28,4 +29,9 @@ class Moderator extends React.Component {
 }
 
 Moderator.contextType = AuthContext;
+    
+Moderator.propTypes = {
+  user: PropTypes.object,
+};
+    
 export default Moderator;
