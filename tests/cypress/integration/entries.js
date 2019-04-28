@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 describe('Entries', function() {
   it('.should be able to be added through the form', function() {
     cy.visit('http://localhost:3000/apply');
