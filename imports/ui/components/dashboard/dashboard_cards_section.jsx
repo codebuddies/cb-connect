@@ -41,7 +41,7 @@ class DashboardCardsSection extends Component {
 }
 
 DashboardCardsSection.propTypes = {
-  section: PropTypes.element,
+  section: PropTypes.string,
   visibility: PropTypes.bool,
   entries: PropTypes.array,
 };

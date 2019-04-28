@@ -43,8 +43,8 @@ class DashboardSidebar extends Component {
 }
 
 DashboardSidebar.propTypes = {
-  onVisibilityChange: PropTypes.boolean,
-  sections: PropTypes.element,
+  onVisibilityChange: PropTypes.func,
+  sections: PropTypes.array,
   currentUserName: PropTypes.string,
 };
 

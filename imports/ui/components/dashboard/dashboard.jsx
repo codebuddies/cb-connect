@@ -98,9 +98,9 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   entries: PropTypes.array,
-  handleCategoryChange: PropTypes.element,
+  handleCategoryChange: PropTypes.func,
   currentUserName: PropTypes.string,
-  ownEntries: PropTypes.element,
+  ownEntries: PropTypes.array,
 };
 
 export default Dashboard;

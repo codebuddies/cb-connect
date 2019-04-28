@@ -115,8 +115,9 @@ class MatchCard extends Component {
 MatchCard.propTypes = {
   oneLineIntro: PropTypes.string,
   lookingFor: PropTypes.string,
-  ownCard: PropTypes.boolean,
+  ownCard: PropTypes.string,
   timezone: PropTypes.string,
+  entryId: PropTypes.string,
 };
 
 export default MatchCard;
