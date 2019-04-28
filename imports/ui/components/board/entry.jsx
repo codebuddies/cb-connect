@@ -1,6 +1,5 @@
 import React from 'react';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-// import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import { MdFavorite } from 'react-icons/md';
 import { PropTypes } from 'prop-types';
 
 function Entry(props) {
@@ -8,7 +7,7 @@ function Entry(props) {
   return (
     <div className="entry">
       <span className="favorite">
-        <FavoriteIcon className="favorite" />
+        <MdFavorite className="favorite" />
       </span>
       <p>{oneLineIntro}</p>
       <p>{lookingFor}</p>
