@@ -29,9 +29,9 @@ class Moderator extends React.Component {
 }
 
 Moderator.contextType = AuthContext;
-    
+
 Moderator.propTypes = {
   user: PropTypes.object,
 };
-    
+
 export default Moderator;
