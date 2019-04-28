@@ -52,7 +52,7 @@ class MatchCard extends Component {
   render() {
     const { oneLineIntro, lookingFor, ownCard, timezone } = this.props;
     return (
-      <div>
+      <React.Fragment>
         <Card>
           <Card.Body>
             <Card.Title className="font-weight-normal">{oneLineIntro}</Card.Title>
@@ -107,7 +107,7 @@ class MatchCard extends Component {
             </Modal.Footer>
           </Form>
         </Modal>
-      </div>
+      </React.Fragment>
     );
   }
 }
