@@ -11,7 +11,9 @@
     "prettier:all": "prettier --write \"./**/*.{js,jsx}\"",
     "prettier:check": "prettier -l \"./**/*.{js,jsx}\"",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "cypress:gui": "cypress open",
+    "cypress:headless": "cypress run"
   },
   "engines": {
     "node": "8.11.4"
@@ -43,6 +45,7 @@
     "babel-jest": "^24.5.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "commitizen": "^3.0.7",
+    "cypress": "^3.2.0",
     "cz-conventional-changelog": "2.1.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
