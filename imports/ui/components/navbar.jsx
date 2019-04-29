@@ -4,6 +4,7 @@ import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { PropTypes } from 'prop-types';
 import { AuthContext } from './hoc/AuthProvider';
+
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
