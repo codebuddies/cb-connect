@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { AuthConsumer } from './AuthProvider';
+import { PropTypes } from 'prop-types';
 
 const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <AuthConsumer>
@@ -12,4 +12,5 @@ const AuthenticatedRoute = ({ component: Component, ...rest }) => (
 AuthenticatedRoute.propTypes = {
   component: PropTypes.func,
 };
+
 export default AuthenticatedRoute;

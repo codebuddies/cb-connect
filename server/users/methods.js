@@ -23,6 +23,14 @@ Accounts.onCreateUser((options, user) => {
 });
 
 Meteor.methods({
+  'entry.flag'(data) {
+    check(data, {
+      reason: String,
+      userId: String,
+      entryId: String,
+    });
+    EntriesHelper.updateFlags(data);
+  },
   'users.enroll'(data) {
     check(data, {
       category: String,
@@ -94,6 +102,7 @@ Meteor.methods({
           oneLineIntro,
           verified: false,
           matched: false,
+          flags: [],
           preferences: [],
           previousMatches: [],
         };

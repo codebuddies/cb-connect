@@ -44,7 +44,7 @@ const MatchesSection = props => {
 };
 
 MatchesSection.propTypes = {
-  ownEntries: PropTypes.element,
+  ownEntries: PropTypes.array,
 };
 
 export default MatchesSection;

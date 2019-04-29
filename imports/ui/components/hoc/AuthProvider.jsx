@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
+import { PropTypes } from 'prop-types';
 const AuthContext = React.createContext();
 
 class AuthProvider extends React.Component {
@@ -27,4 +27,9 @@ AuthProvider.propTypes = {
 };
 
 const AuthConsumer = AuthContext.Consumer;
+
+AuthProvider.propTypes = {
+  children: PropTypes.element,
+};
+
 export { AuthProvider, AuthConsumer, AuthContext };

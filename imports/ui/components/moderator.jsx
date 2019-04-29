@@ -27,7 +27,6 @@ class Moderator extends React.Component {
     );
   }
 }
-
 Moderator.contextType = AuthContext;
 
 Moderator.propTypes = {
