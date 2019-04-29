@@ -40,8 +40,7 @@ class MatchCard extends Component {
     this.setState({ showFlagModal: false });
     Meteor.call('entry.flag', data, (error, result) => {
       if (error) {
-        this.setState({ error: error.reason });
-        this.setState({ processing: false });
+        this.setState({ error: error.reason, processing: false });
       }
       if (result) {
         this.setState({ processing: false });
