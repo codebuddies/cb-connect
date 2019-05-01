@@ -10,7 +10,7 @@ import Apply from '../imports/ui/pages/apply';
 import ForgotPassword from '../imports/ui/pages/forgot_password';
 import SetPassword from '../imports/ui/pages/set_password';
 import Moderator from '../imports/ui/pages/moderator';
-import Profile from '../imports/ui/components/dashboard/profile';
+import Profile from '../imports/ui/pages/dashboard/profile';
 
 // Import HOCs and components
 import AuthenticatedRoute from '../imports/ui/hoc/AuthenticatedRoute';
