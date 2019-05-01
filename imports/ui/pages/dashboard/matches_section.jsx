@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, Nav, Tab } from 'react-bootstrap';
-import MatchCard from './match_card';
 import { PropTypes } from 'prop-types';
+
+import { Card, Nav, Tab } from 'react-bootstrap';
+import MatchCard from '/imports/ui/components/match_card';
 
 const MatchesSection = props => {
   const { ownEntries } = props;

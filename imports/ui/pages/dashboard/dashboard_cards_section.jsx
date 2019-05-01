@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { CardColumns, Card, Collapse } from 'react-bootstrap';
-import MatchCard from './match_card';
 import { PropTypes } from 'prop-types';
+
+import { CardColumns, Card, Collapse } from 'react-bootstrap';
+import MatchCard from '/imports/ui/components/match_card';
 
 class DashboardCardsSection extends Component {
   render() {

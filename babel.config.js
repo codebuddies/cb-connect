@@ -14,6 +14,7 @@ module.exports = {
         alias: {
           lib: './lib',
           components: './imports/ui/components',
+          pages: './imports/ui/pages',
         },
       },
     ],
