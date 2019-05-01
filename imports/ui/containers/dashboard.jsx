@@ -1,6 +1,6 @@
 import { withTracker } from 'meteor/react-meteor-data';
 import Entries from '/imports/api/entries/entries.js';
-import Dashboard from '/imports/ui/pages/dashboard/dashboard';
+import Dashboard from '/imports/ui/pages/dashboard';
 
 // eslint-disable-next-line no-undef
 const categoryId = new ReactiveVar(3);
