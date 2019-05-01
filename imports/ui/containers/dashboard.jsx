@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import Entries from '/imports/api/entries/entries.js';
 import Dashboard from '/imports/ui/pages/dashboard';
