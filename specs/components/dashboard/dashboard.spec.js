@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { shallow } from 'enzyme';
-import Dashboard from 'components/dashboard/dashboard';
+import Dashboard from 'components/dashboard';
 
 describe('<Dashboard />', () => {
   // TODO: Implement a snapshot test here; currently blocked by how this
