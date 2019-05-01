@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { AuthContext } from './hoc/AuthProvider';
+import { AuthContext } from '../hoc/AuthProvider';
 import BoardContainer from '/imports/ui/containers/board.jsx';
 import { PropTypes } from 'prop-types';
 

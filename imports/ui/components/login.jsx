@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Alert, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { EMAIL_REGEX } from '/imports/constants/regex';
-import { AuthContext } from './hoc/AuthProvider';
+import { AuthContext } from '../hoc/AuthProvider';
 class Login extends React.Component {
   constructor(props) {
     super(props);

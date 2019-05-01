@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import BoardContainer from '/imports/ui/containers/board.jsx';
-import { AuthContext } from './hoc/AuthProvider';
+import { AuthContext } from '../hoc/AuthProvider';
 
 class Landing extends React.Component {
   constructor(props) {

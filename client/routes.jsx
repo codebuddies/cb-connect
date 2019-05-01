@@ -10,8 +10,8 @@ import ForgotPassword from '../imports/ui/components/forgot_password.jsx';
 import SetPassword from '../imports/ui/components/set_password.jsx';
 import Moderator from '../imports/ui/components/moderator.jsx';
 import Profile from '../imports/ui/components/dashboard/profile';
-import AuthenticatedRoute from '../imports/ui/components/hoc/AuthenticatedRoute';
-import { AuthProvider } from '../imports/ui/components/hoc/AuthProvider';
+import AuthenticatedRoute from '../imports/ui/hoc/AuthenticatedRoute';
+import { AuthProvider } from '../imports/ui/hoc/AuthProvider';
 
 export const renderRoutes = () => (
   <Router>
