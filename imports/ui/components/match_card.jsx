@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Dropdown, ButtonGroup, Button, Modal, Form } from 'react-bootstrap';
-import '/imports/ui/styles/_cards.scss';
 import { PropTypes } from 'prop-types';
+
+import { Card, Dropdown, ButtonGroup, Button, Modal, Form } from 'react-bootstrap';
 
 class MatchCard extends Component {
   constructor(props) {
