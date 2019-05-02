@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import MatchesSection from 'components/dashboard/matches_section';
+import MatchesSection from '../dashboard_matches_section';
 
 describe('<MatchesSection />', () => {
   it('should render correctly', () => {

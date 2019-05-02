@@ -3,7 +3,7 @@ import React from 'react';
 // React-Bootstrap components within the DashboardSidebar component.
 import { mount } from 'enzyme';
 import { categories } from 'lib/data/categories';
-import DashboardSidebar from 'components/dashboard/dashboard_sidebar';
+import DashboardSidebar from '../dashboard_sidebar';
 
 const validCategories = categories.map(category => category.short_label);
 
