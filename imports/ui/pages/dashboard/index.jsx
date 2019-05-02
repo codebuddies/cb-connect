@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import { categories } from '/lib/data/categories.js';
 
 import DashboardSidebar from './dashboard_sidebar';
-import MatchesSection from './matches_section';
+import MatchesSection from './dashboard_matches_section';
 import DashboardCardsSection from './dashboard_cards_section';
 
 const sectionTargets = {
