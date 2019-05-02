@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Column from './column';
-import '/imports/ui/styles/_board.scss';
+import './_board.scss';
 import { categories } from '/lib/data/categories.js';
 import { PropTypes } from 'prop-types';
 
