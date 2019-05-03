@@ -19,7 +19,7 @@ function Entry(props) {
 Entry.propTypes = {
   // We can check optional and required types here
   timezone: PropTypes.string,
-  lookingFor: PropTypes.array,
+  lookingFor: PropTypes.string,
   oneLineIntro: PropTypes.string,
 };
 export default Entry;
