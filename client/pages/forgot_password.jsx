@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { Accounts } from 'meteor/accounts-base';
-import { EMAIL_REGEX } from '/imports/constants/regex';
+import { EMAIL_REGEX } from '/lib/constants/regex';
 import { AuthContext } from '../hoc/AuthProvider';
 import { Redirect } from 'react-router-dom';
 

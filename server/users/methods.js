@@ -2,8 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { check } from 'meteor/check';
 import { _ } from 'lodash';
-import { timezones } from '../../lib/data/timezones';
-import { categories } from '../../lib/data/categories';
+import { timezones } from '/lib/data/timezones';
+import { categories } from '/lib/data/categories';
 import EntriesHelper from '/imports/api/entries/server/helpers.js';
 
 Accounts.onCreateUser((options, user) => {

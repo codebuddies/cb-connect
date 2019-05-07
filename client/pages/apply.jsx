@@ -2,7 +2,7 @@ import React from 'react';
 import { categories } from '/lib/data/categories';
 import { timezones } from '/lib/data/timezones';
 import { Alert, Card, Button, Form } from 'react-bootstrap';
-import { EMAIL_REGEX } from '/imports/constants/regex';
+import { EMAIL_REGEX } from '/lib/constants/regex';
 import { Meteor } from 'meteor/meteor';
 import { PropTypes } from 'prop-types';
 
