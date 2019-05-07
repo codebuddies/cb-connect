@@ -3,8 +3,6 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test:meteor": "meteor test --once --driver-package meteortesting:mocha",
-    "test:meteor-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "test": "jest",
     "lint": "eslint . --ext .js --ext .jsx",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix",
@@ -60,8 +58,7 @@
     "mainModule": {
       "client": "client/main.js",
       "server": "server/main.js"
-    },
-    "testModule": "tests/main.js"
+    }
   },
   "husky": {
     "hooks": {
