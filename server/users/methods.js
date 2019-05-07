@@ -4,7 +4,7 @@ import { check } from 'meteor/check';
 import { _ } from 'lodash';
 import { timezones } from '/lib/data/timezones';
 import { categories } from '/lib/data/categories';
-import EntriesHelper from '/imports/api/entries/helpers.js';
+import EntriesHelper from '/api/entries/helpers.js';
 
 Accounts.onCreateUser((options, user) => {
   const customizedUser = Object.assign(

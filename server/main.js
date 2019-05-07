@@ -3,8 +3,8 @@ import { databaseSeeder, databaseSeedRemover } from './seeder';
 import './configs';
 import './users/methods';
 
-import '/imports/api/entries/publications.js';
-import '/imports/api/entries/methods.js';
+import '/api/entries/publications.js';
+import '/api/entries/methods.js';
 
 Meteor.startup(() => {
   // code to run on server at startup
