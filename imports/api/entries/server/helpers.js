@@ -1,4 +1,4 @@
-import Entries from '/imports/api/entries/entries.js';
+import Entries from '/imports/api/entries';
 
 const EntriesHelper = {
   add(data) {
