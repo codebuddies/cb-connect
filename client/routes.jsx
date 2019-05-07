@@ -2,20 +2,19 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Import pages
-import Login from '../imports/ui/pages/login';
-import Landing from '../imports/ui/pages/landing';
-import Faq from '../imports/ui/pages/faq';
-import Woohoo from '../imports/ui/pages/woohoo';
-import Apply from '../imports/ui/pages/apply';
-import ForgotPassword from '../imports/ui/pages/forgot_password';
-import SetPassword from '../imports/ui/pages/set_password';
-import Moderator from '../imports/ui/pages/moderator';
-import Profile from '../imports/ui/pages/dashboard/profile';
+import Login from './pages/login';
+import Landing from './pages/landing';
+import Faq from './pages/faq';
+import Woohoo from './pages/woohoo';
+import Apply from './pages/apply';
+import ForgotPassword from './pages/forgot_password';
+import SetPassword from './pages/set_password';
+import Profile from './pages/dashboard/profile';
 
 // Import HOCs and components
-import AuthenticatedRoute from '../imports/ui/hoc/AuthenticatedRoute';
-import { AuthProvider } from '../imports/ui/hoc/AuthProvider';
-import Navbar from '../imports/ui/components/navbar';
+import AuthenticatedRoute from './hoc/AuthenticatedRoute';
+import { AuthProvider } from './hoc/AuthProvider';
+import Navbar from './components/navbar';
 
 export const renderRoutes = () => (
   <Router>
@@ -23,7 +22,6 @@ export const renderRoutes = () => (
       <Navbar>
         <Switch>
           <AuthenticatedRoute path="/dashboard" component={Profile} />
-          <AuthenticatedRoute path="/moderator" component={Moderator} />
           <Route path="/login" component={Login} />
           <Route path="/forgot-password" component={ForgotPassword} />
           <Route exact path="/enroll-account/:token" component={SetPassword} />

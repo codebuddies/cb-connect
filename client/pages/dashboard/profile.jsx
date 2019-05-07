@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DashboardContainer from '/imports/ui/containers/dashboard.jsx';
+import DashboardContainer from '/client/containers/dashboard.jsx';
 
 class Profile extends Component {
   constructor(props) {
