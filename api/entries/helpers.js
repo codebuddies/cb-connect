@@ -1,4 +1,4 @@
-import Entries from '/imports/api/entries';
+import Entries from '/api/entries';
 
 const EntriesHelper = {
   add(data) {
