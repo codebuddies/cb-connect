@@ -17,7 +17,7 @@ sleep 2
 cd  $root_directory/build/bundle/programs/server/ && meteor npm install
 mkdir -p /cb-connect/bundles/$commitHash
 mv $root_directory/build/bundle/* /cb-connect/bundles/$commitHash
-cp $root_directory/conf/dev-settings.json /cb-connect/bundles/$commitHash/dev-settings.json
+cp $root_directory/dev-settings.json /cb-connect/bundles/$commitHash/dev-settings.json
 rm -rf $root_directory/build
 rm -rf $root_directory/.meteor/local
 rm -rf $root_directory/node_modules
