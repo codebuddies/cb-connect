@@ -22,8 +22,8 @@ CONFIG=$DIRECTORY/dev-settings.json
 cd $DIRECTORY
 
 export COMMIT_HASH=$1
-export ROOT_URL='http://cb-connect.com'
-export MONGO_URL='mongodb://127.0.0.1:27017/cb-connect'
+export ROOT_URL='https://connect.codebuddies.org'
+export MONGO_URL='mongodb://rootuser:ns2HcknGze79V9N3@prod-e8gy0.mongodb.net/cb-connect'
 export PORT=3000
 export METEOR_SETTINGS=`cat $CONFIG`
 # export MAIL_URL='smtp://user:password@mailhost:port/'
