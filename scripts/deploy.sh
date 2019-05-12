@@ -16,7 +16,7 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 
 
-CONFIG=$DIRECTORY/dev-settings.json
+CONFIG=$DIRECTORY/settings.json
 /opt/nodejs/bin/forever stop cb-connect
 
 cd $DIRECTORY
