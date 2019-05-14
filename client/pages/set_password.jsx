@@ -53,7 +53,7 @@ class SetPassword extends Component {
         } else {
           this.setState({ processing: false });
           this.setState({ success: 'Welcome To CB Connect !' });
-          this.props.history.push('/');
+          this.props.history.push('/dashboard');
         }
       });
     }
