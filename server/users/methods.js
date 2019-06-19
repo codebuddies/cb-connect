@@ -23,6 +23,12 @@ Accounts.onCreateUser((options, user) => {
 });
 
 Meteor.methods({
+  'entry.request'(data) {
+    check(data, {
+      entryId: String,
+    });
+    EntriesHelper.requestEntry(data);
+  },
   'entry.flag'(data) {
     check(data, {
       reason: String,
@@ -104,6 +110,7 @@ Meteor.methods({
           matched: false,
           flags: [],
           preferences: [],
+          requesters: [],
           previousMatches: [],
         };
 
