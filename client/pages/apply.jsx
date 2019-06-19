@@ -31,7 +31,7 @@ class Apply extends React.Component {
 
   getForm1() {
     const { formValidated } = this.state;
-
+    const { lookingFor } = this._formData || {};
     return (
       <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
         <Card>
@@ -54,6 +54,14 @@ class Apply extends React.Component {
                 }
               />
             ))}
+            <hr />
+            <Form.Group controlId="lookingFor">
+              <Form.Label>Please provide more detail about what you're looking for:</Form.Label>
+              <Form.Control as="textarea" rows="4" required defaultValue={lookingFor} />
+              <Form.Text className="text-muted">
+                e.g. I am working on ______ and struggling with ______. Looking for someone who can ______.
+              </Form.Text>
+            </Form.Group>
           </Card.Body>
         </Card>
         <br />
@@ -66,7 +74,7 @@ class Apply extends React.Component {
 
   getForm2() {
     const { formValidated } = this.state;
-    const { name, oneLineIntro, lookingFor } = this._formData || {};
+    const { name, oneLineIntro } = this._formData || {};
 
     return (
       <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
@@ -98,14 +106,6 @@ class Apply extends React.Component {
               <Form.Control.Feedback type="invalid">
                 Please share an intro between 8 and 140 characters long.
               </Form.Control.Feedback>
-            </Form.Group>
-
-            <Form.Group controlId="lookingFor">
-              <Form.Label>Please provide more detail about what you're looking for:</Form.Label>
-              <Form.Control as="textarea" rows="4" required defaultValue={lookingFor} />
-              <Form.Text className="text-muted">
-                e.g. I am working on ______ and struggling with ______. Looking for someone who can ______.
-              </Form.Text>
             </Form.Group>
           </Card.Body>
         </Card>
