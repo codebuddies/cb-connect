@@ -74,7 +74,7 @@ class Apply extends React.Component {
 
   getForm2() {
     const { formValidated } = this.state;
-    const { name, oneLineIntro } = this._formData || {};
+    const { name, oneLineIntro, skillHelpOther, skillImproveSelf } = this._formData || {};
 
     return (
       <Form noValidate validated={formValidated} onSubmit={this.handleSubmit}>
@@ -97,15 +97,24 @@ class Apply extends React.Component {
 
             <Form.Group controlId="oneLineIntro">
               <Form.Label>One-line intro of yourself:</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                defaultValue={oneLineIntro}
-                pattern="[A-Za-z0-9,!?\x27\x22\s\.]{8,140}"
-              />
+              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[\w\-,!?\x27\x22\s\.]{8,140}" />
               <Form.Control.Feedback type="invalid">
                 Please share an intro between 8 and 140 characters long.
               </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="skillHelpOther">
+              <Form.Label>What skill(s) can you help others with?</Form.Label>
+              <Form.Control type="text" required defaultValue={skillHelpOther} pattern="[\w\-,!?\x27\x22\s\.]{1,140}" />
+              <Form.Text className="text-muted">
+                Coding skills are nice, but this doesn't have to be technical!
+              </Form.Text>
+            </Form.Group>
+            <Form.Group controlId="skillImproveSelf">
+              <Form.Label>What skill(s) are you trying to improve?</Form.Label>
+              <Form.Control type="text" required defaultValue={skillHelpOther} pattern="[\w\-,!?\x27\x22\s\.]{1,140}" />
+              <Form.Text className="text-muted">
+                e.g C, Javascript, Python, Web Dev, Version Control, Interviewing, etc.
+              </Form.Text>
             </Form.Group>
           </Card.Body>
         </Card>
@@ -191,10 +200,22 @@ class Apply extends React.Component {
   }
 
   updateFormData(form) {
-    const { name, oneLineIntro, lookingFor, email, timezone, category } = form.elements;
+    const {
+      name,
+      oneLineIntro,
+      lookingFor,
+      online,
+      skillHelpOther,
+      skillImproveSelf,
+      email,
+      timezone,
+      category,
+    } = form.elements;
     if (name && name.value) this._formData.name = name.value;
     if (oneLineIntro && oneLineIntro.value) this._formData.oneLineIntro = oneLineIntro.value;
     if (lookingFor && lookingFor.value) this._formData.lookingFor = lookingFor.value;
+    if (skillHelpOther && skillHelpOther.value) this._formData.skillHelpOther = skillHelpOther.value;
+    if (skillImproveSelf && skillImproveSelf.value) this._formData.skillImproveSelf = skillImproveSelf.value;
     if (email && email.value) this._formData.email = email.value;
     if (timezone && timezone.value) this._formData.timezone = timezone.value;
     if (category && category.value) this._formData.category = category.value;
@@ -214,7 +235,7 @@ class Apply extends React.Component {
 
 Apply.propTypes = {
   // We can check optional and required types here
-  history: PropTypes.array,
+  history: PropTypes.object,
 };
 
 export default Apply;
