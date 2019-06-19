@@ -53,6 +53,21 @@ let Schema = new SimpleSchema({
   'preferences.$.createdAt': {
     type: Date,
   },
+  requesters: {
+    type: Array,
+    optional: true,
+  },
+  'requesters.$': {
+    type: Object,
+    optional: true,
+    blackbox: true,
+  },
+  'requesters.$.entryId': {
+    type: String,
+  },
+  'requesters.$.createdAt': {
+    type: Date,
+  },
   currentMatch: {
     type: String,
     optional: true,

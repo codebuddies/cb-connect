@@ -7,6 +7,9 @@ const EntriesHelper = {
   updateFlags(data) {
     Entries.update({ _id: data.entryId }, { $push: { flags: data } });
   },
+  requestEntry(data) {
+    Entries.update({ _id: data.entryId }, { $push: { requesters: data } });
+  },
 };
 
 export default EntriesHelper;
