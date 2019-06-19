@@ -26,9 +26,9 @@ class NavigationBar extends React.Component {
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="mr-auto" />
-            {user && user.profile.moderator ? (
+            {user && user.profile.moderator === true ? (
               <Link to="/moderator" className="nav-link mr-sm-2">
-                Moderate
+                Match Users
               </Link>
             ) : (
               ''
