@@ -78,11 +78,11 @@ class Apply extends React.Component {
                 type="text"
                 required
                 defaultValue={name}
-                pattern="[A-Za-z][A-Za-z0-9_\- ]{2,49}"
+                pattern="[A-Za-z][\w\- ]{1,49}"
                 data-error="Please enter"
               />
               <Form.Control.Feedback type="invalid">
-                Your name needs to be between 3 and 50 characters long and begin with a letter. Underscores and hyphens
+                Your name needs to be between 2 and 50 characters long and begin with a letter. Underscores and hyphens
                 are the only special characters allowed.
               </Form.Control.Feedback>
               <Form.Text className="text-muted">Your name will be anonymous except to your match</Form.Text>
@@ -90,12 +90,7 @@ class Apply extends React.Component {
 
             <Form.Group controlId="oneLineIntro">
               <Form.Label>One-line intro of yourself:</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                defaultValue={oneLineIntro}
-                pattern="[A-Za-z0-9,!?_\-\x27\x22\s\.]{8,140}"
-              />
+              <Form.Control type="text" required defaultValue={oneLineIntro} pattern="[\w,!?\-\x27\x22\s\.]{8,140}" />
               <Form.Control.Feedback type="invalid">
                 Please share an intro between 8 and 140 characters long. Avoid non-standard special characters.
               </Form.Control.Feedback>
