@@ -20,10 +20,7 @@ class MatchCard extends Component {
   }
   requestMatch(e) {
     e.preventDefault();
-    const data = {
-      userId: Meteor.userId(), //add to preferences [] of user
-      entryId: this.props.entryId, //add to requesters []
-    };
+    //TODO: update DB with userID of requester to add to the entry they requested
     this.setState({ requested: true });
   }
   showFlagModal(event) {
