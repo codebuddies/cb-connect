@@ -11,10 +11,17 @@ class MatchCard extends Component {
     this.closeFlagModal = this.closeFlagModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.submitFlagModal = this.submitFlagModal.bind(this);
+    this.requestMatch = this.requestMatch.bind(this);
     this.state = {
       showFlagModal: false,
       flagReason: '',
+      requested: false,
     };
+  }
+  requestMatch(e) {
+    e.preventDefault();
+    //TODO: update DB with userID of requester to add to the entry they requested
+    this.setState({ requested: true });
   }
   showFlagModal(event) {
     event.preventDefault();
@@ -28,6 +35,9 @@ class MatchCard extends Component {
     this.setState({
       flagReason: e.target.value,
     });
+  }
+  match(event) {
+    event.preventDefault();
   }
   submitFlagModal(e) {
     e.preventDefault();
@@ -61,7 +71,7 @@ class MatchCard extends Component {
               ''
             ) : (
               <Dropdown as={ButtonGroup} className="btn-block">
-                <Button className="btn-block" variant="primary">
+                <Button className="btn-block" variant="primary" onClick={this.requestMatch}>
                   Request Match
                 </Button>
 
