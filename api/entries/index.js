@@ -14,6 +14,8 @@ let Schema = new SimpleSchema({
   'tz.daylightSaving': String,
   lookingFor: String,
   oneLineIntro: String,
+  skillHelpOther: String,
+  skillImproveSelf: String,
   verified: Boolean,
   flags: {
     type: Array,

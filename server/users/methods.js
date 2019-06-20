@@ -37,6 +37,8 @@ Meteor.methods({
       name: String,
       oneLineIntro: String,
       lookingFor: String,
+      skillHelpOther: String,
+      skillImproveSelf: String,
       email: String,
       timezone: String,
     });
@@ -49,7 +51,7 @@ Meteor.methods({
     if (actor) {
       throw new Meteor.Error('user.enroll', 'User with this email already exists.');
     } else {
-      const { email, name, oneLineIntro, lookingFor } = data;
+      const { email, name, oneLineIntro, lookingFor, skillHelpOther, skillImproveSelf } = data;
       const { id: category_id, short_label: category_title } = category;
       const { id: tz_id, label_text: tz_title, daylight_saving, value: tz_offset } = timezone;
 
@@ -59,6 +61,8 @@ Meteor.methods({
         profile: {
           name: name,
           intro: oneLineIntro,
+          skillHelpOther: skillHelpOther,
+          skillImproveSelf: skillImproveSelf,
           moderator: false,
           tz: {
             id: tz_id,
@@ -99,6 +103,8 @@ Meteor.methods({
             daylightSaving: daylight_saving,
           },
           lookingFor,
+          skillHelpOther,
+          skillImproveSelf,
           oneLineIntro,
           verified: false,
           matched: false,
