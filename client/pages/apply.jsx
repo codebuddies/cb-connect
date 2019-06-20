@@ -112,10 +112,13 @@ class Apply extends React.Component {
             </Form.Group>
             <Form.Group controlId="skillImproveSelf">
               <Form.Label>What skill(s) are you trying to improve?</Form.Label>
-              <Form.Control type="text" required defaultValue={skillHelpOther} pattern="[\w\-,!?\x27\x22\s\.]{1,140}" />
-              <Form.Text className="text-muted">
-                e.g C, Javascript, Python, Web Dev, Version Control, Interviewing, etc.
-              </Form.Text>
+              <Form.Control
+                type="text"
+                required
+                defaultValue={skillImproveSelf}
+                pattern="[\w\-,!?\x27\x22\s\.]{1,140}"
+              />
+              <Form.Text className="text-muted">e.g C, javascript, python, web dev, git, interviewing, etc.</Form.Text>
             </Form.Group>
           </Card.Body>
         </Card>
@@ -205,7 +208,6 @@ class Apply extends React.Component {
       name,
       oneLineIntro,
       lookingFor,
-      online,
       skillHelpOther,
       skillImproveSelf,
       email,
