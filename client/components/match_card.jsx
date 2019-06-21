@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import './_match_card.scss';
 
 import { Card, Dropdown, ButtonGroup, Button, Modal, Form } from 'react-bootstrap';
 
@@ -60,14 +61,18 @@ class MatchCard extends Component {
   }
 
   render() {
-    const { oneLineIntro, lookingFor, ownCard, timezone } = this.props;
+    const { intro, lookingFor, hideButton, ownCard, timezone, skillHelpOther, skillImproveSelf } = this.props;
     return (
       <React.Fragment>
-        <Card>
+        <Card id="match_card">
           <Card.Body>
-            <Card.Title className="font-weight-normal">{oneLineIntro}</Card.Title>
+            <Card.Title className="font-weight-normal">{intro}</Card.Title>
             <Card.Text>{lookingFor}</Card.Text>
-            {ownCard === 'true' ? (
+            <h3>Skill(s) I can help others with</h3>
+            <Card.Text>{skillHelpOther}</Card.Text>
+            <h3>Skill(s) I want to improve</h3>
+            <Card.Text>{skillImproveSelf}</Card.Text>
+            {hideButton === 'true' || ownCard === 'true' ? (
               ''
             ) : (
               <Dropdown as={ButtonGroup} className="btn-block">
@@ -123,7 +128,10 @@ class MatchCard extends Component {
 }
 
 MatchCard.propTypes = {
-  oneLineIntro: PropTypes.string,
+  hideButton: PropTypes.boolean,
+  intro: PropTypes.string,
+  skillHelpOther: PropTypes.string,
+  skillImproveSelf: PropTypes.string,
   lookingFor: PropTypes.string,
   ownCard: PropTypes.string,
   timezone: PropTypes.string,

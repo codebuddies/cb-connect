@@ -14,6 +14,7 @@ const DashboardContainer = withTracker(props => {
   const currentUser = Meteor.user();
   const currentUserName = Meteor.user().profile.name;
   const categoryIdString = categoryId.get().toString();
+  const users = Meteor.subscribe('users');
   const entries =
     categoryIdString === 'all'
       ? Entries.find({ userId: { $ne: currentUser._id } }).fetch()
@@ -29,6 +30,7 @@ const DashboardContainer = withTracker(props => {
     currentUserName,
     ownEntries,
     handleCategoryChange,
+    users,
   };
 })(Dashboard);
 

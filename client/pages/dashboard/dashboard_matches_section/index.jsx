@@ -27,7 +27,7 @@ const MatchesSection = props => {
                   key={i}
                   lookingFor={entry.lookingFor}
                   timezone={entry.tz.title}
-                  oneLineIntro={entry.oneLineIntro}
+                  intro={entry.oneLineIntro}
                   ownCard="true"
                 />
               ))

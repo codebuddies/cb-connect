@@ -7,7 +7,6 @@ import MatchCard from '/client/components/match_card';
 class DashboardCardsSection extends Component {
   render() {
     const { section, visibility, entries } = this.props;
-
     const sectionMapper = {
       Mentor: 'Mentees to help',
       Mentee: 'Mentors',
@@ -22,15 +21,19 @@ class DashboardCardsSection extends Component {
           <Card.Header className="text-capitalize">People looking for {sectionMapper[section]}</Card.Header>
           <Card.Body as={CardColumns}>
             {entries.length ? (
-              entries.map(entry => (
-                <MatchCard
-                  key={entry._id}
-                  entryId={entry._id}
-                  lookingFor={entry.lookingFor}
-                  timezone={entry.tz.title}
-                  oneLineIntro={entry.oneLineIntro}
-                />
-              ))
+              entries.map((entry, i) => {
+                return (
+                  <MatchCard
+                    key={i}
+                    lookingFor={entry.lookingFor}
+                    intro={entry.oneLineIntro}
+                    skillHelpOther={entry.skillHelpOther}
+                    skillImproveSelf={entry.skillImproveSelf}
+                    timezone={entry.tz.title}
+                    hideCard="true"
+                  />
+                );
+              })
             ) : (
               <Card.Text>No active entries were found.</Card.Text>
             )}
