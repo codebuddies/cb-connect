@@ -73,6 +73,7 @@ class Dashboard extends Component {
           entries={this.getEntries().filter(entry => entry.category.id === section.id)}
           section={section.short_label}
           key={key}
+          users={this.props.users}
           visibility={visible}
         />
       );
@@ -101,6 +102,7 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   entries: PropTypes.array,
+  users: PropTypes.array,
   handleCategoryChange: PropTypes.func,
   currentUserName: PropTypes.string,
   ownEntries: PropTypes.array,
