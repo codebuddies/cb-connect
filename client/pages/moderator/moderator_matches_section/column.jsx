@@ -3,8 +3,14 @@ import MatchCard from '../../../components/match_card';
 import { PropTypes } from 'prop-types';
 
 class Column extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedCards: [],
+    };
+  }
   render() {
-    const { entries } = this.props;
+    const { entries, cardsSelected, allowSelection } = this.props;
 
     return (
       <div className="column">
@@ -13,9 +19,14 @@ class Column extends React.Component {
           {entries.map((entry, i) => (
             <MatchCard
               key={i}
+              entry={entry}
               lookingFor={entry.lookingFor}
               oneLineIntro={entry.oneLineIntro}
               timezone={entry.tz.title}
+              skillHelpOther={entry.skillHelpOther}
+              skillImproveSelf={entry.skillImproveSelf}
+              cardsSelected={cardsSelected}
+              allowSelection={allowSelection}
             />
           ))}
         </div>
@@ -28,6 +39,7 @@ Column.propTypes = {
   // We can check optional and required types here
   entries: PropTypes.array,
   heading: PropTypes.string,
+  allowSelection: PropTypes.bool,
 };
 
 export default Column;

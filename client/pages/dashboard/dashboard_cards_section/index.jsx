@@ -29,6 +29,8 @@ class DashboardCardsSection extends Component {
                   lookingFor={entry.lookingFor}
                   timezone={entry.tz.title}
                   oneLineIntro={entry.oneLineIntro}
+                  skillHelpOther={entry.skillHelpOther}
+                  skillImproveSelf={entry.skillImproveSelf}
                 />
               ))
             ) : (
