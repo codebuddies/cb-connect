@@ -10,6 +10,9 @@ const EntriesHelper = {
   requestEntry(data) {
     Entries.update({ _id: data.entryId }, { $push: { requesters: data } });
   },
+  matchUser(data) {
+    //TODO: Update both entries to say matched: true
+  },
 };
 
 export default EntriesHelper;

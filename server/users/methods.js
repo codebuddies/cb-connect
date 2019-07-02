@@ -37,6 +37,12 @@ Meteor.methods({
     });
     EntriesHelper.updateFlags(data);
   },
+  'entry.match'(data) {
+    check(data, {
+      matched: Boolean,
+    });
+    EntriesHelper.matchUser(data);
+  },
   'users.enroll'(data) {
     check(data, {
       category: String,
