@@ -6,7 +6,7 @@ import Board from '/client/pages/moderator/moderator_matches_section/board.jsx';
 const BoardContainer = withTracker(() => {
   const entriesHandle = Meteor.subscribe('entries.board');
   const loading = !entriesHandle.ready();
-  const entries = Entries.find().fetch();
+  const entries = Entries.find({ matched: 'false' }).fetch();
   const users = Meteor.users.find().fetch();
   // eslint-disable-next-line no-unused-vars
   const currentUser = Meteor.userId();
