@@ -142,7 +142,7 @@ class MatchCard extends Component {
 }
 
 MatchCard.propTypes = {
-  hideButton: PropTypes.boolean,
+  hideButton: PropTypes.bool,
   intro: PropTypes.string,
   skillHelpOther: PropTypes.string,
   skillImproveSelf: PropTypes.string,
@@ -150,8 +150,6 @@ MatchCard.propTypes = {
   ownCard: PropTypes.string,
   timezone: PropTypes.string,
   entryId: PropTypes.string,
-  skillHelpOther: PropTypes.string,
-  skillImproveSelf: PropTypes.string,
   allowSelection: PropTypes.bool,
   cardsSelected: PropTypes.func,
   entry: PropTypes.object,
