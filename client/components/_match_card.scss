@@ -4,4 +4,10 @@
     font-size: 0.8em;
     font-weight: 700;
   }
+  .selected {
+    border: 5px solid #2780e3;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }

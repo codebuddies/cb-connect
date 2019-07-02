@@ -13,16 +13,28 @@ class MatchCard extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.submitFlagModal = this.submitFlagModal.bind(this);
     this.requestMatch = this.requestMatch.bind(this);
+    this.selected = this.selected.bind(this);
     this.state = {
       showFlagModal: false,
       flagReason: '',
       requested: false,
+      selected: false,
+      selectedCounter: 0,
     };
   }
   requestMatch(e) {
     e.preventDefault();
     //TODO: update DB with userID of requester to add to the entry they requested
     this.setState({ requested: true });
+  }
+  selected(e) {
+    e.preventDefault();
+    this.props.cardsSelected(this.props.entry);
+    setTimeout(() => {
+      if (this.props.allowSelection) {
+        this.setState({ selected: !this.state.selected });
+      }
+    }, 0);
   }
   showFlagModal(event) {
     event.preventDefault();
@@ -61,18 +73,20 @@ class MatchCard extends Component {
   }
 
   render() {
-    const { intro, lookingFor, hideButton, ownCard, timezone, skillHelpOther, skillImproveSelf } = this.props;
+    const { oneLineIntro, lookingFor, ownCard, timezone, skillHelpOther, skillImproveSelf } = this.props;
     return (
       <React.Fragment>
-        <Card id="match_card">
-          <Card.Body>
-            <Card.Title className="font-weight-normal">{intro}</Card.Title>
+        <Card id="match_card" onClick={this.selected}>
+          <Card.Body className={this.state.selected ? 'selected' : ''}>
+            <Card.Title className="font-weight-normal">{oneLineIntro}</Card.Title>
             <Card.Text>{lookingFor}</Card.Text>
-            <h3>Skill(s) I can help others with</h3>
+
+            <h3>Skills I can help others with</h3>
             <Card.Text>{skillHelpOther}</Card.Text>
-            <h3>Skill(s) I want to improve</h3>
+
+            <h3>Skills I want to improve</h3>
             <Card.Text>{skillImproveSelf}</Card.Text>
-            {hideButton === 'true' || ownCard === 'true' ? (
+            {ownCard === 'true' ? (
               ''
             ) : (
               <Dropdown as={ButtonGroup} className="btn-block">
@@ -136,6 +150,11 @@ MatchCard.propTypes = {
   ownCard: PropTypes.string,
   timezone: PropTypes.string,
   entryId: PropTypes.string,
+  skillHelpOther: PropTypes.string,
+  skillImproveSelf: PropTypes.string,
+  allowSelection: PropTypes.bool,
+  cardsSelected: PropTypes.func,
+  entry: PropTypes.object,
 };
 
 export default MatchCard;
