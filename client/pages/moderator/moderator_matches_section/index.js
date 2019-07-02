@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import BoardContainer from '/client/containers/boardcontainer.jsx';
-import PreviewEmail from './preview.jsx';
 
 class Moderator extends Component {
   constructor(props) {
@@ -11,7 +10,6 @@ class Moderator extends Component {
       <div className="container">
         <div className="row">
           <BoardContainer />
-          <PreviewEmail />
         </div>
       </div>
     );

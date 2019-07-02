@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Column from './column';
 import './_board.scss';
 import { categories } from '/lib/data/categories.js';
+import PreviewEmail from './preview.jsx';
 import { PropTypes } from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 
@@ -57,7 +58,12 @@ class Board extends React.Component {
 
   render() {
     // TODO - if loading is true show some nice loading animation!
-    return <Container id="board">{this.getColumns()}</Container>;
+    return (
+      <>
+        <Container id="board">{this.getColumns()}</Container>
+        <PreviewEmail />
+      </>
+    );
   }
 }
 
