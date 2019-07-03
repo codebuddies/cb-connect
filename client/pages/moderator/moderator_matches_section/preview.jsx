@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './_preview_email.scss';
 import { Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
+import { PropTypes } from 'prop-types';
 
 class PreviewEmail extends Component {
   constructor(props) {
@@ -9,10 +10,17 @@ class PreviewEmail extends Component {
     this.matchUsers = this.matchUsers.bind(this);
     this.createEmail = this.createEmail.bind(this);
     this.state = {};
+    //get user IDs of the two entries we want to match
+    const getUserIds = [];
+    this.props.cardsSelected.forEach(card => {
+      getUserIds.push(card.userId);
+    });
+    this.props.handleUsersToMatch(getUserIds);
   }
   matchUsers() {
     //alert('matched');
-    //Meteor.call()
+
+    //TODO: define data
     Meteor.call('entry.match', data, (error, result) => {
       if (error) {
         this.setState({ error: error.reason, processing: false });
@@ -25,7 +33,7 @@ class PreviewEmail extends Component {
   createEmail(userData) {
     const user1 = userData[0];
     const user2 = userData[1];
-    console.log(userData);
+
     return (
       <div className="email">
         <h4>Hey {user1.userId},</h4>
@@ -81,7 +89,8 @@ class PreviewEmail extends Component {
   }
 
   render() {
-    const { cardsSelected } = this.props;
+    const { cardsSelected, findUsersToMatch } = this.props;
+
     return (
       <div className="container" id="preview_email">
         <div className="row">
@@ -96,5 +105,14 @@ class PreviewEmail extends Component {
     );
   }
 }
+
+PreviewEmail.propTypes = {
+  // We can check optional and required types here
+  entries: PropTypes.array,
+  users: PropTypes.array,
+  cardsSelected: PropTypes.array,
+  findUsersToMatch: PropTypes.array,
+  handleUsersToMatch: PropTypes.func,
+};
 
 export default PreviewEmail;

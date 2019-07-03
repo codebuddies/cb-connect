@@ -63,7 +63,11 @@ class Board extends React.Component {
       <>
         <Container id="board">{this.getColumns()}</Container>
         {this.state.cardsSelected.length === 2 ? (
-          <PreviewEmail cardsSelected={this.state.cardsSelected} />
+          <PreviewEmail
+            cardsSelected={this.state.cardsSelected}
+            findUsersToMatch={this.props.findUsersToMatch}
+            handleUsersToMatch={this.props.handleUsersToMatch}
+          />
         ) : (
           'loading animation'
         )}
@@ -76,6 +80,8 @@ Board.propTypes = {
   // We can check optional and required types here
   entries: PropTypes.array,
   users: PropTypes.array,
+  findUsersToMatch: PropTypes.array,
+  handleUsersToMatch: PropTypes.func,
 };
 
 export default Board;
