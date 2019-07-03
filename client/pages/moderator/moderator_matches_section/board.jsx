@@ -58,10 +58,15 @@ class Board extends React.Component {
 
   render() {
     // TODO - if loading is true show some nice loading animation!
+
     return (
       <>
         <Container id="board">{this.getColumns()}</Container>
-        <PreviewEmail />
+        {this.state.cardsSelected.length === 2 ? (
+          <PreviewEmail cardsSelected={this.state.cardsSelected} />
+        ) : (
+          'loading animation'
+        )}
       </>
     );
   }
