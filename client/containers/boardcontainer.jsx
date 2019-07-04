@@ -15,9 +15,15 @@ const BoardContainer = withTracker(() => {
   const entries = Entries.find({ matched: 'false' }).fetch();
   const users = Meteor.users.find().fetch();
 
-  const findUsersToMatch = Meteor.users.find({ _id: { $in: usersToMatch.get() } }).fetch();
+  const findUsersToMatch = Meteor.users
+    .find(
+      {
+        _id: { $in: usersToMatch.get() },
+      },
+      { fields: { 'profile.name': 1, emails: 1 } }
+    )
+    .fetch();
 
-  // eslint-disable-next-line no-unused-vars
   const currentUser = Meteor.userId();
   return {
     loading,
