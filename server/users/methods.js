@@ -39,9 +39,19 @@ Meteor.methods({
   },
   'entry.match'(data) {
     check(data, {
-      matched: Boolean,
+      from: String,
+      subject: String,
+      to: String,
+      text: String,
     });
     EntriesHelper.matchUser(data);
+    console.log('We are doing stuff.');
+    console.log(data);
+    try {
+      Email.send(data);
+    } catch (e) {
+      console.log(e);
+    }
   },
   'users.enroll'(data) {
     check(data, {

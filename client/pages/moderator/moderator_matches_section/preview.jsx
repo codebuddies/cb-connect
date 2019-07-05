@@ -19,14 +19,16 @@ class PreviewEmail extends Component {
   }
   matchUsers() {
     //alert('matched');
-
+    let data = { from: 'linda@codebuddies.org', to: 'lpeng43+2@gmail.com', subject: 'Codebuddies Hax', text: 'Hax0r' };
     //TODO: define data
     Meteor.call('entry.match', data, (error, result) => {
       if (error) {
         this.setState({ error: error.reason, processing: false });
+        console.log(error);
       }
       if (result) {
         this.setState({ processing: false });
+        console.log('email sent');
       }
     });
   }
