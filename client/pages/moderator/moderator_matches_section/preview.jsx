@@ -72,17 +72,17 @@ class PreviewEmail extends Component {
             <strong>Your CodeBuddy is</strong> {userInfo2.profile.name}.
           </h5>
           <p>
-            {user2.userId} is looking for {user1.category.title}
+            {userInfo2.profile.name} is looking for the following category: {user1.category.title}
           </p>
           <ul>
             <li>
-              <strong>One-line intro of {user2.userId}:</strong> {user2.oneLineIntro}
+              <strong>One-line intro of {userInfo2.profile.name}:</strong> {user2.oneLineIntro}
             </li>
             <li>
-              <strong>Skill(s) {user2.userId} can help others with:</strong> {user2.skillHelpOther}
+              <strong>Skill(s) {userInfo2.profile.name} can help others with:</strong> {user2.skillHelpOther}
             </li>
             <li>
-              <strong>Skill(s) {user2.userId} is trying to improve:</strong> {user2.skillImproveSelf}
+              <strong>Skill(s) {userInfo2.profile.name} is trying to improve:</strong> {user2.skillImproveSelf}
             </li>
             <li>
               <strong>Timezone:</strong> {user2.tz.title}
