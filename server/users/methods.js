@@ -40,15 +40,22 @@ Meteor.methods({
   'entry.match'(data) {
     check(data, {
       from: String,
+      sendTo1: String,
+      sendTo2: String,
       subject: String,
-      to: String,
-      text: String,
+      html1: String,
+      html2: String,
     });
     EntriesHelper.matchUser(data);
-    console.log('We are doing stuff.');
-    console.log(data);
     try {
-      Email.send(data);
+      Email.send({
+        to: data.sendTo1,
+        cc: data.sendTo2,
+        from: data.from,
+        subject: data.subject,
+        html: data.html1,
+      });
+      Email.send({ to: data.sendTo2, cc: data.sendTo1, from: data.from, subject: data.subject, html: data.html2 });
     } catch (e) {
       console.log(e);
     }

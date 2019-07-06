@@ -102,7 +102,7 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   entries: PropTypes.array,
-  users: PropTypes.array,
+  users: PropTypes.object,
   handleCategoryChange: PropTypes.func,
   currentUserName: PropTypes.string,
   ownEntries: PropTypes.array,

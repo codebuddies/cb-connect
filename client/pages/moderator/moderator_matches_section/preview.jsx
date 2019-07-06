@@ -3,6 +3,7 @@ import './_preview_email.scss';
 import { Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { PropTypes } from 'prop-types';
+import ReactDOMServer from 'react-dom/server';
 
 class PreviewEmail extends Component {
   constructor(props) {
@@ -17,10 +18,20 @@ class PreviewEmail extends Component {
     });
     this.props.handleUsersToMatch(getUserIds);
   }
-  matchUsers() {
+  matchUsers(email1Content, email2Content, email1SendTo, email2SendTo) {
     //alert('matched');
-    let data = { from: 'linda@codebuddies.org', to: 'lpeng43+2@gmail.com', subject: 'Codebuddies Hax', text: 'Hax0r' };
-    //TODO: define data
+    const html1 = ReactDOMServer.renderToStaticMarkup(email1Content);
+    const html2 = ReactDOMServer.renderToStaticMarkup(email2Content);
+    let data = {
+      from: 'codebuddies-connect-volunteers@codebuddies.org',
+      sendTo1: email1SendTo,
+      sendTo2: email2SendTo,
+      subject: 'Codebuddies Hax',
+      html1: html1,
+      html2: html2,
+    };
+    console.log(data);
+
     Meteor.call('entry.match', data, (error, result) => {
       if (error) {
         this.setState({ error: error.reason, processing: false });
@@ -28,7 +39,7 @@ class PreviewEmail extends Component {
       }
       if (result) {
         this.setState({ processing: false });
-        console.log('email sent');
+        alert('email sent!');
       }
     });
   }
@@ -38,76 +49,88 @@ class PreviewEmail extends Component {
       const user2 = userData[1];
       let userInfo1 = userInfo[0]._id === user1.userId ? userInfo[0] : userInfo[1];
       let userInfo2 = userInfo[1]._id === user2.userId ? userInfo[1] : userInfo[0];
-      return (
-        <div className="email">
-          <h4>Hey {userInfo1.profile.name},</h4>
+      return {
+        sendTo: userInfo1.emails[0].address,
+        content: (
+          <div className="email">
+            <p>Hey {userInfo1.profile.name},</p>
 
-          <p>
-            After sifting through all of the submissions, we narrowed down the perfect {user1.category.title} for you
-            this week.
-          </p>
+            <p>
+              After sifting through all of the submissions, we narrowed down the perfect {user1.category.title} for you
+              this week.
+            </p>
 
-          <p>
-            People who have connected through CodeBuddies have gone on to make projects together, host hangouts
-            together, and keep each other accountable to their goals.
-          </p>
+            <p>
+              People who have connected through CodeBuddies have gone on to make projects together, host hangouts
+              together, and keep each other accountable to their goals.
+            </p>
 
-          <p>As a reminder, you said you were looking for:</p>
+            <p>As a reminder, you said you were looking for:</p>
 
-          <h5>{user2.category.title}</h5>
-          <ul>
-            <li>
-              <strong>One-line intro of yourself:</strong> {user1.oneLineIntro}
-            </li>
-            <li>
-              <strong>What skills can you help others with?</strong> {user1.skillHelpOther}
-            </li>
-            <li>
-              <strong>What skills are you trying to improve?</strong> {user1.skillImproveSelf}
-            </li>
-            <li>
-              <strong>Timezone:</strong> {user1.tz.title}
-            </li>
-          </ul>
+            <p>
+              <strong>{user2.category.title}</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>One-line intro of yourself:</strong> {user1.oneLineIntro}
+              </li>
+              <li>
+                <strong>What skills can you help others with?</strong> {user1.skillHelpOther}
+              </li>
+              <li>
+                <strong>What skills are you trying to improve?</strong> {user1.skillImproveSelf}
+              </li>
+              <li>
+                <strong>Timezone:</strong> {user1.tz.title}
+              </li>
+            </ul>
 
-          <h5>
-            <strong>Your CodeBuddy is</strong> {userInfo2.profile.name}.
-          </h5>
-          <p>
-            {userInfo2.profile.name} is looking for the following category: {user1.category.title}
-          </p>
-          <ul>
-            <li>
-              <strong>One-line intro of {userInfo2.profile.name}:</strong> {user2.oneLineIntro}
-            </li>
-            <li>
-              <strong>Skill(s) {userInfo2.profile.name} can help others with:</strong> {user2.skillHelpOther}
-            </li>
-            <li>
-              <strong>Skill(s) {userInfo2.profile.name} is trying to improve:</strong> {user2.skillImproveSelf}
-            </li>
-            <li>
-              <strong>Timezone:</strong> {user2.tz.title}
-            </li>
-          </ul>
-        </div>
-      );
+            <h3>
+              <strong>Your CodeBuddy is</strong> {userInfo2.profile.name}.
+            </h3>
+            <p>
+              {userInfo2.profile.name} is looking for the following category: <strong>{user1.category.title}</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>One-line intro from {userInfo2.profile.name}:</strong> {user2.oneLineIntro}
+              </li>
+              <li>
+                <strong>Skill(s) {userInfo2.profile.name} can help others with:</strong> {user2.skillHelpOther}
+              </li>
+              <li>
+                <strong>Skill(s) {userInfo2.profile.name} is trying to improve:</strong> {user2.skillImproveSelf}
+              </li>
+              <li>
+                <strong>Timezone:</strong> {user2.tz.title}
+              </li>
+            </ul>
+          </div>
+        ),
+      };
     }
   }
 
   render() {
     const { cardsSelected, findUsersToMatch } = this.props;
-    console.log(findUsersToMatch);
+    const email1 =
+      findUsersToMatch.length > 0 ? this.createEmail(cardsSelected, findUsersToMatch) : { content: 'Loading...' };
+    const email2 =
+      findUsersToMatch.length > 0
+        ? this.createEmail([cardsSelected[1], cardsSelected[0]], findUsersToMatch)
+        : { content: 'Loading...' };
+
     return (
       <div className="container" id="preview_email">
         <div className="row">
           <h2 className="center">Preview Emails</h2>
         </div>
+        {email1.content}
+        {email2.content}
 
-        {this.createEmail(cardsSelected, findUsersToMatch)}
-        {this.createEmail([cardsSelected[1], cardsSelected[0]], findUsersToMatch)}
-
-        <Button onClick={this.matchUsers}>Match Users</Button>
+        <Button onClick={() => this.matchUsers(email1.content, email2.content, email1.sendTo, email2.sendTo)}>
+          Match Users
+        </Button>
       </div>
     );
   }

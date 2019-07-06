@@ -69,7 +69,7 @@ class Board extends React.Component {
             handleUsersToMatch={this.props.handleUsersToMatch}
           />
         ) : (
-          'loading animation'
+          'Please select two entries to match.'
         )}
       </>
     );
