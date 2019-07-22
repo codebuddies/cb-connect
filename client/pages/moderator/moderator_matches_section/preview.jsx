@@ -18,7 +18,8 @@ class PreviewEmail extends Component {
     });
     this.props.handleUsersToMatch(getUserIds);
   }
-  matchUsers(email1Content, email2Content, email1SendTo, email2SendTo) {
+  matchUsers(email1Content, email2Content, email1SendTo, email2SendTo, idA, idB) {
+    //A and B because they do not necessarily correspond to email1 and email2
     //alert('matched');
     const html1 = ReactDOMServer.renderToStaticMarkup(email1Content);
     const html2 = ReactDOMServer.renderToStaticMarkup(email2Content);
@@ -29,6 +30,8 @@ class PreviewEmail extends Component {
       subject: 'Codebuddies Hax',
       html1: html1,
       html2: html2,
+      idA: idA,
+      idB: idB,
     };
     console.log(data);
 
@@ -50,6 +53,7 @@ class PreviewEmail extends Component {
       let userInfo1 = userInfo[0]._id === user1.userId ? userInfo[0] : userInfo[1];
       let userInfo2 = userInfo[1]._id === user2.userId ? userInfo[1] : userInfo[0];
       return {
+        id: userInfo1._id,
         sendTo: userInfo1.emails[0].address,
         content: (
           <div className="email">
@@ -128,7 +132,18 @@ class PreviewEmail extends Component {
         {email1.content}
         {email2.content}
 
-        <Button onClick={() => this.matchUsers(email1.content, email2.content, email1.sendTo, email2.sendTo)}>
+        <Button
+          onClick={() =>
+            this.matchUsers(
+              email1.content,
+              email2.content,
+              email1.sendTo,
+              email2.sendTo,
+              cardsSelected[0]._id,
+              cardsSelected[1]._id
+            )
+          }
+        >
           Match Users
         </Button>
       </div>

@@ -45,6 +45,8 @@ Meteor.methods({
       subject: String,
       html1: String,
       html2: String,
+      idA: String,
+      idB: String,
     });
     EntriesHelper.matchUser(data);
     try {

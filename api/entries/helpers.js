@@ -11,7 +11,8 @@ const EntriesHelper = {
     Entries.update({ _id: data.entryId }, { $push: { requesters: data } });
   },
   matchUser(data) {
-    //TODO: Update both entries to say matched: true
+    Entries.update({ _id: data.idA }, { $set: { matched: data.idB } });
+    Entries.update({ _id: data.idB }, { $set: { matched: data.idA } });
   },
 };
 
