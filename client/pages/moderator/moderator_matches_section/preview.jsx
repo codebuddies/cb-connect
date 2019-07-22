@@ -27,7 +27,7 @@ class PreviewEmail extends Component {
       from: 'codebuddies-connect-volunteers@codebuddies.org',
       sendTo1: email1SendTo,
       sendTo2: email2SendTo,
-      subject: 'Codebuddies Hax',
+      subject: 'Introducing your CodeBuddies Connect Match!',
       html1: html1,
       html2: html2,
       idA: idA,
