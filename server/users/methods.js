@@ -138,7 +138,7 @@ Meteor.methods({
           skillImproveSelf,
           oneLineIntro,
           verified: false,
-          matched: '',
+          matched: 'false',
           flags: [],
           preferences: [],
           requesters: [],

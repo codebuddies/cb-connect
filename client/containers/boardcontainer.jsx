@@ -12,7 +12,7 @@ const BoardContainer = withTracker(() => {
   const entriesHandle = Meteor.subscribe('entries.board');
   const userEntries = Meteor.subscribe('allUsers');
   const loading = !entriesHandle.ready();
-  const entries = Entries.find({ matched: '' }).fetch();
+  const entries = Entries.find({ matched: 'false' }).fetch();
   const users = Meteor.users.find().fetch();
 
   const findUsersToMatch = Meteor.users

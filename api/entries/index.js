@@ -31,7 +31,9 @@ let Schema = new SimpleSchema({
   'flags.$.reason': {
     type: String,
   },
-  matched: String, //id of matched entry (temp)
+  matched: {
+    type: String,
+  }, //id of matched entry (temp)
   createdAt: {
     type: Date,
     autoValue: function() {

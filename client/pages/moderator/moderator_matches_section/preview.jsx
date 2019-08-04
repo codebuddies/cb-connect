@@ -41,7 +41,7 @@ class PreviewEmail extends Component {
         console.log(error);
       }
       if (result) {
-        this.setState({ processing: false, cardsSelected: [], findUsersToMatch: [] });
+        this.setState({ processing: false, cardsSelected: [] });
         alert('email sent!');
       }
     });
