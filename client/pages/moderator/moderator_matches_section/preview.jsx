@@ -42,9 +42,10 @@ class PreviewEmail extends Component {
       }
       if (result) {
         this.setState({ processing: false, cardsSelected: [] });
-        alert('email sent!');
+        console.log('email sent!');
       }
     });
+    window.location.reload();
   }
   createEmail(userData, userInfo) {
     if (userInfo.length > 0) {
