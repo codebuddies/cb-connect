@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Navbar, Nav, Button, Container, Dropdown } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { PropTypes } from 'prop-types';
 import { AuthContext } from '../hoc/AuthProvider';
@@ -44,15 +44,29 @@ class NavigationBar extends React.Component {
               ''
             )}
             {user ? (
-              <Button variant="outline-success" size="sm" onClick={this.handleLogout}>
-                Logout
-              </Button>
+
+              <Dropdown>
+                <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
+                  My Account
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="/my-profile">Profile</Dropdown.Item>
+                  {/* todos : add my settings page. */}
+                  <Dropdown.Item href="#">Settings</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={this.handleLogout} >Logout</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
             ) : (
+
               <Link to="/login">
                 <Button variant="outline-success" size="sm">
                   Login
                 </Button>
               </Link>
+
             )}
           </Navbar>
         </Container>

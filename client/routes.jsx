@@ -11,6 +11,7 @@ import ForgotPassword from './pages/forgot_password';
 import SetPassword from './pages/set_password';
 import Profile from './pages/dashboard/profile';
 import Moderator from './pages/moderator/moderator_matches_section';
+import MyProfile from './pages/user/my_profile.jsx';
 
 // Import HOCs and components
 import AuthenticatedRoute from './hoc/AuthenticatedRoute';
@@ -22,7 +23,8 @@ export const renderRoutes = () => (
     <AuthProvider>
       <Navbar>
         <Switch>
-          <AuthenticatedRoute path="/dashboard" component={Profile} />
+          <AuthenticatedRoute exact path="/dashboard" component={Profile} />
+          <AuthenticatedRoute exact path="/my-profile" component={MyProfile} />
           <Route path="/moderator" component={Moderator} />
           <Route path="/login" component={Login} />
           <Route path="/forgot-password" component={ForgotPassword} />
