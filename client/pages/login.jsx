@@ -34,7 +34,7 @@ class Login extends React.Component {
   render() {
     const { validated, error } = this.state;
     const { user } = this.context;
-
+    console.log('Login render');
     return user ? (
       <Redirect to="/dashboard" />
     ) : (

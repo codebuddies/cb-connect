@@ -5,10 +5,8 @@ class MyProfile extends Component {
 
   render () {
     const { user } = this.context;
-
-    return user ? (
-      <Redirect to="/dashboard" />
-    ) : (
+    console.log('MyProfile render');
+    return (
       <Container fluid>
         <h2 className="text-center">profile</h2>
       </Container>
