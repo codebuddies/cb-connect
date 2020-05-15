@@ -8,3 +8,11 @@ stage-settings.json
 api/php/db.php
 .idea
 assets
+.vscode/
+/coverage/
+/vendor/
+/logs/*
+!/logs/README.md
+.phpunit.result.cache
+settings.php
+api/php/src/settings.php
