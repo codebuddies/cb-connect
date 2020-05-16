@@ -20,7 +20,7 @@ if (false) { // Should be set to true in production
 // Set up settings
 $dbCodeBuddiesConnect = require __DIR__ . '/db.php';
 $settings = require __DIR__ . '/../app/settings.php';
-$settings($containerBuilder);
+$settings($containerBuilder, $dbCodeBuddiesConnect);
 
 // Set up dependencies
 $dependencies = require __DIR__ . '/../app/dependencies.php';
