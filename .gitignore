@@ -5,6 +5,7 @@ development-settings.json
 .DS_Store
 my-settings.json
 stage-settings.json
+db.php
 api/php/db.php
 .idea
 assets
