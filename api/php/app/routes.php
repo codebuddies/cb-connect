@@ -16,9 +16,12 @@ return function(App $app) {
     
     $debug = 1;
     
-    // _DEBUGGING 🐛🐜🔬🤨
-    $_SERVER['REQUEST_URI'] = 'api/j-test1';
-    $_SERVER['REQUEST_METHOD'] = 'GET';
+    // _DEBUGGING 🐛🔬🐜🤨
+    if(!in_array(CB_DEBUG_MODE, ['false', null])) {
+        $_SERVER['REQUEST_URI'] = 'api/j-test1';
+        $_SERVER['REQUEST_METHOD'] = 'GET';
+    }
+    
     
     $app->get('/', function(Request $request, Response $response) {
         $response->getBody()->write('Hello world!');

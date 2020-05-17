@@ -44,8 +44,7 @@ class Connect
      * @return PDO
      */
     private function oopConnect(ConnectStruct $c): PDO {
-        // same if-else as proceduralConnect(), perhaps I should get fancy here to keep code dry? 🤔
-        if($_SERVER['SERVER_NAME'] == '10.0.0.210') {
+        if(in_array(CB_DEBUG_MODE, [null, 'true']) || $_SERVER['SERVER_NAME'] == '10.0.0.210') {
             // manually maintain a copy of the remote db AND manually mirror it.
             $host = $c->localHost;
             $user = $c->localUser;
