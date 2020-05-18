@@ -14,17 +14,16 @@ return function(App $app) {
         return $response;
     });
     
-    $debug = 1;
-    
     // _DEBUGGING 🐛🔬🐜🤨
-    if(!in_array(CB_DEBUG_MODE, ['false', null])) {
-        $_SERVER['REQUEST_URI'] = 'api/j-test1';
+    if(false) {
+        echo "_> DEBUG MODE ON";
+        // we are in debug mode
+        $_SERVER['REQUEST_URI'] = 'api/info';
         $_SERVER['REQUEST_METHOD'] = 'GET';
     }
     
-    
     $app->get('/', function(Request $request, Response $response) {
-        $response->getBody()->write('Hello world!');
+        $response->getBody()->write('Hello world! ^_^/');
         return $response;
     });
     
@@ -34,6 +33,12 @@ return function(App $app) {
             $debug = 1;
         }
     );
+    
+    $app->get('/info', function(Request $request, Response $response) {
+        //$log = $this->get('cb-log');
+        
+        return $response->getBody()->write(phpinfo());
+    });
     
     $app->group('/users', function(Group $group) {
         $group->get('', ListUsersAction::class);

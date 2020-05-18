@@ -10,6 +10,8 @@ declare(strict_types=1);
 namespace CodeBuddies;
 
 use PDO;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 /**
  * Class Connect connects to the db
@@ -22,14 +24,51 @@ class Connect
      */
     private array $connectInfo;
     
-    public function __construct(array $connectInfo) {
+    /**
+     * @var Logger
+     */
+    private Logger $log;
+    
+    /**
+     * Connect constructor.
+     */
+    private string $pathToLog = 'logs/test.log';
+    
+    /**
+     * knowing if the app is is debug mode helps with knowing what to log, echo,
+     * or with breakpoints to set
+     */
+    private bool $debugMode;
+    
+    public function __construct(array $connectInfo, $debugMode) {
+        $this->debugMode = $debugMode;
         $this->connectInfo = $connectInfo;
+        
+        // set up logger
+        $this->log = new Logger('cb-connect');
+        $this->log->pushHandler(new StreamHandler($this->pathToLog));
+        
+        $ml = __METHOD__ . ' line: ' . __LINE__;
+        // log some info
+        $this->log->info('_> method line = ' . $ml);
+        
+        $connectInfoArr = var_export($this->connectInfo, true);
+        
+        $ml = __METHOD__ . ' line: ' . __LINE__;
+        
+        // log some info
+        $this->log->info('_> connect info = ' . $connectInfoArr);
+        $this->log->info('_> method line = ' . $ml);
     }
     
     /**
      * Connect to the db (for now it'll be MySQL, but MS SQL, PostgresQL, etc. are options to)
      */
-    public function connect (): PDO {
+    public function connect(): PDO {
+        // log some info
+        $ml = __METHOD__ . ' line: ' . __LINE__;
+        $this->log->info('_> method line = ' . $ml);
+        
         // a struct enables 'object->prop' notation & the ability to uphold the "DRY" principle.
         $c = new ConnectStruct($this->connectInfo);
         
@@ -43,26 +82,59 @@ class Connect
      *
      * @return PDO
      */
-    private function oopConnect(ConnectStruct $c): PDO {
-        if(in_array(CB_DEBUG_MODE, [null, 'true']) || $_SERVER['SERVER_NAME'] == '10.0.0.210') {
-            // manually maintain a copy of the remote db AND manually mirror it.
-            $host = $c->localHost;
-            $user = $c->localUser;
-            $pass = $c->localPass;
-            $database = $c->localDb;
+    private function oopConnect(ConnectStruct $c): ?PDO {
+        // log some info
+        $ml = __METHOD__ . ' line: ' . __LINE__;
+        $this->log->info('_> method line = ' . $ml);
+        
+        $serverName = $_SERVER['SERVER_NAME'] ?? null;
+        
+        try {
+            if($this->debugMode || (!is_null($serverName) && $serverName == '10.0.0.210')) {
+                // manually maintain a copy of the remote db AND manually mirror it.
+                $host = $c->localHost;
+                $user = $c->localUser;
+                $pass = $c->localPass;
+                $database = $c->localDb;
+                $dsn = "mysql:host=$host;dbname=$database";
+                
+                $db = new PDO($dsn, $user, $pass);
+            }
+            else {
+                $host = $c->proHost;
+                $user = $c->proUser;
+                $pass = $c->proPass;
+                $database = $c->proDb;
+                $dsn = "mysql:host=$host;dbname=$database";
+                
+                $db = new PDO($dsn, $user, $pass);
+            }
             
-            $db = new PDO("mysql:host=$host;dbname=$database", $user, $pass);
+            $dbClass = get_class($db);
+            
+            if($dbClass != 'PDO') {
+                $this->log->info("_> ERROR, pdo connection not made");
+            }
+            // log some info
+            $ml = __METHOD__ . ' line: ' . __LINE__;
+            $this->log->info('_> method line = ' . $ml);
+            
+            return $db;
         }
-        else {
-            $host = $c->proHost;
-            $user = $c->proUser;
-            $pass = $c->proPass;
-            $database = $c->proDb;
-    
-            $db = new PDO("mysql:host=$host;dbname=$database", $user, $pass);
+        catch(\PDOException $e) {
+            $ml = __METHOD__ . ' line: ' . __LINE__;
+            $errMes = '_> PDO Exception: ' . $e->getMessage() . " ~$ml";
+            $this->log->error($errMes);
+            echo $errMes;
+        }
+        catch(\Throwable $e) {
+            $ml = __METHOD__ . ' line: ' . __LINE__;
+            $errMes = '_> Throwable: ' . $e->getMessage() . " ~$ml";
+            $this->log->error($errMes);
+            echo $e->getMessage();
         }
         
-        return $db;
+        return null;
     }
     
     /**

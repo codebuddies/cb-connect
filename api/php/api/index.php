@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+date_default_timezone_set('America/Los_Angeles');
+
 use App\Application\Handlers\HttpErrorHandler;
 use App\Application\Handlers\ShutdownHandler;
 use App\Application\ResponseEmitter\ResponseEmitter;
@@ -8,21 +10,33 @@ use DI\ContainerBuilder;
 use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 
-define('CB_DEBUG_MODE', $_GET['debug'] ?? null);
-
 require __DIR__ . '/../vendor/autoload.php';
+
+/*******************************************************************
+ ************************ Application Start ************************
+ *******************************************************************/
+
+// see if query str has a debug param
+$getDebug = $_GET['debug'] ?? null;
+if(PHP_SAPI == 'cli' || (!is_null($getDebug) && $getDebug == 'true')) {
+    $debugMode = true;
+}
+else {
+    $debugMode = false;
+}
+$appInfo = ['debug_mode' => $debugMode];
 
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
 
-if (false) { // Should be set to true in production
+if (true) { // Should be set to true in production
 	$containerBuilder->enableCompilation(__DIR__ . '/../var/cache');
 }
 
 // Set up settings
 $dbCodeBuddiesConnect = require __DIR__ . '/db.php';
 $settings = require __DIR__ . '/../app/settings.php';
-$settings($containerBuilder, $dbCodeBuddiesConnect);
+$settings($containerBuilder, $dbCodeBuddiesConnect, $appInfo);
 
 // Set up dependencies
 $dependencies = require __DIR__ . '/../app/dependencies.php';

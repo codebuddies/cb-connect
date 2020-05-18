@@ -21,7 +21,7 @@ class ConnectStruct
     public string $proPass;
     public string $proDb;
     
-    public function __construct($c) {
+    public function __construct(array $c) {
         $this->localHost = $c['local']['host'];
         $this->localUser = $c['local']['user'];
         $this->localPass = $c['local']['pass'];
