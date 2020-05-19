@@ -1,0 +1,7002 @@
+[
+  {
+    "Last Name": "SMITH",
+    "amount": "2,501,922",
+    "percent Frequency": 1.006,
+    "Rank": 1,
+    "rand": 877
+  },
+  {
+    "Last Name": "JOHNSON",
+    "amount": "2,014,470",
+    "percent Frequency": 0.810,
+    "Rank": 2,
+    "rand": 349
+  },
+  {
+    "Last Name": "WILLIAMS",
+    "amount": "1,738,413",
+    "percent Frequency": 0.699,
+    "Rank": 3,
+    "rand": 53
+  },
+  {
+    "Last Name": "JONES",
+    "amount": "1,544,427",
+    "percent Frequency": 0.621,
+    "Rank": 4,
+    "rand": 639
+  },
+  {
+    "Last Name": "BROWN",
+    "amount": "1,544,427",
+    "percent Frequency": 0.621,
+    "Rank": 5,
+    "rand": 639
+  },
+  {
+    "Last Name": "DAVIS",
+    "amount": "1,193,760",
+    "percent Frequency": 0.480,
+    "Rank": 6,
+    "rand": 32
+  },
+  {
+    "Last Name": "MILLER",
+    "amount": "1,054,488",
+    "percent Frequency": 0.424,
+    "Rank": 7,
+    "rand": 745
+  },
+  {
+    "Last Name": "WILSON",
+    "amount": "843,093",
+    "percent Frequency": 0.339,
+    "Rank": 8,
+    "rand": 483
+  },
+  {
+    "Last Name": "MOORE",
+    "amount": "775,944",
+    "percent Frequency": 0.312,
+    "Rank": 9,
+    "rand": 729
+  },
+  {
+    "Last Name": "TAYLOR",
+    "amount": "773,457",
+    "percent Frequency": 0.311,
+    "Rank": 10,
+    "rand": 827
+  },
+  {
+    "Last Name": "ANDERSON",
+    "amount": "773,457",
+    "percent Frequency": 0.311,
+    "Rank": 11,
+    "rand": 315
+  },
+  {
+    "Last Name": "THOMAS",
+    "amount": "773,457",
+    "percent Frequency": 0.311,
+    "Rank": 12,
+    "rand": 38
+  },
+  {
+    "Last Name": "JACKSON",
+    "amount": "770,970",
+    "percent Frequency": 0.310,
+    "Rank": 13,
+    "rand": 547
+  },
+  {
+    "Last Name": "WHITE",
+    "amount": "693,873",
+    "percent Frequency": 0.279,
+    "Rank": 14,
+    "rand": 152
+  },
+  {
+    "Last Name": "HARRIS",
+    "amount": "683,925",
+    "percent Frequency": 0.275,
+    "Rank": 15,
+    "rand": 474
+  },
+  {
+    "Last Name": "MARTIN",
+    "amount": "678,951",
+    "percent Frequency": 0.273,
+    "Rank": 16,
+    "rand": 432
+  },
+  {
+    "Last Name": "THOMPSON",
+    "amount": "669,003",
+    "percent Frequency": 0.269,
+    "Rank": 17,
+    "rand": 973
+  },
+  {
+    "Last Name": "GARCIA",
+    "amount": "631,698",
+    "percent Frequency": 0.254,
+    "Rank": 18,
+    "rand": 583
+  },
+  {
+    "Last Name": "MARTINEZ",
+    "amount": "581,958",
+    "percent Frequency": 0.234,
+    "Rank": 19,
+    "rand": 836
+  },
+  {
+    "Last Name": "ROBINSON",
+    "amount": "579,471",
+    "percent Frequency": 0.233,
+    "Rank": 20,
+    "rand": 480
+  },
+  {
+    "Last Name": "CLARK",
+    "amount": "574,497",
+    "percent Frequency": 0.231,
+    "Rank": 21,
+    "rand": 704
+  },
+  {
+    "Last Name": "RODRIGUEZ",
+    "amount": "569,523",
+    "percent Frequency": 0.229,
+    "Rank": 22,
+    "rand": 337
+  },
+  {
+    "Last Name": "LEWIS",
+    "amount": "562,062",
+    "percent Frequency": 0.226,
+    "Rank": 23,
+    "rand": 560
+  },
+  {
+    "Last Name": "LEE",
+    "amount": "547,140",
+    "percent Frequency": 0.220,
+    "Rank": 24,
+    "rand": 321
+  },
+  {
+    "Last Name": "WALKER",
+    "amount": "544,653",
+    "percent Frequency": 0.219,
+    "Rank": 25,
+    "rand": 53
+  },
+  {
+    "Last Name": "HALL",
+    "amount": "497,400",
+    "percent Frequency": 0.200,
+    "Rank": 26,
+    "rand": 793
+  },
+  {
+    "Last Name": "ALLEN",
+    "amount": "494,913",
+    "percent Frequency": 0.199,
+    "Rank": 27,
+    "rand": 33
+  },
+  {
+    "Last Name": "YOUNG",
+    "amount": "479,991",
+    "percent Frequency": 0.193,
+    "Rank": 28,
+    "rand": 177
+  },
+  {
+    "Last Name": "HERNANDEZ",
+    "amount": "477,504",
+    "percent Frequency": 0.192,
+    "Rank": 29,
+    "rand": 980
+  },
+  {
+    "Last Name": "KING",
+    "amount": "472,530",
+    "percent Frequency": 0.190,
+    "Rank": 30,
+    "rand": 179
+  },
+  {
+    "Last Name": "WRIGHT",
+    "amount": "470,043",
+    "percent Frequency": 0.189,
+    "Rank": 31,
+    "rand": 345
+  },
+  {
+    "Last Name": "LOPEZ",
+    "amount": "465,069",
+    "percent Frequency": 0.187,
+    "Rank": 32,
+    "rand": 830
+  },
+  {
+    "Last Name": "HILL",
+    "amount": "465,069",
+    "percent Frequency": 0.187,
+    "Rank": 33,
+    "rand": 570
+  },
+  {
+    "Last Name": "SCOTT",
+    "amount": "460,095",
+    "percent Frequency": 0.185,
+    "Rank": 34,
+    "rand": 133
+  },
+  {
+    "Last Name": "GREEN",
+    "amount": "455,121",
+    "percent Frequency": 0.183,
+    "Rank": 35,
+    "rand": 822
+  },
+  {
+    "Last Name": "ADAMS",
+    "amount": "432,738",
+    "percent Frequency": 0.174,
+    "Rank": 36,
+    "rand": 11
+  },
+  {
+    "Last Name": "BAKER",
+    "amount": "425,277",
+    "percent Frequency": 0.171,
+    "Rank": 37,
+    "rand": 236
+  },
+  {
+    "Last Name": "GONZALEZ",
+    "amount": "412,842",
+    "percent Frequency": 0.166,
+    "Rank": 38,
+    "rand": 814
+  },
+  {
+    "Last Name": "NELSON",
+    "amount": "402,894",
+    "percent Frequency": 0.162,
+    "Rank": 39,
+    "rand": 274
+  },
+  {
+    "Last Name": "CARTER",
+    "amount": "402,894",
+    "percent Frequency": 0.162,
+    "Rank": 40,
+    "rand": 879
+  },
+  {
+    "Last Name": "MITCHELL",
+    "amount": "397,920",
+    "percent Frequency": 0.160,
+    "Rank": 41,
+    "rand": 968
+  },
+  {
+    "Last Name": "PEREZ",
+    "amount": "385,485",
+    "percent Frequency": 0.155,
+    "Rank": 42,
+    "rand": 511
+  },
+  {
+    "Last Name": "ROBERTS",
+    "amount": "380,511",
+    "percent Frequency": 0.153,
+    "Rank": 43,
+    "rand": 648
+  },
+  {
+    "Last Name": "TURNER",
+    "amount": "378,024",
+    "percent Frequency": 0.152,
+    "Rank": 44,
+    "rand": 674
+  },
+  {
+    "Last Name": "PHILLIPS",
+    "amount": "370,563",
+    "percent Frequency": 0.149,
+    "Rank": 45,
+    "rand": 351
+  },
+  {
+    "Last Name": "CAMPBELL",
+    "amount": "370,563",
+    "percent Frequency": 0.149,
+    "Rank": 46,
+    "rand": 409
+  },
+  {
+    "Last Name": "PARKER",
+    "amount": "363,102",
+    "percent Frequency": 0.146,
+    "Rank": 47,
+    "rand": 769
+  },
+  {
+    "Last Name": "EVANS",
+    "amount": "350,667",
+    "percent Frequency": 0.141,
+    "Rank": 48,
+    "rand": 616
+  },
+  {
+    "Last Name": "EDWARDS",
+    "amount": "340,719",
+    "percent Frequency": 0.137,
+    "Rank": 49,
+    "rand": 779
+  },
+  {
+    "Last Name": "COLLINS",
+    "amount": "333,258",
+    "percent Frequency": 0.134,
+    "Rank": 50,
+    "rand": 973
+  },
+  {
+    "Last Name": "STEWART",
+    "amount": "330,771",
+    "percent Frequency": 0.133,
+    "Rank": 51,
+    "rand": 894
+  },
+  {
+    "Last Name": "SANCHEZ",
+    "amount": "323,310",
+    "percent Frequency": 0.130,
+    "Rank": 52,
+    "rand": 611
+  },
+  {
+    "Last Name": "MORRIS",
+    "amount": "310,875",
+    "percent Frequency": 0.125,
+    "Rank": 53,
+    "rand": 577
+  },
+  {
+    "Last Name": "ROGERS",
+    "amount": "305,901",
+    "percent Frequency": 0.123,
+    "Rank": 54,
+    "rand": 440
+  },
+  {
+    "Last Name": "REED",
+    "amount": "303,414",
+    "percent Frequency": 0.122,
+    "Rank": 55,
+    "rand": 663
+  },
+  {
+    "Last Name": "COOK",
+    "amount": "298,440",
+    "percent Frequency": 0.120,
+    "Rank": 56,
+    "rand": 477
+  },
+  {
+    "Last Name": "MORGAN",
+    "amount": "293,466",
+    "percent Frequency": 0.118,
+    "Rank": 57,
+    "rand": 914
+  },
+  {
+    "Last Name": "BELL",
+    "amount": "290,979",
+    "percent Frequency": 0.117,
+    "Rank": 58,
+    "rand": 997
+  },
+  {
+    "Last Name": "MURPHY",
+    "amount": "290,979",
+    "percent Frequency": 0.117,
+    "Rank": 59,
+    "rand": 165
+  },
+  {
+    "Last Name": "BAILEY",
+    "amount": "286,005",
+    "percent Frequency": 0.115,
+    "Rank": 60,
+    "rand": 915
+  },
+  {
+    "Last Name": "RIVERA",
+    "amount": "281,031",
+    "percent Frequency": 0.113,
+    "Rank": 61,
+    "rand": 363
+  },
+  {
+    "Last Name": "COOPER",
+    "amount": "281,031",
+    "percent Frequency": 0.113,
+    "Rank": 62,
+    "rand": 654
+  },
+  {
+    "Last Name": "RICHARDSON",
+    "amount": "278,544",
+    "percent Frequency": 0.112,
+    "Rank": 63,
+    "rand": 89
+  },
+  {
+    "Last Name": "COX",
+    "amount": "273,570",
+    "percent Frequency": 0.110,
+    "Rank": 64,
+    "rand": 440
+  },
+  {
+    "Last Name": "HOWARD",
+    "amount": "273,570",
+    "percent Frequency": 0.110,
+    "Rank": 65,
+    "rand": 507
+  },
+  {
+    "Last Name": "WARD",
+    "amount": "268,596",
+    "percent Frequency": 0.108,
+    "Rank": 66,
+    "rand": 553
+  },
+  {
+    "Last Name": "TORRES",
+    "amount": "268,596",
+    "percent Frequency": 0.108,
+    "Rank": 67,
+    "rand": 849
+  },
+  {
+    "Last Name": "PETERSON",
+    "amount": "266,109",
+    "percent Frequency": 0.107,
+    "Rank": 68,
+    "rand": 465
+  },
+  {
+    "Last Name": "GRAY",
+    "amount": "263,622",
+    "percent Frequency": 0.106,
+    "Rank": 69,
+    "rand": 474
+  },
+  {
+    "Last Name": "RAMIREZ",
+    "amount": "261,135",
+    "percent Frequency": 0.105,
+    "Rank": 70,
+    "rand": 610
+  },
+  {
+    "Last Name": "JAMES",
+    "amount": "261,135",
+    "percent Frequency": 0.105,
+    "Rank": 71,
+    "rand": 131
+  },
+  {
+    "Last Name": "WATSON",
+    "amount": "256,161",
+    "percent Frequency": 0.103,
+    "Rank": 72,
+    "rand": 947
+  },
+  {
+    "Last Name": "BROOKS",
+    "amount": "256,161",
+    "percent Frequency": 0.103,
+    "Rank": 73,
+    "rand": 829
+  },
+  {
+    "Last Name": "KELLY",
+    "amount": "253,674",
+    "percent Frequency": 0.102,
+    "Rank": 74,
+    "rand": 13
+  },
+  {
+    "Last Name": "SANDERS",
+    "amount": "248,700",
+    "percent Frequency": 0.100,
+    "Rank": 75,
+    "rand": 117
+  },
+  {
+    "Last Name": "PRICE",
+    "amount": "246,213",
+    "percent Frequency": 0.099,
+    "Rank": 76,
+    "rand": 252
+  },
+  {
+    "Last Name": "BENNETT",
+    "amount": "246,213",
+    "percent Frequency": 0.099,
+    "Rank": 77,
+    "rand": 415
+  },
+  {
+    "Last Name": "WOOD",
+    "amount": "243,726",
+    "percent Frequency": 0.098,
+    "Rank": 78,
+    "rand": 793
+  },
+  {
+    "Last Name": "BARNES",
+    "amount": "241,239",
+    "percent Frequency": 0.097,
+    "Rank": 79,
+    "rand": 122
+  },
+  {
+    "Last Name": "ROSS",
+    "amount": "238,752",
+    "percent Frequency": 0.096,
+    "Rank": 80,
+    "rand": 986
+  },
+  {
+    "Last Name": "HENDERSON",
+    "amount": "236,265",
+    "percent Frequency": 0.095,
+    "Rank": 81,
+    "rand": 362
+  },
+  {
+    "Last Name": "COLEMAN",
+    "amount": "236,265",
+    "percent Frequency": 0.095,
+    "Rank": 82,
+    "rand": 86
+  },
+  {
+    "Last Name": "JENKINS",
+    "amount": "236,265",
+    "percent Frequency": 0.095,
+    "Rank": 83,
+    "rand": 710
+  },
+  {
+    "Last Name": "PERRY",
+    "amount": "233,778",
+    "percent Frequency": 0.094,
+    "Rank": 84,
+    "rand": 719
+  },
+  {
+    "Last Name": "POWELL",
+    "amount": "231,291",
+    "percent Frequency": 0.093,
+    "Rank": 85,
+    "rand": 933
+  },
+  {
+    "Last Name": "LONG",
+    "amount": "228,804",
+    "percent Frequency": 0.092,
+    "Rank": 86,
+    "rand": 254
+  },
+  {
+    "Last Name": "PATTERSON",
+    "amount": "228,804",
+    "percent Frequency": 0.092,
+    "Rank": 87,
+    "rand": 669
+  },
+  {
+    "Last Name": "HUGHES",
+    "amount": "228,804",
+    "percent Frequency": 0.092,
+    "Rank": 88,
+    "rand": 686
+  },
+  {
+    "Last Name": "FLORES",
+    "amount": "228,804",
+    "percent Frequency": 0.092,
+    "Rank": 89,
+    "rand": 737
+  },
+  {
+    "Last Name": "WASHINGTON",
+    "amount": "228,804",
+    "percent Frequency": 0.092,
+    "Rank": 90,
+    "rand": 799
+  },
+  {
+    "Last Name": "BUTLER",
+    "amount": "226,317",
+    "percent Frequency": 0.091,
+    "Rank": 91,
+    "rand": 61
+  },
+  {
+    "Last Name": "SIMMONS",
+    "amount": "226,317",
+    "percent Frequency": 0.091,
+    "Rank": 92,
+    "rand": 918
+  },
+  {
+    "Last Name": "FOSTER",
+    "amount": "226,317",
+    "percent Frequency": 0.091,
+    "Rank": 93,
+    "rand": 598
+  },
+  {
+    "Last Name": "GONZALES",
+    "amount": "216,369",
+    "percent Frequency": 0.087,
+    "Rank": 94,
+    "rand": 563
+  },
+  {
+    "Last Name": "BRYANT",
+    "amount": "216,369",
+    "percent Frequency": 0.087,
+    "Rank": 95,
+    "rand": 431
+  },
+  {
+    "Last Name": "ALEXANDER",
+    "amount": "211,395",
+    "percent Frequency": 0.085,
+    "Rank": 96,
+    "rand": 688
+  },
+  {
+    "Last Name": "RUSSELL",
+    "amount": "211,395",
+    "percent Frequency": 0.085,
+    "Rank": 97,
+    "rand": 868
+  },
+  {
+    "Last Name": "GRIFFIN",
+    "amount": "208,908",
+    "percent Frequency": 0.084,
+    "Rank": 98,
+    "rand": 239
+  },
+  {
+    "Last Name": "DIAZ",
+    "amount": "208,908",
+    "percent Frequency": 0.084,
+    "Rank": 99,
+    "rand": 699
+  },
+  {
+    "Last Name": "HAYES",
+    "amount": "206,421",
+    "percent Frequency": 0.083,
+    "Rank": 100,
+    "rand": 840
+  },
+  {
+    "Last Name": "MYERS",
+    "amount": "206,421",
+    "percent Frequency": 0.083,
+    "Rank": 101,
+    "rand": 757
+  },
+  {
+    "Last Name": "FORD",
+    "amount": "203,934",
+    "percent Frequency": 0.082,
+    "Rank": 102,
+    "rand": 9
+  },
+  {
+    "Last Name": "HAMILTON",
+    "amount": "203,934",
+    "percent Frequency": 0.082,
+    "Rank": 103,
+    "rand": 998
+  },
+  {
+    "Last Name": "GRAHAM",
+    "amount": "203,934",
+    "percent Frequency": 0.082,
+    "Rank": 104,
+    "rand": 271
+  },
+  {
+    "Last Name": "SULLIVAN",
+    "amount": "201,447",
+    "percent Frequency": 0.081,
+    "Rank": 105,
+    "rand": 172
+  },
+  {
+    "Last Name": "WALLACE",
+    "amount": "201,447",
+    "percent Frequency": 0.081,
+    "Rank": 106,
+    "rand": 777
+  },
+  {
+    "Last Name": "WOODS",
+    "amount": "198,960",
+    "percent Frequency": 0.080,
+    "Rank": 107,
+    "rand": 27
+  },
+  {
+    "Last Name": "COLE",
+    "amount": "198,960",
+    "percent Frequency": 0.080,
+    "Rank": 108,
+    "rand": 361
+  },
+  {
+    "Last Name": "WEST",
+    "amount": "198,960",
+    "percent Frequency": 0.080,
+    "Rank": 109,
+    "rand": 270
+  },
+  {
+    "Last Name": "JORDAN",
+    "amount": "193,986",
+    "percent Frequency": 0.078,
+    "Rank": 110,
+    "rand": 829
+  },
+  {
+    "Last Name": "OWENS",
+    "amount": "193,986",
+    "percent Frequency": 0.078,
+    "Rank": 111,
+    "rand": 618
+  },
+  {
+    "Last Name": "REYNOLDS",
+    "amount": "193,986",
+    "percent Frequency": 0.078,
+    "Rank": 112,
+    "rand": 603
+  },
+  {
+    "Last Name": "FISHER",
+    "amount": "191,499",
+    "percent Frequency": 0.077,
+    "Rank": 113,
+    "rand": 497
+  },
+  {
+    "Last Name": "ELLIS",
+    "amount": "191,499",
+    "percent Frequency": 0.077,
+    "Rank": 114,
+    "rand": 562
+  },
+  {
+    "Last Name": "HARRISON",
+    "amount": "189,012",
+    "percent Frequency": 0.076,
+    "Rank": 115,
+    "rand": 196
+  },
+  {
+    "Last Name": "GIBSON",
+    "amount": "186,525",
+    "percent Frequency": 0.075,
+    "Rank": 116,
+    "rand": 732
+  },
+  {
+    "Last Name": "MCDONALD",
+    "amount": "186,525",
+    "percent Frequency": 0.075,
+    "Rank": 117,
+    "rand": 377
+  },
+  {
+    "Last Name": "CRUZ",
+    "amount": "186,525",
+    "percent Frequency": 0.075,
+    "Rank": 118,
+    "rand": 778
+  },
+  {
+    "Last Name": "MARSHALL",
+    "amount": "186,525",
+    "percent Frequency": 0.075,
+    "Rank": 119,
+    "rand": 74
+  },
+  {
+    "Last Name": "ORTIZ",
+    "amount": "186,525",
+    "percent Frequency": 0.075,
+    "Rank": 120,
+    "rand": 50
+  },
+  {
+    "Last Name": "GOMEZ",
+    "amount": "186,525",
+    "percent Frequency": 0.075,
+    "Rank": 121,
+    "rand": 374
+  },
+  {
+    "Last Name": "MURRAY",
+    "amount": "184,038",
+    "percent Frequency": 0.074,
+    "Rank": 122,
+    "rand": 834
+  },
+  {
+    "Last Name": "FREEMAN",
+    "amount": "184,038",
+    "percent Frequency": 0.074,
+    "Rank": 123,
+    "rand": 644
+  },
+  {
+    "Last Name": "WELLS",
+    "amount": "181,551",
+    "percent Frequency": 0.073,
+    "Rank": 124,
+    "rand": 682
+  },
+  {
+    "Last Name": "WEBB",
+    "amount": "179,064",
+    "percent Frequency": 0.072,
+    "Rank": 125,
+    "rand": 268
+  },
+  {
+    "Last Name": "SIMPSON",
+    "amount": "174,090",
+    "percent Frequency": 0.070,
+    "Rank": 126,
+    "rand": 549
+  },
+  {
+    "Last Name": "STEVENS",
+    "amount": "174,090",
+    "percent Frequency": 0.070,
+    "Rank": 127,
+    "rand": 275
+  },
+  {
+    "Last Name": "TUCKER",
+    "amount": "174,090",
+    "percent Frequency": 0.070,
+    "Rank": 128,
+    "rand": 36
+  },
+  {
+    "Last Name": "PORTER",
+    "amount": "171,603",
+    "percent Frequency": 0.069,
+    "Rank": 129,
+    "rand": 852
+  },
+  {
+    "Last Name": "HUNTER",
+    "amount": "171,603",
+    "percent Frequency": 0.069,
+    "Rank": 130,
+    "rand": 255
+  },
+  {
+    "Last Name": "HICKS",
+    "amount": "171,603",
+    "percent Frequency": 0.069,
+    "Rank": 131,
+    "rand": 717
+  },
+  {
+    "Last Name": "CRAWFORD",
+    "amount": "169,116",
+    "percent Frequency": 0.068,
+    "Rank": 132,
+    "rand": 960
+  },
+  {
+    "Last Name": "HENRY",
+    "amount": "169,116",
+    "percent Frequency": 0.068,
+    "Rank": 133,
+    "rand": 970
+  },
+  {
+    "Last Name": "BOYD",
+    "amount": "169,116",
+    "percent Frequency": 0.068,
+    "Rank": 134,
+    "rand": 608
+  },
+  {
+    "Last Name": "MASON",
+    "amount": "169,116",
+    "percent Frequency": 0.068,
+    "Rank": 135,
+    "rand": 497
+  },
+  {
+    "Last Name": "MORALES",
+    "amount": "166,629",
+    "percent Frequency": 0.067,
+    "Rank": 136,
+    "rand": 187
+  },
+  {
+    "Last Name": "KENNEDY",
+    "amount": "166,629",
+    "percent Frequency": 0.067,
+    "Rank": 137,
+    "rand": 757
+  },
+  {
+    "Last Name": "WARREN",
+    "amount": "166,629",
+    "percent Frequency": 0.067,
+    "Rank": 138,
+    "rand": 208
+  },
+  {
+    "Last Name": "DIXON",
+    "amount": "164,142",
+    "percent Frequency": 0.066,
+    "Rank": 139,
+    "rand": 307
+  },
+  {
+    "Last Name": "RAMOS",
+    "amount": "164,142",
+    "percent Frequency": 0.066,
+    "Rank": 140,
+    "rand": 7
+  },
+  {
+    "Last Name": "REYES",
+    "amount": "164,142",
+    "percent Frequency": 0.066,
+    "Rank": 141,
+    "rand": 240
+  },
+  {
+    "Last Name": "BURNS",
+    "amount": "161,655",
+    "percent Frequency": 0.065,
+    "Rank": 142,
+    "rand": 164
+  },
+  {
+    "Last Name": "GORDON",
+    "amount": "161,655",
+    "percent Frequency": 0.065,
+    "Rank": 143,
+    "rand": 892
+  },
+  {
+    "Last Name": "SHAW",
+    "amount": "161,655",
+    "percent Frequency": 0.065,
+    "Rank": 144,
+    "rand": 146
+  },
+  {
+    "Last Name": "HOLMES",
+    "amount": "161,655",
+    "percent Frequency": 0.065,
+    "Rank": 145,
+    "rand": 823
+  },
+  {
+    "Last Name": "RICE",
+    "amount": "159,168",
+    "percent Frequency": 0.064,
+    "Rank": 146,
+    "rand": 484
+  },
+  {
+    "Last Name": "ROBERTSON",
+    "amount": "159,168",
+    "percent Frequency": 0.064,
+    "Rank": 147,
+    "rand": 29
+  },
+  {
+    "Last Name": "HUNT",
+    "amount": "156,681",
+    "percent Frequency": 0.063,
+    "Rank": 148,
+    "rand": 456
+  },
+  {
+    "Last Name": "BLACK",
+    "amount": "156,681",
+    "percent Frequency": 0.063,
+    "Rank": 149,
+    "rand": 247
+  },
+  {
+    "Last Name": "DANIELS",
+    "amount": "154,194",
+    "percent Frequency": 0.062,
+    "Rank": 150,
+    "rand": 721
+  },
+  {
+    "Last Name": "PALMER",
+    "amount": "154,194",
+    "percent Frequency": 0.062,
+    "Rank": 151,
+    "rand": 432
+  },
+  {
+    "Last Name": "MILLS",
+    "amount": "151,707",
+    "percent Frequency": 0.061,
+    "Rank": 152,
+    "rand": 987
+  },
+  {
+    "Last Name": "NICHOLS",
+    "amount": "149,220",
+    "percent Frequency": 0.060,
+    "Rank": 153,
+    "rand": 804
+  },
+  {
+    "Last Name": "GRANT",
+    "amount": "149,220",
+    "percent Frequency": 0.060,
+    "Rank": 154,
+    "rand": 892
+  },
+  {
+    "Last Name": "KNIGHT",
+    "amount": "149,220",
+    "percent Frequency": 0.060,
+    "Rank": 155,
+    "rand": 880
+  },
+  {
+    "Last Name": "FERGUSON",
+    "amount": "146,733",
+    "percent Frequency": 0.059,
+    "Rank": 156,
+    "rand": 808
+  },
+  {
+    "Last Name": "ROSE",
+    "amount": "146,733",
+    "percent Frequency": 0.059,
+    "Rank": 157,
+    "rand": 995
+  },
+  {
+    "Last Name": "STONE",
+    "amount": "146,733",
+    "percent Frequency": 0.059,
+    "Rank": 158,
+    "rand": 175
+  },
+  {
+    "Last Name": "HAWKINS",
+    "amount": "146,733",
+    "percent Frequency": 0.059,
+    "Rank": 159,
+    "rand": 531
+  },
+  {
+    "Last Name": "DUNN",
+    "amount": "144,246",
+    "percent Frequency": 0.058,
+    "Rank": 160,
+    "rand": 126
+  },
+  {
+    "Last Name": "PERKINS",
+    "amount": "144,246",
+    "percent Frequency": 0.058,
+    "Rank": 161,
+    "rand": 996
+  },
+  {
+    "Last Name": "HUDSON",
+    "amount": "144,246",
+    "percent Frequency": 0.058,
+    "Rank": 162,
+    "rand": 484
+  },
+  {
+    "Last Name": "SPENCER",
+    "amount": "141,759",
+    "percent Frequency": 0.057,
+    "Rank": 163,
+    "rand": 895
+  },
+  {
+    "Last Name": "GARDNER",
+    "amount": "141,759",
+    "percent Frequency": 0.057,
+    "Rank": 164,
+    "rand": 600
+  },
+  {
+    "Last Name": "STEPHENS",
+    "amount": "141,759",
+    "percent Frequency": 0.057,
+    "Rank": 165,
+    "rand": 732
+  },
+  {
+    "Last Name": "PAYNE",
+    "amount": "141,759",
+    "percent Frequency": 0.057,
+    "Rank": 166,
+    "rand": 528
+  },
+  {
+    "Last Name": "PIERCE",
+    "amount": "139,272",
+    "percent Frequency": 0.056,
+    "Rank": 167,
+    "rand": 321
+  },
+  {
+    "Last Name": "BERRY",
+    "amount": "139,272",
+    "percent Frequency": 0.056,
+    "Rank": 168,
+    "rand": 263
+  },
+  {
+    "Last Name": "MATTHEWS",
+    "amount": "139,272",
+    "percent Frequency": 0.056,
+    "Rank": 169,
+    "rand": 713
+  },
+  {
+    "Last Name": "ARNOLD",
+    "amount": "139,272",
+    "percent Frequency": 0.056,
+    "Rank": 170,
+    "rand": 797
+  },
+  {
+    "Last Name": "WAGNER",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 171,
+    "rand": 621
+  },
+  {
+    "Last Name": "WILLIS",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 172,
+    "rand": 211
+  },
+  {
+    "Last Name": "RAY",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 173,
+    "rand": 727
+  },
+  {
+    "Last Name": "WATKINS",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 174,
+    "rand": 707
+  },
+  {
+    "Last Name": "OLSON",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 175,
+    "rand": 112
+  },
+  {
+    "Last Name": "CARROLL",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 176,
+    "rand": 246
+  },
+  {
+    "Last Name": "DUNCAN",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 177,
+    "rand": 541
+  },
+  {
+    "Last Name": "SNYDER",
+    "amount": "136,785",
+    "percent Frequency": 0.055,
+    "Rank": 178,
+    "rand": 980
+  },
+  {
+    "Last Name": "HART",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 179,
+    "rand": 656
+  },
+  {
+    "Last Name": "CUNNINGHAM",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 180,
+    "rand": 446
+  },
+  {
+    "Last Name": "BRADLEY",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 181,
+    "rand": 924
+  },
+  {
+    "Last Name": "LANE",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 182,
+    "rand": 785
+  },
+  {
+    "Last Name": "ANDREWS",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 183,
+    "rand": 511
+  },
+  {
+    "Last Name": "RUIZ",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 184,
+    "rand": 554
+  },
+  {
+    "Last Name": "HARPER",
+    "amount": "134,298",
+    "percent Frequency": 0.054,
+    "Rank": 185,
+    "rand": 307
+  },
+  {
+    "Last Name": "FOX",
+    "amount": "131,811",
+    "percent Frequency": 0.053,
+    "Rank": 186,
+    "rand": 171
+  },
+  {
+    "Last Name": "RILEY",
+    "amount": "131,811",
+    "percent Frequency": 0.053,
+    "Rank": 187,
+    "rand": 904
+  },
+  {
+    "Last Name": "ARMSTRONG",
+    "amount": "131,811",
+    "percent Frequency": 0.053,
+    "Rank": 188,
+    "rand": 67
+  },
+  {
+    "Last Name": "CARPENTER",
+    "amount": "131,811",
+    "percent Frequency": 0.053,
+    "Rank": 189,
+    "rand": 374
+  },
+  {
+    "Last Name": "WEAVER",
+    "amount": "131,811",
+    "percent Frequency": 0.053,
+    "Rank": 190,
+    "rand": 104
+  },
+  {
+    "Last Name": "GREENE",
+    "amount": "131,811",
+    "percent Frequency": 0.053,
+    "Rank": 191,
+    "rand": 548
+  },
+  {
+    "Last Name": "LAWRENCE",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 192,
+    "rand": 776
+  },
+  {
+    "Last Name": "ELLIOTT",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 193,
+    "rand": 812
+  },
+  {
+    "Last Name": "CHAVEZ",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 194,
+    "rand": 807
+  },
+  {
+    "Last Name": "SIMS",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 195,
+    "rand": 376
+  },
+  {
+    "Last Name": "AUSTIN",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 196,
+    "rand": 115
+  },
+  {
+    "Last Name": "PETERS",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 197,
+    "rand": 656
+  },
+  {
+    "Last Name": "KELLEY",
+    "amount": "129,324",
+    "percent Frequency": 0.052,
+    "Rank": 198,
+    "rand": 691
+  },
+  {
+    "Last Name": "FRANKLIN",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 199,
+    "rand": 438
+  },
+  {
+    "Last Name": "LAWSON",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 200,
+    "rand": 405
+  },
+  {
+    "Last Name": "FIELDS",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 201,
+    "rand": 915
+  },
+  {
+    "Last Name": "GUTIERREZ",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 202,
+    "rand": 25
+  },
+  {
+    "Last Name": "RYAN",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 203,
+    "rand": 457
+  },
+  {
+    "Last Name": "SCHMIDT",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 204,
+    "rand": 907
+  },
+  {
+    "Last Name": "CARR",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 205,
+    "rand": 584
+  },
+  {
+    "Last Name": "VASQUEZ",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 206,
+    "rand": 37
+  },
+  {
+    "Last Name": "CASTILLO",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 207,
+    "rand": 841
+  },
+  {
+    "Last Name": "WHEELER",
+    "amount": "126,837",
+    "percent Frequency": 0.051,
+    "Rank": 208,
+    "rand": 613
+  },
+  {
+    "Last Name": "CHAPMAN",
+    "amount": "124,350",
+    "percent Frequency": 0.050,
+    "Rank": 209,
+    "rand": 917
+  },
+  {
+    "Last Name": "OLIVER",
+    "amount": "124,350",
+    "percent Frequency": 0.050,
+    "Rank": 210,
+    "rand": 517
+  },
+  {
+    "Last Name": "MONTGOMERY",
+    "amount": "121,863",
+    "percent Frequency": 0.049,
+    "Rank": 211,
+    "rand": 317
+  },
+  {
+    "Last Name": "RICHARDS",
+    "amount": "121,863",
+    "percent Frequency": 0.049,
+    "Rank": 212,
+    "rand": 406
+  },
+  {
+    "Last Name": "WILLIAMSON",
+    "amount": "121,863",
+    "percent Frequency": 0.049,
+    "Rank": 213,
+    "rand": 945
+  },
+  {
+    "Last Name": "JOHNSTON",
+    "amount": "121,863",
+    "percent Frequency": 0.049,
+    "Rank": 214,
+    "rand": 449
+  },
+  {
+    "Last Name": "BANKS",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 215,
+    "rand": 394
+  },
+  {
+    "Last Name": "MEYER",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 216,
+    "rand": 852
+  },
+  {
+    "Last Name": "BISHOP",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 217,
+    "rand": 764
+  },
+  {
+    "Last Name": "MCCOY",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 218,
+    "rand": 820
+  },
+  {
+    "Last Name": "HOWELL",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 219,
+    "rand": 531
+  },
+  {
+    "Last Name": "ALVAREZ",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 220,
+    "rand": 288
+  },
+  {
+    "Last Name": "MORRISON",
+    "amount": "119,376",
+    "percent Frequency": 0.048,
+    "Rank": 221,
+    "rand": 232
+  },
+  {
+    "Last Name": "HANSEN",
+    "amount": "116,889",
+    "percent Frequency": 0.047,
+    "Rank": 222,
+    "rand": 39
+  },
+  {
+    "Last Name": "FERNANDEZ",
+    "amount": "116,889",
+    "percent Frequency": 0.047,
+    "Rank": 223,
+    "rand": 672
+  },
+  {
+    "Last Name": "GARZA",
+    "amount": "116,889",
+    "percent Frequency": 0.047,
+    "Rank": 224,
+    "rand": 594
+  },
+  {
+    "Last Name": "HARVEY",
+    "amount": "116,889",
+    "percent Frequency": 0.047,
+    "Rank": 225,
+    "rand": 661
+  },
+  {
+    "Last Name": "LITTLE",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 226,
+    "rand": 363
+  },
+  {
+    "Last Name": "BURTON",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 227,
+    "rand": 502
+  },
+  {
+    "Last Name": "STANLEY",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 228,
+    "rand": 324
+  },
+  {
+    "Last Name": "NGUYEN",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 229,
+    "rand": 279
+  },
+  {
+    "Last Name": "GEORGE",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 230,
+    "rand": 822
+  },
+  {
+    "Last Name": "JACOBS",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 231,
+    "rand": 940
+  },
+  {
+    "Last Name": "REID",
+    "amount": "114,402",
+    "percent Frequency": 0.046,
+    "Rank": 232,
+    "rand": 135
+  },
+  {
+    "Last Name": "KIM",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 233,
+    "rand": 857
+  },
+  {
+    "Last Name": "FULLER",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 234,
+    "rand": 354
+  },
+  {
+    "Last Name": "LYNCH",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 235,
+    "rand": 528
+  },
+  {
+    "Last Name": "DEAN",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 236,
+    "rand": 453
+  },
+  {
+    "Last Name": "GILBERT",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 237,
+    "rand": 688
+  },
+  {
+    "Last Name": "GARRETT",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 238,
+    "rand": 889
+  },
+  {
+    "Last Name": "ROMERO",
+    "amount": "111,915",
+    "percent Frequency": 0.045,
+    "Rank": 239,
+    "rand": 901
+  },
+  {
+    "Last Name": "WELCH",
+    "amount": "109,428",
+    "percent Frequency": 0.044,
+    "Rank": 240,
+    "rand": 693
+  },
+  {
+    "Last Name": "LARSON",
+    "amount": "109,428",
+    "percent Frequency": 0.044,
+    "Rank": 241,
+    "rand": 996
+  },
+  {
+    "Last Name": "FRAZIER",
+    "amount": "109,428",
+    "percent Frequency": 0.044,
+    "Rank": 242,
+    "rand": 346
+  },
+  {
+    "Last Name": "BURKE",
+    "amount": "109,428",
+    "percent Frequency": 0.044,
+    "Rank": 243,
+    "rand": 136
+  },
+  {
+    "Last Name": "HANSON",
+    "amount": "106,941",
+    "percent Frequency": 0.043,
+    "Rank": 244,
+    "rand": 516
+  },
+  {
+    "Last Name": "DAY",
+    "amount": "106,941",
+    "percent Frequency": 0.043,
+    "Rank": 245,
+    "rand": 244
+  },
+  {
+    "Last Name": "MENDOZA",
+    "amount": "106,941",
+    "percent Frequency": 0.043,
+    "Rank": 246,
+    "rand": 338
+  },
+  {
+    "Last Name": "MORENO",
+    "amount": "106,941",
+    "percent Frequency": 0.043,
+    "Rank": 247,
+    "rand": 650
+  },
+  {
+    "Last Name": "BOWMAN",
+    "amount": "106,941",
+    "percent Frequency": 0.043,
+    "Rank": 248,
+    "rand": 260
+  },
+  {
+    "Last Name": "MEDINA",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 249,
+    "rand": 400
+  },
+  {
+    "Last Name": "FOWLER",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 250,
+    "rand": 980
+  },
+  {
+    "Last Name": "BREWER",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 251,
+    "rand": 384
+  },
+  {
+    "Last Name": "HOFFMAN",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 252,
+    "rand": 647
+  },
+  {
+    "Last Name": "CARLSON",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 253,
+    "rand": 141
+  },
+  {
+    "Last Name": "SILVA",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 254,
+    "rand": 371
+  },
+  {
+    "Last Name": "PEARSON",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 255,
+    "rand": 987
+  },
+  {
+    "Last Name": "HOLLAND",
+    "amount": "104,454",
+    "percent Frequency": 0.042,
+    "Rank": 256,
+    "rand": 655
+  },
+  {
+    "Last Name": "DOUGLAS",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 257,
+    "rand": 423
+  },
+  {
+    "Last Name": "FLEMING",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 258,
+    "rand": 679
+  },
+  {
+    "Last Name": "JENSEN",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 259,
+    "rand": 338
+  },
+  {
+    "Last Name": "VARGAS",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 260,
+    "rand": 704
+  },
+  {
+    "Last Name": "BYRD",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 261,
+    "rand": 898
+  },
+  {
+    "Last Name": "DAVIDSON",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 262,
+    "rand": 599
+  },
+  {
+    "Last Name": "HOPKINS",
+    "amount": "101,967",
+    "percent Frequency": 0.041,
+    "Rank": 263,
+    "rand": 65
+  },
+  {
+    "Last Name": "MAY",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 264,
+    "rand": 906
+  },
+  {
+    "Last Name": "TERRY",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 265,
+    "rand": 235
+  },
+  {
+    "Last Name": "HERRERA",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 266,
+    "rand": 694
+  },
+  {
+    "Last Name": "WADE",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 267,
+    "rand": 929
+  },
+  {
+    "Last Name": "SOTO",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 268,
+    "rand": 447
+  },
+  {
+    "Last Name": "WALTERS",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 269,
+    "rand": 459
+  },
+  {
+    "Last Name": "CURTIS",
+    "amount": "99,480",
+    "percent Frequency": 0.040,
+    "Rank": 270,
+    "rand": 322
+  },
+  {
+    "Last Name": "NEAL",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 271,
+    "rand": 718
+  },
+  {
+    "Last Name": "CALDWELL",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 272,
+    "rand": 465
+  },
+  {
+    "Last Name": "LOWE",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 273,
+    "rand": 608
+  },
+  {
+    "Last Name": "JENNINGS",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 274,
+    "rand": 351
+  },
+  {
+    "Last Name": "BARNETT",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 275,
+    "rand": 283
+  },
+  {
+    "Last Name": "GRAVES",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 276,
+    "rand": 960
+  },
+  {
+    "Last Name": "JIMENEZ",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 277,
+    "rand": 70
+  },
+  {
+    "Last Name": "HORTON",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 278,
+    "rand": 515
+  },
+  {
+    "Last Name": "SHELTON",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 279,
+    "rand": 325
+  },
+  {
+    "Last Name": "BARRETT",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 280,
+    "rand": 530
+  },
+  {
+    "Last Name": "OBRIEN",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 281,
+    "rand": 303
+  },
+  {
+    "Last Name": "CASTRO",
+    "amount": "96,993",
+    "percent Frequency": 0.039,
+    "Rank": 282,
+    "rand": 520
+  },
+  {
+    "Last Name": "SUTTON",
+    "amount": "94,506",
+    "percent Frequency": 0.038,
+    "Rank": 283,
+    "rand": 399
+  },
+  {
+    "Last Name": "GREGORY",
+    "amount": "94,506",
+    "percent Frequency": 0.038,
+    "Rank": 284,
+    "rand": 672
+  },
+  {
+    "Last Name": "MCKINNEY",
+    "amount": "94,506",
+    "percent Frequency": 0.038,
+    "Rank": 285,
+    "rand": 532
+  },
+  {
+    "Last Name": "LUCAS",
+    "amount": "94,506",
+    "percent Frequency": 0.038,
+    "Rank": 286,
+    "rand": 784
+  },
+  {
+    "Last Name": "MILES",
+    "amount": "94,506",
+    "percent Frequency": 0.038,
+    "Rank": 287,
+    "rand": 875
+  },
+  {
+    "Last Name": "CRAIG",
+    "amount": "94,506",
+    "percent Frequency": 0.038,
+    "Rank": 288,
+    "rand": 288
+  },
+  {
+    "Last Name": "RODRIQUEZ",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 289,
+    "rand": 942
+  },
+  {
+    "Last Name": "CHAMBERS",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 290,
+    "rand": 590
+  },
+  {
+    "Last Name": "HOLT",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 291,
+    "rand": 501
+  },
+  {
+    "Last Name": "LAMBERT",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 292,
+    "rand": 909
+  },
+  {
+    "Last Name": "FLETCHER",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 293,
+    "rand": 802
+  },
+  {
+    "Last Name": "WATTS",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 294,
+    "rand": 964
+  },
+  {
+    "Last Name": "BATES",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 295,
+    "rand": 691
+  },
+  {
+    "Last Name": "HALE",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 296,
+    "rand": 794
+  },
+  {
+    "Last Name": "RHODES",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 297,
+    "rand": 797
+  },
+  {
+    "Last Name": "PENA",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 298,
+    "rand": 825
+  },
+  {
+    "Last Name": "BECK",
+    "amount": "92,019",
+    "percent Frequency": 0.037,
+    "Rank": 299,
+    "rand": 18
+  },
+  {
+    "Last Name": "NEWMAN",
+    "amount": "89,532",
+    "percent Frequency": 0.036,
+    "Rank": 300,
+    "rand": 894
+  },
+  {
+    "Last Name": "HAYNES",
+    "amount": "89,532",
+    "percent Frequency": 0.036,
+    "Rank": 301,
+    "rand": 225
+  },
+  {
+    "Last Name": "MCDANIEL",
+    "amount": "89,532",
+    "percent Frequency": 0.036,
+    "Rank": 302,
+    "rand": 156
+  },
+  {
+    "Last Name": "MENDEZ",
+    "amount": "89,532",
+    "percent Frequency": 0.036,
+    "Rank": 303,
+    "rand": 869
+  },
+  {
+    "Last Name": "BUSH",
+    "amount": "89,532",
+    "percent Frequency": 0.036,
+    "Rank": 304,
+    "rand": 151
+  },
+  {
+    "Last Name": "VAUGHN",
+    "amount": "89,532",
+    "percent Frequency": 0.036,
+    "Rank": 305,
+    "rand": 232
+  },
+  {
+    "Last Name": "PARKS",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 306,
+    "rand": 245
+  },
+  {
+    "Last Name": "DAWSON",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 307,
+    "rand": 238
+  },
+  {
+    "Last Name": "SANTIAGO",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 308,
+    "rand": 540
+  },
+  {
+    "Last Name": "NORRIS",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 309,
+    "rand": 559
+  },
+  {
+    "Last Name": "HARDY",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 310,
+    "rand": 470
+  },
+  {
+    "Last Name": "LOVE",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 311,
+    "rand": 177
+  },
+  {
+    "Last Name": "STEELE",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 312,
+    "rand": 857
+  },
+  {
+    "Last Name": "CURRY",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 313,
+    "rand": 123
+  },
+  {
+    "Last Name": "POWERS",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 314,
+    "rand": 660
+  },
+  {
+    "Last Name": "SCHULTZ",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 315,
+    "rand": 366
+  },
+  {
+    "Last Name": "BARKER",
+    "amount": "87,045",
+    "percent Frequency": 0.035,
+    "Rank": 316,
+    "rand": 755
+  },
+  {
+    "Last Name": "GUZMAN",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 317,
+    "rand": 240
+  },
+  {
+    "Last Name": "PAGE",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 318,
+    "rand": 3
+  },
+  {
+    "Last Name": "MUNOZ",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 319,
+    "rand": 672
+  },
+  {
+    "Last Name": "BALL",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 320,
+    "rand": 94
+  },
+  {
+    "Last Name": "KELLER",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 321,
+    "rand": 199
+  },
+  {
+    "Last Name": "CHANDLER",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 322,
+    "rand": 397
+  },
+  {
+    "Last Name": "WEBER",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 323,
+    "rand": 868
+  },
+  {
+    "Last Name": "LEONARD",
+    "amount": "84,558",
+    "percent Frequency": 0.034,
+    "Rank": 324,
+    "rand": 115
+  },
+  {
+    "Last Name": "WALSH",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 325,
+    "rand": 63
+  },
+  {
+    "Last Name": "LYONS",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 326,
+    "rand": 454
+  },
+  {
+    "Last Name": "RAMSEY",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 327,
+    "rand": 235
+  },
+  {
+    "Last Name": "WOLFE",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 328,
+    "rand": 997
+  },
+  {
+    "Last Name": "SCHNEIDER",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 329,
+    "rand": 906
+  },
+  {
+    "Last Name": "MULLINS",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 330,
+    "rand": 620
+  },
+  {
+    "Last Name": "BENSON",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 331,
+    "rand": 138
+  },
+  {
+    "Last Name": "SHARP",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 332,
+    "rand": 46
+  },
+  {
+    "Last Name": "BOWEN",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 333,
+    "rand": 982
+  },
+  {
+    "Last Name": "DANIEL",
+    "amount": "82,071",
+    "percent Frequency": 0.033,
+    "Rank": 334,
+    "rand": 44
+  },
+  {
+    "Last Name": "BARBER",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 335,
+    "rand": 100
+  },
+  {
+    "Last Name": "CUMMINGS",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 336,
+    "rand": 845
+  },
+  {
+    "Last Name": "HINES",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 337,
+    "rand": 757
+  },
+  {
+    "Last Name": "BALDWIN",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 338,
+    "rand": 230
+  },
+  {
+    "Last Name": "GRIFFITH",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 339,
+    "rand": 332
+  },
+  {
+    "Last Name": "VALDEZ",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 340,
+    "rand": 953
+  },
+  {
+    "Last Name": "HUBBARD",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 341,
+    "rand": 375
+  },
+  {
+    "Last Name": "SALAZAR",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 342,
+    "rand": 115
+  },
+  {
+    "Last Name": "REEVES",
+    "amount": "79,584",
+    "percent Frequency": 0.032,
+    "Rank": 343,
+    "rand": 297
+  },
+  {
+    "Last Name": "WARNER",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 344,
+    "rand": 562
+  },
+  {
+    "Last Name": "STEVENSON",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 345,
+    "rand": 319
+  },
+  {
+    "Last Name": "BURGESS",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 346,
+    "rand": 870
+  },
+  {
+    "Last Name": "SANTOS",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 347,
+    "rand": 566
+  },
+  {
+    "Last Name": "TATE",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 348,
+    "rand": 106
+  },
+  {
+    "Last Name": "CROSS",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 349,
+    "rand": 586
+  },
+  {
+    "Last Name": "GARNER",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 350,
+    "rand": 461
+  },
+  {
+    "Last Name": "MANN",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 351,
+    "rand": 391
+  },
+  {
+    "Last Name": "MACK",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 352,
+    "rand": 661
+  },
+  {
+    "Last Name": "MOSS",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 353,
+    "rand": 857
+  },
+  {
+    "Last Name": "THORNTON",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 354,
+    "rand": 529
+  },
+  {
+    "Last Name": "DENNIS",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 355,
+    "rand": 871
+  },
+  {
+    "Last Name": "MCGEE",
+    "amount": "77,097",
+    "percent Frequency": 0.031,
+    "Rank": 356,
+    "rand": 955
+  },
+  {
+    "Last Name": "FARMER",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 357,
+    "rand": 686
+  },
+  {
+    "Last Name": "DELGADO",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 358,
+    "rand": 817
+  },
+  {
+    "Last Name": "AGUILAR",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 359,
+    "rand": 709
+  },
+  {
+    "Last Name": "VEGA",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 360,
+    "rand": 429
+  },
+  {
+    "Last Name": "GLOVER",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 361,
+    "rand": 392
+  },
+  {
+    "Last Name": "MANNING",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 362,
+    "rand": 233
+  },
+  {
+    "Last Name": "COHEN",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 363,
+    "rand": 728
+  },
+  {
+    "Last Name": "HARMON",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 364,
+    "rand": 448
+  },
+  {
+    "Last Name": "RODGERS",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 365,
+    "rand": 873
+  },
+  {
+    "Last Name": "ROBBINS",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 366,
+    "rand": 276
+  },
+  {
+    "Last Name": "NEWTON",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 367,
+    "rand": 310
+  },
+  {
+    "Last Name": "TODD",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 368,
+    "rand": 947
+  },
+  {
+    "Last Name": "BLAIR",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 369,
+    "rand": 594
+  },
+  {
+    "Last Name": "HIGGINS",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 370,
+    "rand": 772
+  },
+  {
+    "Last Name": "INGRAM",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 371,
+    "rand": 386
+  },
+  {
+    "Last Name": "REESE",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 372,
+    "rand": 173
+  },
+  {
+    "Last Name": "CANNON",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 373,
+    "rand": 885
+  },
+  {
+    "Last Name": "STRICKLAND",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 374,
+    "rand": 17
+  },
+  {
+    "Last Name": "TOWNSEND",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 375,
+    "rand": 7
+  },
+  {
+    "Last Name": "POTTER",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 376,
+    "rand": 13
+  },
+  {
+    "Last Name": "GOODWIN",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 377,
+    "rand": 358
+  },
+  {
+    "Last Name": "WALTON",
+    "amount": "74,610",
+    "percent Frequency": 0.030,
+    "Rank": 378,
+    "rand": 832
+  },
+  {
+    "Last Name": "ROWE",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 379,
+    "rand": 562
+  },
+  {
+    "Last Name": "HAMPTON",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 380,
+    "rand": 296
+  },
+  {
+    "Last Name": "ORTEGA",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 381,
+    "rand": 386
+  },
+  {
+    "Last Name": "PATTON",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 382,
+    "rand": 552
+  },
+  {
+    "Last Name": "SWANSON",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 383,
+    "rand": 880
+  },
+  {
+    "Last Name": "JOSEPH",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 384,
+    "rand": 674
+  },
+  {
+    "Last Name": "FRANCIS",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 385,
+    "rand": 86
+  },
+  {
+    "Last Name": "GOODMAN",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 386,
+    "rand": 17
+  },
+  {
+    "Last Name": "MALDONADO",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 387,
+    "rand": 323
+  },
+  {
+    "Last Name": "YATES",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 388,
+    "rand": 422
+  },
+  {
+    "Last Name": "BECKER",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 389,
+    "rand": 789
+  },
+  {
+    "Last Name": "ERICKSON",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 390,
+    "rand": 482
+  },
+  {
+    "Last Name": "HODGES",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 391,
+    "rand": 498
+  },
+  {
+    "Last Name": "RIOS",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 392,
+    "rand": 124
+  },
+  {
+    "Last Name": "CONNER",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 393,
+    "rand": 725
+  },
+  {
+    "Last Name": "ADKINS",
+    "amount": "72,123",
+    "percent Frequency": 0.029,
+    "Rank": 394,
+    "rand": 489
+  },
+  {
+    "Last Name": "WEBSTER",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 395,
+    "rand": 6
+  },
+  {
+    "Last Name": "NORMAN",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 396,
+    "rand": 960
+  },
+  {
+    "Last Name": "MALONE",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 397,
+    "rand": 112
+  },
+  {
+    "Last Name": "HAMMOND",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 398,
+    "rand": 687
+  },
+  {
+    "Last Name": "FLOWERS",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 399,
+    "rand": 526
+  },
+  {
+    "Last Name": "COBB",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 400,
+    "rand": 712
+  },
+  {
+    "Last Name": "MOODY",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 401,
+    "rand": 489
+  },
+  {
+    "Last Name": "QUINN",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 402,
+    "rand": 728
+  },
+  {
+    "Last Name": "BLAKE",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 403,
+    "rand": 20
+  },
+  {
+    "Last Name": "MAXWELL",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 404,
+    "rand": 265
+  },
+  {
+    "Last Name": "POPE",
+    "amount": "69,636",
+    "percent Frequency": 0.028,
+    "Rank": 405,
+    "rand": 969
+  },
+  {
+    "Last Name": "FLOYD",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 406,
+    "rand": 792
+  },
+  {
+    "Last Name": "OSBORNE",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 407,
+    "rand": 901
+  },
+  {
+    "Last Name": "PAUL",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 408,
+    "rand": 33
+  },
+  {
+    "Last Name": "MCCARTHY",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 409,
+    "rand": 232
+  },
+  {
+    "Last Name": "GUERRERO",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 410,
+    "rand": 179
+  },
+  {
+    "Last Name": "LINDSEY",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 411,
+    "rand": 79
+  },
+  {
+    "Last Name": "ESTRADA",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 412,
+    "rand": 238
+  },
+  {
+    "Last Name": "SANDOVAL",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 413,
+    "rand": 940
+  },
+  {
+    "Last Name": "GIBBS",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 414,
+    "rand": 283
+  },
+  {
+    "Last Name": "TYLER",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 415,
+    "rand": 1000
+  },
+  {
+    "Last Name": "GROSS",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 416,
+    "rand": 174
+  },
+  {
+    "Last Name": "FITZGERALD",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 417,
+    "rand": 7
+  },
+  {
+    "Last Name": "STOKES",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 418,
+    "rand": 34
+  },
+  {
+    "Last Name": "DOYLE",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 419,
+    "rand": 811
+  },
+  {
+    "Last Name": "SHERMAN",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 420,
+    "rand": 743
+  },
+  {
+    "Last Name": "SAUNDERS",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 421,
+    "rand": 255
+  },
+  {
+    "Last Name": "WISE",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 422,
+    "rand": 828
+  },
+  {
+    "Last Name": "COLON",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 423,
+    "rand": 131
+  },
+  {
+    "Last Name": "GILL",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 424,
+    "rand": 343
+  },
+  {
+    "Last Name": "ALVARADO",
+    "amount": "67,149",
+    "percent Frequency": 0.027,
+    "Rank": 425,
+    "rand": 830
+  },
+  {
+    "Last Name": "GREER",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 426,
+    "rand": 590
+  },
+  {
+    "Last Name": "PADILLA",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 427,
+    "rand": 777
+  },
+  {
+    "Last Name": "SIMON",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 428,
+    "rand": 856
+  },
+  {
+    "Last Name": "WATERS",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 429,
+    "rand": 703
+  },
+  {
+    "Last Name": "NUNEZ",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 430,
+    "rand": 970
+  },
+  {
+    "Last Name": "BALLARD",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 431,
+    "rand": 767
+  },
+  {
+    "Last Name": "SCHWARTZ",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 432,
+    "rand": 401
+  },
+  {
+    "Last Name": "MCBRIDE",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 433,
+    "rand": 582
+  },
+  {
+    "Last Name": "HOUSTON",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 434,
+    "rand": 949
+  },
+  {
+    "Last Name": "CHRISTENSEN",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 435,
+    "rand": 822
+  },
+  {
+    "Last Name": "KLEIN",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 436,
+    "rand": 913
+  },
+  {
+    "Last Name": "PRATT",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 437,
+    "rand": 629
+  },
+  {
+    "Last Name": "BRIGGS",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 438,
+    "rand": 578
+  },
+  {
+    "Last Name": "PARSONS",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 439,
+    "rand": 912
+  },
+  {
+    "Last Name": "MCLAUGHLIN",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 440,
+    "rand": 900
+  },
+  {
+    "Last Name": "ZIMMERMAN",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 441,
+    "rand": 942
+  },
+  {
+    "Last Name": "FRENCH",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 442,
+    "rand": 301
+  },
+  {
+    "Last Name": "BUCHANAN",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 443,
+    "rand": 924
+  },
+  {
+    "Last Name": "MORAN",
+    "amount": "64,662",
+    "percent Frequency": 0.026,
+    "Rank": 444,
+    "rand": 967
+  },
+  {
+    "Last Name": "COPELAND",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 445,
+    "rand": 654
+  },
+  {
+    "Last Name": "ROY",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 446,
+    "rand": 329
+  },
+  {
+    "Last Name": "PITTMAN",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 447,
+    "rand": 999
+  },
+  {
+    "Last Name": "BRADY",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 448,
+    "rand": 413
+  },
+  {
+    "Last Name": "MCCORMICK",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 449,
+    "rand": 938
+  },
+  {
+    "Last Name": "HOLLOWAY",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 450,
+    "rand": 671
+  },
+  {
+    "Last Name": "BROCK",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 451,
+    "rand": 462
+  },
+  {
+    "Last Name": "POOLE",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 452,
+    "rand": 432
+  },
+  {
+    "Last Name": "FRANK",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 453,
+    "rand": 516
+  },
+  {
+    "Last Name": "LOGAN",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 454,
+    "rand": 744
+  },
+  {
+    "Last Name": "OWEN",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 455,
+    "rand": 323
+  },
+  {
+    "Last Name": "BASS",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 456,
+    "rand": 483
+  },
+  {
+    "Last Name": "MARSH",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 457,
+    "rand": 974
+  },
+  {
+    "Last Name": "DRAKE",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 458,
+    "rand": 913
+  },
+  {
+    "Last Name": "WONG",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 459,
+    "rand": 276
+  },
+  {
+    "Last Name": "JEFFERSON",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 460,
+    "rand": 596
+  },
+  {
+    "Last Name": "PARK",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 461,
+    "rand": 360
+  },
+  {
+    "Last Name": "MORTON",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 462,
+    "rand": 872
+  },
+  {
+    "Last Name": "ABBOTT",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 463,
+    "rand": 312
+  },
+  {
+    "Last Name": "SPARKS",
+    "amount": "62,175",
+    "percent Frequency": 0.025,
+    "Rank": 464,
+    "rand": 184
+  },
+  {
+    "Last Name": "PATRICK",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 465,
+    "rand": 197
+  },
+  {
+    "Last Name": "NORTON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 466,
+    "rand": 400
+  },
+  {
+    "Last Name": "HUFF",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 467,
+    "rand": 790
+  },
+  {
+    "Last Name": "CLAYTON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 468,
+    "rand": 467
+  },
+  {
+    "Last Name": "MASSEY",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 469,
+    "rand": 45
+  },
+  {
+    "Last Name": "LLOYD",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 470,
+    "rand": 474
+  },
+  {
+    "Last Name": "FIGUEROA",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 471,
+    "rand": 110
+  },
+  {
+    "Last Name": "CARSON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 472,
+    "rand": 874
+  },
+  {
+    "Last Name": "BOWERS",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 473,
+    "rand": 311
+  },
+  {
+    "Last Name": "ROBERSON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 474,
+    "rand": 296
+  },
+  {
+    "Last Name": "BARTON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 475,
+    "rand": 919
+  },
+  {
+    "Last Name": "TRAN",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 476,
+    "rand": 69
+  },
+  {
+    "Last Name": "LAMB",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 477,
+    "rand": 878
+  },
+  {
+    "Last Name": "HARRINGTON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 478,
+    "rand": 914
+  },
+  {
+    "Last Name": "CASEY",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 479,
+    "rand": 515
+  },
+  {
+    "Last Name": "BOONE",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 480,
+    "rand": 818
+  },
+  {
+    "Last Name": "CORTEZ",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 481,
+    "rand": 53
+  },
+  {
+    "Last Name": "CLARKE",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 482,
+    "rand": 728
+  },
+  {
+    "Last Name": "MATHIS",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 483,
+    "rand": 135
+  },
+  {
+    "Last Name": "SINGLETON",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 484,
+    "rand": 725
+  },
+  {
+    "Last Name": "WILKINS",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 485,
+    "rand": 849
+  },
+  {
+    "Last Name": "CAIN",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 486,
+    "rand": 306
+  },
+  {
+    "Last Name": "BRYAN",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 487,
+    "rand": 431
+  },
+  {
+    "Last Name": "UNDERWOOD",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 488,
+    "rand": 728
+  },
+  {
+    "Last Name": "HOGAN",
+    "amount": "59,688",
+    "percent Frequency": 0.024,
+    "Rank": 489,
+    "rand": 735
+  },
+  {
+    "Last Name": "MCKENZIE",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 490,
+    "rand": 591
+  },
+  {
+    "Last Name": "COLLIER",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 491,
+    "rand": 263
+  },
+  {
+    "Last Name": "LUNA",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 492,
+    "rand": 159
+  },
+  {
+    "Last Name": "PHELPS",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 493,
+    "rand": 698
+  },
+  {
+    "Last Name": "MCGUIRE",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 494,
+    "rand": 505
+  },
+  {
+    "Last Name": "ALLISON",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 495,
+    "rand": 897
+  },
+  {
+    "Last Name": "BRIDGES",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 496,
+    "rand": 498
+  },
+  {
+    "Last Name": "WILKERSON",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 497,
+    "rand": 516
+  },
+  {
+    "Last Name": "NASH",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 498,
+    "rand": 634
+  },
+  {
+    "Last Name": "SUMMERS",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 499,
+    "rand": 12
+  },
+  {
+    "Last Name": "ATKINS",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 500,
+    "rand": 524
+  },
+  {
+    "Last Name": "WILCOX",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 501,
+    "rand": 413
+  },
+  {
+    "Last Name": "PITTS",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 502,
+    "rand": 539
+  },
+  {
+    "Last Name": "CONLEY",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 503,
+    "rand": 201
+  },
+  {
+    "Last Name": "MARQUEZ",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 504,
+    "rand": 848
+  },
+  {
+    "Last Name": "BURNETT",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 505,
+    "rand": 511
+  },
+  {
+    "Last Name": "RICHARD",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 506,
+    "rand": 966
+  },
+  {
+    "Last Name": "COCHRAN",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 507,
+    "rand": 575
+  },
+  {
+    "Last Name": "CHASE",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 508,
+    "rand": 920
+  },
+  {
+    "Last Name": "DAVENPORT",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 509,
+    "rand": 667
+  },
+  {
+    "Last Name": "HOOD",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 510,
+    "rand": 583
+  },
+  {
+    "Last Name": "GATES",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 511,
+    "rand": 793
+  },
+  {
+    "Last Name": "CLAY",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 512,
+    "rand": 23
+  },
+  {
+    "Last Name": "AYALA",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 513,
+    "rand": 7
+  },
+  {
+    "Last Name": "SAWYER",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 514,
+    "rand": 865
+  },
+  {
+    "Last Name": "ROMAN",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 515,
+    "rand": 214
+  },
+  {
+    "Last Name": "VAZQUEZ",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 516,
+    "rand": 721
+  },
+  {
+    "Last Name": "DICKERSON",
+    "amount": "57,201",
+    "percent Frequency": 0.023,
+    "Rank": 517,
+    "rand": 962
+  },
+  {
+    "Last Name": "HODGE",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 518,
+    "rand": 684
+  },
+  {
+    "Last Name": "ACOSTA",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 519,
+    "rand": 951
+  },
+  {
+    "Last Name": "FLYNN",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 520,
+    "rand": 883
+  },
+  {
+    "Last Name": "ESPINOZA",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 521,
+    "rand": 137
+  },
+  {
+    "Last Name": "NICHOLSON",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 522,
+    "rand": 96
+  },
+  {
+    "Last Name": "MONROE",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 523,
+    "rand": 821
+  },
+  {
+    "Last Name": "WOLF",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 524,
+    "rand": 546
+  },
+  {
+    "Last Name": "MORROW",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 525,
+    "rand": 904
+  },
+  {
+    "Last Name": "KIRK",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 526,
+    "rand": 249
+  },
+  {
+    "Last Name": "RANDALL",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 527,
+    "rand": 434
+  },
+  {
+    "Last Name": "ANTHONY",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 528,
+    "rand": 94
+  },
+  {
+    "Last Name": "WHITAKER",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 529,
+    "rand": 663
+  },
+  {
+    "Last Name": "OCONNOR",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 530,
+    "rand": 222
+  },
+  {
+    "Last Name": "SKINNER",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 531,
+    "rand": 600
+  },
+  {
+    "Last Name": "WARE",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 532,
+    "rand": 944
+  },
+  {
+    "Last Name": "MOLINA",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 533,
+    "rand": 937
+  },
+  {
+    "Last Name": "KIRBY",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 534,
+    "rand": 727
+  },
+  {
+    "Last Name": "HUFFMAN",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 535,
+    "rand": 38
+  },
+  {
+    "Last Name": "BRADFORD",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 536,
+    "rand": 122
+  },
+  {
+    "Last Name": "CHARLES",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 537,
+    "rand": 39
+  },
+  {
+    "Last Name": "GILMORE",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 538,
+    "rand": 884
+  },
+  {
+    "Last Name": "DOMINGUEZ",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 539,
+    "rand": 935
+  },
+  {
+    "Last Name": "ONEAL",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 540,
+    "rand": 741
+  },
+  {
+    "Last Name": "BRUCE",
+    "amount": "54,714",
+    "percent Frequency": 0.022,
+    "Rank": 541,
+    "rand": 139
+  },
+  {
+    "Last Name": "LANG",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 542,
+    "rand": 526
+  },
+  {
+    "Last Name": "COMBS",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 543,
+    "rand": 23
+  },
+  {
+    "Last Name": "KRAMER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 544,
+    "rand": 434
+  },
+  {
+    "Last Name": "HEATH",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 545,
+    "rand": 78
+  },
+  {
+    "Last Name": "HANCOCK",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 546,
+    "rand": 934
+  },
+  {
+    "Last Name": "GALLAGHER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 547,
+    "rand": 461
+  },
+  {
+    "Last Name": "GAINES",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 548,
+    "rand": 965
+  },
+  {
+    "Last Name": "SHAFFER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 549,
+    "rand": 782
+  },
+  {
+    "Last Name": "SHORT",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 550,
+    "rand": 374
+  },
+  {
+    "Last Name": "WIGGINS",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 551,
+    "rand": 638
+  },
+  {
+    "Last Name": "MATHEWS",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 552,
+    "rand": 456
+  },
+  {
+    "Last Name": "MCCLAIN",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 553,
+    "rand": 587
+  },
+  {
+    "Last Name": "FISCHER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 554,
+    "rand": 697
+  },
+  {
+    "Last Name": "WALL",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 555,
+    "rand": 309
+  },
+  {
+    "Last Name": "SMALL",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 556,
+    "rand": 260
+  },
+  {
+    "Last Name": "MELTON",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 557,
+    "rand": 442
+  },
+  {
+    "Last Name": "HENSLEY",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 558,
+    "rand": 257
+  },
+  {
+    "Last Name": "BOND",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 559,
+    "rand": 906
+  },
+  {
+    "Last Name": "DYER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 560,
+    "rand": 666
+  },
+  {
+    "Last Name": "CAMERON",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 561,
+    "rand": 117
+  },
+  {
+    "Last Name": "GRIMES",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 562,
+    "rand": 858
+  },
+  {
+    "Last Name": "CONTRERAS",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 563,
+    "rand": 544
+  },
+  {
+    "Last Name": "CHRISTIAN",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 564,
+    "rand": 363
+  },
+  {
+    "Last Name": "WYATT",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 565,
+    "rand": 589
+  },
+  {
+    "Last Name": "BAXTER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 566,
+    "rand": 779
+  },
+  {
+    "Last Name": "SNOW",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 567,
+    "rand": 874
+  },
+  {
+    "Last Name": "MOSLEY",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 568,
+    "rand": 560
+  },
+  {
+    "Last Name": "SHEPHERD",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 569,
+    "rand": 506
+  },
+  {
+    "Last Name": "LARSEN",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 570,
+    "rand": 791
+  },
+  {
+    "Last Name": "HOOVER",
+    "amount": "52,227",
+    "percent Frequency": 0.021,
+    "Rank": 571,
+    "rand": 737
+  },
+  {
+    "Last Name": "BEASLEY",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 572,
+    "rand": 832
+  },
+  {
+    "Last Name": "GLENN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 573,
+    "rand": 317
+  },
+  {
+    "Last Name": "PETERSEN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 574,
+    "rand": 496
+  },
+  {
+    "Last Name": "WHITEHEAD",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 575,
+    "rand": 375
+  },
+  {
+    "Last Name": "MEYERS",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 576,
+    "rand": 185
+  },
+  {
+    "Last Name": "KEITH",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 577,
+    "rand": 332
+  },
+  {
+    "Last Name": "GARRISON",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 578,
+    "rand": 199
+  },
+  {
+    "Last Name": "VINCENT",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 579,
+    "rand": 879
+  },
+  {
+    "Last Name": "SHIELDS",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 580,
+    "rand": 751
+  },
+  {
+    "Last Name": "HORN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 581,
+    "rand": 961
+  },
+  {
+    "Last Name": "SAVAGE",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 582,
+    "rand": 59
+  },
+  {
+    "Last Name": "OLSEN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 583,
+    "rand": 281
+  },
+  {
+    "Last Name": "SCHROEDER",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 584,
+    "rand": 968
+  },
+  {
+    "Last Name": "HARTMAN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 585,
+    "rand": 169
+  },
+  {
+    "Last Name": "WOODARD",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 586,
+    "rand": 705
+  },
+  {
+    "Last Name": "MUELLER",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 587,
+    "rand": 943
+  },
+  {
+    "Last Name": "KEMP",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 588,
+    "rand": 962
+  },
+  {
+    "Last Name": "DELEON",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 589,
+    "rand": 705
+  },
+  {
+    "Last Name": "BOOTH",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 590,
+    "rand": 543
+  },
+  {
+    "Last Name": "PATEL",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 591,
+    "rand": 141
+  },
+  {
+    "Last Name": "CALHOUN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 592,
+    "rand": 445
+  },
+  {
+    "Last Name": "WILEY",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 593,
+    "rand": 498
+  },
+  {
+    "Last Name": "EATON",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 594,
+    "rand": 284
+  },
+  {
+    "Last Name": "CLINE",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 595,
+    "rand": 237
+  },
+  {
+    "Last Name": "NAVARRO",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 596,
+    "rand": 696
+  },
+  {
+    "Last Name": "HARRELL",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 597,
+    "rand": 922
+  },
+  {
+    "Last Name": "LESTER",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 598,
+    "rand": 227
+  },
+  {
+    "Last Name": "HUMPHREY",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 599,
+    "rand": 44
+  },
+  {
+    "Last Name": "PARRISH",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 600,
+    "rand": 921
+  },
+  {
+    "Last Name": "DURAN",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 601,
+    "rand": 410
+  },
+  {
+    "Last Name": "HUTCHINSON",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 602,
+    "rand": 45
+  },
+  {
+    "Last Name": "HESS",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 603,
+    "rand": 19
+  },
+  {
+    "Last Name": "DORSEY",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 604,
+    "rand": 725
+  },
+  {
+    "Last Name": "BULLOCK",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 605,
+    "rand": 225
+  },
+  {
+    "Last Name": "ROBLES",
+    "amount": "49,740",
+    "percent Frequency": 0.020,
+    "Rank": 606,
+    "rand": 39
+  },
+  {
+    "Last Name": "BEARD",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 607,
+    "rand": 847
+  },
+  {
+    "Last Name": "DALTON",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 608,
+    "rand": 990
+  },
+  {
+    "Last Name": "AVILA",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 609,
+    "rand": 973
+  },
+  {
+    "Last Name": "VANCE",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 610,
+    "rand": 560
+  },
+  {
+    "Last Name": "RICH",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 611,
+    "rand": 446
+  },
+  {
+    "Last Name": "BLACKWELL",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 612,
+    "rand": 320
+  },
+  {
+    "Last Name": "YORK",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 613,
+    "rand": 516
+  },
+  {
+    "Last Name": "JOHNS",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 614,
+    "rand": 692
+  },
+  {
+    "Last Name": "BLANKENSHIP",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 615,
+    "rand": 311
+  },
+  {
+    "Last Name": "TREVINO",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 616,
+    "rand": 338
+  },
+  {
+    "Last Name": "SALINAS",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 617,
+    "rand": 151
+  },
+  {
+    "Last Name": "CAMPOS",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 618,
+    "rand": 5
+  },
+  {
+    "Last Name": "PRUITT",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 619,
+    "rand": 363
+  },
+  {
+    "Last Name": "MOSES",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 620,
+    "rand": 13
+  },
+  {
+    "Last Name": "CALLAHAN",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 621,
+    "rand": 862
+  },
+  {
+    "Last Name": "GOLDEN",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 622,
+    "rand": 794
+  },
+  {
+    "Last Name": "MONTOYA",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 623,
+    "rand": 150
+  },
+  {
+    "Last Name": "HARDIN",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 624,
+    "rand": 641
+  },
+  {
+    "Last Name": "GUERRA",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 625,
+    "rand": 811
+  },
+  {
+    "Last Name": "MCDOWELL",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 626,
+    "rand": 920
+  },
+  {
+    "Last Name": "CAREY",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 627,
+    "rand": 472
+  },
+  {
+    "Last Name": "STAFFORD",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 628,
+    "rand": 273
+  },
+  {
+    "Last Name": "GALLEGOS",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 629,
+    "rand": 345
+  },
+  {
+    "Last Name": "HENSON",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 630,
+    "rand": 504
+  },
+  {
+    "Last Name": "WILKINSON",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 631,
+    "rand": 635
+  },
+  {
+    "Last Name": "BOOKER",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 632,
+    "rand": 20
+  },
+  {
+    "Last Name": "MERRITT",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 633,
+    "rand": 15
+  },
+  {
+    "Last Name": "MIRANDA",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 634,
+    "rand": 625
+  },
+  {
+    "Last Name": "ATKINSON",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 635,
+    "rand": 81
+  },
+  {
+    "Last Name": "ORR",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 636,
+    "rand": 246
+  },
+  {
+    "Last Name": "DECKER",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 637,
+    "rand": 704
+  },
+  {
+    "Last Name": "HOBBS",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 638,
+    "rand": 608
+  },
+  {
+    "Last Name": "PRESTON",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 639,
+    "rand": 419
+  },
+  {
+    "Last Name": "TANNER",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 640,
+    "rand": 307
+  },
+  {
+    "Last Name": "KNOX",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 641,
+    "rand": 675
+  },
+  {
+    "Last Name": "PACHECO",
+    "amount": "47,253",
+    "percent Frequency": 0.019,
+    "Rank": 642,
+    "rand": 297
+  },
+  {
+    "Last Name": "STEPHENSON",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 643,
+    "rand": 923
+  },
+  {
+    "Last Name": "GLASS",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 644,
+    "rand": 382
+  },
+  {
+    "Last Name": "ROJAS",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 645,
+    "rand": 592
+  },
+  {
+    "Last Name": "SERRANO",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 646,
+    "rand": 548
+  },
+  {
+    "Last Name": "MARKS",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 647,
+    "rand": 949
+  },
+  {
+    "Last Name": "HICKMAN",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 648,
+    "rand": 827
+  },
+  {
+    "Last Name": "ENGLISH",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 649,
+    "rand": 817
+  },
+  {
+    "Last Name": "SWEENEY",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 650,
+    "rand": 349
+  },
+  {
+    "Last Name": "STRONG",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 651,
+    "rand": 815
+  },
+  {
+    "Last Name": "PRINCE",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 652,
+    "rand": 473
+  },
+  {
+    "Last Name": "MCCLURE",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 653,
+    "rand": 899
+  },
+  {
+    "Last Name": "CONWAY",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 654,
+    "rand": 682
+  },
+  {
+    "Last Name": "WALTER",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 655,
+    "rand": 991
+  },
+  {
+    "Last Name": "ROTH",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 656,
+    "rand": 135
+  },
+  {
+    "Last Name": "MAYNARD",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 657,
+    "rand": 864
+  },
+  {
+    "Last Name": "FARRELL",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 658,
+    "rand": 80
+  },
+  {
+    "Last Name": "LOWERY",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 659,
+    "rand": 429
+  },
+  {
+    "Last Name": "HURST",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 660,
+    "rand": 59
+  },
+  {
+    "Last Name": "NIXON",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 661,
+    "rand": 56
+  },
+  {
+    "Last Name": "WEISS",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 662,
+    "rand": 526
+  },
+  {
+    "Last Name": "TRUJILLO",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 663,
+    "rand": 861
+  },
+  {
+    "Last Name": "ELLISON",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 664,
+    "rand": 314
+  },
+  {
+    "Last Name": "SLOAN",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 665,
+    "rand": 517
+  },
+  {
+    "Last Name": "JUAREZ",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 666,
+    "rand": 763
+  },
+  {
+    "Last Name": "WINTERS",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 667,
+    "rand": 25
+  },
+  {
+    "Last Name": "MCLEAN",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 668,
+    "rand": 887
+  },
+  {
+    "Last Name": "RANDOLPH",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 669,
+    "rand": 64
+  },
+  {
+    "Last Name": "LEON",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 670,
+    "rand": 720
+  },
+  {
+    "Last Name": "BOYER",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 671,
+    "rand": 809
+  },
+  {
+    "Last Name": "VILLARREAL",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 672,
+    "rand": 812
+  },
+  {
+    "Last Name": "MCCALL",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 673,
+    "rand": 322
+  },
+  {
+    "Last Name": "GENTRY",
+    "amount": "44,766",
+    "percent Frequency": 0.018,
+    "Rank": 674,
+    "rand": 286
+  },
+  {
+    "Last Name": "CARRILLO",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 675,
+    "rand": 874
+  },
+  {
+    "Last Name": "KENT",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 676,
+    "rand": 898
+  },
+  {
+    "Last Name": "AYERS",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 677,
+    "rand": 586
+  },
+  {
+    "Last Name": "LARA",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 678,
+    "rand": 237
+  },
+  {
+    "Last Name": "SHANNON",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 679,
+    "rand": 309
+  },
+  {
+    "Last Name": "SEXTON",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 680,
+    "rand": 53
+  },
+  {
+    "Last Name": "PACE",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 681,
+    "rand": 186
+  },
+  {
+    "Last Name": "HULL",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 682,
+    "rand": 550
+  },
+  {
+    "Last Name": "LEBLANC",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 683,
+    "rand": 895
+  },
+  {
+    "Last Name": "BROWNING",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 684,
+    "rand": 275
+  },
+  {
+    "Last Name": "VELASQUEZ",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 685,
+    "rand": 318
+  },
+  {
+    "Last Name": "LEACH",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 686,
+    "rand": 55
+  },
+  {
+    "Last Name": "CHANG",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 687,
+    "rand": 204
+  },
+  {
+    "Last Name": "HOUSE",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 688,
+    "rand": 523
+  },
+  {
+    "Last Name": "SELLERS",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 689,
+    "rand": 649
+  },
+  {
+    "Last Name": "HERRING",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 690,
+    "rand": 268
+  },
+  {
+    "Last Name": "NOBLE",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 691,
+    "rand": 494
+  },
+  {
+    "Last Name": "FOLEY",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 692,
+    "rand": 696
+  },
+  {
+    "Last Name": "BARTLETT",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 693,
+    "rand": 876
+  },
+  {
+    "Last Name": "MERCADO",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 694,
+    "rand": 998
+  },
+  {
+    "Last Name": "LANDRY",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 695,
+    "rand": 393
+  },
+  {
+    "Last Name": "DURHAM",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 696,
+    "rand": 958
+  },
+  {
+    "Last Name": "WALLS",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 697,
+    "rand": 642
+  },
+  {
+    "Last Name": "BARR",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 698,
+    "rand": 681
+  },
+  {
+    "Last Name": "MCKEE",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 699,
+    "rand": 378
+  },
+  {
+    "Last Name": "BAUER",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 700,
+    "rand": 289
+  },
+  {
+    "Last Name": "RIVERS",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 701,
+    "rand": 924
+  },
+  {
+    "Last Name": "EVERETT",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 702,
+    "rand": 48
+  },
+  {
+    "Last Name": "BRADSHAW",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 703,
+    "rand": 589
+  },
+  {
+    "Last Name": "PUGH",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 704,
+    "rand": 968
+  },
+  {
+    "Last Name": "VELEZ",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 705,
+    "rand": 903
+  },
+  {
+    "Last Name": "RUSH",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 706,
+    "rand": 707
+  },
+  {
+    "Last Name": "ESTES",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 707,
+    "rand": 375
+  },
+  {
+    "Last Name": "DODSON",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 708,
+    "rand": 429
+  },
+  {
+    "Last Name": "MORSE",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 709,
+    "rand": 488
+  },
+  {
+    "Last Name": "SHEPPARD",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 710,
+    "rand": 60
+  },
+  {
+    "Last Name": "WEEKS",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 711,
+    "rand": 210
+  },
+  {
+    "Last Name": "CAMACHO",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 712,
+    "rand": 142
+  },
+  {
+    "Last Name": "BEAN",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 713,
+    "rand": 209
+  },
+  {
+    "Last Name": "BARRON",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 714,
+    "rand": 839
+  },
+  {
+    "Last Name": "LIVINGSTON",
+    "amount": "42,279",
+    "percent Frequency": 0.017,
+    "Rank": 715,
+    "rand": 875
+  },
+  {
+    "Last Name": "MIDDLETON",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 716,
+    "rand": 109
+  },
+  {
+    "Last Name": "SPEARS",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 717,
+    "rand": 535
+  },
+  {
+    "Last Name": "BRANCH",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 718,
+    "rand": 424
+  },
+  {
+    "Last Name": "BLEVINS",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 719,
+    "rand": 472
+  },
+  {
+    "Last Name": "CHEN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 720,
+    "rand": 454
+  },
+  {
+    "Last Name": "KERR",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 721,
+    "rand": 911
+  },
+  {
+    "Last Name": "MCCONNELL",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 722,
+    "rand": 901
+  },
+  {
+    "Last Name": "HATFIELD",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 723,
+    "rand": 701
+  },
+  {
+    "Last Name": "HARDING",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 724,
+    "rand": 869
+  },
+  {
+    "Last Name": "ASHLEY",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 725,
+    "rand": 350
+  },
+  {
+    "Last Name": "SOLIS",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 726,
+    "rand": 657
+  },
+  {
+    "Last Name": "HERMAN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 727,
+    "rand": 479
+  },
+  {
+    "Last Name": "FROST",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 728,
+    "rand": 645
+  },
+  {
+    "Last Name": "GILES",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 729,
+    "rand": 699
+  },
+  {
+    "Last Name": "BLACKBURN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 730,
+    "rand": 630
+  },
+  {
+    "Last Name": "WILLIAM",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 731,
+    "rand": 960
+  },
+  {
+    "Last Name": "PENNINGTON",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 732,
+    "rand": 71
+  },
+  {
+    "Last Name": "WOODWARD",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 733,
+    "rand": 765
+  },
+  {
+    "Last Name": "FINLEY",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 734,
+    "rand": 898
+  },
+  {
+    "Last Name": "MCINTOSH",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 735,
+    "rand": 929
+  },
+  {
+    "Last Name": "KOCH",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 736,
+    "rand": 237
+  },
+  {
+    "Last Name": "BEST",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 737,
+    "rand": 890
+  },
+  {
+    "Last Name": "SOLOMON",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 738,
+    "rand": 907
+  },
+  {
+    "Last Name": "MCCULLOUGH",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 739,
+    "rand": 42
+  },
+  {
+    "Last Name": "DUDLEY",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 740,
+    "rand": 715
+  },
+  {
+    "Last Name": "NOLAN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 741,
+    "rand": 405
+  },
+  {
+    "Last Name": "BLANCHARD",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 742,
+    "rand": 880
+  },
+  {
+    "Last Name": "RIVAS",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 743,
+    "rand": 419
+  },
+  {
+    "Last Name": "BRENNAN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 744,
+    "rand": 728
+  },
+  {
+    "Last Name": "MEJIA",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 745,
+    "rand": 389
+  },
+  {
+    "Last Name": "KANE",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 746,
+    "rand": 333
+  },
+  {
+    "Last Name": "BENTON",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 747,
+    "rand": 658
+  },
+  {
+    "Last Name": "JOYCE",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 748,
+    "rand": 639
+  },
+  {
+    "Last Name": "BUCKLEY",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 749,
+    "rand": 993
+  },
+  {
+    "Last Name": "HALEY",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 750,
+    "rand": 510
+  },
+  {
+    "Last Name": "VALENTINE",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 751,
+    "rand": 147
+  },
+  {
+    "Last Name": "MADDOX",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 752,
+    "rand": 672
+  },
+  {
+    "Last Name": "RUSSO",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 753,
+    "rand": 989
+  },
+  {
+    "Last Name": "MCKNIGHT",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 754,
+    "rand": 662
+  },
+  {
+    "Last Name": "BUCK",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 755,
+    "rand": 518
+  },
+  {
+    "Last Name": "MOON",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 756,
+    "rand": 993
+  },
+  {
+    "Last Name": "MCMILLAN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 757,
+    "rand": 137
+  },
+  {
+    "Last Name": "CROSBY",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 758,
+    "rand": 315
+  },
+  {
+    "Last Name": "BERG",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 759,
+    "rand": 993
+  },
+  {
+    "Last Name": "DOTSON",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 760,
+    "rand": 836
+  },
+  {
+    "Last Name": "MAYS",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 761,
+    "rand": 113
+  },
+  {
+    "Last Name": "ROACH",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 762,
+    "rand": 536
+  },
+  {
+    "Last Name": "CHURCH",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 763,
+    "rand": 789
+  },
+  {
+    "Last Name": "CHAN",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 764,
+    "rand": 308
+  },
+  {
+    "Last Name": "RICHMOND",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 765,
+    "rand": 429
+  },
+  {
+    "Last Name": "MEADOWS",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 766,
+    "rand": 142
+  },
+  {
+    "Last Name": "FAULKNER",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 767,
+    "rand": 323
+  },
+  {
+    "Last Name": "ONEILL",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 768,
+    "rand": 832
+  },
+  {
+    "Last Name": "KNAPP",
+    "amount": "39,792",
+    "percent Frequency": 0.016,
+    "Rank": 769,
+    "rand": 30
+  },
+  {
+    "Last Name": "KLINE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 770,
+    "rand": 791
+  },
+  {
+    "Last Name": "BARRY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 771,
+    "rand": 559
+  },
+  {
+    "Last Name": "OCHOA",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 772,
+    "rand": 152
+  },
+  {
+    "Last Name": "JACOBSON",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 773,
+    "rand": 16
+  },
+  {
+    "Last Name": "GAY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 774,
+    "rand": 956
+  },
+  {
+    "Last Name": "AVERY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 775,
+    "rand": 350
+  },
+  {
+    "Last Name": "HENDRICKS",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 776,
+    "rand": 490
+  },
+  {
+    "Last Name": "HORNE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 777,
+    "rand": 722
+  },
+  {
+    "Last Name": "SHEPARD",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 778,
+    "rand": 227
+  },
+  {
+    "Last Name": "HEBERT",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 779,
+    "rand": 146
+  },
+  {
+    "Last Name": "CHERRY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 780,
+    "rand": 805
+  },
+  {
+    "Last Name": "CARDENAS",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 781,
+    "rand": 906
+  },
+  {
+    "Last Name": "MCINTYRE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 782,
+    "rand": 86
+  },
+  {
+    "Last Name": "WHITNEY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 783,
+    "rand": 656
+  },
+  {
+    "Last Name": "WALLER",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 784,
+    "rand": 603
+  },
+  {
+    "Last Name": "HOLMAN",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 785,
+    "rand": 350
+  },
+  {
+    "Last Name": "DONALDSON",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 786,
+    "rand": 280
+  },
+  {
+    "Last Name": "CANTU",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 787,
+    "rand": 802
+  },
+  {
+    "Last Name": "TERRELL",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 788,
+    "rand": 620
+  },
+  {
+    "Last Name": "MORIN",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 789,
+    "rand": 540
+  },
+  {
+    "Last Name": "GILLESPIE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 790,
+    "rand": 859
+  },
+  {
+    "Last Name": "FUENTES",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 791,
+    "rand": 594
+  },
+  {
+    "Last Name": "TILLMAN",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 792,
+    "rand": 452
+  },
+  {
+    "Last Name": "SANFORD",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 793,
+    "rand": 691
+  },
+  {
+    "Last Name": "BENTLEY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 794,
+    "rand": 503
+  },
+  {
+    "Last Name": "PECK",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 795,
+    "rand": 918
+  },
+  {
+    "Last Name": "KEY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 796,
+    "rand": 333
+  },
+  {
+    "Last Name": "SALAS",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 797,
+    "rand": 821
+  },
+  {
+    "Last Name": "ROLLINS",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 798,
+    "rand": 326
+  },
+  {
+    "Last Name": "GAMBLE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 799,
+    "rand": 959
+  },
+  {
+    "Last Name": "DICKSON",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 800,
+    "rand": 26
+  },
+  {
+    "Last Name": "BATTLE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 801,
+    "rand": 432
+  },
+  {
+    "Last Name": "SANTANA",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 802,
+    "rand": 876
+  },
+  {
+    "Last Name": "CABRERA",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 803,
+    "rand": 907
+  },
+  {
+    "Last Name": "CERVANTES",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 804,
+    "rand": 592
+  },
+  {
+    "Last Name": "HOWE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 805,
+    "rand": 579
+  },
+  {
+    "Last Name": "HINTON",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 806,
+    "rand": 112
+  },
+  {
+    "Last Name": "HURLEY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 807,
+    "rand": 700
+  },
+  {
+    "Last Name": "SPENCE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 808,
+    "rand": 341
+  },
+  {
+    "Last Name": "ZAMORA",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 809,
+    "rand": 122
+  },
+  {
+    "Last Name": "YANG",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 810,
+    "rand": 818
+  },
+  {
+    "Last Name": "MCNEIL",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 811,
+    "rand": 701
+  },
+  {
+    "Last Name": "SUAREZ",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 812,
+    "rand": 73
+  },
+  {
+    "Last Name": "CASE",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 813,
+    "rand": 403
+  },
+  {
+    "Last Name": "PETTY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 814,
+    "rand": 201
+  },
+  {
+    "Last Name": "GOULD",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 815,
+    "rand": 618
+  },
+  {
+    "Last Name": "MCFARLAND",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 816,
+    "rand": 880
+  },
+  {
+    "Last Name": "SAMPSON",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 817,
+    "rand": 682
+  },
+  {
+    "Last Name": "CARVER",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 818,
+    "rand": 897
+  },
+  {
+    "Last Name": "BRAY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 819,
+    "rand": 156
+  },
+  {
+    "Last Name": "ROSARIO",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 820,
+    "rand": 994
+  },
+  {
+    "Last Name": "MACDONALD",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 821,
+    "rand": 663
+  },
+  {
+    "Last Name": "STOUT",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 822,
+    "rand": 429
+  },
+  {
+    "Last Name": "HESTER",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 823,
+    "rand": 32
+  },
+  {
+    "Last Name": "MELENDEZ",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 824,
+    "rand": 545
+  },
+  {
+    "Last Name": "DILLON",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 825,
+    "rand": 903
+  },
+  {
+    "Last Name": "FARLEY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 826,
+    "rand": 422
+  },
+  {
+    "Last Name": "HOPPER",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 827,
+    "rand": 408
+  },
+  {
+    "Last Name": "GALLOWAY",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 828,
+    "rand": 312
+  },
+  {
+    "Last Name": "POTTS",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 829,
+    "rand": 478
+  },
+  {
+    "Last Name": "BERNARD",
+    "amount": "37,305",
+    "percent Frequency": 0.015,
+    "Rank": 830,
+    "rand": 925
+  },
+  {
+    "Last Name": "JOYNER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 831,
+    "rand": 341
+  },
+  {
+    "Last Name": "STEIN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 832,
+    "rand": 880
+  },
+  {
+    "Last Name": "AGUIRRE",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 833,
+    "rand": 687
+  },
+  {
+    "Last Name": "OSBORN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 834,
+    "rand": 534
+  },
+  {
+    "Last Name": "MERCER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 835,
+    "rand": 41
+  },
+  {
+    "Last Name": "BENDER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 836,
+    "rand": 1
+  },
+  {
+    "Last Name": "FRANCO",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 837,
+    "rand": 603
+  },
+  {
+    "Last Name": "ROWLAND",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 838,
+    "rand": 361
+  },
+  {
+    "Last Name": "SYKES",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 839,
+    "rand": 213
+  },
+  {
+    "Last Name": "BENJAMIN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 840,
+    "rand": 591
+  },
+  {
+    "Last Name": "TRAVIS",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 841,
+    "rand": 889
+  },
+  {
+    "Last Name": "PICKETT",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 842,
+    "rand": 186
+  },
+  {
+    "Last Name": "CRANE",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 843,
+    "rand": 875
+  },
+  {
+    "Last Name": "SEARS",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 844,
+    "rand": 489
+  },
+  {
+    "Last Name": "MAYO",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 845,
+    "rand": 929
+  },
+  {
+    "Last Name": "DUNLAP",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 846,
+    "rand": 858
+  },
+  {
+    "Last Name": "HAYDEN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 847,
+    "rand": 317
+  },
+  {
+    "Last Name": "WILDER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 848,
+    "rand": 980
+  },
+  {
+    "Last Name": "MCKAY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 849,
+    "rand": 737
+  },
+  {
+    "Last Name": "COFFEY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 850,
+    "rand": 357
+  },
+  {
+    "Last Name": "MCCARTY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 851,
+    "rand": 968
+  },
+  {
+    "Last Name": "EWING",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 852,
+    "rand": 63
+  },
+  {
+    "Last Name": "COOLEY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 853,
+    "rand": 101
+  },
+  {
+    "Last Name": "VAUGHAN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 854,
+    "rand": 791
+  },
+  {
+    "Last Name": "BONNER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 855,
+    "rand": 123
+  },
+  {
+    "Last Name": "COTTON",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 856,
+    "rand": 521
+  },
+  {
+    "Last Name": "HOLDER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 857,
+    "rand": 827
+  },
+  {
+    "Last Name": "STARK",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 858,
+    "rand": 715
+  },
+  {
+    "Last Name": "FERRELL",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 859,
+    "rand": 716
+  },
+  {
+    "Last Name": "CANTRELL",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 860,
+    "rand": 481
+  },
+  {
+    "Last Name": "FULTON",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 861,
+    "rand": 1
+  },
+  {
+    "Last Name": "LYNN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 862,
+    "rand": 331
+  },
+  {
+    "Last Name": "LOTT",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 863,
+    "rand": 367
+  },
+  {
+    "Last Name": "CALDERON",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 864,
+    "rand": 640
+  },
+  {
+    "Last Name": "ROSA",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 865,
+    "rand": 147
+  },
+  {
+    "Last Name": "POLLARD",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 866,
+    "rand": 589
+  },
+  {
+    "Last Name": "HOOPER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 867,
+    "rand": 78
+  },
+  {
+    "Last Name": "BURCH",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 868,
+    "rand": 146
+  },
+  {
+    "Last Name": "MULLEN",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 869,
+    "rand": 6
+  },
+  {
+    "Last Name": "FRY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 870,
+    "rand": 760
+  },
+  {
+    "Last Name": "RIDDLE",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 871,
+    "rand": 377
+  },
+  {
+    "Last Name": "LEVY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 872,
+    "rand": 764
+  },
+  {
+    "Last Name": "DAVID",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 873,
+    "rand": 583
+  },
+  {
+    "Last Name": "DUKE",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 874,
+    "rand": 448
+  },
+  {
+    "Last Name": "ODONNELL",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 875,
+    "rand": 90
+  },
+  {
+    "Last Name": "GUY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 876,
+    "rand": 79
+  },
+  {
+    "Last Name": "MICHAEL",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 877,
+    "rand": 999
+  },
+  {
+    "Last Name": "BRITT",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 878,
+    "rand": 210
+  },
+  {
+    "Last Name": "FREDERICK",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 879,
+    "rand": 339
+  },
+  {
+    "Last Name": "DAUGHERTY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 880,
+    "rand": 67
+  },
+  {
+    "Last Name": "BERGER",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 881,
+    "rand": 233
+  },
+  {
+    "Last Name": "DILLARD",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 882,
+    "rand": 781
+  },
+  {
+    "Last Name": "ALSTON",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 883,
+    "rand": 262
+  },
+  {
+    "Last Name": "JARVIS",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 884,
+    "rand": 875
+  },
+  {
+    "Last Name": "FRYE",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 885,
+    "rand": 27
+  },
+  {
+    "Last Name": "RIGGS",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 886,
+    "rand": 836
+  },
+  {
+    "Last Name": "CHANEY",
+    "amount": "34,818",
+    "percent Frequency": 0.014,
+    "Rank": 887,
+    "rand": 82
+  },
+  {
+    "Last Name": "ODOM",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 888,
+    "rand": 968
+  },
+  {
+    "Last Name": "DUFFY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 889,
+    "rand": 843
+  },
+  {
+    "Last Name": "FITZPATRICK",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 890,
+    "rand": 724
+  },
+  {
+    "Last Name": "VALENZUELA",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 891,
+    "rand": 932
+  },
+  {
+    "Last Name": "MERRILL",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 892,
+    "rand": 709
+  },
+  {
+    "Last Name": "MAYER",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 893,
+    "rand": 795
+  },
+  {
+    "Last Name": "ALFORD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 894,
+    "rand": 685
+  },
+  {
+    "Last Name": "MCPHERSON",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 895,
+    "rand": 954
+  },
+  {
+    "Last Name": "ACEVEDO",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 896,
+    "rand": 590
+  },
+  {
+    "Last Name": "DONOVAN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 897,
+    "rand": 57
+  },
+  {
+    "Last Name": "BARRERA",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 898,
+    "rand": 63
+  },
+  {
+    "Last Name": "ALBERT",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 899,
+    "rand": 334
+  },
+  {
+    "Last Name": "COTE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 900,
+    "rand": 550
+  },
+  {
+    "Last Name": "REILLY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 901,
+    "rand": 987
+  },
+  {
+    "Last Name": "COMPTON",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 902,
+    "rand": 330
+  },
+  {
+    "Last Name": "RAYMOND",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 903,
+    "rand": 428
+  },
+  {
+    "Last Name": "MOONEY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 904,
+    "rand": 834
+  },
+  {
+    "Last Name": "MCGOWAN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 905,
+    "rand": 42
+  },
+  {
+    "Last Name": "CRAFT",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 906,
+    "rand": 924
+  },
+  {
+    "Last Name": "CLEVELAND",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 907,
+    "rand": 575
+  },
+  {
+    "Last Name": "CLEMONS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 908,
+    "rand": 788
+  },
+  {
+    "Last Name": "WYNN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 909,
+    "rand": 419
+  },
+  {
+    "Last Name": "NIELSEN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 910,
+    "rand": 344
+  },
+  {
+    "Last Name": "BAIRD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 911,
+    "rand": 324
+  },
+  {
+    "Last Name": "STANTON",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 912,
+    "rand": 313
+  },
+  {
+    "Last Name": "SNIDER",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 913,
+    "rand": 50
+  },
+  {
+    "Last Name": "ROSALES",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 914,
+    "rand": 409
+  },
+  {
+    "Last Name": "BRIGHT",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 915,
+    "rand": 137
+  },
+  {
+    "Last Name": "WITT",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 916,
+    "rand": 299
+  },
+  {
+    "Last Name": "STUART",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 917,
+    "rand": 74
+  },
+  {
+    "Last Name": "HAYS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 918,
+    "rand": 967
+  },
+  {
+    "Last Name": "HOLDEN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 919,
+    "rand": 148
+  },
+  {
+    "Last Name": "RUTLEDGE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 920,
+    "rand": 739
+  },
+  {
+    "Last Name": "KINNEY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 921,
+    "rand": 731
+  },
+  {
+    "Last Name": "CLEMENTS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 922,
+    "rand": 627
+  },
+  {
+    "Last Name": "CASTANEDA",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 923,
+    "rand": 389
+  },
+  {
+    "Last Name": "SLATER",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 924,
+    "rand": 625
+  },
+  {
+    "Last Name": "HAHN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 925,
+    "rand": 486
+  },
+  {
+    "Last Name": "EMERSON",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 926,
+    "rand": 95
+  },
+  {
+    "Last Name": "CONRAD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 927,
+    "rand": 931
+  },
+  {
+    "Last Name": "BURKS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 928,
+    "rand": 613
+  },
+  {
+    "Last Name": "DELANEY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 929,
+    "rand": 484
+  },
+  {
+    "Last Name": "PATE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 930,
+    "rand": 158
+  },
+  {
+    "Last Name": "LANCASTER",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 931,
+    "rand": 354
+  },
+  {
+    "Last Name": "SWEET",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 932,
+    "rand": 315
+  },
+  {
+    "Last Name": "JUSTICE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 933,
+    "rand": 917
+  },
+  {
+    "Last Name": "TYSON",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 934,
+    "rand": 363
+  },
+  {
+    "Last Name": "SHARPE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 935,
+    "rand": 970
+  },
+  {
+    "Last Name": "WHITFIELD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 936,
+    "rand": 708
+  },
+  {
+    "Last Name": "TALLEY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 937,
+    "rand": 181
+  },
+  {
+    "Last Name": "MACIAS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 938,
+    "rand": 394
+  },
+  {
+    "Last Name": "IRWIN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 939,
+    "rand": 668
+  },
+  {
+    "Last Name": "BURRIS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 940,
+    "rand": 355
+  },
+  {
+    "Last Name": "RATLIFF",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 941,
+    "rand": 424
+  },
+  {
+    "Last Name": "MCCRAY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 942,
+    "rand": 198
+  },
+  {
+    "Last Name": "MADDEN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 943,
+    "rand": 787
+  },
+  {
+    "Last Name": "KAUFMAN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 944,
+    "rand": 23
+  },
+  {
+    "Last Name": "BEACH",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 945,
+    "rand": 735
+  },
+  {
+    "Last Name": "GOFF",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 946,
+    "rand": 266
+  },
+  {
+    "Last Name": "CASH",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 947,
+    "rand": 760
+  },
+  {
+    "Last Name": "BOLTON",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 948,
+    "rand": 287
+  },
+  {
+    "Last Name": "MCFADDEN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 949,
+    "rand": 954
+  },
+  {
+    "Last Name": "LEVINE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 950,
+    "rand": 149
+  },
+  {
+    "Last Name": "GOOD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 951,
+    "rand": 50
+  },
+  {
+    "Last Name": "BYERS",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 952,
+    "rand": 414
+  },
+  {
+    "Last Name": "KIRKLAND",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 953,
+    "rand": 659
+  },
+  {
+    "Last Name": "KIDD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 954,
+    "rand": 698
+  },
+  {
+    "Last Name": "WORKMAN",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 955,
+    "rand": 343
+  },
+  {
+    "Last Name": "CARNEY",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 956,
+    "rand": 113
+  },
+  {
+    "Last Name": "DALE",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 957,
+    "rand": 507
+  },
+  {
+    "Last Name": "MCLEOD",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 958,
+    "rand": 962
+  },
+  {
+    "Last Name": "HOLCOMB",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 959,
+    "rand": 149
+  },
+  {
+    "Last Name": "ENGLAND",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 960,
+    "rand": 99
+  },
+  {
+    "Last Name": "FINCH",
+    "amount": "32,331",
+    "percent Frequency": 0.013,
+    "Rank": 961,
+    "rand": 951
+  },
+  {
+    "Last Name": "HEAD",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 962,
+    "rand": 76
+  },
+  {
+    "Last Name": "BURT",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 963,
+    "rand": 813
+  },
+  {
+    "Last Name": "HENDRIX",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 964,
+    "rand": 587
+  },
+  {
+    "Last Name": "SOSA",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 965,
+    "rand": 90
+  },
+  {
+    "Last Name": "HANEY",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 966,
+    "rand": 788
+  },
+  {
+    "Last Name": "FRANKS",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 967,
+    "rand": 425
+  },
+  {
+    "Last Name": "SARGENT",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 968,
+    "rand": 878
+  },
+  {
+    "Last Name": "NIEVES",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 969,
+    "rand": 956
+  },
+  {
+    "Last Name": "DOWNS",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 970,
+    "rand": 518
+  },
+  {
+    "Last Name": "RASMUSSEN",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 971,
+    "rand": 103
+  },
+  {
+    "Last Name": "BIRD",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 972,
+    "rand": 339
+  },
+  {
+    "Last Name": "HEWITT",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 973,
+    "rand": 288
+  },
+  {
+    "Last Name": "LINDSAY",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 974,
+    "rand": 685
+  },
+  {
+    "Last Name": "LE",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 975,
+    "rand": 914
+  },
+  {
+    "Last Name": "FOREMAN",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 976,
+    "rand": 575
+  },
+  {
+    "Last Name": "VALENCIA",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 977,
+    "rand": 571
+  },
+  {
+    "Last Name": "ONEIL",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 978,
+    "rand": 40
+  },
+  {
+    "Last Name": "DELACRUZ",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 979,
+    "rand": 456
+  },
+  {
+    "Last Name": "VINSON",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 980,
+    "rand": 463
+  },
+  {
+    "Last Name": "DEJESUS",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 981,
+    "rand": 598
+  },
+  {
+    "Last Name": "HYDE",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 982,
+    "rand": 328
+  },
+  {
+    "Last Name": "FORBES",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 983,
+    "rand": 925
+  },
+  {
+    "Last Name": "GILLIAM",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 984,
+    "rand": 546
+  },
+  {
+    "Last Name": "GUTHRIE",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 985,
+    "rand": 487
+  },
+  {
+    "Last Name": "WOOTEN",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 986,
+    "rand": 691
+  },
+  {
+    "Last Name": "HUBER",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 987,
+    "rand": 660
+  },
+  {
+    "Last Name": "BARLOW",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 988,
+    "rand": 983
+  },
+  {
+    "Last Name": "BOYLE",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 989,
+    "rand": 132
+  },
+  {
+    "Last Name": "MCMAHON",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 990,
+    "rand": 219
+  },
+  {
+    "Last Name": "BUCKNER",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 991,
+    "rand": 186
+  },
+  {
+    "Last Name": "ROCHA",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 992,
+    "rand": 663
+  },
+  {
+    "Last Name": "PUCKETT",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 993,
+    "rand": 418
+  },
+  {
+    "Last Name": "LANGLEY",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 994,
+    "rand": 774
+  },
+  {
+    "Last Name": "KNOWLES",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 995,
+    "rand": 616
+  },
+  {
+    "Last Name": "COOKE",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 996,
+    "rand": 805
+  },
+  {
+    "Last Name": "VELAZQUEZ",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 997,
+    "rand": 257
+  },
+  {
+    "Last Name": "WHITLEY",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 998,
+    "rand": 606
+  },
+  {
+    "Last Name": "NOEL",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 999,
+    "rand": 868
+  },
+  {
+    "Last Name": "VANG",
+    "amount": "29,844",
+    "percent Frequency": 0.012,
+    "Rank": 1000,
+    "rand": 922
+  }
+]
