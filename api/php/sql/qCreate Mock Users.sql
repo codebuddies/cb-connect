@@ -10,6 +10,9 @@ from first_names;
 select *
 from last_names;
 
+select *
+from mock_users;
+
 -- female first names
 create or replace view V_female_first_names as
 select `Female Name` as female_first_name, rand
@@ -70,6 +73,36 @@ order by first_name;
 -- check the table
 select *
 from mock_users;
+
+
+alter table mock_users add column skills varchar(200);
+alter table mock_users add column q_id int;
+
+
+-- give mock users a quick id
+update mock_users set q_id = ((round(rand(), 3) * 10000) + 10000000)
+where q_id is not null;
+
+
+
+-- crate a super basic table to test on
+create table my_table
+(
+    first varchar(100),
+    last  varchar(100)
+);
+
+insert into my_table
+values ('julius', 'alvarado'), ('janet', 'garcia');
+
+
+select *
+from my_table;
+
+
+
+
+
 
 
 
