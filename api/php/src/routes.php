@@ -6,7 +6,8 @@ use Slim\Http\Response;
 use CodeBuddies\AppGlobals;
 use CodeBuddies\ModelUsers;
 
-if(false) {
+if(AppGlobals::inDebugMode()) {
+    echo "[ CODE BUDDIES CONNECT IN DEBUG MODE ]";
     $_SERVER['REQUEST_URI'] = '/test1';
     $_SERVER['REQUEST_METHOD'] = 'GET';
 }
@@ -22,17 +23,19 @@ $app->get('/hello/{name}',
 
 $app->get('/test1',
     function(Request $request, Response $response) {
-        $dbCodeBuddiesConnect = $this->dbProduction;
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect);
         $mockUsers = $usersModel->getMockUsers();
-        $table = "<table><tr><th>first_name</th><th>first_name</th><th>user_type</th><th>gender</th></tr>";
+    
+        // construct a table real quick
+        $table = "<table><tr><th>first_name</th><th>last_name</th><th>user_type</th><th>gender</th></tr>";
         foreach($mockUsers as $user) {
             [$first, $last, $userType, $gender] = $user;
             $table .= "<tr><td>f, $first</td><td>l, $last</td><td>u, $userType</td><td>g, $gender</td></tr>";
         }
         $table .= "</table>";
-        // construct a table real quick
         $debug = 1;
+        
         $response->getBody()->write($table);
         return $response;
     }

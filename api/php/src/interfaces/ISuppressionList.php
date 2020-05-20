@@ -6,7 +6,7 @@
  * Time: 4:32 PM
  */
 
-namespace Ninja\Auto\Interfaces;
+namespace CodeBuddies;
 
 interface ISuppressionList
 {
