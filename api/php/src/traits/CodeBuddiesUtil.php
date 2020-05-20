@@ -32,23 +32,23 @@ trait CodeBuddiesUtil
      * @return array
      */
     public function createRandomSkills(int $max): array {
-        return $this->randomSkills($max, []);
+        return $this->randomSkills($max, $this->Skills(), []);
     }
     
     /**
      * Helper recursive function to create random skills
      *
      * @param int $max
+     * @param array $skillSet
      * @param array $skills
      *
      * @return array
      */
-    private function randomSkills(int $max, array $skills): array {
+    private function randomSkills(int $max, array $skillSet, array $skills): array {
         if($max === 0) return array_unique($skills);
         
-        $skillSet = $this->Skills();
         $skills [] = $skillSet[rand(0, count($skillSet) - 1)];
         
-        return $this->randomSkills(--$max, $skills);
+        return $this->randomSkills(--$max, $skillSet, $skills);
     }
 }

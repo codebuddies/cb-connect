@@ -7,8 +7,8 @@ use CodeBuddies\AppGlobals;
 use CodeBuddies\ModelUsers;
 
 if(AppGlobals::inDebugMode()) {
-    echo "[ CODE BUDDIES CONNECT IN DEBUG MODE ]";
-    $_SERVER['REQUEST_URI'] = '/test1';
+    echo "\n <br> [ CODE BUDDIES CONNECT IN DEBUG MODE ] <br> \n";
+    $_SERVER['REQUEST_URI'] = '/test/add-skills';
     $_SERVER['REQUEST_METHOD'] = 'GET';
 }
 
@@ -41,11 +41,24 @@ $app->get('/test1',
     }
 );
 
+
 $app->get('/user',
     function (Request $request, Response $response) {
         return $response->getBody()->write("Hello, user!");
     }
 );
+
+$app->get('/test/add-skills',
+    function (Request $request, Response $response) {
+        //TODO: look into maybe creating a singleton for classes that are used often
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+        $result = $usersModel->addSkillsToMockUsers();
+        
+        return $response->withJson($result);
+    }
+);
+
 
 $app->get('/[{name}]',
     function(Request $request, Response $response, array $args) {
