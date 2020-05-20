@@ -11,6 +11,8 @@ namespace CodeBuddies;
 
 class ModelUsers
 {
+    use CodeBuddiesUtil;
+    
     /**
      * The main Code Buddies Connect db, if more db's are needed, they'll have
      * specialized names
@@ -22,6 +24,8 @@ class ModelUsers
     }
     
     public function getMockUsers(): array {
+        $randomSkills = $this->createRandomSkills(rand(2,10));
+        
         $tableName = 'mock_users';
         try {
             $query = /** @lang */ "
