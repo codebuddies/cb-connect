@@ -51,7 +51,6 @@ else {
         $dsn = sprintf('mysql:dbname=%s;host=%s', $dbName, $host);
         
         return new PDO($dsn, $user, $pass, [
-            //PDO::ATTR_TIMEOUT => 5,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,
         ]);

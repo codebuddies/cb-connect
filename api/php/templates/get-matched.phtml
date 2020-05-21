@@ -1,0 +1,88 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Julius Alvarado
+ * Date: 5/21/2020
+ * Time: 6:59 AM
+ */
+
+
+/**
+ * Created by PhpStorm.
+ * User: Julius Alvarado
+ * Date: 8/25/2019
+ * Time: 2:35 AM
+ *
+ *
+ * - This is the VERY simple UI so the user can type something
+ * a textarea input form to emulate client and data instructions
+ *
+ * Primarily this is good for a human to test, not phpunit.
+ *
+ */
+
+$appName = "Code Buddies Connect";
+
+?>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code Buddies connect</title>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .rsm-sample-input {
+            margin-left: 24px;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<img src="/img/cb-logo.svg" alt="cb connect" height="80px">
+<h1>Get matched with a mentor, mentee, collaborator, or pair programming partner</h1>
+
+<form action="/test/get-matched" method="post">
+    <label for="user-name">Name</label>
+    <input id="user-name" name="user-name" type="text">
+    
+    <br><br>
+    
+    <label for="user-skills">Skills</label>
+    <input id="user-skills" name="user-skills" type="text">
+    
+    <br><br>
+
+    <label for="user-about">About</label>
+    <textarea name="user-about" id="user-about" cols="50" rows="5"></textarea>
+    
+    <input type="hidden" name="app-name" value="<?= $appName ?>">
+    
+    <br><br>
+    
+    <input type="submit" value="GET MATCHED">
+</form>
+
+<h2>sample skills to copy and paste (or type in your own input)</h2>
+
+<ul>
+    <li>math, css, javascript, python</li>
+    <li>apache, excel, math, visual basic, data, python</li>
+    <li>interview practice, java, go, c, hack, r</li>
+    <li>c, interview practice, game</li>
+</ul>
+
+<h4 style='margin-top: 50%'> <?= $appName ?> &copy; 2020</h4>
+
+
+</body>
+</html>
