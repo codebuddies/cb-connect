@@ -66,29 +66,58 @@ $app->get('/test/get-matched',
     }
 );
 
+/**
+ * Initial matching algorithm successfully implemented 5-21-2020 @12pm
+ * ... the rest will be easy (just a lot of work)
+ * Will re-factor later.
+ */
 $app->post('/test/get-matched',
     function(Request $request, Response $response) {
-        //$getParsedBody = var_export($data, true);
-        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
         //-- example parsed body for debugging --
-        $mockData = [
-            // mock a basic sql injection
-            'user-name' => "'SELECT * FROM users_db --",
-            // will result to = "SELECTFROMusers_dbjulius" after sanitation
-            'user-skills' => 'math, css, javascript, php',
-            'user-about' => '',
-            'app-name' => 'Code Buddies Connect',
+        $mockData1 = [
+            // mock a basic sql injection while debugging
+            'user-name'    => "'SELECT * FROM users_db --",
+            'user-skills'    => 'math, css, javascript, php',
+            'user-about'     => '',
+            'app-name'     => 'Code Buddies Connect',
         ];
-        
+    
+        // force a 75% match, cause I'm not getting any
+        $mockData = [
+            // mock a basic sql injection while debugging
+            'user-name'    => "'SELECT * FROM users_db --",
+            'user-skills'    => 'c#, visual basic, html, php',
+            // mock a basic sql injection while debugging...
+            'user-about'     => ', SELECT user_pass, user_email FROM users_db',
+            'app-name'     => 'Code Buddies Connect',
+        ];
         // The DATA ^_^
         $data = AppGlobals::inDebugMode() ? $mockData : $request->getParsedBody();
+        
+        //$getParsedBody = var_export($data, true);
+        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
         
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect);
         $result = $usersModel->matchSkills($data);
+        $matchedUsers = [];
         
-        return $response->withJson($result);
+        // just get the needed fields 
+        foreach($result as $i => $matchedUser) {
+            $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
+            $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
+            $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
+            
+            $skillsMatched = $matchedUser['skills_matched'] ?? null;
+            $matchedUsers[$i]['skills_matched'] = implode( ", ",$skillsMatched);
+        }
+        
+        //-- return json for future API
+        //return $response->withJson($result);
+        
+        // render a table rather than a bunch of json
+        return $this->renderer->render($response, 'user-matches.phtml', $matchedUsers);
     }
 );
 
