@@ -1,0 +1,62 @@
+
+
+.cb-text-center {
+    text-align: center;
+}
+
+.cb-margin-auto {
+    margin: auto;
+}
+
+.cb-pad5 {
+    padding: 5px;
+}
+
+.cb-mtop-0 {
+    margin-top: 0;
+}
+
+.cb-btn {
+    border-radius: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* sample demo styles */
+.checkboxdemoBasicUsage div.flex-xs {
+    min-height: 40px;
+}
+
+.checkboxdemoBasicUsage .checkboxDemo1 div {
+    clear: both;
+}
+
+.checkboxdemoBasicUsage p {
+    padding-left: 8px;
+}
+
+.checkboxdemoBasicUsage fieldset.standard {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.checkboxdemoBasicUsage legend {
+    color: #3F51B5;
+}
+
+.checkboxdemoBasicUsage legend code {
+    color: #3F51B5;
+    font-weight: normal;
+}
+
+.checkboxdemoBasicUsage .ipsum {
+    color: saddlebrown;
+}
+
+.toolbardemoBasicUsage md-toolbar .md-button.md-icon-button .favorite-icon {
+    fill: #DE3641; }
+
+.toolbardemoBasicUsage md-toolbar md-toolbar-filler {
+    background-color: #e0e0e0; }
+.toolbardemoBasicUsage md-toolbar md-toolbar-filler #filler-icon {
+    fill: #4C9EF1; }
