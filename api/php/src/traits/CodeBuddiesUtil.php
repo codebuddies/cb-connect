@@ -10,45 +10,87 @@ namespace CodeBuddies;
 
 trait CodeBuddiesUtil
 {
-    public function Skills(): array {
+    /**
+     * All the skills I could think of. This list will certainly grow.
+     * This is for view2 of http://cbconnect.herokuapp.com/apply
+     *
+     * @return array|string[]
+     */
+    public function setSkills(): array {
         //TODO: get a list of all the popular frameworks from each language
         
         // do a 'contains' type search e.g. if someone types 'web development' it should match 'web dev'
         return [
-            'php', 'javascript', 'node', 'sql', 'java', 'c#', 'ruby', 'web dev',
-            '.net', 'computer science', 'algorithms', 'go', 'python', 'r', 'data', 'math',
-            'git', 'css', 'html', 'aws', 'interview practice', 'math', 'js', 'iphone',
-            'android', 'mobile', 'game', 'app', 'elixir', 'rust', 'testing', 'ai', 'machine learning',
+            'php', 'javascript', 'node', 'sql', 'java', 'c#', 'ruby', 'web development', 'mysql',
+            '.net', 'computer science', 'algorithms', 'go', 'python', 'r', 'data', 'math', 'statistics',
+            'git', 'css', 'html', 'aws', 'interview practice', 'math', 'js', 'iphone development', 'postresql',
+            'android development', 'mobile development', 'game development', 'mobile and web app development', 'elixir', 'rust', 'testing', 'ai', 'machine learning',
             'artificial intelligence', 'angular', 'react', 'testing', 'hack', 'security', 'c++',
-            'c', 'big data', 'statistics', 'swift', 'visual basic', 'excel', 'apache', 'cloud',
+            'c', 'big data', 'statistics', 'swift', 'visual basic', 'excel', 'apache', 'cloud', 'data science',
+            'data analysis', 'web apps', 'calculus', 'linear algebra', 'amazon web services', 'microsoft azure',
+            'backend', 'frontend', 'google cloud', 'javascript', 'probability', 'data science',
+            'full stack development', 'linux', 'windows', 'mac',
         ];
     }
     
     /**
-     * Send an array containing 1 to max random skills
+     * The current view1 options from http://cbconnect.herokuapp.com/apply
+     * I think it it critical for a "multi select" to be used. Something like:
+     * https://material.angularjs.org/latest/demo/checkbox
+     *
+     * @return array
+     */
+    public function setLookingForStandardizedOptions(): array {
+        return [
+            'Accountability partner', 'Coding partner',
+            'Mentor (I am looking for a mentor)',
+            'Mentee (I would like to mentor or teach)',
+            'An Open Source Project to contribute to',
+            'Potential New Contributors to my Open Source Project',
+            'A team to join for a Hackathon',
+            'Someone to join my Hackathon team',
+            'Other (not mentioned above)',
+        ];
+    }
+    
+    /**
+     * Send an array containing 1 to $max random skills, primarily for giving the
+     * mock_users table some data to match against
      *
      * @param int $max
      *
      * @return array
      */
     public function createRandomSkills(int $max): array {
-        return $this->randomSkills($max, $this->Skills(), []);
+        return $this->randomItemsFromSet($max, $this->setSkills(), []);
     }
     
     /**
-     * Helper recursive function to create random skills
+     * Send an array containing 1 to $max random skill,primarily for giving the
+     * mock_users table some data to match against
      *
      * @param int $max
-     * @param array $skillSet
-     * @param array $skills
      *
      * @return array
      */
-    private function randomSkills(int $max, array $skillSet, array $skills): array {
-        if($max === 0) return array_unique($skills);
+    public function createRandomLookingFor(int $max): array {
+        return $this->randomItemsFromSet($max, $this->setLookingForStandardizedOptions(), []);
+    }
+    
+    /**
+     * Helper recursive function to get random items from a set
+     *
+     * @param int $max
+     * @param array $initSet - the initialization set
+     * @param array $set - random items get put in this set, should be an empty set
+     *
+     * @return array - returns $set
+     */
+    private function randomItemsFromSet(int $max, array $initSet, array $set): array {
+        if($max === 0) return array_unique($set);
         
-        $skills [] = $skillSet[rand(0, count($skillSet) - 1)];
+        $set [] = $initSet[rand(0, count($initSet) - 1)];
         
-        return $this->randomSkills(--$max, $skillSet, $skills);
+        return $this->randomItemsFromSet(--$max, $initSet, $set);
     }
 }

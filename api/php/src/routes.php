@@ -8,7 +8,8 @@ use CodeBuddies\ModelUsers;
 
 if(AppGlobals::inDebugMode()) {
     echo "\n <br> [ CODE BUDDIES CONNECT IN DEBUG MODE ] <br> \n";
-    $_SERVER['REQUEST_URI'] = '/test/get-matched';
+    // ?add-random-looking-for=true
+    $_SERVER['REQUEST_URI'] = '/test/get-matched/looking-for';
     $_SERVER['REQUEST_METHOD'] = 'POST';
 }
 
@@ -21,6 +22,7 @@ $app->get('/hello/{name}',
         return $response;
     }
 );
+
 
 $app->get('/test1',
     function(Request $request, Response $response) {
@@ -49,6 +51,7 @@ $app->get('/user',
     }
 );
 
+
 $app->get('/test/add-skills',
     function(Request $request, Response $response) {
         //TODO: look into maybe creating a singleton for classes that are used often
@@ -60,30 +63,65 @@ $app->get('/test/add-skills',
     }
 );
 
+/**
+ * initial form for the "about user" match spec
+ */
 $app->get('/test/get-matched',
     function(Request $request, Response $response, array $args) {
         return $this->renderer->render($response, 'get-matched.phtml', $args);
     }
 );
 
+
 /**
- * Initial matching algorithm successfully implemented 5-21-2020 @12pm
- * ... the rest will be easy (just a lot of work)
- * Will re-factor later.
+ * 1st UI state. It will ask the user what they're looking for e.g.
+ * "I am looking for:" ... then the options
+ *
+ * To add random "Looking For" options
+ * ?add-random-looking-for=true
  */
-$app->post('/test/get-matched',
+$app->post("/test/get-matched/looking-for",
+    function(Request $request, Response $response, array $args) {
+        $qStr = $request->getQueryParams();
+        $addRandomLookingFor = $qStr['add-random-looking-for'] ?? null;
+        
+        //-- example parsed body for debugging --
+        //$getParsedBody = var_export($data, true);
+        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
+        
+        //TODO: look into maybe creating a singleton for classes that are used often
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+    
+        // if the 'add-random-looking-for' q param is true
+        if(!is_null($addRandomLookingFor) && $addRandomLookingFor == 'true') {
+            $result = $usersModel->addLookingForToMockUsers();
+            $hadError = $result['x-cb-error'] ?? null;
+            if(!is_null($hadError)) {
+                $this->logger->error($result['x-cb-error']);
+            }
+        }
+        
+        $opt = $usersModel->setLookingForStandardizedOptions();
+        $debugData = [$opt[2], $opt[1], $opt[4]];
+        $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
+        
+        $result = $usersModel->matchLookingFor($data); // only variation so far
+    }
+);
+
+/**
+ * 2nd UI state. After the user answers what they are looking for, this view is rendered.
+ * It'll ask "What skills can you help with?" and "What skills do you need help with?"
+ */
+$app->post('/test/get-matched/about-user',
     function(Request $request, Response $response) {
         //-- example parsed body for debugging --
-        $mockData1 = [
-            // mock a basic sql injection while debugging
-            'user-name'    => "'SELECT * FROM users_db --",
-            'user-skills'    => 'math, css, javascript, php',
-            'user-about'     => '',
-            'app-name'     => 'Code Buddies Connect',
-        ];
+        //$getParsedBody = var_export($data, true);
+        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
     
-        // force a 75% match, cause I'm not getting any
-        $mockData = [
+        // mock data for debugging
+        $debugData = [
             // mock a basic sql injection while debugging
             'user-name'    => "'SELECT * FROM users_db --",
             'user-skills'    => 'c#, visual basic, html, php',
@@ -92,18 +130,15 @@ $app->post('/test/get-matched',
             'app-name'     => 'Code Buddies Connect',
         ];
         // The DATA ^_^
-        $data = AppGlobals::inDebugMode() ? $mockData : $request->getParsedBody();
-        
-        //$getParsedBody = var_export($data, true);
-        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
+        $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
         
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect);
         $result = $usersModel->matchSkills($data);
-        $matchedUsers = [];
         
-        // just get the needed fields 
+        // just get the needed fields
+        $matchedUsers = [];
         foreach($result as $i => $matchedUser) {
             $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
             $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
@@ -112,6 +147,7 @@ $app->post('/test/get-matched',
             $skillsMatched = $matchedUser['skills_matched'] ?? null;
             $matchedUsers[$i]['skills_matched'] = implode( ", ",$skillsMatched);
         }
+        unset($result); // free mem from buffer
         
         //-- return json for future API
         //return $response->withJson($result);
@@ -120,6 +156,60 @@ $app->post('/test/get-matched',
         return $this->renderer->render($response, 'user-matches.phtml', $matchedUsers);
     }
 );
+
+
+/***********************************
+ * The Routes we'll probably need *
+ **********************************
+-- based on my analysis of the UX from http://cbconnect.herokuapp.com/apply --
+ * GET https://codebuddies.co/api/get-matched/looking-for?x=y&w=z
+ * GET https://codebuddies.co/api/get-matched/about-user?x=y&w=z
+ * GET https://codebuddies.co/api/get-matched/see-matches?x=y&w=z
+ */
+$app->group('/proto/model/get-matched', function(\Slim\App $app) {
+    
+    // we can read and write data using GET & POST verbs, but initially it'll be easier to just use GET
+    
+    /*
+        -- Query String for "what the user is looking for" --
+        ?code-acc-partner=false
+            &mentor=true
+            &mentee=false
+            &open-source-proj=true
+            &more-details=was%20hoping%20for%20people%20using%20laravel%20or%20phalconphp
+    
+        -- notes --
+        Should use multi-select, not a radio buttons
+    */
+    $app->get('/looking-for', \CodeBuddies\ActionMatchLookingFor::class);
+    
+    /*
+        -- Query String for "about who the user is" --
+        ?name=julius
+            &one-line=php%20all%20day
+            &strong-skills=php%2Ccomputer%20science%2C%20algorithms%2C%20node.js%2C%20microsoft%20excel
+            &weak-skills=combinatorics%2C%20statistics%2C%20binary%20tree%27s%2C%20recursion
+    
+        -- notes --
+        [strong_skills] and [weak_skills] should be an autocomplete for normalized input
+    */
+    $app->get('/about-user', \CodeBuddies\ActionMatchAboutUser::class);
+    
+    /*
+        -- Query String for "seeing who the user matched with" --
+        ?email=phpninja@mail.com
+            &time-zone=Pacific_standard
+            &days-avail=mon%2C%20thur%2C%20fri
+            &time-avail=7pm-8pm
+    
+        -- notes --
+        1. [days_avail] and [time_avail] should initially just be drop down options, a more sophisticated UI may be
+        difficult to implement
+        2. By this point, we have made 2 requests to the PHP 7.4 API so we can have a little widget in the corner
+            showing how many matches they have to entice them click the "See Matches" button ^_^
+    */
+    $app->get('/see-matches', \CodeBuddies\ActionMatchSeeMatches::class);
+});
 
 
 $app->get('/[{name}]',
@@ -151,6 +241,8 @@ $app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function($r
     $handler = $this->notFoundHandler;
     return $handler($req, $res);
 });
+
+
 
 
 

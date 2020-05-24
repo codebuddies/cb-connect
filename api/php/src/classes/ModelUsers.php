@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace CodeBuddies;
 
+//TODO: general eventual, utilize specialized data structures(php-ds, spl-ds, C extensions, etc.)
+// rather using array for everything
+
 use Spatie\Regex\Regex;
 
 class ModelUsers
@@ -57,20 +60,20 @@ class ModelUsers
      */
     public function addSkillsToMockUsers(): array {
         try {
-            // get id's
-            $query = /** @lang * */
+            //TODO: L200, dry this code
+            $query = /** @lang */
                 "select q_id from $this->tableMockUsers";
             $statement = $this->db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll();
             
-            $queryFormat = /** @lang * */
+            $queryFormat = /** @lang */
                 "update %s set skills = '%s' where q_id = %d;";
+            
             foreach($result as $i => $q_id) {
                 $randomSkills = $this->createRandomSkills(rand(2, 10));
                 $randomSkillsImplode = implode(", ", $randomSkills);
                 $q_id = (int)$q_id['q_id'];
-                $debug = 1;
                 $query = sprintf($queryFormat, $this->tableMockUsers, $randomSkillsImplode, $q_id);
                 $statement = $this->db->prepare($query);
                 $statement->execute();
@@ -88,7 +91,8 @@ class ModelUsers
     }
     
     /**
-     * The most important and difficult to implement match
+     * Match implementation for the "About me" web view, the 2nd web view.
+     * Will be it's own request
      *
      * @param array $data
      *
@@ -100,7 +104,7 @@ class ModelUsers
             // maybe make this a class property
             $ff = new class() {
                 public $matches = [];
-                public $pctMatchThreshold = 0.0;
+                public $pctMatchThreshold = 0.5;
                 public $keyMatchPct = 'skill_pct_match';
                 public $keyMatchedSkill = 'skills_matched';
             };
@@ -126,32 +130,9 @@ class ModelUsers
             asort($userSkillParsed);
             $userSkillsCount = count($userSkillParsed);
             
-            //TODO: do NOT get all users, write a better query to get users
-            // for now just get all of the mock users... for now
+            //TODO: do NOT get ALL users, write a better query to get users, this will be fine for
+            // result sets < 100,000... but will get slow with 100,001 to 1,000,000+ records
             $allMockUsers = $this->getMockUsers();
-            /*
-            -- example user --
-            array (
-                  'first_name' => 'Aaron',
-                  0 => 'Aaron',
-                  'last_name' => 'CHASE',
-                  1 => 'CHASE',
-                  'user_type' => 'mock user',
-                  2 => 'mock user',
-                  'gender' => 'male',
-                  3 => 'male',
-                  'skills' => 'angular, html, javascript, php, interview practice, c#, c, web dev',
-                  4 => 'angular, html, javascript, php, interview practice, c#, c, web dev',
-                  'q_id' => '10000340',
-                  5 => '10000340',
-                  'id' => '1',
-                  6 => '1',
-                  'about' => NULL,
-                  7 => NULL,
-                  'time_added' => '2020-05-21 09:33:42',
-                  8 => '2020-05-21 09:33:42',
-                )
-            */
             
             // OUTER_LOOP_1 - O(n),  get user skills, sort, and kind of "split"
             // initial match attempt is in PHP, but SQL would be preferable eventually
@@ -210,6 +191,59 @@ class ModelUsers
     }
     
     /**
+     * Add some random "Looking For" answers to the mock users table to have some
+     * data to match against
+     *
+     * @return array
+     */
+    public function addLookingForToMockUsers(): array {
+        try {
+            //TODO: L200, dry this code
+            $query = /** @lang */
+                "select id from $this->tableMockUsers";
+            $statement = $this->db->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+    
+            $query = /** @lang */
+                "update $this->tableMockUsers set looking_for = :lookingFor where id = :id";
+            foreach($result as $i => $id) {
+                $randomLookingFor = $this->createRandomLookingFor(4);
+                $randLookingImplode = implode(", ", $randomLookingFor);
+                $id = (int)$id['id'];
+                $statement = $this->db->prepare($query);
+                $statement->bindValue(':lookingFor', $randLookingImplode);
+                $statement->bindValue(':id', $id);
+                $statement->execute();
+            }
+            
+            return [
+                'x-cb-info' => 'successfully added random Looking For to test users',
+            ];
+        }
+        catch(\Throwable $e) {
+            $ml = __METHOD__ . ' line: ' . __LINE__;
+            $errorMessage = $e->getMessage();
+            $debug = 1;
+            return [
+                'x-cb-error' => $errorMessage,
+                'x-cb-info' => "_> CB_CONNECT: Query to add random 'Looking For' to mock_users failed ~$ml",
+            ];
+        }
+    }
+    
+    /**
+     * Matching for the "Looking for" web view. Will be its' own request.
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function matchLookingFor(array $data): array {
+        return [];
+    }
+    
+    /**
      * Only accept comma's and alphanumeric chars. For security.
      *
      * @param array $data
@@ -231,7 +265,7 @@ class ModelUsers
             $sanitizedData[$sanLambda($k)] = $sanLambda($datum);
         }
         
-        $debug = 1;
+        
         return $sanitizedData;
     }
 }
