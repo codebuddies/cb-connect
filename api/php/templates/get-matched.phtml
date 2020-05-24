@@ -28,60 +28,178 @@ $appName = "Code Buddies Connect";
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-ng-app="cbConnectApp">
 
 <head>
     <meta charset="UTF-8">
     <title>Code Buddies connect</title>
-    
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-        .rsm-sample-input {
-            margin-left: 24px;
-            padding: 12px;
+
+    <!-- Angular Material CSS now available via Google CDN; version 1.1.9 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.css">
+    <link rel="stylesheet" href="/ui-match/styles/app.css">
+
+    <!-- ng-cloak -->
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
         }
     </style>
 </head>
 
 
-<body>
+<body ng-controller="MatchCtrl">
+<!-- https://codebuddies.org/images/logo.svg -->
+<!--<img src="/img/cb-logo.svg" alt="cb connect" height="80px">-->
 
-<img src="https://codebuddies.org/images/logo.svg" alt="cb connect" height="80px">
-<h1>Get matched with a mentor, mentee, collaborator, or pair programming partner</h1>
 
-<form action="/test/get-matched" method="post">
-    <label for="user-name">Name</label>
-    <input id="user-name" name="user-name" type="text">
-    
-    <br><br>
-    
-    <label for="user-skills">Skills</label>
-    <input id="user-skills" name="user-skills" type="text">
-    
-    <br><br>
+<!-- header -->
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2 flex md-truncate> Code Buddies Connect</h2>
+        <md-button class="md-raised md-accent md-hue-3 cb-btn" aria-label="Learn More">
+            Learn More
+        </md-button>
+        <md-button class="md-fab md-mini md-hue-3 cb-pad5" aria-label="Favorite">
+            <ng-md-icon icon="favorite" size="30" fill="#ffffff"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
 
-    <label for="user-about">About</label>
-    <textarea name="user-about" id="user-about" cols="50" rows="5"></textarea>
-    
-    <input type="hidden" name="app-name" value="<?= $appName ?>">
-    
-    <br><br>
-    
-    <input type="submit" value="GET MATCHED">
-</form>
+<div layout="row" layout-align="center center">
+    <h1>You are looking for</h1>
+</div>
 
-<h2>sample skills to copy and paste (or type in your own input)</h2>
+<div layout="row" layout-align="center center">
+    <div class="md-padding checkboxdemoBasicUsage" ng-cloak flex="60">
+        <form action="/test/get-matched/about-user" method="POST">
+            <fieldset class="standard">
+                <div layout-wrap layout-gt-sm="row">
 
-<ul>
-    <li>math, css, javascript, python</li>
-    <li>apache, excel, math, visual basic, data, python</li>
-    <li>interview practice, java, go, c, hack, r</li>
-    <li>c, interview practice, game</li>
-</ul>
+                    <!-- 1st option -->
+                    <div flex-gt-sm="50">
+                        <!--  {{ data.cb1 }} -->
+                        <md-checkbox ng-model="data.account" aria-label="Checkbox 1">
+                            Accountability Partner
+                        </md-checkbox>
+                    </div>
 
-<h4 style='margin-top: 4%'> <?= $appName ?> &copy; 2020</h4>
+                    <!-- 2nd option -->
+                    <div flex-gt-sm="50">
+                        <!-- md-warn  ng-false-value="'nope'"   ng-true-value="'yup'" {{ data.cb2 }} -->
+                        <md-checkbox ng-model="data.coding" aria-label="Checkbox 2" class="md-align-top-left">
+                            Coding Partner
+                        </md-checkbox>
+                    </div>
+
+                    <!-- 3rd option -->
+                    <div flex-gt-sm="50">
+                        <!-- ng-disabled="true" aria-label="Disabled checkbox" -->
+                        <md-checkbox ng-model="data.mentor" aria-label="Checkbox 3">
+                            Mentor (I am looking for a mentor)
+                        </md-checkbox>
+                    </div>
+
+                    <!-- 4th option -->
+                    <div flex-gt-sm="50">
+                        <!-- ng-disabled="true" aria-label="Disabled checked checkbox" -->
+                        <md-checkbox ng-model="data.mentee" aria-label="Checkbox 4" ng-init="data.mentee=true">
+                            Mentee (I would like to mentor or teach)
+                        </md-checkbox>
+                    </div>
+
+                    <!-- 5th option -->
+                    <div flex-gt-sm="50">
+                        <md-checkbox ng-model="data.openSource" aria-label="Checkbox 5">
+                            Open Source Project to contribute to
+                        </md-checkbox>
+                    </div>
+
+                    <!-- 6th option -->
+                    <div flex-gt-sm="50">
+                        <!-- md-indeterminate="" aria-label="Checkbox Indeterminate" -->
+                        <md-checkbox ng-model="data.contributors" aria-label="Checkbox 6">
+                            New Contributors to my Open Source Project
+                        </md-checkbox>
+                    </div>
+
+                    <!-- 7th option -->
+                    <div flex-gt-sm="50">
+                        <!--  md-indeterminate="" aria-label="Checkbox Disabled Indeterminate" ng-disabled="true" -->
+                        <md-checkbox ng-model="data.hackTeamToJoin" aria-label="Checkbox 7">
+                            A team to join for a Hackathon
+                        </md-checkbox>
+                    </div>
+
+                    <!-- 8th option -->
+                    <div flex-gt-sm="50">
+                        <!--  md-indeterminate="" aria-label="Checkbox Disabled Indeterminate" ng-disabled="true" -->
+                        <md-checkbox ng-model="data.joinMyHackTeam" aria-label="Checkbox 8">
+                            Someone to join my Hackathon team
+                        </md-checkbox>
+                    </div>
+
+                    <!-- Other option -->
+                    <div flex-gt-sm="50">
+                        <!--  md-indeterminate="" aria-label="Checkbox Disabled Indeterminate" ng-disabled="true" -->
+                        <md-checkbox ng-model="data.other" aria-label="Checkbox last">
+                            Other (not mentioned above)
+                        </md-checkbox>
+                    </div>
+                </div>
+            </fieldset>
+
+            <h1 class="cb-text-center">Please provide more detail</h1>
+
+            <md-input-container class="md-block">
+                <label>What you're working on, struggling with, looking for someone who?</label>
+                <textarea ng-model="user.biography" md-maxlength="500" rows="5" md-select-on-focus=""></textarea>
+            </md-input-container>
+
+            <div layout="row" layout-align="end start">
+                <md-button class="md-raised md-accent md-hue-4 cb-btn" type="submit">
+                    Next, Your Skills
+                </md-button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div layout="row" layout-padding layout-margin layout-align="center start">
+    <div flex="25">
+        <p>Get matched with a mentor, mentee, collaborator, or pair programming partner.</p>
+    </div>
+    <div flex="50">
+        <h1 class="cb-text-center cb-mtop-0"> <?= $appName ?></h1>
+        <h2 class="cb-text-center"> &copy; 2020</h2>
+    </div>
+    <div flex="25">
+        <a href="https://codebuddies.org/">
+            <md-button class="cb-btn">Codebuddies.org</md-button>
+        </a>
+        <a href="mailto:j.alvarado@engineer.com">
+            <md-button class="cb-btn">j.alvarado@engineer.com</md-button>
+        </a>
+        <a href="https://github.com/ideaguy3d/cb-connect">
+            <md-button class="cb-btn">GitHub repo</md-button>
+        </a>
+    </div>
+</div>
+
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+
+<!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+<!-- The AngularJS 1.7 app -->
+<script src="/ui-match/app.js"></script>
 
 
 </body>
