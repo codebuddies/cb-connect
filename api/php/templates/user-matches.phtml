@@ -64,9 +64,9 @@
         foreach($data as $match) { ?>
             <tr>
                 <td><?= htmlspecialchars($match['first_name']) ?></td>
-                <td><?= $match['skill_pct_match'] ?></td>
-                <td><?= $match['skills_matched'] ?></td>
-                <td><?= $match['user_type'] ?></td>
+                <td><?= htmlspecialchars($match['skill_pct_match']) ?></td>
+                <td><?= htmlspecialchars($match['skills_matched']) ?></td>
+                <td><?= htmlspecialchars($match['user_type']) ?></td>
             </tr>
         <?php }
     } ?>
