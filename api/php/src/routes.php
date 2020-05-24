@@ -13,19 +13,15 @@ if(AppGlobals::inDebugMode()) {
     $_SERVER['REQUEST_METHOD'] = 'POST';
 }
 
-$app->get('/hello/{name}',
-    function(Request $request, Response $response, array $args) {
+$app->get('/hello/{name}', function(Request $request, Response $response, array $args) {
         $zName = $args['name'];
         $response->getBody()->write("Well, Ello There $zName");
         // $this->logger->addInfo("routes.php julius alvarado logged something");
         
         return $response;
-    }
-);
+    });
 
-
-$app->get('/test1',
-    function(Request $request, Response $response) {
+$app->get('/test1', function(Request $request, Response $response) {
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect);
         $mockUsers = $usersModel->getMockUsers();
@@ -41,36 +37,41 @@ $app->get('/test1',
         
         $response->getBody()->write($table);
         return $response;
-    }
-);
+    });
 
-
-$app->get('/user',
-    function(Request $request, Response $response) {
+$app->get('/user', function(Request $request, Response $response) {
         return $response->getBody()->write("Hello, user!");
-    }
-);
+    });
 
-
-$app->get('/test/add-skills',
-    function(Request $request, Response $response) {
+/**
+ * Add random skills to the mock_users table
+ */
+$app->get('/test/add/random/skills', function(Request $request, Response $response) {
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect);
         $result = $usersModel->addSkillsToMockUsers();
         
         return $response->withJson($result);
-    }
-);
+    });
 
 /**
- * initial form for the "about user" match spec
+ * Add random "Looking For" options
  */
-$app->get('/test/get-matched',
-    function(Request $request, Response $response, array $args) {
-        return $this->renderer->render($response, 'get-matched.phtml', $args);
-    }
-);
+$app->get('/test/add/random/looking-for', function(Request $request, Response $response) {
+        //TODO: look into maybe creating a singleton for classes that are used often
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+        
+        $result = $usersModel->addLookingForToMockUsers();
+        $hadError = $result['x-cb-error'] ?? null;
+        if(!is_null($hadError)) {
+            $this->logger->error($result['x-cb-error']);
+        }
+        
+        return $response->withJson($result);
+    });
+
 
 
 /**
@@ -80,82 +81,76 @@ $app->get('/test/get-matched',
  * To add random "Looking For" options
  * ?add-random-looking-for=true
  */
-$app->post("/test/get-matched/looking-for",
-    function(Request $request, Response $response, array $args) {
-        $qStr = $request->getQueryParams();
-        $addRandomLookingFor = $qStr['add-random-looking-for'] ?? null;
+$app->get('/test/get-matched', function(Request $request, Response $response, array $args) {
+        return $this->view->render($response, 'get-matched.phtml', $args);
+    });
+
+/**
+ * 2nd UI state. After the user answers what they are looking for, this view is rendered.
+ * It'll ask "What skills can you help with?" and "What skills do you need help with?"
+ */
+$app->post('/test/get-matched/about-user', function(Request $request, Response $response, array $args) {
+    return $this->view->render($response, 'about-user.phtml', $args);
+});
+
+/**
+ * 3rd UI State. After user submits "About User" info
+ */
+$app->post('/test/get-matched/contact-info', function(Request $request, Response $response) {
+    //-- example parsed body for debugging --
+    //$getParsedBody = var_export($data, true);
+    //file_put_contents('logs/parsed-body.txt', $getParsedBody);
+    
+    // mock data for debugging
+    $debugData = [
+        // mock a basic sql injection while debugging
+        'user-name'    => "'SELECT * FROM users_db --",
+        'user-skills'    => 'c#, visual basic, html, php',
+        // mock a basic sql injection while debugging...
+        'user-about'     => ', SELECT user_pass, user_email FROM users_db',
+        'app-name'     => 'Code Buddies Connect',
+    ];
+    // The DATA ^_^
+    $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
+    
+    //TODO: look into maybe creating a singleton for classes that are used often
+    $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+    $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+    $result = $usersModel->matchSkills($data);
+    
+    // just get the needed fields
+    $matchedUsers = [];
+    foreach($result as $i => $matchedUser) {
+        $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
+        $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
+        $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
         
-        //-- example parsed body for debugging --
-        //$getParsedBody = var_export($data, true);
-        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
-        
+        $skillsMatched = $matchedUser['skills_matched'] ?? null;
+        $matchedUsers[$i]['skills_matched'] = implode( ", ",$skillsMatched);
+    }
+    unset($result); // free mem from buffer
+    
+    //-- return json for future API
+    //return $response->withJson($result);
+    
+    // render a table rather than a bunch of json
+    return $this->view->render($response, 'user-matches.phtml', $matchedUsers);
+});
+
+/**
+ * After the 1st UI state is completed, which is the "looking for" view
+ */
+$app->post("/test/get-matched/see-matches", function(Request $request, Response $response, array $args) {
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect);
-    
-        // if the 'add-random-looking-for' q param is true
-        if(!is_null($addRandomLookingFor) && $addRandomLookingFor == 'true') {
-            $result = $usersModel->addLookingForToMockUsers();
-            $hadError = $result['x-cb-error'] ?? null;
-            if(!is_null($hadError)) {
-                $this->logger->error($result['x-cb-error']);
-            }
-        }
         
         $opt = $usersModel->setLookingForStandardizedOptions();
         $debugData = [$opt[2], $opt[1], $opt[4]];
         $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
         
         $result = $usersModel->matchLookingFor($data); // only variation so far
-    }
-);
-
-/**
- * 2nd UI state. After the user answers what they are looking for, this view is rendered.
- * It'll ask "What skills can you help with?" and "What skills do you need help with?"
- */
-$app->post('/test/get-matched/about-user',
-    function(Request $request, Response $response) {
-        //-- example parsed body for debugging --
-        //$getParsedBody = var_export($data, true);
-        //file_put_contents('logs/parsed-body.txt', $getParsedBody);
-    
-        // mock data for debugging
-        $debugData = [
-            // mock a basic sql injection while debugging
-            'user-name'    => "'SELECT * FROM users_db --",
-            'user-skills'    => 'c#, visual basic, html, php',
-            // mock a basic sql injection while debugging...
-            'user-about'     => ', SELECT user_pass, user_email FROM users_db',
-            'app-name'     => 'Code Buddies Connect',
-        ];
-        // The DATA ^_^
-        $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
-        
-        //TODO: look into maybe creating a singleton for classes that are used often
-        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
-        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
-        $result = $usersModel->matchSkills($data);
-        
-        // just get the needed fields
-        $matchedUsers = [];
-        foreach($result as $i => $matchedUser) {
-            $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
-            $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
-            $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
-            
-            $skillsMatched = $matchedUser['skills_matched'] ?? null;
-            $matchedUsers[$i]['skills_matched'] = implode( ", ",$skillsMatched);
-        }
-        unset($result); // free mem from buffer
-        
-        //-- return json for future API
-        //return $response->withJson($result);
-        
-        // render a table rather than a bunch of json
-        return $this->renderer->render($response, 'user-matches.phtml', $matchedUsers);
-    }
-);
+    });
 
 
 /***********************************
@@ -166,7 +161,7 @@ $app->post('/test/get-matched/about-user',
  * GET https://codebuddies.co/api/get-matched/about-user?x=y&w=z
  * GET https://codebuddies.co/api/get-matched/see-matches?x=y&w=z
  */
-$app->group('/proto/model/get-matched', function(\Slim\App $app) {
+$app->group('/get-matched', function(\Slim\App $app) {
     
     // we can read and write data using GET & POST verbs, but initially it'll be easier to just use GET
     
@@ -212,12 +207,10 @@ $app->group('/proto/model/get-matched', function(\Slim\App $app) {
 });
 
 
-$app->get('/[{name}]',
-    function(Request $request, Response $response, array $args) {
+$app->get('/[{name}]', function(Request $request, Response $response, array $args) {
         //-- Render index view:
-        return $this->renderer->render($response, 'index.phtml', $args);
-    }
-);
+        return $this->view->render($response, 'index.phtml', $args);
+    });
 
 
 //--------------------------------------------------------------
@@ -228,6 +221,7 @@ $app->options('/{routes:.+}', function($request, $response, $args) {
     return $response;
 });
 
+
 $app->add(function($req, $res, $next) {
     $response = $next($req, $res);
     return $response
@@ -236,6 +230,7 @@ $app->add(function($req, $res, $next) {
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
+
 
 $app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function($req, $res) {
     $handler = $this->notFoundHandler;

@@ -5,9 +5,8 @@ use CodeBuddies\AppGlobals;
 $container = $app->getContainer();
 
 // view renderer
-$container['renderer'] = function($c) {
-    $settings = $c->get('settings')['renderer'];
-    return new \Slim\Views\PhpRenderer($settings['template_path']);
+$container['view'] = function($c) {
+    return new \Slim\Views\PhpRenderer('templates/');
 };
 
 // monolog

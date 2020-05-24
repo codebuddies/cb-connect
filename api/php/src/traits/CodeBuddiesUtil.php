@@ -42,13 +42,23 @@ trait CodeBuddiesUtil
      */
     public function setLookingForStandardizedOptions(): array {
         return [
-            'Accountability partner', 'Coding partner',
+            // 1
+            'Accountability partner',
+            // 2
+            'Coding partner',
+            // 3
             'Mentor (I am looking for a mentor)',
+            // 4
             'Mentee (I would like to mentor or teach)',
+            // 5
             'An Open Source Project to contribute to',
+            // 6
             'Potential New Contributors to my Open Source Project',
+            // 7
             'A team to join for a Hackathon',
+            // 8
             'Someone to join my Hackathon team',
+            // 9
             'Other (not mentioned above)',
         ];
     }
