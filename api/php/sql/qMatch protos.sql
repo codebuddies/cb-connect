@@ -17,12 +17,14 @@ alter table mock_users add column last_name varchar(100);
 
 alter table mock_users add column user_type varchar(100);
 
+
 update mock_users set mock_users.first_name = C1;
 update mock_users set mock_users.last_name = C2;
 update mock_users set mock_users.user_type = C3;
 
+
 -- check the table
-select *
+select id,first_name, user_type, skills,  looking_for
 from mock_users;
 
 

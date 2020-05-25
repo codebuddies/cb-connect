@@ -18,6 +18,11 @@ $container['logger'] = function($c) {
     return $logger;
 };
 
+// code buddies user
+$container['codeUser'] = function($c) {
+    return $c['settings']['codeUser'];
+};
+
 if(!AppGlobals::isLocal()) {
     // The CloudSQL Code Buddies Connect db
     $container['dbProduction'] = function($c) {
