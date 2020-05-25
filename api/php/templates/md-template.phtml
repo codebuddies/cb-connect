@@ -1,0 +1,296 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Julius Alvarado
+ * Date: 5/21/2020
+ * Time: 6:59 AM
+ */
+
+$appName = "Code Buddies Connect";
+
+?>
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="cbConnectApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code Buddies connect</title>
+    
+    <!-- Angular Material CSS now available via Google CDN; version 1.1.9 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.css">
+    <link rel="stylesheet" href="/ui-match/styles/app.css">
+    
+    <!-- ng-cloak -->
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+
+<body ng-controller="MatchCtrl">
+<!-- https://codebuddies.org/images/logo.svg -->
+<!--<img src="/img/cb-logo.svg" alt="cb connect" height="80px">-->
+
+
+<!-- Horizontal sort of Nav Bar -->
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2 flex md-truncate> Code Buddies Connect</h2>
+        <md-button class="md-raised md-accent md-hue-3 cb-btn" aria-label="Learn More">
+            Learn More
+        </md-button>
+        <md-button class="md-fab md-mini md-hue-3 cb-pad5" aria-label="Favorite">
+            <ng-md-icon icon="favorite" size="30" fill="#ffffff"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div layout="row" layout-align="center center">
+    <h1>Hello Wolrd ^_^/</h1>
+    
+    <md-content layout-padding>
+        <form name="projectForm">
+            
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
+                <div ng-messages="projectForm.description.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+                </div>
+            </md-input-container>
+            
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>Client Name</label>
+                    <input required name="clientName" ng-model="project.clientName">
+                    <div ng-messages="projectForm.clientName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                
+                <md-input-container flex="50">
+                    <label>Project Type</label>
+                    <md-select name="type" ng-model="project.type" required>
+                        <md-option value="app">Application</md-option>
+                        <md-option value="web">Website</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            
+            <md-input-container class="md-block">
+                <label>Client Email</label>
+                <input required type="email" name="clientEmail" ng-model="project.clientEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/">
+                
+                <div ng-messages="projectForm.clientEmail.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                    </div>
+                </div>
+            </md-input-container>
+            
+            <md-input-container class="md-block">
+                <label>Hourly Rate (USD)</label>
+                <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999" ng-pattern="/^1234$/">
+                
+                <div ng-messages="projectForm.rate.$error" multiple md-auto-hide="false">
+                    <div ng-message="required">
+                        You've got to charge something! You can't just <b>give away</b> a Missile Defense
+                        System.
+                    </div>
+                    
+                    <div ng-message="min">
+                        You should charge at least $800 an hour. This job is a big deal... if you mess up,
+                        everyone dies!
+                    </div>
+                    
+                    <div ng-message="pattern">
+                        You should charge exactly $1,234.
+                    </div>
+                    
+                    <div ng-message="max">
+                        {{projectForm.rate.$viewValue | currency:"$":0}} an hour? That's a little ridiculous. I
+                        doubt even Bill Clinton could afford that.
+                    </div>
+                </div>
+            </md-input-container>
+            
+            <md-input-container class="md-block">
+                <md-checkbox name="tos" ng-model="project.tos" required>
+                    I accept the terms of service.
+                </md-checkbox>
+                <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+                    <div ng-message="required">
+                        You must accept the terms of service before you can proceed.
+                    </div>
+                </div>
+            </md-input-container>
+            
+            <md-input-container class="md-block">
+                <md-switch class="md-primary" name="special" ng-model="project.special" required>
+                    Enable special options.
+                </md-switch>
+                <div ng-messages="projectForm.special.$error" multiple>
+                    <div ng-message="required">
+                        You must enable all special options before you can proceed.
+                    </div>
+                </div>
+            </md-input-container>
+
+
+            <div layout="row" layout-xs="column" layout-sm="column" layout-align="space-between center">
+                <div flex-gt-sm="80">
+                    <p>
+                        The <code>md-input-container</code> gives you the flexibility to display your messages
+                        using many standard angular directives.
+                    </p>
+
+                    <p>
+                        For instance, toggle the switch
+
+                        <span hide-xs hide-sm>to the right</span>
+                        <span hide-gt-sm>below</span>
+
+                        to see the messages switch between some custom hints, and the actual error messages.
+                        Note that some of the <code>ng-messages</code> containers use <code>ngIf</code> while
+                        others use <code>ng-show</code> or <code>ng-hide</code>.
+                    </p>
+                </div>
+
+                <md-input-container>
+                    <md-switch ng-model="showHints">Showing {{showHints ? "Hints" : "Errors"}}</md-switch>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Name</label>
+                    <input md-maxlength="30" required name="name" ng-model="user.name">
+
+                    <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+
+                    <div ng-messages="userForm.name.$error" ng-if="!showHints">
+                        <div ng-message="required">Name is required.</div>
+                        <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                    </div>
+                </md-input-container>
+
+                <div flex="5" hide-xs hide-sm>
+                    <!-- Spacer //-->
+                </div>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Social Security Number</label>
+                    <input name="social" ng-model="user.social" ng-pattern="/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/">
+
+                    <div class="hint" ng-if="showHints">###-##-####</div>
+
+                    <div ng-messages="userForm.social.$error" ng-if="!showHints">
+                        <div ng-message="pattern">###-##-#### - Please enter a valid SSN.</div>
+                    </div>
+                </md-input-container>
+
+            </div>
+
+            <div layout-gt-sm="row">
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input name="email" ng-model="user.email" required minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/">
+
+                    <div class="hint" ng-show="showHints">How can we reach you?</div>
+
+                    <div ng-messages="userForm.email.$error" ng-hide="showHints">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <div flex="5" hide-xs hide-sm>
+                    <!-- Spacer //-->
+                </div>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Phone Number</label>
+                    <input name="phone" ng-model="user.phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/">
+
+                    <div class="hint" ng-show="showHints">(###) ###-####</div>
+
+                    <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+                        <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                    </div>
+                </md-input-container>
+
+                <style>
+                    /*
+                     * The Material demos system does not currently allow targeting the body element, so this
+                     * must go here in the HTML.
+                     */
+                    body[dir=rtl] .hint {
+                        right: 2px;
+                        left: auto;
+                    }
+                </style>
+            </div>
+
+
+            <div>
+                <md-button type="submit">Submit</md-button>
+            </div>
+            
+            <p style="font-size:.8em; width: 100%; text-align: center;">
+                Make sure to include
+                <a href="https://docs.angularjs.org/api/ngMessages" target="_blank">ngMessages</a>
+                module when using ng-message markup.
+            </p>
+        </form>
+    </md-content>
+</div>
+
+
+<!-- Footer -->
+<div layout="row" layout-padding layout-margin layout-align="center start">
+    <div flex="25">
+        <p>Get matched with a mentor, mentee, collaborator, or pair programming partner.</p>
+    </div>
+    <div flex="50">
+        <h1 class="cb-text-center cb-mtop-0"> <?= $appName ?></h1>
+        <h2 class="cb-text-center"> &copy; 2020</h2>
+    </div>
+    <div flex="25">
+        <a href="https://codebuddies.org/">
+            <md-button class="cb-btn">Codebuddies.org</md-button>
+        </a>
+        <a href="mailto:j.alvarado@engineer.com">
+            <md-button class="cb-btn">j.alvarado@engineer.com</md-button>
+        </a>
+        <a href="https://github.com/ideaguy3d/cb-connect">
+            <md-button class="cb-btn">GitHub repo</md-button>
+        </a>
+    </div>
+</div>
+
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+
+<!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+<!-- The AngularJS 1.7 app -->
+<script src="/ui-match/app.js"></script>
+
+
+</body>
+</html>
