@@ -9,9 +9,6 @@ declare(strict_types=1);
 
 namespace CodeBuddies;
 
-//TODO: general eventual, utilize specialized data structures(php-ds, spl-ds, C extensions, etc.)
-// rather using array for everything
-
 use Spatie\Regex\Regex;
 
 class ModelUsers
@@ -204,7 +201,7 @@ class ModelUsers
             $statement = $this->db->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
-    
+            
             $query = /** @lang */
                 "update $this->tableMockUsers set looking_for = :lookingFor where id = :id";
             foreach($result as $i => $id) {
@@ -233,14 +230,90 @@ class ModelUsers
     }
     
     /**
-     * Matching for the "Looking for" web view. Will be its' own request.
-     *
-     * @param array $data
+     * @param array $data - an as.ar from the POST req
+     * @param $qid
      *
      * @return array
      */
-    public function matchLookingFor(array $data): array {
-        return [];
+    public function insertLookingFor(array $data, $qid): array {
+        try {
+            $about = $data['working-on'];
+            $lookingFor = '';
+            $lookForKeys = LookingForStruct::lookingForKeys();
+            foreach($data as $k => $boolVal) {
+                if(in_array($k, $lookForKeys)) {
+                    $lookingFor .= "$k $boolVal, ";
+                }
+            }
+            
+            $query = "
+                insert into {$this->tableMockUsers} (q_id, user_type, about, looking_for)
+                values (:qid, 'real user', :about, :lookingFor);
+            ";
+            $statement = $this->db->prepare($query);
+            $statement->bindValue(':qid', $qid);
+            $statement->bindValue(':about', $about);
+            $statement->bindValue(':lookingFor', $lookingFor);
+            $statement->execute();
+            return [
+              'x-cb-info' => '_> Successfully insert "Looking For" data'
+            ];
+        }
+        catch(\Throwable $e) {
+            $err = $e->getMessage();
+            $debug = 1;
+            return [
+              'x-cb-error' => $err,
+              'x-cb-info' => '_> Unable to insert what the user is looking for into DB'
+            ];
+        }
+    }
+    
+    /**
+     * Matching for the "Looking for" web view. Will be its' own request.
+     *
+     * This data doesn't need to
+     *
+     * @param array $whatUserIsLookingFor
+     *
+     * @return array
+     */
+    public function matchLookingFor(array $whatUserIsLookingFor): array {
+        try {
+            // functions' fields
+            $ff = new class() {
+            
+            };
+            $lookFor = new LookingForStruct($whatUserIsLookingFor);
+            
+            //TODO: this query needs filters and to be improved
+            $query = "
+                select id, first_name, user_type, looking_for
+                from mock_users
+            ";
+            $statement = $this->db->prepare($query);
+            $statement->execute();
+            //TODO: use another function instead of fetchAll()
+            $result = $statement->fetchAll();
+            
+            foreach($result as $k => $record) {
+                [$_id, $_firstName, $_userType, $_lookFor] = $record;
+                $_lookFor = $this->lookForMatchMap($_lookFor);
+            }
+            
+            return [
+                'x-cb-info' => '_> Still implementing',
+            ];
+        }
+        catch(\Throwable $e) {
+            $err = $e->getMessage();
+            $debug = 1;
+            return [
+                'x-cb-error' => $e,
+                'x-cb-info' => '_> CB_ERROR, failed to match what user is "Looking For"',
+            ];
+        }
+        
     }
     
     /**
@@ -267,5 +340,17 @@ class ModelUsers
         
         
         return $sanitizedData;
+    }
+    
+    private function lookForMatchMap(string $lookFor): array {
+        $lookFor = explode(',', $lookFor);
+        
+        // elem is the users answer
+        foreach($lookFor as $elem) {
+            $elem = strtolower(trim($elem));
+            // if(strtolower(LookingForStruct::$accountQ))
+        }
+        
+        return $lookFor;
     }
 }
