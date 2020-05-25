@@ -21,11 +21,21 @@ class LookingForStruct
     public $workingOn;
     
     /**
+     * @var string
+     */
+    public static $workingOnKey = 'working-on';
+    
+    /**
      * This is the IP address from the client device to assist
      * with persisting state across multiple requests
      * @var string - of numbers
      */
     public $codeUser;
+    
+    /**
+     * @var string
+     */
+    public static $codeUserKey = 'code-user';
     
     /**
      * An accountability partner?
@@ -105,6 +115,12 @@ class LookingForStruct
     public static $otherKey = 'other';
     
     /**
+     *
+     * @var array
+     */
+    public $chosenKeys;
+    
+    /**
      * $lookingFor is an array of mostly 'true' or 'false' values that the
      * user selected from the web form when selecting what they were
      * looking for in a match.
@@ -112,18 +128,18 @@ class LookingForStruct
      * @param array $lookingFor
      */
     public function __construct(array $lookingFor) {
-        $lookingFor = $this->sanitize($lookingFor);
+        $this->chosenKeys = $this->lookFilter($lookingFor);
         
-        $this->workingOn = $lookingFor['working-on'];
-        $this->codeUser = $lookingFor['code-user'];
-        // bool values
-        $this->account = $lookingFor['account'];
-        $this->coding = $lookingFor['coding'];
-        $this->mentor = $lookingFor['mentor'];
-        $this->mentee = $lookingFor['mentee'];
-        $this->openSource = $lookingFor['openSource'];
-        $this->contributors = $lookingFor['contributors'];
-        $this->other = $lookingFor['other'];
+        $this->workingOn = $lookingFor[self::$workingOnKey] ?? null;
+        $this->codeUser = $lookingFor[self::$codeUserKey] ?? null;
+        // bool values, may not need these
+        $this->account = $lookingFor[self::$accountKey] ?? null;
+        $this->coding = $lookingFor[self::$codingKey] ?? null;
+        $this->mentor = $lookingFor[self::$mentorKey] ?? null;
+        $this->mentee = $lookingFor[self::$menteeKey] ?? null;
+        $this->openSource = $lookingFor[self::$openSourceKey] ?? null;
+        $this->contributors = $lookingFor[self::$contribKey] ?? null;
+        $this->other = $lookingFor[self::$otherKey] ?? null;
     }
     
     /**
@@ -137,22 +153,28 @@ class LookingForStruct
         ];
     }
     
-    private function sanitize(array $sanitize): array {
+    private function lookFilter(array $sanitize): array {
         $san = [];
+        $filtered = [];
         foreach($sanitize as $key => $value) {
             // convert to true or false i.e. bool
             switch($key) {
-                case 'account':
-                case 'coding':
-                case 'mentor':
-                case 'mentee':
-                case 'openSource':
-                case 'contributors':
-                case 'other':
+                case self::$accountKey:
+                case self::$codingKey:
+                case self::$mentorKey:
+                case self::$menteeKey:
+                case self::$openSourceKey:
+                case self::$contribKey:
+                case self::$otherKey:
                     $san[$key] = ($value === 'true');
                     break;
+                default:
+                    $san[$key] = $value;
+            }
+            if($san[$key]) {
+                $filtered [] = $key;
             }
         }
-        return array_filter($san);
+        return $filtered;
     }
 }

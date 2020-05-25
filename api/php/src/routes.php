@@ -5,6 +5,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use CodeBuddies\AppGlobals;
 use CodeBuddies\ModelUsers;
+use CodeBuddies\CtrlAboutUser;
 
 if(AppGlobals::inDebugMode()) {
     echo "\n <br> [ CODE BUDDIES CONNECT IN DEBUG MODE ] <br> \n";
@@ -118,50 +119,19 @@ $app->post('/test/get-matched/about-user', function(Request $request, Response $
     //file_put_contents('logs/parsed-body.txt', $getParsedBody);
     
     $result = $usersModel->matchLookingFor($data); // only variation so far
+    $result['codeUser'] = $this->codeUser;
+    
+    $debug = 1;
     
     //return $response->withJson($result); // return json for future API
-    
-    return $this->view->render($response, 'about-user.phtml', $args);
+    return $this->view->render($response, 'about-user.phtml', $result);
 });
 
 /**
  * 3rd View State.
  * After user submits "About User" info, they enter their email and availability
  */
-$app->post('/test/get-matched/contact-info', function(Request $request, Response $response) {
-    //-- example parsed body for debugging --
-    //$getParsedBody = var_export($data, true);
-    //file_put_contents('logs/parsed-body.txt', $getParsedBody);
-    
-    // mock data for debugging
-    $debugData = [
-        // mock a basic sql injection while debugging
-        'user-name' => "'SELECT * FROM users_db --",
-        'user-skills' => 'c#, visual basic, html, php',
-        'user-about' => ', SELECT user_pass, user_email FROM users_db',
-        'app-name' => 'Code Buddies Connect',
-    ];
-    $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
-    
-    //TODO: look into maybe creating a singleton for classes that are used often
-    $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
-    $usersModel = new ModelUsers($dbCodeBuddiesConnect);
-    $result = $usersModel->matchSkills($data);
-    
-    // just get the needed fields
-    $matchedUsers = [];
-    foreach($result as $i => $matchedUser) {
-        $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
-        $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
-        $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
-        
-        $skillsMatched = $matchedUser['skills_matched'] ?? null;
-        $matchedUsers[$i]['skills_matched'] = implode(", ", $skillsMatched);
-    }
-    unset($result); // free mem from buffer
-    
-    return $this->view->render($response, 'contact-info.phtml', $data);
-});
+$app->post('/test/get-matched/contact-info', \CodeBuddies\CtrlAboutUser::class . ':matchSkills');
 
 /**
  * _4th UI state. After the user answers what they are looking for, this view is rendered.
@@ -208,7 +178,7 @@ $app->group('/get-matched', function(\Slim\App $app) {
         -- notes --
         [strong_skills] and [weak_skills] should be an autocomplete for normalized input
     */
-    $app->get('/about-user', \CodeBuddies\ActionMatchAboutUser::class);
+    $app->get('/about-user', \CodeBuddies\CtrlAboutUser::class);
     
     /*
         -- Query String for "seeing who the user matched with" --

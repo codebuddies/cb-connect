@@ -26,8 +26,16 @@ class ModelUsers
      */
     private $tableMockUsers = 'mock_users';
     
+    /**
+     * @var array
+     */
+    private $lookForKeys;
+    
+    private $curUserDbId;
+    
     public function __construct($dbCodeBuddiesConnect) {
         $this->db = $dbCodeBuddiesConnect;
+        $this->lookForKeys = LookingForStruct::lookingForKeys();
     }
     
     /**
@@ -239,9 +247,10 @@ class ModelUsers
         try {
             $about = $data['working-on'];
             $lookingFor = '';
-            $lookForKeys = LookingForStruct::lookingForKeys();
             foreach($data as $k => $boolVal) {
-                if(in_array($k, $lookForKeys)) {
+                if('false' == $boolVal) continue;
+                
+                if(in_array($k, $this->lookForKeys)) {
                     $lookingFor .= "$k $boolVal, ";
                 }
             }
@@ -255,16 +264,18 @@ class ModelUsers
             $statement->bindValue(':about', $about);
             $statement->bindValue(':lookingFor', $lookingFor);
             $statement->execute();
+            $this->curUserDbId = $this->db->lastInsertId();
+            $debug = 1;
             return [
-              'x-cb-info' => '_> Successfully insert "Looking For" data'
+                'x-cb-info' => '_> Successfully inserted "Looking For" data',
             ];
         }
         catch(\Throwable $e) {
             $err = $e->getMessage();
             $debug = 1;
             return [
-              'x-cb-error' => $err,
-              'x-cb-info' => '_> Unable to insert what the user is looking for into DB'
+                'x-cb-error' => $err,
+                'x-cb-info' => '_> Unable to insert what the user is looking for into DB',
             ];
         }
     }
@@ -282,9 +293,15 @@ class ModelUsers
         try {
             // functions' fields
             $ff = new class() {
-            
+                public $matches = [];
+                public $currentUserInfo = [];
+                public $idKey = 'current_user_db_id';
+                public $lookForKey = 'current_user_look_for_keys';
             };
-            $lookFor = new LookingForStruct($whatUserIsLookingFor);
+            // what the Current user is looking for
+            $_cLookFor = new LookingForStruct($whatUserIsLookingFor);
+            $ff->currentUserInfo[$ff->idKey] = $this->curUserDbId;
+            $ff->currentUserInfo[$ff->lookForKey] = $_cLookFor->chosenKeys;
             
             //TODO: this query needs filters and to be improved
             $query = "
@@ -296,13 +313,36 @@ class ModelUsers
             //TODO: use another function instead of fetchAll()
             $result = $statement->fetchAll();
             
-            foreach($result as $k => $record) {
-                [$_id, $_firstName, $_userType, $_lookFor] = $record;
-                $_lookFor = $this->lookForMatchMap($_lookFor);
-            }
+            // OUTER_LOOP_1, loop over all the User Records
+            foreach($result as $k => $dbUserRec) {
+                [$_dbID, $_dbFirstName, $_dbUserType, $_dbLookFor] = $dbUserRec;
+                if(is_null($_dbLookFor)) continue;
+                
+                $lookForExplode = explode(',', $_dbLookFor);
+                $_dbLookForMappedKeys = $this->lookForMatchMap($lookForExplode);
+                
+                $matches = array_intersect($_dbLookForMappedKeys, $_cLookFor->chosenKeys);
+                $matchCount = count($matches);
+                if($matchCount > 0) {
+                    $ff->matches [] = [
+                        'matched_user_db_id' => (int)$_dbID,
+                        'm_first_name' => $_dbFirstName,
+                        'm_user_type' => $_dbUserType,
+                        'm_looking_for' => $_dbLookFor,
+                        'm_look_for_maps' => $_dbLookForMappedKeys,
+                        'what_matched' => $matches,
+                    ];
+                }
+                $debug = 1;
+            } // end of: OUTER_LOOP_1
+            
+            $debug = 1;
             
             return [
-                'x-cb-info' => '_> Still implementing',
+                'matches' => $ff->matches,
+                'match_count' => count($ff->matches),
+                'current_user_info' => $ff->currentUserInfo,
+                'x-cb-info' => '_> Matched users who were looking for similar options',
             ];
         }
         catch(\Throwable $e) {
@@ -342,15 +382,39 @@ class ModelUsers
         return $sanitizedData;
     }
     
-    private function lookForMatchMap(string $lookFor): array {
-        $lookFor = explode(',', $lookFor);
+    private function lookForMatchMap(array $lookFor): array {
+        $lookForMap = [];
         
+        $check = function($key) use (&$elem) {
+            return (stripos($elem, $key) !== false);
+        };
+        
+        $options = $this->setLookingForStandardizedOptions();
+        $openSourceQ = $options['openSource'];
+        $contribQ = $options['contributors'];
         // elem is the users answer
         foreach($lookFor as $elem) {
             $elem = strtolower(trim($elem));
-            // if(strtolower(LookingForStruct::$accountQ))
+            if($check(LookingForStruct::$accountKey)) {
+                $lookForMap [] = LookingForStruct::$accountKey;
+            }
+            else if($check(LookingForStruct::$codingKey)) {
+                $lookForMap [] = LookingForStruct::$codingKey;
+            }
+            else if($check(LookingForStruct::$menteeKey)) {
+                $lookForMap [] = LookingForStruct::$mentorKey;
+            }
+            else if($check(LookingForStruct::$mentorKey)) {
+                $lookForMap [] = LookingForStruct::$menteeKey;
+            }
+            else if($check($openSourceQ)) { // FULL question
+                $lookForMap [] = LookingForStruct::$contribKey;
+            }
+            else if($check($contribQ)) { // FULL question
+                $lookForMap [] = LookingForStruct::$openSourceKey;
+            }
         }
         
-        return $lookFor;
+        return $lookForMap;
     }
 }
