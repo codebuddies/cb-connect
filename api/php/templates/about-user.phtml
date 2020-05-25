@@ -20,60 +20,117 @@ $appName = "Code Buddies Connect";
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-ng-app="cbConnectApp">
 
 <head>
     <meta charset="UTF-8">
     <title>Code Buddies connect</title>
-    
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-        .rsm-sample-input {
-            margin-left: 24px;
-            padding: 12px;
+
+    <!-- Angular Material CSS now available via Google CDN; version 1.1.9 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.css">
+    <link rel="stylesheet" href="/ui-match/styles/app.css">
+
+    <!-- ng-cloak -->
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
         }
     </style>
 </head>
 
 
-<body>
+<body ng-controller="MatchCtrl">
 
-<img src="https://codebuddies.org/images/logo.svg" alt="cb connect" height="80px">
-<h1>Get matched with a mentor, mentee, collaborator, or pair programming partner</h1>
+<!-- Horizontal sort of Nav Bar -->
+<?php
+include 'templates/layout/toolbar.php'
+?>
 
-<form action="/test/get-matched/contact-info" method="post">
-    <label for="user-name">Name</label>
-    <input id="user-name" name="user-name" type="text">
-    
-    <br><br>
-    
-    <label for="user-skills">Skills</label>
-    <input id="user-skills" name="user-skills" type="text">
-    
-    <br><br>
+<p>{{status}}</p>
+<!-- _SESSION TEST -->
+<br>
+<?= $data['codeUser'] ?? 'no code buddy user' ?>
+<br>
+<?= $_SESSION['j_user'] ?? 'no j_user' ?>
 
-    <label for="user-about">About</label>
-    <textarea name="user-about" id="user-about" cols="50" rows="5"></textarea>
-    
-    <input type="hidden" name="app-name" value="<?= $appName ?>">
-    
-    <br><br>
-    
-    <input type="submit" value="GET MATCHED">
-</form>
+<div layout="row" layout-align="center center">
+    <!-- LEFT side -->
+    <div layout-padding flex="15">
+        <!-- icon about -->
+        <div layout="row" layout-align="center center">
+            <ng-md-icon icon="face" style="fill: sandybrown" size="36"></ng-md-icon>
+            <h1>&nbsp; About</h1>
+        </div>
+        
+        <h1 class="cb-text-center cb-mtop-0">2 / 3 <ng-md-icon icon="check_circle" style="fill: hotpink"></ng-md-icon></h1>
+    </div>
 
-<h2>sample skills to copy and paste (or type in your own input)</h2>
+    <!-- RIGHT side -->
+    <div class="md-padding" flex="60">
+        <form action="/test/get-matched/contact-info" method="post">
+            <h1>About you and your skills</h1>
+            <br>
+            <!-- Users' name -->
+            <md-input-container class="md-block">
+                <label for="user-name">Hello, what is your name?</label>
+                <input id="user-name" name="user-name" type="text">
+            </md-input-container>
 
-<ul>
-    <li>math, css, javascript, python</li>
-    <li>apache, excel, math, visual basic, data, python</li>
-    <li>interview practice, java, go, c, hack, r</li>
-    <li>c, interview practice, game</li>
-</ul>
+            <br><br>
 
-<h4 style='margin-top: 4%'> <?= $appName ?> &copy; 2020</h4>
+            <!-- One line intro -->
+            <md-input-container class="md-block">
+                <label for="one-line-intro">Your 1 line intro about yourself?</label>
+                <input type="text" id="one-line-intro" name="one-line-intro">
+            </md-input-container>
+
+            <br><br>
+
+            <!-- User Skills -->
+            <md-input-container class="md-block">
+                <label for="user-skills">What skill(s) can you help others with?</label>
+                <input id="user-skills" name="user-skills" type="text">
+            </md-input-container>
+
+            <br><br>
+
+            <!-- Want to improve Skills -->
+            <md-input-container class="md-block">
+                <label for="want-to-improve-skills">What skill(s) are you trying to improve?</label>
+                <input type="text" id="want-to-improve-skills" name="want-to-improve-skills">
+            </md-input-container>
+
+            <input type="hidden" name="app-name" value="<?= $appName ?>">
+
+            <div layout="row" layout-align="end start">
+                <md-button class="md-raised md-accent md-hue-4 cb-btn" type="submit">
+                    Get Matched
+                </md-button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br><br>
+
+<!-- Footer -->
+<?php
+include('templates/layout/footer.php');
+?>
+
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+
+<!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+<!-- The AngularJS 1.7 app -->
+<script src="/ui-match/app.js"></script>
 
 
 </body>
