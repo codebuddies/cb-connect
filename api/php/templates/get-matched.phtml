@@ -46,7 +46,6 @@ $appName = "Code Buddies Connect";
     </style>
 </head>
 
-
 <body ng-controller="MatchCtrl">
 
 <!-- Horizontal sort of Nav Bar -->
@@ -55,11 +54,11 @@ include 'templates/layout/toolbar.php'
 ?>
 
 <!-- _SESSION TEST -->
-<p>{{status}}</p>
+{{status}}
 <br>
-<?= $data['codeUser'] ?? 'no code buddy user' ?>
+<?= $_SESSION['c_user_ip'] ?? 'no code buddy user' ?>
 <br>
-<?= $_SESSION['j_user'] ?? 'no j_user' ?>
+<?= $_SESSION['c_user_id'] ?? 'no code buddy user with an id' ?>
 
 <div layout="row" layout-align="center center">
     <!-- LEFT side -->

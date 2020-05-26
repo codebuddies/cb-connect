@@ -46,16 +46,21 @@ $appName = "Code Buddies Connect";
 include 'templates/layout/toolbar.php'
 ?>
 
-<p>{{status}}</p>
 <!-- _SESSION TEST -->
+{{status}}
 <br>
-<?= $data['codeUser'] ?? 'no code buddy user' ?>
+<?= $_SESSION['c_user_ip'] ?? 'no code buddy user' ?>
 <br>
-<?= $_SESSION['j_user'] ?? 'no j_user' ?>
+<?= $_SESSION['c_user_id'] ?? 'no code buddy user with an id' ?>
 
 <div layout="row" layout-align="center center">
     <!-- LEFT side -->
     <div layout-padding flex="15">
+        <h4>
+            Matched Users so far: <span class="cb-match-span">
+                <?= $data['match_count'] ?? 'A lot!' ?></span>
+        </h4>
+
         <!-- icon about -->
         <div layout="row" layout-align="center center">
             <ng-md-icon icon="face" style="fill: sandybrown" size="36"></ng-md-icon>
@@ -67,39 +72,44 @@ include 'templates/layout/toolbar.php'
 
     <!-- RIGHT side -->
     <div class="md-padding" flex="60">
-        <form action="/test/get-matched/contact-info" method="post">
+        <!-- 3rd view state "/test/get-matched/contact-info" -->
+        <form action="/test/get-matched/show-matches" method="post">
             <h1>About you and your skills</h1>
             <br>
-            <!-- Users' name -->
+            <!-- 1st - Users' name -->
             <md-input-container class="md-block">
                 <label for="user-name">Hello, what is your name?</label>
                 <input id="user-name" name="user-name" type="text">
             </md-input-container>
-
+            
             <br><br>
 
-            <!-- One line intro -->
+            <!-- 2nd - One line Intro
             <md-input-container class="md-block">
                 <label for="one-line-intro">Your 1 line intro about yourself?</label>
                 <input type="text" id="one-line-intro" name="one-line-intro">
             </md-input-container>
-
+            
             <br><br>
-
-            <!-- User Skills -->
+            -->
+            
+            <!-- 3rd - User Skills -->
             <md-input-container class="md-block">
                 <label for="user-skills">What skill(s) can you help others with?</label>
                 <input id="user-skills" name="user-skills" type="text">
+                <div class="hint">comma seperated e.g. "C, PHP, HTML, Math, Data Science, etc."</div>
             </md-input-container>
 
             <br><br>
 
-            <!-- Want to improve Skills -->
+            <!-- 4th - Want to improve Skills
             <md-input-container class="md-block">
-                <label for="want-to-improve-skills">What skill(s) are you trying to improve?</label>
-                <input type="text" id="want-to-improve-skills" name="want-to-improve-skills">
+                <label for="wanted-skills">What skill(s) are you trying to improve?</label>
+                <input type="text" id="wanted-skills" name="wanted-skills">
+                <div class="hint">comma seperated e.g. "C, PHP, HTML, Math, Data Science, etc."</div>
             </md-input-container>
-
+            -->
+            
             <input type="hidden" name="app-name" value="<?= $appName ?>">
 
             <div layout="row" layout-align="end start">

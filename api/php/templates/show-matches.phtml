@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>User Matches - CB Connect</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 12px 0 0 0;
+            color: #aaa;
+            font-size: 18px;
+            padding: 20px;
+        }
+
+        .landing {
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .landing > h1 {
+            color: #32ace7;
+            letter-spacing: -3px;
+            font-family: 'Lato', sans-serif;
+            font-size: 100px;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 700px) {
+            .landing > h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+
+</head>
+
+
+<body>
+
+<!-- _SESSION TEST -->
+{{status}}
+<br>
+<?= $data['c_user_ip'] ?? 'no code buddy user' ?>
+<br>
+<?= $_SESSION['c_user_id'] ?? 'no code buddy user with an id' ?>
+
+<div class="landing">
+    <h1>Your Matches</h1>
+    <h4>Click on their profiles to learn more! ^_^</h4>
+    
+    <?php if(isset($name)) : ?>
+        <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
+    <?php else: ?>
+        <p><a href="http://www.codebuddies.org">Code Buddies</a></p>
+    <?php endif; ?>
+    
+    <table style="margin: auto">
+        <tr>
+            <th>First Name</th>
+            <th>Match Score</th>
+            <th>Skills that Matched</th>
+            <th>user_type</th>
+        </tr>
+    <?php if(isset($data)) {
+        foreach($data as $match) { ?>
+            <tr>
+                <td><?= htmlspecialchars($match['first_name']) ?></td>
+                <td><?= htmlspecialchars($match['skill_pct_match']) ?></td>
+                <td><?= htmlspecialchars($match['skills_matched']) ?></td>
+                <td><?= htmlspecialchars($match['user_type']) ?></td>
+            </tr>
+        <?php }
+    } ?>
+    </table>
+</div>
+
+</body>
+</html>
