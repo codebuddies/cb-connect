@@ -109,10 +109,9 @@ $app->post('/test/get-matched/about-user', function(Request $request, Response $
         
         // insert data into sql db
         $usersModel->insertLookingFor($data, $cUser);
-    
         
-    
-        $result = $usersModel->matchLookingFor($data); // only variation so far
+        // only variation so far
+        $result = $usersModel->matchLookingFor($data);
         $result['codeUser'] = $this->codeUser;
         
         //
@@ -129,38 +128,7 @@ $app->post('/test/get-matched/about-user', function(Request $request, Response $
  * - At the moment, it'll do the "Match Skills" op, then render the "contact-info" view.
  */
 $app->post('/other/get-matched/contact-info', function(Request $request, Response $response, array $args) {
-    /**
-     * I'm calling these closures "ops" , to better move "ops" around to different routes
-     * -- REMEMBER: Update the "return" statement when moving ops around. --
-     * @return array
-     */
-    $matchedSkillData = function() use ($request, $response): array {
-        // mock data for debugging
-        $debugData = AppGlobals::debugMatchSkills()['data'];
-        $parsedBody = $request->getParsedbody();
-        $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
-        if(AppGlobals::$logFromRoutePhp) AppGlobals::createFileOfData($parsedBody); // true to print
-        
-        //TODO: look into maybe creating a singleton for classes that are used often
-        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
-        $usersModel = new ModelUsers($dbCodeBuddiesConnect, $this->logger);
-        $result = $usersModel->matchSkills($data);
-        
-        // just get the needed fields
-        $matchedUsers = [];
-        foreach($result as $i => $matchedUser) {
-            $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
-            $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
-            $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
-            
-            $skillsMatched = $matchedUser['skills_matched'] ?? null;
-            $matchedUsers[$i]['skills_matched'] = implode(", ", $skillsMatched);
-        }
-        unset($result); // free mem from buffer
-        return $matchedUsers;
-    };
-    
-    return $this->view->render($response, 'other/contact-info.phtml', $matchedSkillData());
+    return $this->view->render($response, 'other/contact-info.phtml', []);
 });
 
 /**
@@ -183,6 +151,7 @@ $app->post("/test/get-matched/show-matches", function(Request $request, Response
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
         $usersModel = new ModelUsers($dbCodeBuddiesConnect, $this->logger);
+        if(!AppGlobals::inDebugMode()) $usersModel->insertSkills($data);
         $result = $usersModel->matchSkills($data);
         $f = $usersModel->userMatchFields; // field names
         
@@ -191,7 +160,8 @@ $app->post("/test/get-matched/show-matches", function(Request $request, Response
         if(count($result) > 0) {
             foreach($result as $i => $matchedUser) {
                 $matchedUserExport = var_export($matchedUser, true);
-                $this->log->info("_> Matched User = $matchedUserExport");
+                $this->logger->info("_> Matched User = $matchedUserExport");
+                
                 $matchedUsers[$i][$f->first] = $matchedUser[$f->first];
                 $matchedUsers[$i][$f->skillPct] = $matchedUser[$f->skillPct];
                 $matchedUsers[$i][$f->userType] = $matchedUser[$f->userType];
@@ -207,6 +177,10 @@ $app->post("/test/get-matched/show-matches", function(Request $request, Response
         
         unset($result); // free mem from buffer
         return $matchedUsers;
+    };
+    
+    $allMatchedData = function(){
+        
     };
     
     // render a table rather than a bunch of json
