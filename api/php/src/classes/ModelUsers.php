@@ -9,11 +9,15 @@ declare(strict_types=1);
 
 namespace CodeBuddies;
 
+use phpDocumentor\Reflection\Types\Object_;
 use Spatie\Regex\Regex;
+use Monolog\Logger;
 
 class ModelUsers
 {
     use CodeBuddiesUtil;
+    
+    private $log;
     
     /**
      * The main Code Buddies Connect db, if more db's are needed, they'll have
@@ -33,9 +37,25 @@ class ModelUsers
     
     private $curUserDbId;
     
-    public function __construct($dbCodeBuddiesConnect) {
+    /**
+     * The field names from the users' table & the field names
+     * that get created during matching
+     * @var object
+     */
+    public $userMatchFields;
+    
+    public function __construct($dbCodeBuddiesConnect, Logger $log) {
+        $this->log = $log;
         $this->db = $dbCodeBuddiesConnect;
         $this->lookForKeys = LookingForStruct::lookingForKeys();
+        
+        // maybe put this struct in its' own file?
+        $this->userMatchFields = new class() {
+            public $first = 'first_name';
+            public $userType = 'skill_pct_match';
+            public $skillPct = 'user_type';
+            public $skillMatch = 'skills_matched';
+        };
     }
     
     /**
@@ -114,22 +134,9 @@ class ModelUsers
                 public $keyMatchedSkill = 'skills_matched';
             };
             $data = $this->sanitizeData($data);
-            ['username' => $userName, 'userskills' => $userSkills, 'userabout' => $userAbout] = $data;
-            $userType = 'real user';
             
-            if(!AppGlobals::inDebugMode()) {
-                //-- 1st insert new user data into db:
-                $query = /** @lang SQL * */
-                    "insert into $this->tableMockUsers (first_name, user_type, skills, about)
-                values (:userName, :userType, :userSkills, :userAbout)";
-                $statement = $this->db->prepare($query);
-                $statement->bindValue(':userName', $userName);
-                $statement->bindValue(':userType', $userType);
-                $statement->bindValue(':userSkills', $userSkills);
-                $statement->bindValue(':userAbout', $userAbout);
-                $statement->execute();
-            }
-            
+            if(!AppGlobals::inDebugMode()) $this->insertSkills($data);
+            ['userskills' => $userSkills] = $data;
             // get number of skills user added and LOWERCASE all elems
             $userSkillParsed = array_map(function($e) { return strtolower(trim($e)); }, explode(',', $userSkills));
             asort($userSkillParsed);
@@ -264,7 +271,9 @@ class ModelUsers
             $statement->bindValue(':about', $about);
             $statement->bindValue(':lookingFor', $lookingFor);
             $statement->execute();
-            $this->curUserDbId = $this->db->lastInsertId();
+            $dbInsertId = $this->db->lastInsertId();
+            $this->curUserDbId = $dbInsertId;
+            $_SESSION['c_user_id'] = $dbInsertId;
             $debug = 1;
             return [
                 'x-cb-info' => '_> Successfully inserted "Looking For" data',
@@ -278,6 +287,37 @@ class ModelUsers
                 'x-cb-info' => '_> Unable to insert what the user is looking for into DB',
             ];
         }
+    }
+    
+    /**
+     * Insert the data from the web form into sql db
+     * ... The function that invokes this function is wrapped in a try/catch.
+     *
+     * @param array $data
+     */
+    public function insertSkills(array $data): void {
+        // data from web form, future fields: 'wantedskills' => $wantedSkills, 'onelineintro' => $userAbout,
+        ['username' => $userName, 'userskills' => $userSkills,] = $data;
+        $userType = 'real user';
+        $userAbout = 'todo';
+        $cUserId = $_SESSION['c_user_id'] ?? null;
+        //-- insert new user data into db:
+        $query = "insert into $this->tableMockUsers (first_name, user_type, skills, about)
+                values (:userName, :userType, :userSkills, :userAbout)";
+        
+        $ml = __METHOD__ . ' line: ' . __LINE__;
+        if(!is_null($cUserId)) {
+            $this->log->info("_> state successfully persisted, db id = $cUserId ~$ml");
+            $query .= " where id = $cUserId";
+        }
+        else $this->log->error("_> DID NOT persist state... Something went wrong!! ~$ml");
+        
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':userName', $userName);
+        $statement->bindValue(':userType', $userType);
+        $statement->bindValue(':userSkills', $userSkills);
+        $statement->bindValue(':userAbout', $userAbout);
+        $statement->execute();
     }
     
     /**

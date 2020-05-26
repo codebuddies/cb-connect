@@ -13,11 +13,10 @@ session_start();
 
 //$oneDay = 86400;
 $codeUser =  $_SERVER['REMOTE_ADDR'] ?? 'none';
-$_SESSION['cb_user'] = $codeUser;
 
-if(!isset($_SESSION['j_user'])) {
-    $_SESSION['j_user'] = 'Julius';
-    $_SESSION['code_user'] = $codeUser;
+if(!isset($_SESSION['c_user_ip'])) {
+    $_SESSION['c_user_id'] = 'none';
+    $_SESSION['c_user_ip'] = $codeUser;
 }
 
 # [START gae_slim_front_controller]
