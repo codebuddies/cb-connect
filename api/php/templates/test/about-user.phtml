@@ -20,30 +20,10 @@ $appName = "Code Buddies Connect";
 
 <!DOCTYPE html>
 
-<html lang="en" data-ng-app="cbConnectApp">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Code Buddies connect</title>
-
-    <!-- Angular Material CSS now available via Google CDN; version 1.1.9 used here -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.css">
-    <link rel="stylesheet" href="/ui-match/styles/app.css">
-
-    <!-- ng-cloak -->
-    <style type="text/css">
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-            display: none !important;
-        }
-    </style>
-</head>
-
-
-<body ng-controller="MatchCtrl">
-
-<!-- Horizontal sort of Nav Bar -->
 <?php
-include 'templates/layout/toolbar.php'
+include 'templates/layout/html-upper.php';
+//<!-- Horizontal sort of Nav Bar -->
+include 'templates/layout/toolbar.php';
 ?>
 
 <!-- _SESSION TEST -->
@@ -53,6 +33,9 @@ include 'templates/layout/toolbar.php'
 <br>
 <?= $_SESSION['c_user_id'] ?? 'no code buddy user with an id' ?>
 
+<!------------------------------------------------------>
+<!----------------- MAIN HTML CONTENT  ----------------->
+<!------------------------------------------------------>
 <div layout="row" layout-align="center center">
     <!-- LEFT side -->
     <div layout-padding flex="15">
@@ -123,25 +106,12 @@ include 'templates/layout/toolbar.php'
 
 <br><br>
 
-<!-- Footer -->
 <?php
+//<!-- Footer -->
 include('templates/layout/footer.php');
+//<!-- JavaScript -->
+include('templates/layout/js-scripts.php');
 ?>
-
-
-<!-- Angular Material Dependencies -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
-
-<!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
-<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
-
-<!-- The AngularJS 1.7 app -->
-<script src="/ui-match/app.js"></script>
-
 
 </body>
 </html>
