@@ -13,6 +13,16 @@ namespace CodeBuddies;
 class AppGlobals
 {
     /**
+     * @var bool
+     */
+    public static $logFromRoutePhp = false;
+    
+    /**
+     * @var bool
+     */
+    public static $logFromModelUsersPhp = false;
+    
+    /**
      * Determine if app is in local or remote environment
      * @return bool
      */
@@ -39,12 +49,20 @@ class AppGlobals
      * @return array
      */
     public static function debugMatchSkills(): array {
+        $mock = [
+            // mock a basic sql injection while debugging
+            'user-name' => "'SELECT * FROM users_db --",
+            'user-skills' => 'c#, visual basic, html, php',
+            'user-about' => ', SELECT user_pass, user_email FROM users_db',
+            'app-name' => 'Code Buddies Connect',
+        ];
+        
         return [
             'data' => [
                 // mock a basic sql injection while debugging
-                'user-name' => "'SELECT * FROM users_db --",
-                'user-skills' => 'c#, visual basic, html, php',
-                'user-about' => ', SELECT user_pass, user_email FROM users_db',
+                'user-name' => "hii there !! World.",
+                'user-skills' => 'c, php',
+                'user-about' => 'php programmer',
                 'app-name' => 'Code Buddies Connect',
             ],
         ];
@@ -78,12 +96,13 @@ class AppGlobals
      * debug mode so I have to manually type in a form then click submit. When I click
      * submit this function will create a file with the export data
      *
-     * @param $data
+     * @param $data - could be anything, just log it
+     * @param null $id - so logs don't override each other
      */
-    public static function createFileOfData($data) {
+    public static function createFileOfData($data, $id = null) {
+        if(is_null($id)) $id = rand(1,1000000);
         $data = var_export($data, true);
-        file_put_contents('logs/parsed-body.txt', $data);
+        file_put_contents("logs/parsed-body-$id.txt", $data);
     }
-    
     
 }

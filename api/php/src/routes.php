@@ -80,7 +80,7 @@ $app->get('/test/add-random/looking-for', function(Request $request, Response $r
  */
 $app->get('/test/get-matched', function(Request $request, Response $response, array $args) {
     $data = ['codeUser' => $this->codeUser, 'args' => $args,];
-    return $this->view->render($response, 'get-matched.phtml', $data);
+    return $this->view->render($response, 'test/get-matched.phtml', $data);
 });
 
 /**
@@ -102,7 +102,7 @@ $app->post('/test/get-matched/about-user', function(Request $request, Response $
         $parsedBody = $request->getParsedBody();
         $debugData = AppGlobals::debugMatchLookingFor()['data'];
         $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
-        if(false) AppGlobals::createFileOfData($parsedBody); // true to print
+        if(AppGlobals::$logFromRoutePhp) AppGlobals::createFileOfData($parsedBody); // true to print
         
         // persist state
         $cUser = $_SESSION['codeUser'] ?? 'debug_mode';
@@ -120,15 +120,15 @@ $app->post('/test/get-matched/about-user', function(Request $request, Response $
     };
     
     //return $response->withJson($result); // return json for future API
-    return $this->view->render($response, 'about-user.phtml', $matchedLookForData());
+    return $this->view->render($response, 'test/about-user.phtml', $matchedLookForData());
 });
 
-/**
+/**AS OF 5-24-2020 THIS VIEW IS NO LONGER GETTING USED NOTE ROUTE /other/**
  * _3rd View State.
  * After user submits "About User" info, they enter their email and availability
  * - At the moment, it'll do the "Match Skills" op, then render the "contact-info" view.
  */
-$app->post('/test/get-matched/contact-info', function(Request $request, Response $response, array $args) {
+$app->post('/other/get-matched/contact-info', function(Request $request, Response $response, array $args) {
     /**
      * I'm calling these closures "ops" , to better move "ops" around to different routes
      * -- REMEMBER: Update the "return" statement when moving ops around. --
@@ -139,7 +139,7 @@ $app->post('/test/get-matched/contact-info', function(Request $request, Response
         $debugData = AppGlobals::debugMatchSkills()['data'];
         $parsedBody = $request->getParsedbody();
         $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
-        if(false) AppGlobals::createFileOfData($parsedBody); // true to print
+        if(AppGlobals::$logFromRoutePhp) AppGlobals::createFileOfData($parsedBody); // true to print
         
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
@@ -160,7 +160,7 @@ $app->post('/test/get-matched/contact-info', function(Request $request, Response
         return $matchedUsers;
     };
     
-    return $this->view->render($response, 'contact-info.phtml', $matchedSkillData());
+    return $this->view->render($response, 'other/contact-info.phtml', $matchedSkillData());
 });
 
 /**
@@ -178,7 +178,7 @@ $app->post("/test/get-matched/show-matches", function(Request $request, Response
         $debugData = AppGlobals::debugMatchSkills()['data'];
         $parsedBody = $request->getParsedbody();
         $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
-        if(true) AppGlobals::createFileOfData($parsedBody); // true to print
+        if(AppGlobals::$logFromRoutePhp) AppGlobals::createFileOfData($parsedBody); // true to print
         
         //TODO: look into maybe creating a singleton for classes that are used often
         $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
@@ -188,8 +188,10 @@ $app->post("/test/get-matched/show-matches", function(Request $request, Response
         
         // just get the needed fields
         $matchedUsers = [];
-        if($result > 0) {
+        if(count($result) > 0) {
             foreach($result as $i => $matchedUser) {
+                $matchedUserExport = var_export($matchedUser, true);
+                $this->log->info("_> Matched User = $matchedUserExport");
                 $matchedUsers[$i][$f->first] = $matchedUser[$f->first];
                 $matchedUsers[$i][$f->skillPct] = $matchedUser[$f->skillPct];
                 $matchedUsers[$i][$f->userType] = $matchedUser[$f->userType];
@@ -208,7 +210,7 @@ $app->post("/test/get-matched/show-matches", function(Request $request, Response
     };
     
     // render a table rather than a bunch of json
-    return $this->view->render($response, 'show-matches.phtml', $matchedSkillData());
+    return $this->view->render($response, 'test/show-matches.phtml', $matchedSkillData());
 });
 
 
