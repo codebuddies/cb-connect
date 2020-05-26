@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace CodeBuddies;
 
-use phpDocumentor\Reflection\Types\Object_;
 use Spatie\Regex\Regex;
 use Monolog\Logger;
 
@@ -65,7 +64,7 @@ class ModelUsers
     public function getMockUsers(): array {
         try {
             $query = /** @lang */
-                "select * from $this->tableMockUsers";
+                "select id, first_name, skills from $this->tableMockUsers";
             $statement = $this->db->prepare($query);
             $statement->execute();
             return $statement->fetchAll();
@@ -127,15 +126,9 @@ class ModelUsers
         try {
             // create a struct real quick to assist the matching
             // maybe make this a class property
-            $ff = new class() {
-                public $matches = [];
-                public $pctMatchThreshold = 0.5;
-                public $keyMatchPct = 'skill_pct_match';
-                public $keyMatchedSkill = 'skills_matched';
-            };
+            $ff = new SkillStruct();
             $data = $this->sanitizeData($data);
             
-            if(!AppGlobals::inDebugMode()) $this->insertSkills($data);
             ['userskills' => $userSkills] = $data;
             // get number of skills user added and LOWERCASE all elems
             $userSkillParsed = array_map(function($e) { return strtolower(trim($e)); }, explode(',', $userSkills));
@@ -195,10 +188,15 @@ class ModelUsers
         }
         catch(\Throwable $e) {
             $ml = __METHOD__ . ' line: ' . __LINE__;
-            return [
+            $errArr = [
                 'x-cb-error' => $e->getMessage(),
                 'x-cb-status' => "_> CB_CONNECT: Query to match user skills failed ~$ml",
             ];
+            $errExport = var_export($errArr, true);
+            $exitMessage ="Please email ( phpninja@mail.com ) and copy the following error to the email: \n\n <br><br>";
+            $exitMessage .= $errExport;
+            //TODO: figure out a better way to handle this error!!! >:\
+            exit($exitMessage);
         }
     }
     
@@ -274,16 +272,16 @@ class ModelUsers
             $dbInsertId = $this->db->lastInsertId();
             $this->curUserDbId = $dbInsertId;
             $_SESSION['c_user_id'] = $dbInsertId;
-            $debug = 1;
+           
             return [
                 'x-cb-info' => '_> Successfully inserted "Looking For" data',
             ];
         }
         catch(\Throwable $e) {
             $err = $e->getMessage();
-            $debug = 1;
+           $ml = __METHOD__ . ' line: ' . __LINE__;
             return [
-                'x-cb-error' => $err,
+                'x-cb-error' => "$err ~$ml",
                 'x-cb-info' => '_> Unable to insert what the user is looking for into DB',
             ];
         }
@@ -294,30 +292,50 @@ class ModelUsers
      * ... The function that invokes this function is wrapped in a try/catch.
      *
      * @param array $data
+     * @return array
      */
-    public function insertSkills(array $data): void {
-        // data from web form, future fields: 'wantedskills' => $wantedSkills, 'onelineintro' => $userAbout,
-        ['username' => $userName, 'userskills' => $userSkills,] = $data;
-        $userType = 'real user';
-        $userAbout = 'todo';
-        $cUserId = $_SESSION['c_user_id'] ?? null;
-        //-- insert new user data into db:
-        $query = "insert into $this->tableMockUsers (first_name, user_type, skills, about)
-                values (:userName, :userType, :userSkills, :userAbout)";
+    public function insertSkills(array $data): array {
+        try {
+            $data = $this->sanitizeData($data);
+            // data from web form, future fields: 'wantedskills' => $wantedSkills, 'onelineintro' => $userAbout,
+            ['username' => $userName, 'userskills' => $userSkills,] = $data;
+            $userType = 'real user';
+            $userAbout = 'todo';
+            $cUserId = $_SESSION['c_user_id'] ?? null;
+    
+            $ml = __METHOD__ . ' line: ' . __LINE__;
+            if(!is_null($cUserId)) {
+                $this->log->info("_> state successfully persisted, db id = $cUserId ~$ml");
         
-        $ml = __METHOD__ . ' line: ' . __LINE__;
-        if(!is_null($cUserId)) {
-            $this->log->info("_> state successfully persisted, db id = $cUserId ~$ml");
-            $query .= " where id = $cUserId";
+                $query = "update $this->tableMockUsers set first_name = :userName, user_type = :userType,
+                skills = :userSkills, about = :userAbout where id = :id";
+        
+                $statement = $this->db->prepare($query);
+                $statement->bindValue(':userName', $userName);
+                $statement->bindValue(':userType', $userType);
+                $statement->bindValue(':userSkills', $userSkills);
+                $statement->bindValue(':userAbout', $userAbout);
+                $statement->bindValue(':id', $cUserId);
+                $statement->execute();
+                return [
+                    'x-cb-info' => '_> Successfully inserted "Skills" data',
+                ];
+            }
+            else {
+                $message = "_> DID NOT persist state... Something went wrong!! ~$ml";
+                $this->log->error($message);
+                Throw new \Exception($message);
+            }
         }
-        else $this->log->error("_> DID NOT persist state... Something went wrong!! ~$ml");
+        catch (\Throwable $e) {
+            $err = $e->getMessage();
+            $ml = __METHOD__ . ' line: ' . __LINE__;
+            return [
+                'x-cb-error' => "$err ~$ml",
+                'x-cb-info' => '_> Unable to insert "Skills" into DB',
+            ];
+        }
         
-        $statement = $this->db->prepare($query);
-        $statement->bindValue(':userName', $userName);
-        $statement->bindValue(':userType', $userType);
-        $statement->bindValue(':userSkills', $userSkills);
-        $statement->bindValue(':userAbout', $userAbout);
-        $statement->execute();
     }
     
     /**
@@ -393,6 +411,38 @@ class ModelUsers
                 'x-cb-info' => '_> CB_ERROR, failed to match what user is "Looking For"',
             ];
         }
+        
+    }
+    
+    /**
+     * As of 5-26-2020 @12:04pm, this function will match:
+     * 1) the "Looking For" selected options (this data will be a comma separated list in the db
+     *      or an associative array from the web form)
+     * 2) the "Skills" the user typed in
+     * ... Also, it is DEPENDING on the "Looking For" selected options to already be in the db
+     *      and for "Skills" to be from the web form and for an active session
+     *
+     * @param array $webFormSkills - The skills the user input from a web form
+     * @param bool $lookForIsInDb - Is the looking for data in the db? Or from a web form/some other HTTP req?
+     * @param bool $skillsInDb - Is the skills data in the db? Or from a web from/some other HTTP req?
+     *
+     * @return array
+     */
+    public function matchAll(array $webFormSkills, bool $lookForIsInDb = true, bool $skillsInDb = false): array {
+        if(!$lookForIsInDb) {
+            //TODO: implement matching the "Looking For" data from a web form/other HTTP req
+            // while concurrently matching "Skills" (either from a web form/other HTTP req OR db)
+        }
+        if($skillsInDb) {
+            //TODO: implement matching the "Skills" data matching from a db while concurrently matching
+            // the "Looking For" data (either from a web form/other HTTP req OR db)
+        }
+        
+        /*****************************************************************************
+         ** The skills data is from a web form and looking for is an the db already **
+         ****************************************************************************/
+        $ff = new SkillStruct();
+        $data = $this->sanitizeData($webFormSkills);
         
     }
     
