@@ -1,5 +1,4 @@
 
-
 .cb-text-center {
     text-align: center;
 }
@@ -54,9 +53,24 @@
 }
 
 .toolbardemoBasicUsage md-toolbar .md-button.md-icon-button .favorite-icon {
-    fill: #DE3641; }
+    fill: #DE3641;
+}
 
 .toolbardemoBasicUsage md-toolbar md-toolbar-filler {
-    background-color: #e0e0e0; }
+    background-color: #e0e0e0;
+}
+
 .toolbardemoBasicUsage md-toolbar md-toolbar-filler #filler-icon {
-    fill: #4C9EF1; }
+    fill: #4C9EF1;
+}
+
+.inputdemoErrors .inputErrorsApp {
+    min-height: 48px;
+}
+
+.inputdemoErrors md-input-container > p {
+    font-size: 0.8em;
+    text-align: left;
+    width: 100%;
+}
+

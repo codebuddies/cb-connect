@@ -33,4 +33,57 @@ class AppGlobals
         
         return false;
     }
+    
+    /**
+     * To clean up route code and help with debugging
+     * @return array
+     */
+    public static function debugMatchSkills(): array {
+        return [
+            'data' => [
+                // mock a basic sql injection while debugging
+                'user-name' => "'SELECT * FROM users_db --",
+                'user-skills' => 'c#, visual basic, html, php',
+                'user-about' => ', SELECT user_pass, user_email FROM users_db',
+                'app-name' => 'Code Buddies Connect',
+            ],
+        ];
+    }
+    
+    /**
+     * Clean up route and help w/debugging
+     * @return array
+     */
+    public static function debugMatchLookingFor(): array {
+        return [
+            // exactly what data looks like after slim3's getParsedBody()
+            'data' => [
+                'working-on' => '',
+                'code-user' => '10.0.0.190',
+                'account' => 'true',
+                'coding' => 'true',
+                'mentor' => 'false',
+                'mentee' => 'true',
+                'openSource' => 'true',
+                'contributors' => 'false',
+                'other' => 'true',
+            ],
+        ];
+    }
+    
+    /**
+     * Create a file with the data to see its' structure. This was primarily needed
+     * for POST requests from clients to see how to traverse the data properly.
+     * e.g. A user submits a form to a POST/GET route, I don't know how to do this in
+     * debug mode so I have to manually type in a form then click submit. When I click
+     * submit this function will create a file with the export data
+     *
+     * @param $data
+     */
+    public static function createFileOfData($data) {
+        $data = var_export($data, true);
+        file_put_contents('logs/parsed-body.txt', $data);
+    }
+    
+    
 }

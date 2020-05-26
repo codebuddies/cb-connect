@@ -5,12 +5,11 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use CodeBuddies\AppGlobals;
 use CodeBuddies\ModelUsers;
-use CodeBuddies\CtrlAboutUser;
 
 if(AppGlobals::inDebugMode()) {
     echo "\n <br> [ CODE BUDDIES CONNECT IN DEBUG MODE ] <br> \n";
     // ?add-random-looking-for=true
-    $_SERVER['REQUEST_URI'] = '/test/get-matched/about-user';
+    $_SERVER['REQUEST_URI'] = '/test/get-matched/show-matches';
     $_SERVER['REQUEST_METHOD'] = 'POST';
 }
 
@@ -57,7 +56,7 @@ $app->get('/test/add-random/skills', function(Request $request, Response $respon
 });
 
 /**
- * Add random "Looking For" options
+ * Add random "Looking For" options to the mock_users table
  */
 $app->get('/test/add-random/looking-for', function(Request $request, Response $response) {
     //TODO: look into maybe creating a singleton for classes that are used often
@@ -73,73 +72,137 @@ $app->get('/test/add-random/looking-for', function(Request $request, Response $r
     return $response->withJson($result);
 });
 
+//TODO: make /test/get-matched routes a group
+
 /**
- * 1st View State.
+ * _1st View State.
  * It will ask the user what they're looking for e.g. "I am looking for:" ... then the options
  */
 $app->get('/test/get-matched', function(Request $request, Response $response, array $args) {
-    $data = [
-        'codeUser' => $this->codeUser,
-        'args' => $args,
-    ];
+    $data = ['codeUser' => $this->codeUser, 'args' => $args,];
     return $this->view->render($response, 'get-matched.phtml', $data);
 });
 
 /**
- * 2nd View State.
+ * _2nd View State.
  * After the user answers what they are looking for, this view is rendered.
  * It'll ask "What skills can you help with?" and "What skills do you need help with?"
  */
 $app->post('/test/get-matched/about-user', function(Request $request, Response $response, array $args) {
-    //TODO: look into maybe creating a singleton for classes that are used often
-    $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
-    $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+    /**
+     * I'm calling this these closures "ops" , to better move "ops" around to different routes
+     * -- REMEMBER: Update the "return" statement when moving ops around. --
+     * @return array
+     */
+    $matchedLookForData = function() use ($request, $response): array {
+        //TODO: look into maybe creating a singleton for classes that are used often
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
     
-    // exactly what data looks like after getParsedBody()
-    $debugData = [
-        'working-on' => '',
-        'code-user' => '10.0.0.190',
-        'account' => 'true',
-        'coding' => 'true',
-        'mentor' => 'false',
-        'mentee' => 'true',
-        'openSource' => 'true',
-        'contributors' => 'false',
-        'other' => 'true',
-    ];
-    // get data for debug mode or a POST request
-    $data = AppGlobals::inDebugMode() ? $debugData : $request->getParsedBody();
+        $parsedBody = $request->getParsedBody();
+        $debugData = AppGlobals::debugMatchLookingFor()['data'];
+        $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
+        if(false) AppGlobals::createFileOfData($parsedBody); // true to print
+        
+        // persist state
+        $cUser = $_SESSION['codeUser'] ?? 'debug_mode';
+        
+        // insert data into sql db
+        $usersModel->insertLookingFor($data, $cUser);
     
-    $cUser = $_SESSION['codeUser'] ?? 'debug_mode';
-    // insert data into sql db
-    $usersModel->insertLookingFor($data, $cUser);
+        
     
-    //TODO: make this a utility function -- example parsed body for debugging --
-    //$getParsedBody = var_export($data, true);
-    //file_put_contents('logs/parsed-body.txt', $getParsedBody);
-    
-    $result = $usersModel->matchLookingFor($data); // only variation so far
-    $result['codeUser'] = $this->codeUser;
-    
-    $debug = 1;
+        $result = $usersModel->matchLookingFor($data); // only variation so far
+        $result['codeUser'] = $this->codeUser;
+        
+        //
+        return $result;
+    };
     
     //return $response->withJson($result); // return json for future API
-    return $this->view->render($response, 'about-user.phtml', $result);
+    return $this->view->render($response, 'about-user.phtml', $matchedLookForData());
 });
 
 /**
- * 3rd View State.
+ * _3rd View State.
  * After user submits "About User" info, they enter their email and availability
+ * - At the moment, it'll do the "Match Skills" op, then render the "contact-info" view.
  */
-$app->post('/test/get-matched/contact-info', \CodeBuddies\CtrlAboutUser::class . ':matchSkills');
+$app->post('/test/get-matched/contact-info', function(Request $request, Response $response, array $args) {
+    /**
+     * I'm calling this these closures "ops" , to better move "ops" around to different routes
+     * -- REMEMBER: Update the "return" statement when moving ops around. --
+     * @return array
+     */
+    $matchedSkillData = function() use ($request, $response): array {
+        // mock data for debugging
+        $debugData = AppGlobals::debugMatchSkills()['data'];
+        $parsedBody = $request->getParsedbody();
+        $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
+        if(false) AppGlobals::createFileOfData($parsedBody); // true to print
+        
+        //TODO: look into maybe creating a singleton for classes that are used often
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+        $result = $usersModel->matchSkills($data);
+        
+        // just get the needed fields
+        $matchedUsers = [];
+        foreach($result as $i => $matchedUser) {
+            $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
+            $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
+            $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
+            
+            $skillsMatched = $matchedUser['skills_matched'] ?? null;
+            $matchedUsers[$i]['skills_matched'] = implode(", ", $skillsMatched);
+        }
+        unset($result); // free mem from buffer
+        return $matchedUsers;
+    };
+    
+    return $this->view->render($response, 'contact-info.phtml', $matchedSkillData());
+});
 
 /**
  * _4th UI state. After the user answers what they are looking for, this view is rendered.
  * It'll ask "What skills can you help with?" and "What skills do you need help with?"
  */
-$app->post("/test/get-matched/see-matches", function(Request $request, Response $response, array $args) {
+$app->post("/test/get-matched/show-matches", function(Request $request, Response $response, array $args) {
+    /**
+     * I'm calling this these closures "ops" , to better move "ops" around to different routes
+     * -- REMEMBER: Update the "return" statement when moving ops around. --
+     * @return array
+     */
+    $matchedSkillData = function() use ($request, $response): array {
+        // mock data for debugging
+        $debugData = AppGlobals::debugMatchSkills()['data'];
+        $parsedBody = $request->getParsedbody();
+        $data = AppGlobals::inDebugMode() ? $debugData : $parsedBody;
+        
+        // set to true to print data
+        if(false) AppGlobals::createFileOfData($parsedBody);
+        
+        //TODO: look into maybe creating a singleton for classes that are used often
+        $dbCodeBuddiesConnect = AppGlobals::isLocal() ? $this->dbLocal : $this->dbProduction;
+        $usersModel = new ModelUsers($dbCodeBuddiesConnect);
+        $result = $usersModel->matchSkills($data);
+        
+        // just get the needed fields
+        $matchedUsers = [];
+        foreach($result as $i => $matchedUser) {
+            $matchedUsers[$i]['first_name'] = $matchedUser['first_name'];
+            $matchedUsers[$i]['skill_pct_match'] = $matchedUser['skill_pct_match'];
+            $matchedUsers[$i]['user_type'] = $matchedUser['user_type'];
+            
+            $skillsMatched = $matchedUser['skills_matched'] ?? null;
+            $matchedUsers[$i]['skills_matched'] = implode(", ", $skillsMatched);
+        }
+        unset($result); // free mem from buffer
+        return $matchedUsers;
+    };
+    
     // render a table rather than a bunch of json
-    return $this->view->render($response, 'user-matches.phtml', $matchedUsers);
+    return $this->view->render($response, 'user-matches.phtml', $matchedSkillData());
 });
 
 
@@ -178,7 +241,7 @@ $app->group('/get-matched', function(\Slim\App $app) {
         -- notes --
         [strong_skills] and [weak_skills] should be an autocomplete for normalized input
     */
-    $app->get('/about-user', \CodeBuddies\CtrlAboutUser::class);
+    $app->get('/about-user', \CodeBuddies\ActionMatchAboutUser::class);
     
     /*
         -- Query String for "seeing who the user matched with" --
