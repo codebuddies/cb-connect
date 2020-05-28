@@ -17,3 +17,4 @@ assets
 .phpunit.result.cache
 settings.php
 api/php/src/settings.php
+api/php/ui-match/app.js

@@ -28,6 +28,40 @@ select id,first_name, user_type, skills,  looking_for
 from mock_users;
 
 
+#----------------------------------
+#-- Mock Users 5-27-2020 queries --
+#----------------------------------
+select id, mock_users.first_name, mock_users.user_type,
+       skills, looking_for
+from mock_users order by id desc;
+
+select count(*) as total_real_users from mock_users
+where mock_users.user_type != 'test user';
+
+
+select count(*) as total_test_users from mock_users
+where mock_users.user_type = 'test user';
+
+
+create or replace table mock_users_copy
+select * from mock_users;
+
+
+create or replace table test_users
+select * from mock_users;
+
+
+delete from mock_users where ``.mock_users.user_type = 'test user';
+-- delete recs that don't have the 'looking for' in correct format
+delete from mock_users where id < 233;
+
+
+
+
+
+
+
+
 
 
 -- __EXPORT __START
