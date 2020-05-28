@@ -21,6 +21,11 @@
     padding-right: 10px;
 }
 
+.cb-match-span {
+    color: dodgerblue;
+    padding: 12px;
+}
+
 /* sample demo styles */
 .checkboxdemoBasicUsage div.flex-xs {
     min-height: 40px;

@@ -32,18 +32,36 @@ include 'templates/layout/toolbar.php';
             <th>First Name</th>
             <th>Match Score</th>
             <th>Skills that Matched</th>
+<!--            <th>What you are both Looking For</th>-->
             <th>user_type</th>
         </tr>
     <?php if(isset($data)) {
-        foreach($data as $match) { ?>
+        foreach($data['skills'] as $match) { ?>
             <tr>
                 <td><?= htmlspecialchars($match['first_name']) ?></td>
                 <td><?= htmlspecialchars($match['skill_pct_match']) ?></td>
-                <td><?= htmlspecialchars($match['skills_matched']) ?></td>
+                <td><?= htmlspecialchars(implode(', ',$match['skills_matched'])) ?></td>
                 <td><?= htmlspecialchars($match['user_type']) ?></td>
             </tr>
         <?php }
     } ?>
+    </table>
+
+    <table style="margin: auto">
+        <tr>
+            <th>First Name</th>
+            <th>What you are both Looking For</th>
+            <th>user_type</th>
+        </tr>
+        <?php if(isset($data)) {
+            foreach($data['look_for']['matches'] as $match) { ?>
+                <tr>
+                    <td><?= htmlspecialchars($match['m_first_name']) ?></td>
+                    <td><?= htmlspecialchars(implode(', ', $match['what_matched'])) ?></td>
+                    <td><?= htmlspecialchars($match['m_user_type']) ?></td>
+                </tr>
+            <?php }
+        } ?>
     </table>
 </div>
 

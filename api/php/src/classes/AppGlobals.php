@@ -70,14 +70,18 @@ class AppGlobals
     
     /**
      * Clean up route and help w/debugging
-     * @return array
+     *
+     * @param bool $dbLookingFor
+     *
+     * @return mixed
      */
-    public static function debugMatchLookingFor(): array {
-        return [
+    public static function debugMatchLookingFor($dbLookingFor = false) {
+        return !$dbLookingFor ? [
             // exactly what data looks like after slim3's getParsedBody()
+            // when submitted from a web form
             'data' => [
                 'working-on' => '',
-                'code-user' => '10.0.0.190',
+                'code-user' => 'debugger',
                 'account' => 'true',
                 'coding' => 'true',
                 'mentor' => 'false',
@@ -86,7 +90,8 @@ class AppGlobals
                 'contributors' => 'false',
                 'other' => 'true',
             ],
-        ];
+            // how data looks from the sql db
+        ] : 'account true, mentee true, openSource true, other , ';
     }
     
     /**
@@ -100,7 +105,7 @@ class AppGlobals
      * @param null $id - so logs don't override each other
      */
     public static function createFileOfData($data, $id = null) {
-        if(is_null($id)) $id = rand(1,1000000);
+        if(is_null($id)) $id = rand(1, 1000000);
         $data = var_export($data, true);
         file_put_contents("logs/parsed-body-$id.txt", $data);
     }
