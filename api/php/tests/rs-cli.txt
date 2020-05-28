@@ -1,0 +1,18 @@
+
+// copy and paste unit test cli commands  
+
+$ .\vendor\bin\phpunit --bootstrap .\vendor\autoload.php --verbose .\tests\LoanOfficerDelegateTest.php --colors=always
+
+OR "w/ --testdox"
+
+$ .\vendor\bin\phpunit --bootstrap .\vendor\autoload.php --testdox tests --colors=always
+
+
+
+
+
+
+
+
+
+//
