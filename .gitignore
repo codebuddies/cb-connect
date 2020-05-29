@@ -5,3 +5,10 @@ development-settings.json
 .DS_Store
 my-settings.json
 stage-settings.json
+.idea/cb-connect.iml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/php.xml
+.idea/vcs.xml
+.idea/workspace.xml
