@@ -1,0 +1,154 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Julius Alvarado
+ * Date: 5/24/2020
+ * Time: 8:34 AM
+ */
+
+$appName = "Code Buddies Connect";
+
+?>
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="cbConnectApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code Buddies connect</title>
+
+    <!-- Angular Material CSS now available via Google CDN; version 1.1.9 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.css">
+    <link rel="stylesheet" href="/ui-match/styles/app.css">
+
+    <!-- ng-cloak -->
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+
+<body ng-controller="MatchCtrl">
+<!-- https://codebuddies.org/images/logo.svg -->
+<!--<img src="/img/cb-logo.svg" alt="cb connect" height="80px">-->
+
+<!-- Horizontal sort of Nav Bar -->
+<?php
+include 'templates/layout/toolbar.php';
+?>
+
+<p>{{status}}</p>
+
+<!-- _SESSION TEST -->
+<br>
+<?= $data['codeUser'] ?? 'no code buddy user' ?>
+<br>
+<?= $_SESSION['j_user'] ?? 'no j_user' ?>
+
+
+<!-- The Views' Content / Input Form -->
+<div layout="row" layout-align="center center">
+    <!-- LEFT side -->
+    <div layout-padding flex-sm="20" flex-gt-xs="15">
+        <!-- icon match -->
+        <div layout="row" layout-align="center center">
+            <ng-md-icon icon="group" style="fill: cornflowerblue" size="48"></ng-md-icon>
+            <h1>&nbsp; Matches</h1>
+        </div>
+
+        <h1 class="cb-mtop-0 cb-text-center">3 / 3
+            <ng-md-icon icon="check_circle" style="fill: hotpink"></ng-md-icon>
+        </h1>
+    </div>
+
+    <!-- RIGHT side -->
+    <md-content layout-padding>
+        <form name="projectForm">
+            <!-- top of form -->
+            <div layout="row" layout-xs="column" layout-sm="column" layout-align="space-between center">
+                <div flex-gt-sm="80">
+                    We will never share your email with others.
+                </div>
+
+                <md-input-container>
+                    <md-switch ng-model="showHints">Showing {{showHints ? "Hints" : "Errors"}}</md-switch>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <!-- Email with hints -->
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Name</label>
+                    <input id="name" md-maxlength="30" required name="name" ng-model="user.name">
+
+                    <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+
+                    <div ng-messages="userForm.name.$error" ng-if="!showHints">
+                        <div ng-message="required">Name is required.</div>
+                        <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input name="email" ng-model="user.email" required minlength="10" maxlength="100"
+                           ng-pattern="/^.+@.+\..+$/">
+
+                    <div class="hint" ng-show="showHints">How can we reach you?</div>
+
+                    <div ng-messages="userForm.email.$error" ng-hide="showHints">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <style>
+                    /*The Material demos system does not currently allow targeting
+                    the body element, so this must go here in the HTML.*/
+                    body[dir=rtl] .hint {
+                        right: 2px;
+                        left: auto;
+                    }
+                </style>
+            </div>
+
+            <div layout="row" layout-align="end start">
+                <md-button class="md-raised md-accent md-hue-4 cb-btn" type="submit">
+                    Next, Your Matches
+                </md-button>
+            </div>
+        </form>
+    </md-content>
+</div>
+
+<br><br>
+
+<!-- Footer -->
+<?php
+include 'templates/layout/footer.php';
+?>
+
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+
+<!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+<!-- The AngularJS 1.7 app -->
+<script src="/ui-match/app.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Julius Alvarado
+ * Date: 8/25/2019
+ * Time: 2:35 AM
+ *
+ *
+ * - This is the VERY simple UI so the user can type something
+ * a textarea input form to emulate client and data instructions
+ *
+ * Primarily this is good for a human to test, not phpunit.
+ *
+ */
+
+$appName = "Code Buddies Connect";
+
+?>
+
+
+<!DOCTYPE html>
+
+<?php
+include 'templates/layout/html-upper.php';
+//<!-- Horizontal sort of Nav Bar -->
+include 'templates/layout/toolbar.php';
+?>
+
+<!-- _SESSION TEST -->
+{{status}}
+<br>
+<?= $_SESSION['c_user_ip'] ?? 'no code buddy user' ?>
+<br>
+<?= $_SESSION['c_user_id'] ?? 'no code buddy user with an id' ?>
+
+<!------------------------------------------------------>
+<!----------------- MAIN HTML CONTENT  ----------------->
+<!------------------------------------------------------>
+<div layout="row" layout-align="center center">
+    <!-- LEFT side -->
+    <div layout-padding flex="15">
+        <h4>
+            Matched Users so far: <span class="cb-match-span">
+                <?= $data['match_count'] ?? 'A lot!' ?></span>
+        </h4>
+
+        <!-- icon about -->
+        <div layout="row" layout-align="center center">
+            <ng-md-icon icon="face" style="fill: sandybrown" size="36"></ng-md-icon>
+            <h1>&nbsp; About</h1>
+        </div>
+        
+        <h1 class="cb-text-center cb-mtop-0">2 / 3 <ng-md-icon icon="check_circle" style="fill: hotpink"></ng-md-icon></h1>
+    </div>
+
+    <!-- RIGHT side -->
+    <div class="md-padding" flex="60">
+        <!-- 3rd view state "/test/get-matched/contact-info" -->
+        <form action="/test/get-matched/show-matches" method="post">
+            <h1>About you and your skills</h1>
+            <br>
+            <!-- 1st - Users' name -->
+            <md-input-container class="md-block">
+                <label for="user-name">Hello, what is your name?</label>
+                <input id="user-name" name="user-name" type="text">
+            </md-input-container>
+            
+            <br><br>
+
+            <!-- 2nd - One line Intro
+            <md-input-container class="md-block">
+                <label for="one-line-intro">Your 1 line intro about yourself?</label>
+                <input type="text" id="one-line-intro" name="one-line-intro">
+            </md-input-container>
+            
+            <br><br>
+            -->
+            
+            <!-- 3rd - User Skills -->
+            <md-input-container class="md-block">
+                <label for="user-skills">What skill(s) can you help others with?</label>
+                <input id="user-skills" name="user-skills" type="text">
+                <div class="hint">comma seperated e.g. "C, PHP, HTML, Math, Data Science, etc."</div>
+            </md-input-container>
+
+            <br><br>
+
+            <!-- 4th - Want to improve Skills
+            <md-input-container class="md-block">
+                <label for="wanted-skills">What skill(s) are you trying to improve?</label>
+                <input type="text" id="wanted-skills" name="wanted-skills">
+                <div class="hint">comma seperated e.g. "C, PHP, HTML, Math, Data Science, etc."</div>
+            </md-input-container>
+            -->
+            
+            <input type="hidden" name="app-name" value="<?= $appName ?>">
+
+            <div layout="row" layout-align="end start">
+                <md-button class="md-raised md-accent md-hue-4 cb-btn" type="submit">
+                    Get Matched
+                </md-button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br><br>
+
+<?php
+//<!-- Footer -->
+include('templates/layout/footer.php');
+//<!-- JavaScript -->
+include('templates/layout/js-scripts.php');
+?>
+
+</body>
+</html>
