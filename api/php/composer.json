@@ -1,0 +1,18 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.17",
+        "ext-pdo": "*",
+        "spatie/regex": "^1.4"
+    },
+    "require-dev": {
+        "google/cloud-tools": "^0.8.1",
+        "phpunit/phpunit": "^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeBuddies\\": ["src/classes", "src/interface", "src/traits"]
+        }
+    }
+}
