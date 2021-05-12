@@ -29,7 +29,7 @@
     "react-dom": "^16.8.6",
     "react-icons": "^3.6.1",
     "react-router-dom": "^4.3.1",
-    "simpl-schema": "^1.5.3"
+    "simpl-schema": "^1.10.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
